@@ -1,0 +1,15 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/cortex_m0/cortex_m0.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/alu.v,1704910493,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/control_unit.v,D:/cortex_m0/cortex_m0.srcs/sources_1/new/def.v,alu,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/control_unit.v,1704909486,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/datapath.v,D:/cortex_m0/cortex_m0.srcs/sources_1/new/def.v,control_unit,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/datapath.v,1704911820,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/flg.v,,datapath,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/def.v,1704905332,verilog,,,,,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/flg.v,1702388815,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/r16.v,,flg,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/r16.v,1702388844,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/rgf.v,,r16,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/rgf.v,1704903063,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/rom.v,,rgf,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/rom.v,1702388711,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/top_layer.v,,rom,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v,1702388929,verilog,,,,tb_top_layer,,,,,,,,
+D:/cortex_m0/cortex_m0.srcs/sources_1/new/top_layer.v,1702443381,verilog,,D:/cortex_m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v,,top_layer,,,,,,,,

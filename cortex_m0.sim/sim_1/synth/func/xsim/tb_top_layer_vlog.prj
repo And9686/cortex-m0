@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_top_layer_func_synth.v" \
+"../../../../../cortex_m0.srcs/sources_1/new/tb_top_layer.v" \
+
+# Do not sort compile order
+nosort
