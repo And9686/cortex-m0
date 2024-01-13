@@ -30,7 +30,7 @@ module top_layer(
   wire i_we_cr_datapath;
   wire i_re_cr_datapath;
   wire [1:0] i_addr1_mux_datapath;
-  wire i_addr2_mux_datapath;
+  wire [1:0] i_addr2_mux_datapath;
   wire [1:0] i_data_mux_datapath;
   wire [3:0] i_alu_opcode_datapath;
   wire [1:0] i_alu_input_datapath;

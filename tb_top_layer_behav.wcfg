@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="366.050 ns"></ZoomEndTime>
-      <Cursor1Time time="220.000 ns"></Cursor1Time>
+      <ZoomStartTime time="53.810 ns"></ZoomStartTime>
+      <ZoomEndTime time="308.811 ns"></ZoomEndTime>
+      <Cursor1Time time="278.096 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="217"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
    <wave_markers>
@@ -51,9 +51,25 @@
          <obj_property name="ElementShortName">o_bits[3:0]</obj_property>
          <obj_property name="ObjectShortName">o_bits[3:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_state" type="array">
+         <obj_property name="ElementShortName">r_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">r_state[1:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/i_instructions" type="array">
          <obj_property name="ElementShortName">i_instructions[15:0]</obj_property>
          <obj_property name="ObjectShortName">i_instructions[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/i_op1" type="array">
+         <obj_property name="ElementShortName">i_op1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_op1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/i_op2" type="array">
+         <obj_property name="ElementShortName">i_op2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_op2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/o_res" type="array">
+         <obj_property name="ElementShortName">o_res[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_res[31:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

@@ -30,7 +30,7 @@ module control_unit(
     output wire o_we_cr,
     output wire o_re_cr,
     output wire [1:0] o_addr1_mux,
-    output wire o_addr2_mux,
+    output wire [1:0] o_addr2_mux,
     output wire [1:0] o_data_mux,
     output wire [3:0] o_alu_opcode,
     output wire [1:0] o_alu_input
@@ -119,15 +119,29 @@ module control_unit(
                             r_alu_opcode = `SUB;
                         end else
                         if (r_instructions[13:11] == 3'b100) begin  // MOV Imediate
-                            r_addr1_mux = 3; // Result Register
+                            r_addr2_mux = 3; // Result Register
                             r_data_mux = 3; // Imediate 8bits
                             r_execute = `MOV_8BIT;
                         end
                     end else
                     if (r_instructions[15:10] == 6'b010000) begin // Data Processing Instructions
                         if (r_instructions[9:6] == 4'b1100) begin // Logical OR - ORR RM, Rdn
+                            //things abour Logical OR
+                            // ...
+                            // ...
+                        end
+                    end else
+                    if (r_instructions[15:12] == 4'b1101) begin // Conditional Branch
+                        if (r_instructions[11:8] == 4'b1110) begin// Undefined Branch (Positive Jump)
+                            r_alu_input = 2; // input alu 8 bits
+                            r_addr2_mux = 2; // Second Operand
+                            r_addr1_mux = 2;
+                            r_execute = `BRNCH_AL;
+                            r_data_mux = 2;
+
+                            r_alu_opcode = `ADD; // To increment the Program Counter
+                        end
                     end
-                    
                     r_nstate = EXECUTE;
                 end
                 EXECUTE: begin // Execute the instruction read
@@ -144,6 +158,11 @@ module control_unit(
                             r_nstate = START;
                         end
                         `MOV_8BIT: begin
+                            r_we_cr = 1; // Write Enable the core register 
+                            r_re_cr = 0;
+                            r_nstate = START;
+                        end
+                        `BRNCH_AL: begin
                             r_we_cr = 1; // Write Enable the core register 
                             r_re_cr = 0;
                             r_nstate = START;

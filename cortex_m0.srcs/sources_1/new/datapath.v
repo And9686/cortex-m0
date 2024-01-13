@@ -27,7 +27,7 @@ module datapath(
   input wire i_we_cr,
   input wire i_re_cr,
   input wire [1:0] i_addr1_mux,
-  input wire i_addr2_mux,
+  input wire [1:0] i_addr2_mux,
   input wire [1:0] i_data_mux,
   input wire [3:0] i_alu_opcode,
   input wire [1:0] i_alu_input, // For when its an imediate entering the ALU
@@ -46,7 +46,7 @@ module datapath(
   wire [31:0]   w_rgf_data1;
   wire [31:0]   w_rgf_data2;
   
-  wire [3:0] w_addr2_mux;
+  reg [3:0] w_addr2_mux;
 
   reg [31:0]    r_rgf;
   reg [31:0]    r_alu_input;
@@ -100,14 +100,21 @@ module datapath(
 
     always @*
       case (i_addr1_mux)
-         2'b00  : w_addr1_mux = w_ir[2:0];
-         2'b01  : w_addr1_mux = w_ir[5:3];
-         2'b10  : w_addr1_mux = r_pc_addr;
-         2'b11  : w_addr1_mux = w_ir[10:8]; // MOV IMEDIATE 8 Bits
+         2'b000  : w_addr1_mux = w_ir[2:0];
+         2'b001  : w_addr1_mux = w_ir[5:3];
+         2'b010  : w_addr1_mux = r_pc_addr;
          default: w_addr1_mux = 0;
       endcase
   
-  assign w_addr2_mux = i_addr2_mux ? w_ir[2:0]:w_ir[6:3];
+  // assign w_addr2_mux = i_addr2_mux ? w_ir[2:0]:w_ir[6:3];
+  
+  always @*
+      case (i_addr2_mux)
+         2'b00  : w_addr2_mux = w_ir[6:3];
+         2'b01  : w_addr2_mux = w_ir[2:0];
+         2'b10  : w_addr2_mux = r_pc_addr; // program counter
+         default: w_addr2_mux = 0;
+  endcase
   
   always @*
       case (i_data_mux)
@@ -123,7 +130,7 @@ module datapath(
          2'b00: r_alu_input = w_rgf_data1; // default output from core registers
          2'b01: r_alu_input = w_ir[8:6]; // Add 3bit imediate
          2'b10: r_alu_input = w_ir[7:0]; // Add 8bit imediate
-         2'b11: r_alu_input = w_rgf_data1; // nothing for now
+         default: r_alu_input = 0; // nothing
       endcase
   // Output assignment
   assign o_instructions = w_ir;
