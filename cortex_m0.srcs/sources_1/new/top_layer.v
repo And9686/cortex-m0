@@ -29,6 +29,7 @@ module top_layer(
   wire i_we_ir_datapath;
   wire i_we_cr_datapath;
   wire i_re_cr_datapath;
+  wire i_re_rom_datapath;
   wire [1:0] i_addr1_mux_datapath;
   wire [1:0] i_addr2_mux_datapath;
   wire [1:0] i_data_mux_datapath;
@@ -43,6 +44,7 @@ module top_layer(
     .i_we_ir(i_we_ir_datapath),
     .i_we_cr(i_we_cr_datapath),
     .i_re_cr(i_re_cr_datapath),
+    .i_re_rom(i_re_rom_datapath),
     .i_addr1_mux(i_addr1_mux_datapath),
     .i_addr2_mux(i_addr2_mux_datapath),
     .i_data_mux(i_data_mux_datapath),
@@ -60,6 +62,7 @@ module top_layer(
     .o_we_ir(i_we_ir_datapath),
     .o_we_cr(i_we_cr_datapath),
     .o_re_cr(i_re_cr_datapath),
+    .o_re_rom(i_re_rom_datapath),
     .o_addr1_mux(i_addr1_mux_datapath),
     .o_addr2_mux(i_addr2_mux_datapath),
     .o_data_mux(i_data_mux_datapath),

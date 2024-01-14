@@ -1,4 +1,1 @@
 Breakpoint File Version 1.0
-139,true,"C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v"
-168,true,"C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v"
-140,true,"C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v"

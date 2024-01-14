@@ -26,6 +26,7 @@ module datapath(
   input wire i_we_ir,
   input wire i_we_cr,
   input wire i_re_cr,
+  input wire i_re_rom,
   input wire [1:0] i_addr1_mux,
   input wire [1:0] i_addr2_mux,
   input wire [1:0] i_data_mux,
@@ -72,6 +73,7 @@ module datapath(
 
   rom rom_inst (
     .clk(clk),
+    .i_re_rom(i_re_rom),
     .i_address(w_rgf_data1),
     .o_rom(w_rom)
   );
@@ -100,9 +102,10 @@ module datapath(
 
     always @*
       case (i_addr1_mux)
-         2'b000  : w_addr1_mux = w_ir[2:0];
-         2'b001  : w_addr1_mux = w_ir[5:3];
-         2'b010  : w_addr1_mux = r_pc_addr;
+         2'b00  : w_addr1_mux = w_ir[2:0];
+         2'b01  : w_addr1_mux = w_ir[5:3];
+         2'b10  : w_addr1_mux = r_pc_addr;
+         2'b11  : w_addr1_mux = w_ir[10:8]; // mov instruction
          default: w_addr1_mux = 0;
       endcase
   

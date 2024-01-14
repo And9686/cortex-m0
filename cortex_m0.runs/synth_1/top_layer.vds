@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Jan 12 23:11:49 2024
-# Process ID: 11964
+# Start of session at: Sun Jan 14 06:25:58 2024
+# Process ID: 17976
 # Current directory: C:/Users/aluno/Documents/cortex-m0/cortex_m0.runs/synth_1
 # Command line: vivado.exe -log top_layer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_layer.tcl
 # Log file: C:/Users/aluno/Documents/cortex-m0/cortex_m0.runs/synth_1/top_layer.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-C79CDTU, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16987 MB
 #-----------------------------------------------------------
 source top_layer.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 413.199 ; gain = 98.855
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 415.934 ; gain = 101.043
 Command: read_checkpoint -auto_incremental -incremental C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,10 +24,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1740
+INFO: [Synth 8-7075] Helper process launched with PID 11132
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1225.445 ; gain = 408.859
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1226.441 ; gain = 408.777
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_layer' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
 INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
@@ -36,23 +36,24 @@ INFO: [Synth 8-6155] done synthesizing module 'r16' (0#1) [C:/Users/aluno/Docume
 INFO: [Synth 8-6157] synthesizing module 'flg' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'flg' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
 INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
-INFO: [Synth 8-3876] $readmem data file 'rom.mem' is read successfully [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:37]
+INFO: [Synth 8-3876] $readmem data file 'rom.mem' is read successfully [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:38]
 INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
 INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
 	Parameter OPCODE_WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
 INFO: [Synth 8-6157] synthesizing module 'rgf' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'rgf' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
-INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:102]
-INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:113]
+INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:104]
+INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:123]
 INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
 INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
-WARNING: [Synth 8-151] case item 32'b00000000000000000000000000000100 is unreachable [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:161]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:79]
 INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'top_layer' (0#1) [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
-WARNING: [Synth 8-6014] Unused sequential element r_instructions_reg was removed.  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:71]
-WARNING: [Synth 8-6014] Unused sequential element r_state_reg was removed.  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:77]
-WARNING: [Synth 8-7137] Register r_execute_reg in module control_unit has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:103]
+WARNING: [Synth 8-6014] Unused sequential element r_instructions_reg was removed.  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:75]
+WARNING: [Synth 8-6014] Unused sequential element r_state_reg was removed.  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:81]
+WARNING: [Synth 8-7137] Register r_execute_reg in module control_unit has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:111]
+WARNING: [Synth 8-7129] Port clk in module rgf is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_flg[3] in module alu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_flg[2] in module alu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_flg[0] in module alu is either unconnected or has no load
@@ -74,18 +75,18 @@ WARNING: [Synth 8-7129] Port i_address[18] in module rom is either unconnected o
 WARNING: [Synth 8-7129] Port i_address[17] in module rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_address[16] in module rom is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1324.312 ; gain = 507.727
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1327.066 ; gain = 509.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1324.312 ; gain = 507.727
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1327.066 ; gain = 509.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1324.312 ; gain = 507.727
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1327.066 ; gain = 509.402
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1324.312 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1327.066 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -96,42 +97,44 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_layer_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1432.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1434.484 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1432.832 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1434.484 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'r_nstate_reg' in module 'control_unit'
+WARNING: [Synth 8-327] inferring latch for variable 'r_address_reg' [C:/Users/aluno/Documents/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:42]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   START |                             0001 |                               11
-                   FETCH |                             0010 |                               00
-                  DECODE |                             0100 |                               01
-                 EXECUTE |                             1000 |                               10
+                   START |                            00001 |                              011
+                   FETCH |                            00010 |                              000
+                  DECODE |                            00100 |                              001
+                 EXECUTE |                            01000 |                              010
+                    HALT |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_nstate_reg' using encoding 'one-hot' in module 'control_unit'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -146,21 +149,28 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
 +---Muxes : 
 	   8 Input   33 Bit        Muxes := 3     
 	   2 Input   33 Bit        Muxes := 3     
 	   2 Input   32 Bit        Muxes := 96    
 	   4 Input   32 Bit        Muxes := 2     
-	   2 Input   16 Bit        Muxes := 4     
-	   2 Input    4 Bit        Muxes := 5     
+	   2 Input   16 Bit        Muxes := 5     
+	   5 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 4     
 	   4 Input    4 Bit        Muxes := 2     
 	   5 Input    4 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 3     
-	   6 Input    2 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 13    
-	   4 Input    1 Bit        Muxes := 10    
+	   9 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 10    
+	   6 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -177,8 +187,13 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port clk in module rgf is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/rom_inst/r_address_reg[15]) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/rom_inst/r_address_reg[14]) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/rom_inst/r_address_reg[13]) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/rom_inst/r_address_reg[12]) is unused and will be removed from module top_layer.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -188,8 +203,8 @@ ROM: Preliminary Mapping Report
 +------------+------------+---------------+----------------+
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
-|rom         | r_rom      | 4096x12       | LUT            | 
-|top_layer   | p_0_out    | 4096x12       | LUT            | 
+|rom         | r_rom      | 4096x14       | LUT            | 
+|top_layer   | p_0_out    | 4096x14       | LUT            | 
 +------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -199,19 +214,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -229,37 +244,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -275,45 +290,47 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
+|1     |BUFG   |     2|
 |2     |CARRY4 |    25|
 |3     |LUT1   |     1|
-|4     |LUT2   |    50|
-|5     |LUT3   |   573|
-|6     |LUT4   |   101|
-|7     |LUT5   |   114|
-|8     |LUT6   |  1261|
+|4     |LUT2   |    48|
+|5     |LUT3   |   556|
+|6     |LUT4   |   126|
+|7     |LUT5   |   107|
+|8     |LUT6   |  1306|
 |9     |MUXF7  |    64|
 |10    |MUXF8  |    32|
-|11    |FDCE   |   578|
-|12    |FDPE   |   527|
-|13    |FDRE   |     2|
-|14    |LDC    |   524|
-|15    |IBUF   |     2|
-|16    |OBUF   |     4|
+|11    |FDCE   |   583|
+|12    |FDPE   |   529|
+|13    |FDRE   |     3|
+|14    |LD     |    12|
+|15    |LDC    |   526|
+|16    |IBUF   |     2|
+|17    |OBUF   |     4|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1434.484 ; gain = 616.820
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 1432.832 ; gain = 507.727
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1432.832 ; gain = 616.246
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:41 . Memory (MB): peak = 1434.484 ; gain = 509.402
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1434.484 ; gain = 616.820
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1432.832 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 645 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1434.484 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 659 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1432.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1434.484 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 524 instances were transformed.
-  LDC => LDCE: 524 instances
+  A total of 538 instances were transformed.
+  LD => LDCE: 12 instances
+  LDC => LDCE: 526 instances
 
-Synth Design complete, checksum: 747e23e7
+Synth Design complete, checksum: dcd366ee
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1432.832 ; gain = 995.762
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1434.484 ; gain = 993.672
 INFO: [Common 17-1381] The checkpoint 'C:/Users/aluno/Documents/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_layer_utilization_synth.rpt -pb top_layer_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan 12 23:12:50 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 14 06:26:56 2024...

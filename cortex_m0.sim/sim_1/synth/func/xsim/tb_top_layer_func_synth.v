@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Fri Jan 12 01:09:09 2024
-// Host        : andresmotta running 64-bit major release  (build 9200)
+// Date        : Sun Jan 14 06:28:19 2024
+// Host        : DESKTOP-C79CDTU running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file
-//               D:/cortex_m0/cortex_m0.sim/sim_1/synth/func/xsim/tb_top_layer_func_synth.v
+//               C:/Users/aluno/Documents/cortex-m0/cortex_m0.sim/sim_1/synth/func/xsim/tb_top_layer_func_synth.v
 // Design      : top_layer
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,14 +14,14 @@
 
 module alu
    (data1,
-    \r_alu_input_reg[0] ,
-    \r_alu_input_reg[0]_0 ,
-    \r_alu_input_reg[0]_1 ,
-    \r_alu_input_reg[0]_2 ,
-    \r_alu_input_reg[0]_3 ,
-    \r_alu_input_reg[0]_4 ,
-    \r_alu_input_reg[0]_5 ,
-    \r_alu_input_reg[0]_6 ,
+    \o_data1_reg[3] ,
+    \o_data1_reg[7] ,
+    \r_addr2_mux_reg[0] ,
+    \r_addr2_mux_reg[0]_0 ,
+    \r_addr2_mux_reg[0]_1 ,
+    \r_addr2_mux_reg[0]_2 ,
+    \r_addr2_mux_reg[0]_3 ,
+    \r_addr2_mux_reg[0]_4 ,
     \r_reg_reg[1][0]_LDC_i_5 ,
     p_1_in,
     DI,
@@ -33,34 +33,27 @@ module alu
     \r_reg_reg[1][20]_LDC_i_4 ,
     \r_reg_reg[1][24]_LDC_i_5 ,
     \r_reg_reg[1][28]_LDC_i_4 ,
+    i_alu_input_datapath,
+    i__carry_i_18,
+    i__carry_i_18_0,
     Q,
-    i__carry_i_10,
-    i__carry_i_10_0,
-    i__carry_i_10_1,
-    i__carry_i_10_2,
-    i__carry_i_10_3,
-    i__carry_i_10_4,
-    i__carry_i_10_5,
-    i__carry_i_10_6,
-    i__carry_i_10_7,
-    i__carry_i_10_8,
-    i__carry_i_10_9,
-    i__carry__0_i_13,
-    i__carry__1_i_13,
-    i__carry__2_i_13,
-    i__carry__3_i_13,
-    i__carry__4_i_13,
-    i__carry__5_i_13,
+    i__carry_i_18_1,
+    i__carry_i_18_2,
+    i__carry_i_18_3,
+    i__carry_i_18_4,
+    i__carry_i_18_5,
+    i__carry_i_18_6,
+    i__carry__0_i_15,
     i__carry__6_i_12);
   output [31:0]data1;
-  output [3:0]\r_alu_input_reg[0] ;
-  output [3:0]\r_alu_input_reg[0]_0 ;
-  output [3:0]\r_alu_input_reg[0]_1 ;
-  output [3:0]\r_alu_input_reg[0]_2 ;
-  output [3:0]\r_alu_input_reg[0]_3 ;
-  output [3:0]\r_alu_input_reg[0]_4 ;
-  output [3:0]\r_alu_input_reg[0]_5 ;
-  output [3:0]\r_alu_input_reg[0]_6 ;
+  output [3:0]\o_data1_reg[3] ;
+  output [3:0]\o_data1_reg[7] ;
+  output [3:0]\r_addr2_mux_reg[0] ;
+  output [3:0]\r_addr2_mux_reg[0]_0 ;
+  output [3:0]\r_addr2_mux_reg[0]_1 ;
+  output [3:0]\r_addr2_mux_reg[0]_2 ;
+  output [3:0]\r_addr2_mux_reg[0]_3 ;
+  output [3:0]\r_addr2_mux_reg[0]_4 ;
   input \r_reg_reg[1][0]_LDC_i_5 ;
   input [29:0]p_1_in;
   input [0:0]DI;
@@ -72,25 +65,18 @@ module alu
   input [3:0]\r_reg_reg[1][20]_LDC_i_4 ;
   input [3:0]\r_reg_reg[1][24]_LDC_i_5 ;
   input [3:0]\r_reg_reg[1][28]_LDC_i_4 ;
+  input [1:0]i_alu_input_datapath;
+  input i__carry_i_18;
+  input i__carry_i_18_0;
   input [31:0]Q;
-  input i__carry_i_10;
-  input i__carry_i_10_0;
-  input i__carry_i_10_1;
-  input i__carry_i_10_2;
-  input [3:0]i__carry_i_10_3;
-  input i__carry_i_10_4;
-  input i__carry_i_10_5;
-  input i__carry_i_10_6;
-  input i__carry_i_10_7;
-  input i__carry_i_10_8;
-  input i__carry_i_10_9;
-  input [3:0]i__carry__0_i_13;
-  input [3:0]i__carry__1_i_13;
-  input [3:0]i__carry__2_i_13;
-  input [3:0]i__carry__3_i_13;
-  input [3:0]i__carry__4_i_13;
-  input [3:0]i__carry__5_i_13;
-  input [3:0]i__carry__6_i_12;
+  input [3:0]i__carry_i_18_1;
+  input i__carry_i_18_2;
+  input i__carry_i_18_3;
+  input i__carry_i_18_4;
+  input i__carry_i_18_5;
+  input i__carry_i_18_6;
+  input i__carry__0_i_15;
+  input [27:0]i__carry__6_i_12;
 
   wire [0:0]DI;
   wire [31:0]Q;
@@ -127,33 +113,26 @@ module alu
   wire \_inferred__1/i__carry_n_2 ;
   wire \_inferred__1/i__carry_n_3 ;
   wire [31:0]data1;
-  wire [3:0]i__carry__0_i_13;
-  wire [3:0]i__carry__1_i_13;
-  wire [3:0]i__carry__2_i_13;
-  wire [3:0]i__carry__3_i_13;
-  wire [3:0]i__carry__4_i_13;
-  wire [3:0]i__carry__5_i_13;
-  wire [3:0]i__carry__6_i_12;
-  wire i__carry_i_10;
-  wire i__carry_i_10_0;
-  wire i__carry_i_10_1;
-  wire i__carry_i_10_2;
-  wire [3:0]i__carry_i_10_3;
-  wire i__carry_i_10_4;
-  wire i__carry_i_10_5;
-  wire i__carry_i_10_6;
-  wire i__carry_i_10_7;
-  wire i__carry_i_10_8;
-  wire i__carry_i_10_9;
+  wire i__carry__0_i_15;
+  wire [27:0]i__carry__6_i_12;
+  wire i__carry_i_18;
+  wire i__carry_i_18_0;
+  wire [3:0]i__carry_i_18_1;
+  wire i__carry_i_18_2;
+  wire i__carry_i_18_3;
+  wire i__carry_i_18_4;
+  wire i__carry_i_18_5;
+  wire i__carry_i_18_6;
+  wire [1:0]i_alu_input_datapath;
+  wire [3:0]\o_data1_reg[3] ;
+  wire [3:0]\o_data1_reg[7] ;
   wire [29:0]p_1_in;
-  wire [3:0]\r_alu_input_reg[0] ;
-  wire [3:0]\r_alu_input_reg[0]_0 ;
-  wire [3:0]\r_alu_input_reg[0]_1 ;
-  wire [3:0]\r_alu_input_reg[0]_2 ;
-  wire [3:0]\r_alu_input_reg[0]_3 ;
-  wire [3:0]\r_alu_input_reg[0]_4 ;
-  wire [3:0]\r_alu_input_reg[0]_5 ;
-  wire [3:0]\r_alu_input_reg[0]_6 ;
+  wire [3:0]\r_addr2_mux_reg[0] ;
+  wire [3:0]\r_addr2_mux_reg[0]_0 ;
+  wire [3:0]\r_addr2_mux_reg[0]_1 ;
+  wire [3:0]\r_addr2_mux_reg[0]_2 ;
+  wire [3:0]\r_addr2_mux_reg[0]_3 ;
+  wire [3:0]\r_addr2_mux_reg[0]_4 ;
   wire \r_reg_reg[1][0]_LDC_i_5 ;
   wire [3:0]\r_reg_reg[1][12]_LDC_i_5 ;
   wire [3:0]\r_reg_reg[1][16]_LDC_i_4 ;
@@ -228,255 +207,298 @@ module alu
         .DI({1'b0,p_1_in[29:27]}),
         .O(data1[31:28]),
         .S(\r_reg_reg[1][28]_LDC_i_4 ));
-  LUT3 #(
-    .INIT(8'hB4)) 
-    i__carry__0_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[7]),
-        .I2(i__carry__0_i_13[3]),
-        .O(\r_alu_input_reg[0]_0 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
-    i__carry__0_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[6]),
-        .I2(i__carry__0_i_13[2]),
-        .O(\r_alu_input_reg[0]_0 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
-    i__carry__0_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[5]),
-        .I2(i__carry__0_i_13[1]),
-        .O(\r_alu_input_reg[0]_0 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+  LUT5 #(
+    .INIT(32'hF1FD0E02)) 
     i__carry__0_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[4]),
-        .I2(i__carry__0_i_13[0]),
-        .O(\r_alu_input_reg[0]_0 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(Q[7]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i__carry_i_18_3),
+        .I4(i__carry__6_i_12[3]),
+        .O(\o_data1_reg[7] [3]));
+  LUT5 #(
+    .INIT(32'hF1FD0E02)) 
+    i__carry__0_i_34
+       (.I0(Q[6]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i__carry_i_18_0),
+        .I4(i__carry__6_i_12[2]),
+        .O(\o_data1_reg[7] [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
+    i__carry__0_i_35
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[5]),
+        .I3(i__carry__6_i_12[1]),
+        .O(\o_data1_reg[7] [1]));
+  LUT5 #(
+    .INIT(32'hF1FD0E02)) 
+    i__carry__0_i_36
+       (.I0(Q[4]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i__carry__0_i_15),
+        .I4(i__carry__6_i_12[0]),
+        .O(\o_data1_reg[7] [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__1_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[11]),
-        .I2(i__carry__1_i_13[3]),
-        .O(\r_alu_input_reg[0]_1 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[11]),
+        .I3(i__carry__6_i_12[7]),
+        .O(\r_addr2_mux_reg[0] [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__1_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[10]),
-        .I2(i__carry__1_i_13[2]),
-        .O(\r_alu_input_reg[0]_1 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[10]),
+        .I3(i__carry__6_i_12[6]),
+        .O(\r_addr2_mux_reg[0] [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__1_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[9]),
-        .I2(i__carry__1_i_13[1]),
-        .O(\r_alu_input_reg[0]_1 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[9]),
+        .I3(i__carry__6_i_12[5]),
+        .O(\r_addr2_mux_reg[0] [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__1_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[8]),
-        .I2(i__carry__1_i_13[0]),
-        .O(\r_alu_input_reg[0]_1 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[8]),
+        .I3(i__carry__6_i_12[4]),
+        .O(\r_addr2_mux_reg[0] [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__2_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[15]),
-        .I2(i__carry__2_i_13[3]),
-        .O(\r_alu_input_reg[0]_2 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[15]),
+        .I3(i__carry__6_i_12[11]),
+        .O(\r_addr2_mux_reg[0]_0 [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__2_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[14]),
-        .I2(i__carry__2_i_13[2]),
-        .O(\r_alu_input_reg[0]_2 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[14]),
+        .I3(i__carry__6_i_12[10]),
+        .O(\r_addr2_mux_reg[0]_0 [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__2_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[13]),
-        .I2(i__carry__2_i_13[1]),
-        .O(\r_alu_input_reg[0]_2 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[13]),
+        .I3(i__carry__6_i_12[9]),
+        .O(\r_addr2_mux_reg[0]_0 [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__2_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[12]),
-        .I2(i__carry__2_i_13[0]),
-        .O(\r_alu_input_reg[0]_2 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[12]),
+        .I3(i__carry__6_i_12[8]),
+        .O(\r_addr2_mux_reg[0]_0 [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__3_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[19]),
-        .I2(i__carry__3_i_13[3]),
-        .O(\r_alu_input_reg[0]_3 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[19]),
+        .I3(i__carry__6_i_12[15]),
+        .O(\r_addr2_mux_reg[0]_1 [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__3_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[18]),
-        .I2(i__carry__3_i_13[2]),
-        .O(\r_alu_input_reg[0]_3 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[18]),
+        .I3(i__carry__6_i_12[14]),
+        .O(\r_addr2_mux_reg[0]_1 [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__3_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[17]),
-        .I2(i__carry__3_i_13[1]),
-        .O(\r_alu_input_reg[0]_3 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[17]),
+        .I3(i__carry__6_i_12[13]),
+        .O(\r_addr2_mux_reg[0]_1 [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__3_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[16]),
-        .I2(i__carry__3_i_13[0]),
-        .O(\r_alu_input_reg[0]_3 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[16]),
+        .I3(i__carry__6_i_12[12]),
+        .O(\r_addr2_mux_reg[0]_1 [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__4_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[23]),
-        .I2(i__carry__4_i_13[3]),
-        .O(\r_alu_input_reg[0]_4 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[23]),
+        .I3(i__carry__6_i_12[19]),
+        .O(\r_addr2_mux_reg[0]_2 [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__4_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[22]),
-        .I2(i__carry__4_i_13[2]),
-        .O(\r_alu_input_reg[0]_4 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[22]),
+        .I3(i__carry__6_i_12[18]),
+        .O(\r_addr2_mux_reg[0]_2 [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__4_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[21]),
-        .I2(i__carry__4_i_13[1]),
-        .O(\r_alu_input_reg[0]_4 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[21]),
+        .I3(i__carry__6_i_12[17]),
+        .O(\r_addr2_mux_reg[0]_2 [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__4_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[20]),
-        .I2(i__carry__4_i_13[0]),
-        .O(\r_alu_input_reg[0]_4 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[20]),
+        .I3(i__carry__6_i_12[16]),
+        .O(\r_addr2_mux_reg[0]_2 [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__5_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[27]),
-        .I2(i__carry__5_i_13[3]),
-        .O(\r_alu_input_reg[0]_5 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[27]),
+        .I3(i__carry__6_i_12[23]),
+        .O(\r_addr2_mux_reg[0]_3 [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__5_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[26]),
-        .I2(i__carry__5_i_13[2]),
-        .O(\r_alu_input_reg[0]_5 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[26]),
+        .I3(i__carry__6_i_12[22]),
+        .O(\r_addr2_mux_reg[0]_3 [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__5_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[25]),
-        .I2(i__carry__5_i_13[1]),
-        .O(\r_alu_input_reg[0]_5 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[25]),
+        .I3(i__carry__6_i_12[21]),
+        .O(\r_addr2_mux_reg[0]_3 [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__5_i_33
-       (.I0(i__carry_i_10),
-        .I1(Q[24]),
-        .I2(i__carry__5_i_13[0]),
-        .O(\r_alu_input_reg[0]_5 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[24]),
+        .I3(i__carry__6_i_12[20]),
+        .O(\r_addr2_mux_reg[0]_3 [0]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__6_i_29
-       (.I0(i__carry_i_10),
-        .I1(Q[31]),
-        .I2(i__carry__6_i_12[3]),
-        .O(\r_alu_input_reg[0]_6 [3]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[31]),
+        .I3(i__carry__6_i_12[27]),
+        .O(\r_addr2_mux_reg[0]_4 [3]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__6_i_30
-       (.I0(i__carry_i_10),
-        .I1(Q[30]),
-        .I2(i__carry__6_i_12[2]),
-        .O(\r_alu_input_reg[0]_6 [2]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[30]),
+        .I3(i__carry__6_i_12[26]),
+        .O(\r_addr2_mux_reg[0]_4 [2]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__6_i_31
-       (.I0(i__carry_i_10),
-        .I1(Q[29]),
-        .I2(i__carry__6_i_12[1]),
-        .O(\r_alu_input_reg[0]_6 [1]));
-  LUT3 #(
-    .INIT(8'hB4)) 
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[29]),
+        .I3(i__carry__6_i_12[25]),
+        .O(\r_addr2_mux_reg[0]_4 [1]));
+  LUT4 #(
+    .INIT(16'hEF10)) 
     i__carry__6_i_32
-       (.I0(i__carry_i_10),
-        .I1(Q[28]),
-        .I2(i__carry__6_i_12[0]),
-        .O(\r_alu_input_reg[0]_6 [0]));
-  LUT3 #(
-    .INIT(8'hB4)) 
-    i__carry_i_15
-       (.I0(i__carry_i_10),
-        .I1(Q[3]),
-        .I2(i__carry_i_10_3[3]),
-        .O(\r_alu_input_reg[0] [3]));
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(Q[28]),
+        .I3(i__carry__6_i_12[24]),
+        .O(\r_addr2_mux_reg[0]_4 [0]));
+  LUT5 #(
+    .INIT(32'hF1FD0E02)) 
+    i__carry_i_37
+       (.I0(Q[3]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i__carry_i_18_6),
+        .I4(i__carry_i_18_1[3]),
+        .O(\o_data1_reg[3] [3]));
   LUT6 #(
-    .INIT(64'h111DDD1DEEE222E2)) 
-    i__carry_i_16
-       (.I0(Q[2]),
-        .I1(i__carry_i_10),
-        .I2(i__carry_i_10_7),
-        .I3(i__carry_i_10_8),
-        .I4(i__carry_i_10_9),
-        .I5(i__carry_i_10_3[2]),
-        .O(\r_alu_input_reg[0] [2]));
+    .INIT(64'h8CAE9DBF73516240)) 
+    i__carry_i_38
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i__carry_i_18_4),
+        .I3(i__carry_i_18_5),
+        .I4(Q[2]),
+        .I5(i__carry_i_18_1[2]),
+        .O(\o_data1_reg[3] [2]));
   LUT6 #(
-    .INIT(64'h111DDD1DEEE222E2)) 
-    i__carry_i_17
-       (.I0(Q[1]),
-        .I1(i__carry_i_10),
-        .I2(i__carry_i_10_4),
-        .I3(i__carry_i_10_5),
-        .I4(i__carry_i_10_6),
-        .I5(i__carry_i_10_3[1]),
-        .O(\r_alu_input_reg[0] [1]));
+    .INIT(64'h8CAE9DBF73516240)) 
+    i__carry_i_39
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i__carry_i_18_2),
+        .I3(i__carry_i_18_3),
+        .I4(Q[1]),
+        .I5(i__carry_i_18_1[1]),
+        .O(\o_data1_reg[3] [1]));
   LUT6 #(
-    .INIT(64'h111DDD1DEEE222E2)) 
-    i__carry_i_18
-       (.I0(Q[0]),
-        .I1(i__carry_i_10),
-        .I2(i__carry_i_10_0),
-        .I3(i__carry_i_10_1),
-        .I4(i__carry_i_10_2),
-        .I5(i__carry_i_10_3[0]),
-        .O(\r_alu_input_reg[0] [0]));
+    .INIT(64'h8CAE9DBF73516240)) 
+    i__carry_i_40
+       (.I0(i_alu_input_datapath[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(i__carry_i_18),
+        .I3(i__carry_i_18_0),
+        .I4(Q[0]),
+        .I5(i__carry_i_18_1[0]),
+        .O(\o_data1_reg[3] [0]));
 endmodule
 
 module control_unit
-   (r_we_ir,
-    \r_alu_input_reg[0]_0 ,
+   (i_re_rom_datapath,
+    r_we_ir,
     i_alu_opcode_datapath,
-    E,
-    i_addr2_mux_datapath,
+    i_re_cr_datapath,
     \r_addr1_mux_reg[1]_0 ,
     w_addr1_mux,
     \r_addr1_mux_reg[1]_1 ,
     p_1_in,
     i_addr1_mux_datapath,
-    Q,
+    i_alu_input_datapath,
+    \r_addr2_mux_reg[1]_0 ,
+    \FSM_onehot_r_nstate_reg[4]_0 ,
+    r_we_ir_reg_0,
     \r_addr1_mux_reg[1]_2 ,
     \r_addr1_mux_reg[1]_3 ,
+    S,
+    \r_alu_opcode_reg[1]_0 ,
+    \r_alu_opcode_reg[1]_1 ,
+    \r_alu_opcode_reg[1]_2 ,
+    \r_alu_opcode_reg[1]_3 ,
+    \r_alu_opcode_reg[1]_4 ,
+    \r_alu_opcode_reg[1]_5 ,
+    \r_alu_opcode_reg[1]_6 ,
     r_we_cr_reg_rep__5_0,
     r_we_cr_reg_rep__5_1,
     r_we_cr_reg_rep__5_2,
@@ -1504,21 +1526,21 @@ module control_unit
     r_we_cr_reg_rep__5_128,
     r_we_cr_reg_rep__5_129,
     clk_IBUF_BUFG,
-    r_addr2_mux_reg_0,
-    \r_alu_opcode_reg[1]_0 ,
+    \r_addr1_mux_reg[1]_4 ,
+    \r_alu_opcode_reg[1]_7 ,
     \r_reg_reg[10][4]_C ,
     \r_reg_reg[1][3]_P ,
     w_rgf_data2,
     o_instructions_datapath,
+    Q,
+    data0,
     r_data,
     r_rgf0,
     \r_reg_reg[6][0]_C ,
     \r_reg_reg[6][0]_C_0 ,
     \r_reg_reg[6][0]_C_1 ,
-    \r_reg_reg[1][31]_LDC_i_6_0 ,
-    data1,
-    data0,
     rst_n_IBUF,
+    data1,
     \r_reg_reg[9][3]_P ,
     \r_reg_reg[2][22]_P ,
     \r_reg_reg[1][16]_C ,
@@ -1536,25 +1558,37 @@ module control_unit
     \r_reg_reg[7][31]_C ,
     \r_reg_reg[12][2]_C ,
     \r_reg_reg[15][31]_C ,
-    \r_execute_reg[0]_0 ,
-    \r_data_mux_reg[1]_0 ,
+    \r_addr1_mux_reg[0]_0 ,
+    r_alu_input,
+    r_addr1_mux,
+    \r_addr2_mux_reg[1]_1 ,
+    \r_data_mux_reg[0]_0 ,
+    \r_execute_reg[2]_0 ,
     \r_execute_reg[1]_0 ,
-    \r_execute_reg[1]_1 ,
-    \r_execute_reg[1]_2 ,
-    \r_execute_reg[1]_3 );
+    \r_execute_reg[0]_0 );
+  output i_re_rom_datapath;
   output r_we_ir;
-  output \r_alu_input_reg[0]_0 ;
   output [0:0]i_alu_opcode_datapath;
-  output [0:0]E;
-  output i_addr2_mux_datapath;
+  output i_re_cr_datapath;
   output \r_addr1_mux_reg[1]_0 ;
   output [1:0]w_addr1_mux;
   output \r_addr1_mux_reg[1]_1 ;
   output [29:0]p_1_in;
   output [1:0]i_addr1_mux_datapath;
-  output [0:0]Q;
+  output [1:0]i_alu_input_datapath;
+  output \r_addr2_mux_reg[1]_0 ;
+  output [2:0]\FSM_onehot_r_nstate_reg[4]_0 ;
+  output r_we_ir_reg_0;
   output \r_addr1_mux_reg[1]_2 ;
   output \r_addr1_mux_reg[1]_3 ;
+  output [2:0]S;
+  output [3:0]\r_alu_opcode_reg[1]_0 ;
+  output [3:0]\r_alu_opcode_reg[1]_1 ;
+  output [3:0]\r_alu_opcode_reg[1]_2 ;
+  output [3:0]\r_alu_opcode_reg[1]_3 ;
+  output [3:0]\r_alu_opcode_reg[1]_4 ;
+  output [3:0]\r_alu_opcode_reg[1]_5 ;
+  output [3:0]\r_alu_opcode_reg[1]_6 ;
   output r_we_cr_reg_rep__5_0;
   output r_we_cr_reg_rep__5_1;
   output r_we_cr_reg_rep__5_2;
@@ -2582,21 +2616,21 @@ module control_unit
   output r_we_cr_reg_rep__5_128;
   output r_we_cr_reg_rep__5_129;
   input clk_IBUF_BUFG;
-  input r_addr2_mux_reg_0;
-  input \r_alu_opcode_reg[1]_0 ;
+  input \r_addr1_mux_reg[1]_4 ;
+  input \r_alu_opcode_reg[1]_7 ;
   input \r_reg_reg[10][4]_C ;
   input [1:0]\r_reg_reg[1][3]_P ;
-  input [29:0]w_rgf_data2;
-  input [8:0]o_instructions_datapath;
+  input [30:0]w_rgf_data2;
+  input [7:0]o_instructions_datapath;
+  input [31:0]Q;
+  input [32:0]data0;
   input [0:0]r_data;
   input [30:0]r_rgf0;
   input \r_reg_reg[6][0]_C ;
   input \r_reg_reg[6][0]_C_0 ;
   input \r_reg_reg[6][0]_C_1 ;
-  input [31:0]\r_reg_reg[1][31]_LDC_i_6_0 ;
-  input [31:0]data1;
-  input [32:0]data0;
   input rst_n_IBUF;
+  input [31:0]data1;
   input \r_reg_reg[9][3]_P ;
   input \r_reg_reg[2][22]_P ;
   input \r_reg_reg[1][16]_C ;
@@ -2614,55 +2648,81 @@ module control_unit
   input \r_reg_reg[7][31]_C ;
   input \r_reg_reg[12][2]_C ;
   input \r_reg_reg[15][31]_C ;
-  input \r_execute_reg[0]_0 ;
-  input \r_data_mux_reg[1]_0 ;
+  input \r_addr1_mux_reg[0]_0 ;
+  input [0:0]r_alu_input;
+  input [0:0]r_addr1_mux;
+  input \r_addr2_mux_reg[1]_1 ;
+  input \r_data_mux_reg[0]_0 ;
+  input \r_execute_reg[2]_0 ;
   input \r_execute_reg[1]_0 ;
-  input \r_execute_reg[1]_1 ;
-  input \r_execute_reg[1]_2 ;
-  input \r_execute_reg[1]_3 ;
+  input \r_execute_reg[0]_0 ;
 
-  wire [0:0]E;
   wire \FSM_onehot_r_nstate[0]_i_1_n_0 ;
-  wire \FSM_onehot_r_nstate[1]_i_1_n_0 ;
-  wire \FSM_onehot_r_nstate_reg_n_0_[0] ;
-  wire \FSM_onehot_r_nstate_reg_n_0_[3] ;
-  wire [0:0]Q;
+  wire \FSM_onehot_r_nstate[4]_i_1_n_0 ;
+  wire \FSM_onehot_r_nstate[4]_i_2_n_0 ;
+  wire [2:0]\FSM_onehot_r_nstate_reg[4]_0 ;
+  wire [31:0]Q;
+  wire [2:0]S;
   wire clk_IBUF_BUFG;
   wire [32:0]data0;
   wire [31:0]data1;
   wire [31:0]\datapath_inst/r_rgf ;
+  wire i__carry__0_i_13_n_0;
+  wire i__carry__0_i_14_n_0;
+  wire i__carry__0_i_16_n_0;
+  wire i__carry_i_10_n_0;
+  wire i__carry_i_14_n_0;
+  wire i__carry_i_15_n_0;
+  wire i__carry_i_16_n_0;
   wire [1:0]i_addr1_mux_datapath;
-  wire i_addr2_mux_datapath;
+  wire [1:0]i_alu_input_datapath;
   wire [0:0]i_alu_opcode_datapath;
+  wire i_re_cr_datapath;
+  wire i_re_rom_datapath;
   wire i_we_cr_datapath;
-  wire [8:0]o_instructions_datapath;
+  wire [7:0]o_instructions_datapath;
   wire [29:0]p_1_in;
+  wire [0:0]r_addr1_mux;
   wire \r_addr1_mux[0]_i_1_n_0 ;
   wire \r_addr1_mux[1]_i_1_n_0 ;
+  wire \r_addr1_mux_reg[0]_0 ;
   wire \r_addr1_mux_reg[1]_0 ;
   wire \r_addr1_mux_reg[1]_1 ;
   wire \r_addr1_mux_reg[1]_2 ;
   wire \r_addr1_mux_reg[1]_3 ;
-  wire r_addr2_mux_i_1_n_0;
-  wire r_addr2_mux_reg_0;
-  wire \r_alu_input[0]_i_1_n_0 ;
-  wire \r_alu_input_reg[0]_0 ;
-  wire \r_alu_opcode_reg[1]_0 ;
+  wire \r_addr1_mux_reg[1]_4 ;
+  wire \r_addr2_mux[0]_i_1_n_0 ;
+  wire \r_addr2_mux[1]_i_1_n_0 ;
+  wire \r_addr2_mux_reg[1]_0 ;
+  wire \r_addr2_mux_reg[1]_1 ;
+  wire [0:0]r_alu_input;
+  wire [3:0]\r_alu_opcode_reg[1]_0 ;
+  wire [3:0]\r_alu_opcode_reg[1]_1 ;
+  wire [3:0]\r_alu_opcode_reg[1]_2 ;
+  wire [3:0]\r_alu_opcode_reg[1]_3 ;
+  wire [3:0]\r_alu_opcode_reg[1]_4 ;
+  wire [3:0]\r_alu_opcode_reg[1]_5 ;
+  wire [3:0]\r_alu_opcode_reg[1]_6 ;
+  wire \r_alu_opcode_reg[1]_7 ;
+  wire r_branch;
+  wire r_branch_i_1_n_0;
+  wire r_branch_reg_n_0;
   wire [0:0]r_data;
   wire [1:0]r_data_mux;
   wire \r_data_mux[0]_i_1_n_0 ;
   wire \r_data_mux[1]_i_1_n_0 ;
-  wire \r_data_mux_reg[1]_0 ;
+  wire \r_data_mux_reg[0]_0 ;
   wire \r_execute[0]_i_1_n_0 ;
   wire \r_execute[1]_i_1_n_0 ;
+  wire \r_execute[2]_i_1_n_0 ;
   wire \r_execute_reg[0]_0 ;
   wire \r_execute_reg[1]_0 ;
-  wire \r_execute_reg[1]_1 ;
-  wire \r_execute_reg[1]_2 ;
-  wire \r_execute_reg[1]_3 ;
+  wire \r_execute_reg[2]_0 ;
   wire \r_execute_reg_n_0_[0] ;
   wire \r_execute_reg_n_0_[1] ;
+  wire \r_execute_reg_n_0_[2] ;
   wire r_re_cr_i_1_n_0;
+  wire r_re_rom_i_1_n_0;
   wire \r_reg_reg[0][2]_P ;
   wire \r_reg_reg[10][2]_P ;
   wire \r_reg_reg[10][31]_LDC_i_4_n_0 ;
@@ -2704,7 +2764,6 @@ module control_unit
   wire \r_reg_reg[1][2]_LDC_i_4_n_0 ;
   wire \r_reg_reg[1][30]_LDC_i_4_n_0 ;
   wire \r_reg_reg[1][31]_LDC_i_3_n_0 ;
-  wire [31:0]\r_reg_reg[1][31]_LDC_i_6_0 ;
   wire \r_reg_reg[1][31]_LDC_i_7_n_0 ;
   wire \r_reg_reg[1][3]_LDC_i_4_n_0 ;
   wire [1:0]\r_reg_reg[1][3]_P ;
@@ -2727,6 +2786,7 @@ module control_unit
   wire [30:0]r_rgf0;
   wire r_we_cr_i_1_n_0;
   wire r_we_cr_i_2_n_0;
+  wire r_we_cr_i_3_n_0;
   wire r_we_cr_reg_0;
   wire r_we_cr_reg_1;
   wire r_we_cr_reg_10;
@@ -3770,67 +3830,117 @@ module control_unit
   wire r_we_ir;
   wire r_we_ir_0;
   wire r_we_ir_i_1_n_0;
+  wire r_we_ir_reg_0;
   wire rst_n_IBUF;
   wire [1:0]w_addr1_mux;
-  wire [29:0]w_rgf_data2;
+  wire [30:0]w_rgf_data2;
 
-  LUT3 #(
-    .INIT(8'hD0)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h02A2)) 
     \FSM_onehot_r_nstate[0]_i_1 
-       (.I0(\r_execute_reg_n_0_[0] ),
-        .I1(\r_execute_reg_n_0_[1] ),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
+       (.I0(r_branch),
+        .I1(\r_execute_reg_n_0_[0] ),
+        .I2(\r_execute_reg_n_0_[1] ),
+        .I3(\r_execute_reg_n_0_[2] ),
         .O(\FSM_onehot_r_nstate[0]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'hFF40)) 
-    \FSM_onehot_r_nstate[1]_i_1 
-       (.I0(\r_execute_reg_n_0_[1] ),
-        .I1(\r_execute_reg_n_0_[0] ),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .O(\FSM_onehot_r_nstate[1]_i_1_n_0 ));
-  (* FSM_ENCODED_STATES = "DECODE:0100,EXECUTE:1000,FETCH:0010,START:0001" *) 
+    .INIT(16'hFFFE)) 
+    \FSM_onehot_r_nstate[4]_i_1 
+       (.I0(r_we_ir_0),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I2(r_branch),
+        .I3(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .O(\FSM_onehot_r_nstate[4]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'hE200)) 
+    \FSM_onehot_r_nstate[4]_i_2 
+       (.I0(\r_execute_reg_n_0_[0] ),
+        .I1(\r_execute_reg_n_0_[1] ),
+        .I2(\r_execute_reg_n_0_[2] ),
+        .I3(r_branch),
+        .O(\FSM_onehot_r_nstate[4]_i_2_n_0 ));
+  (* FSM_ENCODED_STATES = "FETCH:00010,DECODE:00100,EXECUTE:01000,HALT:10000,START:00001" *) 
   FDPE #(
     .INIT(1'b1)) 
     \FSM_onehot_r_nstate_reg[0] 
        (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
+        .CE(\FSM_onehot_r_nstate[4]_i_1_n_0 ),
         .D(\FSM_onehot_r_nstate[0]_i_1_n_0 ),
-        .PRE(r_addr2_mux_reg_0),
-        .Q(\FSM_onehot_r_nstate_reg_n_0_[0] ));
-  (* FSM_ENCODED_STATES = "DECODE:0100,EXECUTE:1000,FETCH:0010,START:0001" *) 
+        .PRE(\r_addr1_mux_reg[1]_4 ),
+        .Q(\FSM_onehot_r_nstate_reg[4]_0 [0]));
+  (* FSM_ENCODED_STATES = "FETCH:00010,DECODE:00100,EXECUTE:01000,HALT:10000,START:00001" *) 
   FDCE #(
     .INIT(1'b0)) 
     \FSM_onehot_r_nstate_reg[1] 
        (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
-        .D(\FSM_onehot_r_nstate[1]_i_1_n_0 ),
+        .CE(\FSM_onehot_r_nstate[4]_i_1_n_0 ),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\FSM_onehot_r_nstate_reg[4]_0 [0]),
         .Q(r_we_ir_0));
-  (* FSM_ENCODED_STATES = "DECODE:0100,EXECUTE:1000,FETCH:0010,START:0001" *) 
+  (* FSM_ENCODED_STATES = "FETCH:00010,DECODE:00100,EXECUTE:01000,HALT:10000,START:00001" *) 
   FDCE #(
     .INIT(1'b0)) 
     \FSM_onehot_r_nstate_reg[2] 
        (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CE(\FSM_onehot_r_nstate[4]_i_1_n_0 ),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_ir_0),
-        .Q(Q));
-  (* FSM_ENCODED_STATES = "DECODE:0100,EXECUTE:1000,FETCH:0010,START:0001" *) 
+        .Q(\FSM_onehot_r_nstate_reg[4]_0 [1]));
+  (* FSM_ENCODED_STATES = "FETCH:00010,DECODE:00100,EXECUTE:01000,HALT:10000,START:00001" *) 
   FDCE #(
     .INIT(1'b0)) 
     \FSM_onehot_r_nstate_reg[3] 
        (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
-        .D(Q),
-        .Q(\FSM_onehot_r_nstate_reg_n_0_[3] ));
+        .CE(\FSM_onehot_r_nstate[4]_i_1_n_0 ),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .Q(r_branch));
+  (* FSM_ENCODED_STATES = "FETCH:00010,DECODE:00100,EXECUTE:01000,HALT:10000,START:00001" *) 
+  FDCE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_r_nstate_reg[4] 
+       (.C(clk_IBUF_BUFG),
+        .CE(\FSM_onehot_r_nstate[4]_i_1_n_0 ),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\FSM_onehot_r_nstate[4]_i_2_n_0 ),
+        .Q(\FSM_onehot_r_nstate_reg[4]_0 [2]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__0_i_1
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[6]),
         .O(p_1_in[6]));
+  LUT6 #(
+    .INIT(64'hFFFFFF002727FF00)) 
+    i__carry__0_i_13
+       (.I0(i_alu_input_datapath[1]),
+        .I1(r_data),
+        .I2(Q[7]),
+        .I3(data0[7]),
+        .I4(i_alu_opcode_datapath),
+        .I5(i_alu_input_datapath[0]),
+        .O(i__carry__0_i_13_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFF002727FF00)) 
+    i__carry__0_i_14
+       (.I0(i_alu_input_datapath[1]),
+        .I1(o_instructions_datapath[5]),
+        .I2(Q[6]),
+        .I3(data0[6]),
+        .I4(i_alu_opcode_datapath),
+        .I5(i_alu_input_datapath[0]),
+        .O(i__carry__0_i_14_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFF002727FF00)) 
+    i__carry__0_i_16
+       (.I0(i_alu_input_datapath[1]),
+        .I1(o_instructions_datapath[4]),
+        .I2(Q[4]),
+        .I3(data0[4]),
+        .I4(i_alu_opcode_datapath),
+        .I5(i_alu_input_datapath[0]),
+        .O(i__carry__0_i_16_n_0));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__0_i_2
@@ -3849,6 +3959,37 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[3]),
         .O(p_1_in[3]));
+  LUT3 #(
+    .INIT(8'h78)) 
+    i__carry__0_i_5
+       (.I0(w_rgf_data2[6]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i__carry__0_i_13_n_0),
+        .O(\r_alu_opcode_reg[1]_0 [3]));
+  LUT3 #(
+    .INIT(8'h78)) 
+    i__carry__0_i_6
+       (.I0(w_rgf_data2[5]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i__carry__0_i_14_n_0),
+        .O(\r_alu_opcode_reg[1]_0 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__0_i_7
+       (.I0(w_rgf_data2[4]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[5]),
+        .I3(data0[5]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_0 [1]));
+  LUT3 #(
+    .INIT(8'h78)) 
+    i__carry__0_i_8
+       (.I0(w_rgf_data2[3]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i__carry__0_i_16_n_0),
+        .O(\r_alu_opcode_reg[1]_0 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__1_i_1
@@ -3873,6 +4014,46 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[7]),
         .O(p_1_in[7]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__1_i_5
+       (.I0(w_rgf_data2[10]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[11]),
+        .I3(data0[11]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_1 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__1_i_6
+       (.I0(w_rgf_data2[9]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[10]),
+        .I3(data0[10]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_1 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__1_i_7
+       (.I0(w_rgf_data2[8]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[9]),
+        .I3(data0[9]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_1 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__1_i_8
+       (.I0(w_rgf_data2[7]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[8]),
+        .I3(data0[8]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_1 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__2_i_1
@@ -3897,6 +4078,46 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[11]),
         .O(p_1_in[11]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__2_i_5
+       (.I0(w_rgf_data2[14]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[15]),
+        .I3(data0[15]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_2 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__2_i_6
+       (.I0(w_rgf_data2[13]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[14]),
+        .I3(data0[14]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_2 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__2_i_7
+       (.I0(w_rgf_data2[12]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[13]),
+        .I3(data0[13]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_2 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__2_i_8
+       (.I0(w_rgf_data2[11]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[12]),
+        .I3(data0[12]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_2 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__3_i_1
@@ -3921,6 +4142,46 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[15]),
         .O(p_1_in[15]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__3_i_5
+       (.I0(w_rgf_data2[18]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[19]),
+        .I3(data0[19]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_3 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__3_i_6
+       (.I0(w_rgf_data2[17]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[18]),
+        .I3(data0[18]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_3 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__3_i_7
+       (.I0(w_rgf_data2[16]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[17]),
+        .I3(data0[17]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_3 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__3_i_8
+       (.I0(w_rgf_data2[15]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[16]),
+        .I3(data0[16]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_3 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__4_i_1
@@ -3945,6 +4206,46 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[19]),
         .O(p_1_in[19]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__4_i_5
+       (.I0(w_rgf_data2[22]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[23]),
+        .I3(data0[23]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_4 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__4_i_6
+       (.I0(w_rgf_data2[21]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[22]),
+        .I3(data0[22]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_4 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__4_i_7
+       (.I0(w_rgf_data2[20]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[21]),
+        .I3(data0[21]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_4 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__4_i_8
+       (.I0(w_rgf_data2[19]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[20]),
+        .I3(data0[20]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_4 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__5_i_1
@@ -3969,6 +4270,46 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[23]),
         .O(p_1_in[23]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__5_i_5
+       (.I0(w_rgf_data2[26]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[27]),
+        .I3(data0[27]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_5 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__5_i_6
+       (.I0(w_rgf_data2[25]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[26]),
+        .I3(data0[26]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_5 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__5_i_7
+       (.I0(w_rgf_data2[24]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[25]),
+        .I3(data0[25]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_5 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__5_i_8
+       (.I0(w_rgf_data2[23]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[24]),
+        .I3(data0[24]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_5 [0]));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry__6_i_1
@@ -3987,6 +4328,95 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[27]),
         .O(p_1_in[27]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__6_i_4
+       (.I0(w_rgf_data2[30]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[31]),
+        .I3(data0[31]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_6 [3]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__6_i_5
+       (.I0(w_rgf_data2[29]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[30]),
+        .I3(data0[30]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_6 [2]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__6_i_6
+       (.I0(w_rgf_data2[28]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[29]),
+        .I3(data0[29]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_6 [1]));
+  LUT6 #(
+    .INIT(64'h774477447744B784)) 
+    i__carry__6_i_7
+       (.I0(w_rgf_data2[27]),
+        .I1(i_alu_opcode_datapath),
+        .I2(Q[28]),
+        .I3(data0[28]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(\r_alu_opcode_reg[1]_6 [0]));
+  LUT5 #(
+    .INIT(32'hFABAAAAA)) 
+    i__carry_i_1
+       (.I0(i__carry_i_10_n_0),
+        .I1(o_instructions_datapath[0]),
+        .I2(i_alu_input_datapath[1]),
+        .I3(i_alu_input_datapath[0]),
+        .I4(i_alu_opcode_datapath),
+        .O(\r_addr2_mux_reg[1]_0 ));
+  LUT6 #(
+    .INIT(64'h00FF1111F0F0F0F0)) 
+    i__carry_i_10
+       (.I0(Q[0]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(data0[0]),
+        .I3(o_instructions_datapath[5]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_opcode_datapath),
+        .O(i__carry_i_10_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFF002727FF00)) 
+    i__carry_i_14
+       (.I0(i_alu_input_datapath[1]),
+        .I1(o_instructions_datapath[3]),
+        .I2(Q[3]),
+        .I3(data0[3]),
+        .I4(i_alu_opcode_datapath),
+        .I5(i_alu_input_datapath[0]),
+        .O(i__carry_i_14_n_0));
+  LUT6 #(
+    .INIT(64'h00FF1111F0F0F0F0)) 
+    i__carry_i_15
+       (.I0(Q[2]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(data0[2]),
+        .I3(o_instructions_datapath[6]),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_opcode_datapath),
+        .O(i__carry_i_15_n_0));
+  LUT6 #(
+    .INIT(64'h00FF1111F0F0F0F0)) 
+    i__carry_i_16
+       (.I0(Q[1]),
+        .I1(i_alu_input_datapath[1]),
+        .I2(data0[1]),
+        .I3(r_data),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_opcode_datapath),
+        .O(i__carry_i_16_n_0));
   LUT2 #(
     .INIT(4'h8)) 
     i__carry_i_2
@@ -4005,37 +4435,65 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(w_rgf_data2[0]),
         .O(p_1_in[0]));
+  LUT3 #(
+    .INIT(8'h78)) 
+    i__carry_i_6
+       (.I0(w_rgf_data2[2]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i__carry_i_14_n_0),
+        .O(S[2]));
+  LUT6 #(
+    .INIT(64'h7777777748884488)) 
+    i__carry_i_7
+       (.I0(w_rgf_data2[1]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i_alu_input_datapath[1]),
+        .I4(o_instructions_datapath[2]),
+        .I5(i__carry_i_15_n_0),
+        .O(S[1]));
+  LUT6 #(
+    .INIT(64'h7777777748884488)) 
+    i__carry_i_8
+       (.I0(w_rgf_data2[0]),
+        .I1(i_alu_opcode_datapath),
+        .I2(i_alu_input_datapath[0]),
+        .I3(i_alu_input_datapath[1]),
+        .I4(o_instructions_datapath[1]),
+        .I5(i__carry_i_16_n_0),
+        .O(S[0]));
   LUT2 #(
     .INIT(4'h2)) 
     \o_data1[31]_i_3 
        (.I0(i_addr1_mux_datapath[1]),
         .I1(i_addr1_mux_datapath[0]),
         .O(w_addr1_mux[1]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT4 #(
-    .INIT(16'hAFA8)) 
+  LUT6 #(
+    .INIT(64'h0C0C0C7F0C0C0C08)) 
     \r_addr1_mux[0]_i_1 
-       (.I0(Q),
-        .I1(\r_data_mux_reg[1]_0 ),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .I3(i_addr1_mux_datapath[0]),
+       (.I0(\r_addr1_mux_reg[0]_0 ),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I2(r_alu_input),
+        .I3(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I4(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I5(i_addr1_mux_datapath[0]),
         .O(\r_addr1_mux[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'hFFBFFF80)) 
+  LUT6 #(
+    .INIT(64'hF0F0F0F7F0F0F080)) 
     \r_addr1_mux[1]_i_1 
-       (.I0(\r_execute_reg[0]_0 ),
-        .I1(Q),
-        .I2(\r_data_mux_reg[1]_0 ),
-        .I3(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .I4(i_addr1_mux_datapath[1]),
+       (.I0(\r_addr1_mux_reg[0]_0 ),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I2(r_addr1_mux),
+        .I3(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I4(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I5(i_addr1_mux_datapath[1]),
         .O(\r_addr1_mux[1]_i_1_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_addr1_mux_reg[0] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(\r_addr1_mux[0]_i_1_n_0 ),
         .Q(i_addr1_mux_datapath[0]));
   FDCE #(
@@ -4043,74 +4501,94 @@ module control_unit
     \r_addr1_mux_reg[1] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(\r_addr1_mux[1]_i_1_n_0 ),
         .Q(i_addr1_mux_datapath[1]));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
-  LUT3 #(
-    .INIT(8'hF4)) 
-    r_addr2_mux_i_1
-       (.I0(\r_execute_reg[0]_0 ),
-        .I1(Q),
-        .I2(i_addr2_mux_datapath),
-        .O(r_addr2_mux_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT4 #(
+    .INIT(16'h2F20)) 
+    \r_addr2_mux[0]_i_1 
+       (.I0(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I1(r_alu_input),
+        .I2(\r_addr2_mux_reg[1]_1 ),
+        .I3(i_alu_input_datapath[0]),
+        .O(\r_addr2_mux[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \r_addr2_mux[1]_i_1 
+       (.I0(r_alu_input),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I2(\r_addr2_mux_reg[1]_1 ),
+        .I3(i_alu_input_datapath[1]),
+        .O(\r_addr2_mux[1]_i_1_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
-    r_addr2_mux_reg
+    \r_addr2_mux_reg[0] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
-        .D(r_addr2_mux_i_1_n_0),
-        .Q(i_addr2_mux_datapath));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
-  LUT3 #(
-    .INIT(8'hF4)) 
-    \r_alu_input[0]_i_1 
-       (.I0(\r_execute_reg[0]_0 ),
-        .I1(Q),
-        .I2(\r_alu_input_reg[0]_0 ),
-        .O(\r_alu_input[0]_i_1_n_0 ));
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\r_addr2_mux[0]_i_1_n_0 ),
+        .Q(i_alu_input_datapath[0]));
   FDCE #(
     .INIT(1'b0)) 
-    \r_alu_input_reg[0] 
+    \r_addr2_mux_reg[1] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
-        .D(\r_alu_input[0]_i_1_n_0 ),
-        .Q(\r_alu_input_reg[0]_0 ));
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\r_addr2_mux[1]_i_1_n_0 ),
+        .Q(i_alu_input_datapath[1]));
   FDCE #(
     .INIT(1'b0)) 
     \r_alu_opcode_reg[1] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
-        .D(\r_alu_opcode_reg[1]_0 ),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(\r_alu_opcode_reg[1]_7 ),
         .Q(i_alu_opcode_datapath));
   LUT6 #(
-    .INIT(64'hFF10FFFFFF10FF00)) 
+    .INIT(64'hCC44CC44CC44FC44)) 
+    r_branch_i_1
+       (.I0(r_we_ir_0),
+        .I1(r_branch_reg_n_0),
+        .I2(\r_execute_reg_n_0_[2] ),
+        .I3(r_branch),
+        .I4(\r_execute_reg_n_0_[0] ),
+        .I5(\r_execute_reg_n_0_[1] ),
+        .O(r_branch_i_1_n_0));
+  FDCE #(
+    .INIT(1'b0)) 
+    r_branch_reg
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(r_branch_i_1_n_0),
+        .Q(r_branch_reg_n_0));
+  LUT5 #(
+    .INIT(32'hFAFBFAF8)) 
     \r_data_mux[0]_i_1 
-       (.I0(o_instructions_datapath[6]),
-        .I1(o_instructions_datapath[7]),
-        .I2(o_instructions_datapath[8]),
-        .I3(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .I4(Q),
-        .I5(r_data_mux[0]),
+       (.I0(\r_data_mux_reg[0]_0 ),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I2(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I3(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I4(r_data_mux[0]),
         .O(\r_data_mux[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT4 #(
-    .INIT(16'hA3A0)) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h888B8888)) 
     \r_data_mux[1]_i_1 
-       (.I0(\r_data_mux_reg[1]_0 ),
-        .I1(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .I2(Q),
-        .I3(r_data_mux[1]),
+       (.I0(\r_addr1_mux_reg[0]_0 ),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I2(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I3(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I4(r_data_mux[1]),
         .O(\r_data_mux[1]_i_1_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_mux_reg[0] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(\r_data_mux[0]_i_1_n_0 ),
         .Q(r_data_mux[0]));
   FDCE #(
@@ -4118,10 +4596,16 @@ module control_unit
     \r_data_mux_reg[1] 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(\r_data_mux[1]_i_1_n_0 ),
         .Q(r_data_mux[1]));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \r_data_reg[15]_LDC_i_8 
+       (.I0(r_we_ir),
+        .I1(rst_n_IBUF),
+        .O(r_we_ir_reg_0));
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     \r_data_reg[1]_LDC_i_1__0 
@@ -4130,7 +4614,7 @@ module control_unit
         .I2(rst_n_IBUF),
         .I3(i_alu_opcode_datapath),
         .O(r_we_cr_reg_rep__5_128));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'hBB3B)) 
     \r_data_reg[1]_LDC_i_2__0 
@@ -4139,23 +4623,31 @@ module control_unit
         .I2(data0[32]),
         .I3(i_alu_opcode_datapath),
         .O(r_we_cr_reg_rep__5_129));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT5 #(
+    .INIT(32'h0BFF0B00)) 
     \r_execute[0]_i_1 
        (.I0(\r_execute_reg[0]_0 ),
-        .I1(\r_execute_reg[1]_3 ),
-        .I2(\r_execute_reg_n_0_[0] ),
+        .I1(o_instructions_datapath[7]),
+        .I2(r_alu_input),
+        .I3(\r_execute_reg[2]_0 ),
+        .I4(\r_execute_reg_n_0_[0] ),
         .O(\r_execute[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hDFDCFFFFDFDC0000)) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \r_execute[1]_i_1 
        (.I0(\r_execute_reg[1]_0 ),
-        .I1(\r_execute_reg[1]_1 ),
-        .I2(o_instructions_datapath[5]),
-        .I3(\r_execute_reg[1]_2 ),
-        .I4(\r_execute_reg[1]_3 ),
-        .I5(\r_execute_reg_n_0_[1] ),
+        .I1(\r_execute_reg[2]_0 ),
+        .I2(\r_execute_reg_n_0_[1] ),
         .O(\r_execute[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_execute[2]_i_1 
+       (.I0(r_alu_input),
+        .I1(\r_execute_reg[2]_0 ),
+        .I2(\r_execute_reg_n_0_[2] ),
+        .O(\r_execute[2]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \r_execute_reg[0] 
@@ -4172,24 +4664,47 @@ module control_unit
         .D(\r_execute[1]_i_1_n_0 ),
         .Q(\r_execute_reg_n_0_[1] ),
         .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \r_execute_reg[2] 
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .D(\r_execute[2]_i_1_n_0 ),
+        .Q(\r_execute_reg_n_0_[2] ),
+        .R(1'b0));
   LUT6 #(
-    .INIT(64'hCDDDCDCDCCCCCCCC)) 
+    .INIT(64'hFFFFCCCDFFFFCCCC)) 
     r_re_cr_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(E),
+       (.I0(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I2(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I3(\FSM_onehot_r_nstate[0]_i_1_n_0 ),
+        .I4(r_we_ir_0),
+        .I5(i_re_cr_datapath),
         .O(r_re_cr_i_1_n_0));
   FDCE #(
     .INIT(1'b0)) 
     r_re_cr_reg
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_re_cr_i_1_n_0),
-        .Q(E));
+        .Q(i_re_cr_datapath));
+  LUT3 #(
+    .INIT(8'hBA)) 
+    r_re_rom_i_1
+       (.I0(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I1(r_we_ir_0),
+        .I2(i_re_rom_datapath),
+        .O(r_re_rom_i_1_n_0));
+  FDCE #(
+    .INIT(1'b0)) 
+    r_re_rom_reg
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
+        .D(r_re_rom_i_1_n_0),
+        .Q(i_re_rom_datapath));
   LUT6 #(
     .INIT(64'h0000000000008000)) 
     \r_reg_reg[0][0]_LDC_i_1 
@@ -4695,9 +5210,9 @@ module control_unit
     \r_reg_reg[0][31]_LDC_i_3 
        (.I0(w_addr1_mux[1]),
         .I1(i_addr1_mux_datapath[1]),
-        .I2(o_instructions_datapath[5]),
+        .I2(o_instructions_datapath[7]),
         .I3(i_addr1_mux_datapath[0]),
-        .I4(o_instructions_datapath[1]),
+        .I4(o_instructions_datapath[2]),
         .O(\r_addr1_mux_reg[1]_0 ));
   LUT6 #(
     .INIT(64'h0000000000008000)) 
@@ -5990,9 +6505,9 @@ module control_unit
     \r_reg_reg[11][31]_LDC_i_3 
        (.I0(w_addr1_mux[1]),
         .I1(i_addr1_mux_datapath[1]),
-        .I2(o_instructions_datapath[5]),
+        .I2(o_instructions_datapath[7]),
         .I3(i_addr1_mux_datapath[0]),
-        .I4(o_instructions_datapath[1]),
+        .I4(o_instructions_datapath[2]),
         .O(w_addr1_mux[0]));
   LUT6 #(
     .INIT(64'h0000000008000000)) 
@@ -6639,9 +7154,9 @@ module control_unit
     \r_reg_reg[12][31]_LDC_i_4 
        (.I0(w_addr1_mux[1]),
         .I1(i_addr1_mux_datapath[1]),
-        .I2(o_instructions_datapath[5]),
+        .I2(o_instructions_datapath[7]),
         .I3(i_addr1_mux_datapath[0]),
-        .I4(o_instructions_datapath[1]),
+        .I4(o_instructions_datapath[2]),
         .O(\r_addr1_mux_reg[1]_1 ));
   LUT6 #(
     .INIT(64'h0800000000000000)) 
@@ -8075,7 +8590,7 @@ module control_unit
         .I4(\datapath_inst/r_rgf [9]),
         .I5(w_addr1_mux[1]),
         .O(r_we_cr_reg_rep_105));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][0]_LDC_i_1 
@@ -8085,7 +8600,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [0]),
         .O(r_we_cr_reg_rep__5_47));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][0]_LDC_i_2 
@@ -8094,7 +8609,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [0]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__5_107));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][10]_LDC_i_1 
@@ -8104,7 +8619,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [10]),
         .O(r_we_cr_reg_rep_41));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][10]_LDC_i_2 
@@ -8113,7 +8628,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [10]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep_101));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][11]_LDC_i_1 
@@ -8123,7 +8638,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [11]),
         .O(r_we_cr_reg_rep_40));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][11]_LDC_i_2 
@@ -8132,7 +8647,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [11]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep_100));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][12]_LDC_i_1 
@@ -8142,7 +8657,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [12]),
         .O(r_we_cr_reg_rep__0_43));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][12]_LDC_i_2 
@@ -8151,7 +8666,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [12]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__0_103));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][13]_LDC_i_1 
@@ -8161,7 +8676,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [13]),
         .O(r_we_cr_reg_rep__0_42));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][13]_LDC_i_2 
@@ -8170,7 +8685,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [13]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__0_102));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][14]_LDC_i_1 
@@ -8180,7 +8695,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [14]),
         .O(r_we_cr_reg_rep__0_41));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][14]_LDC_i_2 
@@ -8189,7 +8704,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [14]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__0_101));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][15]_LDC_i_1 
@@ -8199,7 +8714,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [15]),
         .O(r_we_cr_reg_rep__0_40));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][15]_LDC_i_2 
@@ -8208,7 +8723,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [15]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__0_100));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][16]_LDC_i_1 
@@ -8218,7 +8733,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [16]),
         .O(r_we_cr_reg_rep__1_43));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][16]_LDC_i_2 
@@ -8227,7 +8742,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [16]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__1_103));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][17]_LDC_i_1 
@@ -8237,7 +8752,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [17]),
         .O(r_we_cr_reg_rep__1_42));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][17]_LDC_i_2 
@@ -8246,7 +8761,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [17]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__1_102));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][18]_LDC_i_1 
@@ -8256,7 +8771,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [18]),
         .O(r_we_cr_reg_rep__1_41));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][18]_LDC_i_2 
@@ -8265,7 +8780,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [18]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__1_101));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][19]_LDC_i_1 
@@ -8275,7 +8790,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [19]),
         .O(r_we_cr_reg_rep__1_40));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][19]_LDC_i_2 
@@ -8284,7 +8799,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [19]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__1_100));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][1]_LDC_i_1 
@@ -8294,7 +8809,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [1]),
         .O(r_we_cr_reg_rep__5_46));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][1]_LDC_i_2 
@@ -8303,7 +8818,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [1]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__5_106));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][20]_LDC_i_1 
@@ -8313,7 +8828,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [20]),
         .O(r_we_cr_reg_rep__2_43));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][20]_LDC_i_2 
@@ -8322,7 +8837,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [20]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__2_103));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][21]_LDC_i_1 
@@ -8332,7 +8847,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [21]),
         .O(r_we_cr_reg_rep__2_42));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][21]_LDC_i_2 
@@ -8341,7 +8856,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [21]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__2_102));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][22]_LDC_i_1 
@@ -8351,7 +8866,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [22]),
         .O(r_we_cr_reg_rep__2_41));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][22]_LDC_i_2 
@@ -8360,7 +8875,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [22]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__2_101));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][23]_LDC_i_1 
@@ -8370,7 +8885,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [23]),
         .O(r_we_cr_reg_rep__2_40));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][23]_LDC_i_2 
@@ -8379,7 +8894,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [23]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__2_100));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][24]_LDC_i_1 
@@ -8389,7 +8904,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [24]),
         .O(r_we_cr_reg_rep__3_43));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][24]_LDC_i_2 
@@ -8398,7 +8913,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [24]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__3_103));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][25]_LDC_i_1 
@@ -8408,7 +8923,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [25]),
         .O(r_we_cr_reg_rep__3_42));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][25]_LDC_i_2 
@@ -8417,7 +8932,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [25]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__3_102));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][26]_LDC_i_1 
@@ -8427,7 +8942,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [26]),
         .O(r_we_cr_reg_rep__3_41));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][26]_LDC_i_2 
@@ -8436,7 +8951,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [26]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__3_101));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][27]_LDC_i_1 
@@ -8446,7 +8961,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [27]),
         .O(r_we_cr_reg_rep__3_40));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][27]_LDC_i_2 
@@ -8455,7 +8970,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [27]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__3_100));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][28]_LDC_i_1 
@@ -8465,7 +8980,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [28]),
         .O(r_we_cr_reg_rep__4_43));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][28]_LDC_i_2 
@@ -8474,7 +8989,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [28]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__4_103));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][29]_LDC_i_1 
@@ -8484,7 +8999,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [29]),
         .O(r_we_cr_reg_rep__4_42));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][29]_LDC_i_2 
@@ -8493,7 +9008,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [29]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__4_102));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][2]_LDC_i_1 
@@ -8503,7 +9018,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [2]),
         .O(r_we_cr_reg_rep__5_48));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][2]_LDC_i_2 
@@ -8512,7 +9027,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [2]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__5_108));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][30]_LDC_i_1 
@@ -8522,7 +9037,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [30]),
         .O(r_we_cr_reg_rep__4_41));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][30]_LDC_i_2 
@@ -8531,7 +9046,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [30]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__4_101));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][31]_LDC_i_1 
@@ -8541,7 +9056,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [31]),
         .O(r_we_cr_reg_rep__4_40));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][31]_LDC_i_2 
@@ -8550,7 +9065,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [31]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__4_100));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][3]_LDC_i_1 
@@ -8560,7 +9075,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [3]),
         .O(r_we_cr_reg_rep__5_45));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][3]_LDC_i_2 
@@ -8569,7 +9084,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [3]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep__5_105));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][4]_LDC_i_1 
@@ -8579,7 +9094,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [4]),
         .O(r_we_cr_reg_43));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][4]_LDC_i_2 
@@ -8588,7 +9103,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [4]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_103));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][5]_LDC_i_1 
@@ -8598,7 +9113,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [5]),
         .O(r_we_cr_reg_42));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][5]_LDC_i_2 
@@ -8607,7 +9122,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [5]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_102));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][6]_LDC_i_1 
@@ -8617,7 +9132,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [6]),
         .O(r_we_cr_reg_41));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][6]_LDC_i_2 
@@ -8626,7 +9141,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [6]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_101));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][7]_LDC_i_1 
@@ -8636,7 +9151,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [7]),
         .O(r_we_cr_reg_40));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][7]_LDC_i_2 
@@ -8645,7 +9160,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [7]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_100));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][8]_LDC_i_1 
@@ -8655,7 +9170,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [8]),
         .O(r_we_cr_reg_rep_43));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][8]_LDC_i_2 
@@ -8664,7 +9179,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [8]),
         .I3(\r_reg_reg[15][31]_C ),
         .O(r_we_cr_reg_rep_103));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \r_reg_reg[15][9]_LDC_i_1 
@@ -8674,7 +9189,7 @@ module control_unit
         .I3(w_addr1_mux[1]),
         .I4(\datapath_inst/r_rgf [9]),
         .O(r_we_cr_reg_rep_42));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[15][9]_LDC_i_2 
@@ -8718,7 +9233,7 @@ module control_unit
     \r_reg_reg[1][0]_LDC_i_5 
        (.I0(r_data_mux[1]),
         .I1(r_data_mux[0]),
-        .I2(\r_reg_reg[1][31]_LDC_i_6_0 [0]),
+        .I2(Q[0]),
         .I3(data1[0]),
         .I4(data0[0]),
         .I5(i_alu_opcode_datapath),
@@ -8757,7 +9272,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[10]),
         .I2(data1[10]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [10]),
+        .I3(Q[10]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][10]_LDC_i_4_n_0 ));
@@ -8795,7 +9310,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[11]),
         .I2(data1[11]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [11]),
+        .I3(Q[11]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][11]_LDC_i_4_n_0 ));
@@ -8833,7 +9348,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[12]),
         .I2(data1[12]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [12]),
+        .I3(Q[12]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][12]_LDC_i_5_n_0 ));
@@ -8871,7 +9386,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[13]),
         .I2(data1[13]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [13]),
+        .I3(Q[13]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][13]_LDC_i_4_n_0 ));
@@ -8909,7 +9424,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[14]),
         .I2(data1[14]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [14]),
+        .I3(Q[14]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][14]_LDC_i_4_n_0 ));
@@ -8947,7 +9462,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[15]),
         .I2(data1[15]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [15]),
+        .I3(Q[15]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][15]_LDC_i_4_n_0 ));
@@ -8985,7 +9500,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[16]),
         .I2(data1[16]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [16]),
+        .I3(Q[16]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][16]_LDC_i_4_n_0 ));
@@ -9023,7 +9538,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[17]),
         .I2(data1[17]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [17]),
+        .I3(Q[17]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][17]_LDC_i_4_n_0 ));
@@ -9061,7 +9576,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[18]),
         .I2(data1[18]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [18]),
+        .I3(Q[18]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][18]_LDC_i_4_n_0 ));
@@ -9099,7 +9614,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[19]),
         .I2(data1[19]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [19]),
+        .I3(Q[19]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][19]_LDC_i_4_n_0 ));
@@ -9127,7 +9642,7 @@ module control_unit
     .INIT(32'hEEAAFAAA)) 
     \r_reg_reg[1][1]_LDC_i_3 
        (.I0(\r_reg_reg[1][1]_LDC_i_4_n_0 ),
-        .I1(o_instructions_datapath[0]),
+        .I1(o_instructions_datapath[1]),
         .I2(r_rgf0[0]),
         .I3(r_data_mux[0]),
         .I4(r_data_mux[1]),
@@ -9138,7 +9653,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[1]),
         .I2(data1[1]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [1]),
+        .I3(Q[1]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][1]_LDC_i_4_n_0 ));
@@ -9176,7 +9691,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[20]),
         .I2(data1[20]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [20]),
+        .I3(Q[20]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][20]_LDC_i_4_n_0 ));
@@ -9214,7 +9729,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[21]),
         .I2(data1[21]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [21]),
+        .I3(Q[21]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][21]_LDC_i_4_n_0 ));
@@ -9258,7 +9773,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[22]),
         .I2(data1[22]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [22]),
+        .I3(Q[22]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][22]_LDC_i_5_n_0 ));
@@ -9296,7 +9811,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[23]),
         .I2(data1[23]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [23]),
+        .I3(Q[23]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][23]_LDC_i_4_n_0 ));
@@ -9334,7 +9849,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[24]),
         .I2(data1[24]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [24]),
+        .I3(Q[24]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][24]_LDC_i_5_n_0 ));
@@ -9372,7 +9887,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[25]),
         .I2(data1[25]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [25]),
+        .I3(Q[25]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][25]_LDC_i_4_n_0 ));
@@ -9410,7 +9925,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[26]),
         .I2(data1[26]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [26]),
+        .I3(Q[26]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][26]_LDC_i_4_n_0 ));
@@ -9448,7 +9963,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[27]),
         .I2(data1[27]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [27]),
+        .I3(Q[27]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][27]_LDC_i_4_n_0 ));
@@ -9486,7 +10001,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[28]),
         .I2(data1[28]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [28]),
+        .I3(Q[28]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][28]_LDC_i_4_n_0 ));
@@ -9524,7 +10039,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[29]),
         .I2(data1[29]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [29]),
+        .I3(Q[29]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][29]_LDC_i_4_n_0 ));
@@ -9552,7 +10067,7 @@ module control_unit
     .INIT(32'hEEAAFAAA)) 
     \r_reg_reg[1][2]_LDC_i_3 
        (.I0(\r_reg_reg[1][2]_LDC_i_4_n_0 ),
-        .I1(o_instructions_datapath[1]),
+        .I1(o_instructions_datapath[2]),
         .I2(r_rgf0[1]),
         .I3(r_data_mux[0]),
         .I4(r_data_mux[1]),
@@ -9563,7 +10078,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[2]),
         .I2(data1[2]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [2]),
+        .I3(Q[2]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][2]_LDC_i_4_n_0 ));
@@ -9601,7 +10116,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[30]),
         .I2(data1[30]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [30]),
+        .I3(Q[30]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][30]_LDC_i_4_n_0 ));
@@ -9645,7 +10160,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[31]),
         .I2(data1[31]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [31]),
+        .I3(Q[31]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][31]_LDC_i_7_n_0 ));
@@ -9673,7 +10188,7 @@ module control_unit
     .INIT(32'hEEAAFAAA)) 
     \r_reg_reg[1][3]_LDC_i_3 
        (.I0(\r_reg_reg[1][3]_LDC_i_4_n_0 ),
-        .I1(o_instructions_datapath[2]),
+        .I1(o_instructions_datapath[3]),
         .I2(r_rgf0[2]),
         .I3(r_data_mux[0]),
         .I4(r_data_mux[1]),
@@ -9684,7 +10199,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[3]),
         .I2(data1[3]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [3]),
+        .I3(Q[3]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][3]_LDC_i_4_n_0 ));
@@ -9712,7 +10227,7 @@ module control_unit
     .INIT(32'hEEAAFAAA)) 
     \r_reg_reg[1][4]_LDC_i_3 
        (.I0(\r_reg_reg[1][4]_LDC_i_4_n_0 ),
-        .I1(o_instructions_datapath[3]),
+        .I1(o_instructions_datapath[4]),
         .I2(r_rgf0[3]),
         .I3(r_data_mux[0]),
         .I4(r_data_mux[1]),
@@ -9723,7 +10238,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[4]),
         .I2(data1[4]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [4]),
+        .I3(Q[4]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][4]_LDC_i_4_n_0 ));
@@ -9761,7 +10276,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[5]),
         .I2(data1[5]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [5]),
+        .I3(Q[5]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][5]_LDC_i_4_n_0 ));
@@ -9789,7 +10304,7 @@ module control_unit
     .INIT(32'hEEAAFAAA)) 
     \r_reg_reg[1][6]_LDC_i_3 
        (.I0(\r_reg_reg[1][6]_LDC_i_4_n_0 ),
-        .I1(o_instructions_datapath[4]),
+        .I1(o_instructions_datapath[5]),
         .I2(r_rgf0[5]),
         .I3(r_data_mux[0]),
         .I4(r_data_mux[1]),
@@ -9800,7 +10315,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[6]),
         .I2(data1[6]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [6]),
+        .I3(Q[6]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][6]_LDC_i_4_n_0 ));
@@ -9839,7 +10354,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[7]),
         .I2(data1[7]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [7]),
+        .I3(Q[7]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][7]_LDC_i_4_n_0 ));
@@ -9877,7 +10392,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[8]),
         .I2(data1[8]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [8]),
+        .I3(Q[8]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][8]_LDC_i_4_n_0 ));
@@ -9915,7 +10430,7 @@ module control_unit
        (.I0(i_alu_opcode_datapath),
         .I1(data0[9]),
         .I2(data1[9]),
-        .I3(\r_reg_reg[1][31]_LDC_i_6_0 [9]),
+        .I3(Q[9]),
         .I4(r_data_mux[0]),
         .I5(r_data_mux[1]),
         .O(\r_reg_reg[1][9]_LDC_i_4_n_0 ));
@@ -12690,9 +13205,9 @@ module control_unit
     \r_reg_reg[6][18]_LDC_i_3 
        (.I0(w_addr1_mux[1]),
         .I1(i_addr1_mux_datapath[1]),
-        .I2(o_instructions_datapath[5]),
+        .I2(o_instructions_datapath[7]),
         .I3(i_addr1_mux_datapath[0]),
-        .I4(o_instructions_datapath[1]),
+        .I4(o_instructions_datapath[2]),
         .O(\r_addr1_mux_reg[1]_3 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -13134,7 +13649,7 @@ module control_unit
         .I4(\r_reg_reg[1][3]_P [1]),
         .I5(\r_reg_reg[6][0]_P ),
         .O(r_we_cr_reg_rep_125));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][0]_LDC_i_1 
@@ -13144,7 +13659,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [0]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__5_49));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][0]_LDC_i_2 
@@ -13153,7 +13668,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [0]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__5_96));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][10]_LDC_i_1 
@@ -13163,7 +13678,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [10]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep_46));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][10]_LDC_i_2 
@@ -13172,7 +13687,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [10]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep_89));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][11]_LDC_i_1 
@@ -13182,7 +13697,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [11]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep_47));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][11]_LDC_i_2 
@@ -13191,7 +13706,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [11]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep_88));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][12]_LDC_i_1 
@@ -13201,7 +13716,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [12]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__0_44));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][12]_LDC_i_2 
@@ -13210,7 +13725,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [12]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__0_91));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][13]_LDC_i_1 
@@ -13220,7 +13735,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [13]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__0_45));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][13]_LDC_i_2 
@@ -13229,7 +13744,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [13]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__0_90));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][14]_LDC_i_1 
@@ -13239,7 +13754,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [14]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__0_46));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][14]_LDC_i_2 
@@ -13248,7 +13763,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [14]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__0_89));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][15]_LDC_i_1 
@@ -13258,7 +13773,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [15]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__0_47));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][15]_LDC_i_2 
@@ -13267,7 +13782,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [15]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__0_88));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][16]_LDC_i_1 
@@ -13277,7 +13792,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [16]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__1_44));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][16]_LDC_i_2 
@@ -13286,7 +13801,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [16]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__1_91));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][17]_LDC_i_1 
@@ -13296,7 +13811,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [17]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__1_45));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][17]_LDC_i_2 
@@ -13305,7 +13820,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [17]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__1_90));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][18]_LDC_i_1 
@@ -13315,7 +13830,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [18]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__1_46));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][18]_LDC_i_2 
@@ -13324,7 +13839,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [18]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__1_89));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][19]_LDC_i_1 
@@ -13334,7 +13849,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [19]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__1_47));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][19]_LDC_i_2 
@@ -13343,7 +13858,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [19]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__1_88));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][1]_LDC_i_1 
@@ -13353,7 +13868,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [1]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__5_50));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][1]_LDC_i_2 
@@ -13362,7 +13877,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [1]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__5_95));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][20]_LDC_i_1 
@@ -13372,7 +13887,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [20]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__2_44));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][20]_LDC_i_2 
@@ -13381,7 +13896,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [20]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__2_91));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][21]_LDC_i_1 
@@ -13391,7 +13906,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [21]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__2_45));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][21]_LDC_i_2 
@@ -13400,7 +13915,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [21]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__2_90));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][22]_LDC_i_1 
@@ -13410,7 +13925,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [22]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__2_46));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][22]_LDC_i_2 
@@ -13419,7 +13934,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [22]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__2_89));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][23]_LDC_i_1 
@@ -13429,7 +13944,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [23]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__2_47));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][23]_LDC_i_2 
@@ -13438,7 +13953,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [23]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__2_88));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][24]_LDC_i_1 
@@ -13448,7 +13963,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [24]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__3_44));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][24]_LDC_i_2 
@@ -13457,7 +13972,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [24]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__3_91));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][25]_LDC_i_1 
@@ -13467,7 +13982,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [25]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__3_45));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][25]_LDC_i_2 
@@ -13476,7 +13991,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [25]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__3_90));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][26]_LDC_i_1 
@@ -13486,7 +14001,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [26]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__3_46));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][26]_LDC_i_2 
@@ -13495,7 +14010,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [26]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__3_89));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][27]_LDC_i_1 
@@ -13505,7 +14020,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [27]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__3_47));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][27]_LDC_i_2 
@@ -13514,7 +14029,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [27]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__3_88));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][28]_LDC_i_1 
@@ -13524,7 +14039,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [28]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__4_44));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][28]_LDC_i_2 
@@ -13533,7 +14048,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [28]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__4_91));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][29]_LDC_i_1 
@@ -13543,7 +14058,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [29]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__4_45));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][29]_LDC_i_2 
@@ -13552,7 +14067,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [29]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__4_90));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][2]_LDC_i_1 
@@ -13562,7 +14077,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [2]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__5_52));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][2]_LDC_i_2 
@@ -13571,7 +14086,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [2]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__5_97));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][30]_LDC_i_1 
@@ -13581,7 +14096,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [30]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__4_46));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][30]_LDC_i_2 
@@ -13590,7 +14105,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [30]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__4_89));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][31]_LDC_i_1 
@@ -13600,7 +14115,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [31]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__4_47));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][31]_LDC_i_2 
@@ -13609,7 +14124,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [31]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__4_88));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][3]_LDC_i_1 
@@ -13619,7 +14134,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [3]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep__5_51));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][3]_LDC_i_2 
@@ -13628,7 +14143,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [3]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep__5_94));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][4]_LDC_i_1 
@@ -13638,7 +14153,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [4]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_44));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][4]_LDC_i_2 
@@ -13647,7 +14162,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [4]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_91));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][5]_LDC_i_1 
@@ -13657,7 +14172,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [5]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_45));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][5]_LDC_i_2 
@@ -13666,7 +14181,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [5]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_90));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][6]_LDC_i_1 
@@ -13676,7 +14191,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [6]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_46));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][6]_LDC_i_2 
@@ -13685,7 +14200,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [6]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_89));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][7]_LDC_i_1 
@@ -13695,7 +14210,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [7]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_47));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][7]_LDC_i_2 
@@ -13704,7 +14219,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [7]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_88));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][8]_LDC_i_1 
@@ -13714,7 +14229,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [8]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep_44));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][8]_LDC_i_2 
@@ -13723,7 +14238,7 @@ module control_unit
         .I2(\datapath_inst/r_rgf [8]),
         .I3(\r_reg_reg[7][31]_C ),
         .O(r_we_cr_reg_rep_91));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT5 #(
     .INIT(32'h00000800)) 
     \r_reg_reg[7][9]_LDC_i_1 
@@ -13733,7 +14248,7 @@ module control_unit
         .I3(\datapath_inst/r_rgf [9]),
         .I4(\r_reg_reg[15][31]_P ),
         .O(r_we_cr_reg_rep_45));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT4 #(
     .INIT(16'h555D)) 
     \r_reg_reg[7][9]_LDC_i_2 
@@ -14887,9 +15402,9 @@ module control_unit
     \r_reg_reg[9][31]_LDC_i_6 
        (.I0(w_addr1_mux[1]),
         .I1(i_addr1_mux_datapath[1]),
-        .I2(o_instructions_datapath[5]),
+        .I2(o_instructions_datapath[7]),
         .I3(i_addr1_mux_datapath[0]),
-        .I4(o_instructions_datapath[1]),
+        .I4(o_instructions_datapath[2]),
         .O(\r_addr1_mux_reg[1]_2 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -15031,30 +15546,40 @@ module control_unit
         .I4(\r_addr1_mux_reg[1]_2 ),
         .I5(\datapath_inst/r_rgf [9]),
         .O(r_we_cr_reg_rep_69));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
     r_we_cr_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
         .O(r_we_cr_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hFFFF4700)) 
     r_we_cr_i_2
-       (.I0(\FSM_onehot_r_nstate_reg_n_0_[0] ),
-        .I1(Q),
+       (.I0(\r_execute_reg_n_0_[2] ),
+        .I1(\r_execute_reg_n_0_[1] ),
+        .I2(\r_execute_reg_n_0_[0] ),
+        .I3(r_branch),
+        .I4(r_we_cr_i_3_n_0),
         .O(r_we_cr_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    r_we_cr_i_3
+       (.I0(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I2(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .O(r_we_cr_i_3_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
   FDCE #(
     .INIT(1'b0)) 
     r_we_cr_reg
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_i_1_n_0),
         .Q(i_we_cr_datapath));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15063,7 +15588,7 @@ module control_unit
     r_we_cr_reg_rep
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep_i_1_n_0),
         .Q(r_we_cr_reg_rep_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15072,7 +15597,7 @@ module control_unit
     r_we_cr_reg_rep__0
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__0_i_1_n_0),
         .Q(r_we_cr_reg_rep__0_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15081,7 +15606,7 @@ module control_unit
     r_we_cr_reg_rep__1
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__1_i_1_n_0),
         .Q(r_we_cr_reg_rep__1_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15090,7 +15615,7 @@ module control_unit
     r_we_cr_reg_rep__2
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__2_i_1_n_0),
         .Q(r_we_cr_reg_rep__2_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15099,7 +15624,7 @@ module control_unit
     r_we_cr_reg_rep__3
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__3_i_1_n_0),
         .Q(r_we_cr_reg_rep__3_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15108,7 +15633,7 @@ module control_unit
     r_we_cr_reg_rep__4
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__4_i_1_n_0),
         .Q(r_we_cr_reg_rep__4_n_0));
   (* ORIG_CELL_NAME = "r_we_cr_reg" *) 
@@ -15117,93 +15642,87 @@ module control_unit
     r_we_cr_reg_rep__5
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_cr_rep__5_i_1_n_0),
         .Q(r_we_cr_reg_rep__5_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
     r_we_cr_rep__0_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__0_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep__1_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__1_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep__2_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__2_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep__3_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__3_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep__4_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__4_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep__5_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep__5_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFCECFCFC)) 
-    r_we_cr_rep_i_1
-       (.I0(r_we_cr_i_2_n_0),
-        .I1(r_we_ir_0),
-        .I2(\FSM_onehot_r_nstate_reg_n_0_[3] ),
-        .I3(\r_execute_reg_n_0_[1] ),
-        .I4(\r_execute_reg_n_0_[0] ),
-        .I5(i_we_cr_datapath),
-        .O(r_we_cr_rep_i_1_n_0));
-  LUT4 #(
-    .INIT(16'hF1F0)) 
-    r_we_ir_i_1
-       (.I0(Q),
-        .I1(\FSM_onehot_r_nstate_reg_n_0_[0] ),
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
         .I2(r_we_ir_0),
-        .I3(r_we_ir),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__0_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep__1_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__1_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep__2_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__2_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep__3_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__3_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep__4_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__4_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep__5_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep__5_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFAFFFA30)) 
+    r_we_cr_rep_i_1
+       (.I0(r_branch),
+        .I1(r_branch_reg_n_0),
+        .I2(r_we_ir_0),
+        .I3(r_we_cr_i_2_n_0),
+        .I4(i_we_cr_datapath),
+        .O(r_we_cr_rep_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFF01FF00)) 
+    r_we_ir_i_1
+       (.I0(\FSM_onehot_r_nstate_reg[4]_0 [1]),
+        .I1(\FSM_onehot_r_nstate_reg[4]_0 [0]),
+        .I2(\FSM_onehot_r_nstate_reg[4]_0 [2]),
+        .I3(r_we_ir_0),
+        .I4(r_we_ir),
         .O(r_we_ir_i_1_n_0));
   FDCE #(
     .INIT(1'b0)) 
     r_we_ir_reg
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(r_addr2_mux_reg_0),
+        .CLR(\r_addr1_mux_reg[1]_4 ),
         .D(r_we_ir_i_1_n_0),
         .Q(r_we_ir));
 endmodule
@@ -15214,8 +15733,8 @@ module datapath
     data1,
     r_rgf0,
     Q,
-    \r_data_reg[13]_P ,
-    r_data,
+    \r_data_reg[7]_P ,
+    \r_data_reg[10]_P ,
     \r_data_reg[0]_C ,
     \r_data_reg[0]_P ,
     \r_addr1_mux_reg[0] ,
@@ -15237,15 +15756,17 @@ module datapath
     \r_addr1_mux_reg[0]_15 ,
     \r_addr1_mux_reg[0]_16 ,
     \r_addr1_mux_reg[0]_17 ,
-    \r_data_reg[6]_C ,
+    \r_data_reg[6]_P ,
     data0,
+    \r_data_reg[9]_P ,
+    r_alu_input,
     \FSM_onehot_r_nstate_reg[2] ,
-    \r_data_reg[1]_P ,
-    \r_data_reg[12]_C ,
-    \r_data_reg[9]_C ,
-    \r_data_reg[11]_C ,
-    \r_data_reg[9]_C_0 ,
-    \r_data_reg[11]_C_0 ,
+    \r_data_reg[14]_P ,
+    \FSM_onehot_r_nstate_reg[2]_0 ,
+    \r_data_reg[12]_P ,
+    r_addr1_mux,
+    \r_data_reg[13]_C ,
+    \FSM_onehot_r_nstate_reg[2]_1 ,
     rst_n,
     \r_reg_reg[1][31]_P ,
     \r_reg_reg[1][31]_C ,
@@ -16271,30 +16792,40 @@ module datapath
     \r_reg_reg[0][1]_C ,
     \r_reg_reg[0][0]_P ,
     \r_reg_reg[0][0]_C ,
-    clk_IBUF_BUFG,
-    \r_data_reg[1]_P_0 ,
+    CLK,
+    \r_data_reg[1]_P ,
     \r_data_reg[1]_C ,
+    \r_reg_reg[1][0]_LDC_i_5 ,
     p_1_in,
+    S,
+    \r_reg_reg[1][4]_LDC_i_4 ,
+    \r_reg_reg[1][8]_LDC_i_4 ,
+    \r_reg_reg[1][12]_LDC_i_5 ,
+    \r_reg_reg[1][16]_LDC_i_4 ,
+    \r_reg_reg[1][20]_LDC_i_4 ,
+    \r_reg_reg[1][24]_LDC_i_5 ,
+    \r_reg_reg[1][28]_LDC_i_4 ,
+    clk_IBUF_BUFG,
     \r_reg_reg[15][31]_C_0 ,
     w_addr1_mux,
     \r_reg_reg[12][2]_C_0 ,
     \r_reg_reg[9][3]_P_0 ,
     \o_data1_reg[31] ,
-    \r_alu_opcode_reg[1] ,
     rst_n_IBUF,
+    \r_alu_opcode_reg[1] ,
     i_addr1_mux_datapath,
-    i_addr2_mux_datapath,
-    i__carry_i_10,
+    i_alu_input_datapath,
     i_alu_opcode_datapath,
+    i_re_rom_datapath,
     r_we_ir,
-    E);
+    \r_data_reg[15]_P );
   output [3:0]o_bits_OBUF;
   output r_we_ir_reg;
   output [31:0]data1;
   output [30:0]r_rgf0;
   output [31:0]Q;
-  output [8:0]\r_data_reg[13]_P ;
-  output [0:0]r_data;
+  output [0:0]\r_data_reg[7]_P ;
+  output [7:0]\r_data_reg[10]_P ;
   output \r_data_reg[0]_C ;
   output \r_data_reg[0]_P ;
   output \r_addr1_mux_reg[0] ;
@@ -16316,15 +16847,17 @@ module datapath
   output \r_addr1_mux_reg[0]_15 ;
   output \r_addr1_mux_reg[0]_16 ;
   output \r_addr1_mux_reg[0]_17 ;
-  output [29:0]\r_data_reg[6]_C ;
+  output [30:0]\r_data_reg[6]_P ;
   output [32:0]data0;
+  output \r_data_reg[9]_P ;
+  output [0:0]r_alu_input;
   output \FSM_onehot_r_nstate_reg[2] ;
-  output \r_data_reg[1]_P ;
-  output \r_data_reg[12]_C ;
-  output \r_data_reg[9]_C ;
-  output \r_data_reg[11]_C ;
-  output \r_data_reg[9]_C_0 ;
-  output \r_data_reg[11]_C_0 ;
+  output \r_data_reg[14]_P ;
+  output \FSM_onehot_r_nstate_reg[2]_0 ;
+  output \r_data_reg[12]_P ;
+  output [0:0]r_addr1_mux;
+  output \r_data_reg[13]_C ;
+  output \FSM_onehot_r_nstate_reg[2]_1 ;
   output rst_n;
   input \r_reg_reg[1][31]_P ;
   input \r_reg_reg[1][31]_C ;
@@ -17350,27 +17883,40 @@ module datapath
   input \r_reg_reg[0][1]_C ;
   input \r_reg_reg[0][0]_P ;
   input \r_reg_reg[0][0]_C ;
-  input clk_IBUF_BUFG;
-  input \r_data_reg[1]_P_0 ;
+  input CLK;
+  input \r_data_reg[1]_P ;
   input \r_data_reg[1]_C ;
+  input \r_reg_reg[1][0]_LDC_i_5 ;
   input [29:0]p_1_in;
+  input [2:0]S;
+  input [3:0]\r_reg_reg[1][4]_LDC_i_4 ;
+  input [3:0]\r_reg_reg[1][8]_LDC_i_4 ;
+  input [3:0]\r_reg_reg[1][12]_LDC_i_5 ;
+  input [3:0]\r_reg_reg[1][16]_LDC_i_4 ;
+  input [3:0]\r_reg_reg[1][20]_LDC_i_4 ;
+  input [3:0]\r_reg_reg[1][24]_LDC_i_5 ;
+  input [3:0]\r_reg_reg[1][28]_LDC_i_4 ;
+  input clk_IBUF_BUFG;
   input \r_reg_reg[15][31]_C_0 ;
   input [1:0]w_addr1_mux;
   input \r_reg_reg[12][2]_C_0 ;
   input \r_reg_reg[9][3]_P_0 ;
   input \o_data1_reg[31] ;
-  input [0:0]\r_alu_opcode_reg[1] ;
   input rst_n_IBUF;
+  input [2:0]\r_alu_opcode_reg[1] ;
   input [1:0]i_addr1_mux_datapath;
-  input i_addr2_mux_datapath;
-  input i__carry_i_10;
+  input [1:0]i_alu_input_datapath;
   input [0:0]i_alu_opcode_datapath;
+  input i_re_rom_datapath;
   input r_we_ir;
-  input [0:0]E;
+  input \r_data_reg[15]_P ;
 
-  wire [0:0]E;
+  wire CLK;
   wire \FSM_onehot_r_nstate_reg[2] ;
+  wire \FSM_onehot_r_nstate_reg[2]_0 ;
+  wire \FSM_onehot_r_nstate_reg[2]_1 ;
   wire [31:0]Q;
+  wire [2:0]S;
   wire alu_inst_n_32;
   wire alu_inst_n_33;
   wire alu_inst_n_34;
@@ -18010,10 +18556,10 @@ module datapath
   wire core_register_n_159;
   wire core_register_n_16;
   wire core_register_n_160;
-  wire core_register_n_1601;
   wire core_register_n_161;
   wire core_register_n_162;
   wire core_register_n_163;
+  wire core_register_n_1633;
   wire core_register_n_1634;
   wire core_register_n_1635;
   wire core_register_n_1636;
@@ -18041,37 +18587,9 @@ module datapath
   wire core_register_n_1656;
   wire core_register_n_1657;
   wire core_register_n_1658;
-  wire core_register_n_1659;
   wire core_register_n_166;
-  wire core_register_n_1660;
-  wire core_register_n_1661;
-  wire core_register_n_1662;
-  wire core_register_n_1663;
-  wire core_register_n_1664;
-  wire core_register_n_1665;
-  wire core_register_n_1666;
-  wire core_register_n_1667;
-  wire core_register_n_1668;
-  wire core_register_n_1669;
   wire core_register_n_167;
-  wire core_register_n_1670;
-  wire core_register_n_1671;
-  wire core_register_n_1672;
-  wire core_register_n_1673;
-  wire core_register_n_1674;
-  wire core_register_n_1675;
-  wire core_register_n_1676;
-  wire core_register_n_1677;
-  wire core_register_n_1678;
-  wire core_register_n_1679;
   wire core_register_n_168;
-  wire core_register_n_1680;
-  wire core_register_n_1681;
-  wire core_register_n_1682;
-  wire core_register_n_1683;
-  wire core_register_n_1684;
-  wire core_register_n_1685;
-  wire core_register_n_1686;
   wire core_register_n_169;
   wire core_register_n_17;
   wire core_register_n_170;
@@ -18997,24 +19515,15 @@ module datapath
   wire [32:0]data0;
   wire [31:0]data1;
   wire flags_n_1;
-  wire i__carry_i_10;
   wire [1:0]i_addr1_mux_datapath;
-  wire i_addr2_mux_datapath;
+  wire [1:0]i_alu_input_datapath;
   wire [0:0]i_alu_opcode_datapath;
-  wire instruction_register_n_0;
-  wire instruction_register_n_1;
-  wire instruction_register_n_10;
-  wire instruction_register_n_11;
-  wire instruction_register_n_13;
-  wire instruction_register_n_14;
-  wire instruction_register_n_16;
-  wire instruction_register_n_2;
-  wire instruction_register_n_9;
+  wire i_re_rom_datapath;
   wire [3:0]o_bits_OBUF;
   wire \o_data1_reg[31] ;
-  wire [8:8]o_instructions_datapath;
   wire [29:0]p_1_in;
   wire [0:0]p_2_in;
+  wire [0:0]r_addr1_mux;
   wire \r_addr1_mux_reg[0] ;
   wire [1:0]\r_addr1_mux_reg[0]_0 ;
   wire \r_addr1_mux_reg[0]_1 ;
@@ -19034,20 +19543,21 @@ module datapath
   wire \r_addr1_mux_reg[0]_7 ;
   wire \r_addr1_mux_reg[0]_8 ;
   wire \r_addr1_mux_reg[0]_9 ;
-  wire [0:0]\r_alu_opcode_reg[1] ;
-  wire [0:0]r_data;
+  wire [7:0]r_address;
+  wire [0:0]r_alu_input;
+  wire [2:0]\r_alu_opcode_reg[1] ;
   wire \r_data_reg[0]_C ;
   wire \r_data_reg[0]_P ;
-  wire \r_data_reg[11]_C ;
-  wire \r_data_reg[11]_C_0 ;
-  wire \r_data_reg[12]_C ;
-  wire [8:0]\r_data_reg[13]_P ;
+  wire [7:0]\r_data_reg[10]_P ;
+  wire \r_data_reg[12]_P ;
+  wire \r_data_reg[13]_C ;
+  wire \r_data_reg[14]_P ;
+  wire \r_data_reg[15]_P ;
   wire \r_data_reg[1]_C ;
   wire \r_data_reg[1]_P ;
-  wire \r_data_reg[1]_P_0 ;
-  wire [29:0]\r_data_reg[6]_C ;
-  wire \r_data_reg[9]_C ;
-  wire \r_data_reg[9]_C_0 ;
+  wire [30:0]\r_data_reg[6]_P ;
+  wire [0:0]\r_data_reg[7]_P ;
+  wire \r_data_reg[9]_P ;
   wire \r_reg[0][0]_C_i_1_n_0 ;
   wire \r_reg[0][10]_C_i_1_n_0 ;
   wire \r_reg[0][11]_C_i_1_n_0 ;
@@ -20007,12 +20517,14 @@ module datapath
   wire \r_reg_reg[15][9]_C ;
   wire \r_reg_reg[15][9]_P ;
   wire \r_reg_reg[1][0]_C ;
+  wire \r_reg_reg[1][0]_LDC_i_5 ;
   wire \r_reg_reg[1][0]_P ;
   wire \r_reg_reg[1][10]_C ;
   wire \r_reg_reg[1][10]_P ;
   wire \r_reg_reg[1][11]_C ;
   wire \r_reg_reg[1][11]_P ;
   wire \r_reg_reg[1][12]_C ;
+  wire [3:0]\r_reg_reg[1][12]_LDC_i_5 ;
   wire \r_reg_reg[1][12]_P ;
   wire \r_reg_reg[1][13]_C ;
   wire \r_reg_reg[1][13]_P ;
@@ -20021,6 +20533,7 @@ module datapath
   wire \r_reg_reg[1][15]_C ;
   wire \r_reg_reg[1][15]_P ;
   wire \r_reg_reg[1][16]_C ;
+  wire [3:0]\r_reg_reg[1][16]_LDC_i_4 ;
   wire \r_reg_reg[1][16]_P ;
   wire \r_reg_reg[1][17]_C ;
   wire \r_reg_reg[1][17]_P ;
@@ -20031,6 +20544,7 @@ module datapath
   wire \r_reg_reg[1][1]_C ;
   wire \r_reg_reg[1][1]_P ;
   wire \r_reg_reg[1][20]_C ;
+  wire [3:0]\r_reg_reg[1][20]_LDC_i_4 ;
   wire \r_reg_reg[1][20]_P ;
   wire \r_reg_reg[1][21]_C ;
   wire \r_reg_reg[1][21]_P ;
@@ -20039,6 +20553,7 @@ module datapath
   wire \r_reg_reg[1][23]_C ;
   wire \r_reg_reg[1][23]_P ;
   wire \r_reg_reg[1][24]_C ;
+  wire [3:0]\r_reg_reg[1][24]_LDC_i_5 ;
   wire \r_reg_reg[1][24]_P ;
   wire \r_reg_reg[1][25]_C ;
   wire \r_reg_reg[1][25]_P ;
@@ -20047,6 +20562,7 @@ module datapath
   wire \r_reg_reg[1][27]_C ;
   wire \r_reg_reg[1][27]_P ;
   wire \r_reg_reg[1][28]_C ;
+  wire [3:0]\r_reg_reg[1][28]_LDC_i_4 ;
   wire \r_reg_reg[1][28]_P ;
   wire \r_reg_reg[1][29]_C ;
   wire \r_reg_reg[1][29]_P ;
@@ -20059,6 +20575,7 @@ module datapath
   wire \r_reg_reg[1][3]_C ;
   wire \r_reg_reg[1][3]_P ;
   wire \r_reg_reg[1][4]_C ;
+  wire [3:0]\r_reg_reg[1][4]_LDC_i_4 ;
   wire \r_reg_reg[1][4]_P ;
   wire \r_reg_reg[1][5]_C ;
   wire \r_reg_reg[1][5]_P ;
@@ -20067,6 +20584,7 @@ module datapath
   wire \r_reg_reg[1][7]_C ;
   wire \r_reg_reg[1][7]_P ;
   wire \r_reg_reg[1][8]_C ;
+  wire [3:0]\r_reg_reg[1][8]_LDC_i_4 ;
   wire \r_reg_reg[1][8]_P ;
   wire \r_reg_reg[1][9]_C ;
   wire \r_reg_reg[1][9]_P ;
@@ -20616,97 +21134,72 @@ module datapath
   wire r_rgf0_carry_n_3;
   wire r_we_ir;
   wire r_we_ir_reg;
+  wire rom_inst_n_8;
+  wire rom_inst_n_9;
   wire rst_n;
   wire rst_n_IBUF;
   wire [1:0]w_addr1_mux;
   wire [3:0]w_addr2_mux;
-  wire [31:0]w_rgf_data2;
+  wire [0:0]w_rgf_data2;
   wire [3:2]NLW_r_rgf0_carry__6_CO_UNCONNECTED;
   wire [3:3]NLW_r_rgf0_carry__6_O_UNCONNECTED;
 
   alu alu_inst
        (.DI(p_2_in),
         .Q(Q),
-        .S({core_register_n_1634,core_register_n_1635,core_register_n_1636,flags_n_1}),
+        .S({S,flags_n_1}),
         .data1(data1),
-        .i__carry__0_i_13(\r_data_reg[6]_C [6:3]),
-        .i__carry__1_i_13(\r_data_reg[6]_C [10:7]),
-        .i__carry__2_i_13(\r_data_reg[6]_C [14:11]),
-        .i__carry__3_i_13(\r_data_reg[6]_C [18:15]),
-        .i__carry__4_i_13(\r_data_reg[6]_C [22:19]),
-        .i__carry__5_i_13(\r_data_reg[6]_C [26:23]),
-        .i__carry__6_i_12({w_rgf_data2[31],\r_data_reg[6]_C [29:27]}),
-        .i__carry_i_10(i__carry_i_10),
-        .i__carry_i_10_0(instruction_register_n_14),
-        .i__carry_i_10_1(instruction_register_n_2),
-        .i__carry_i_10_2(instruction_register_n_16),
-        .i__carry_i_10_3({\r_data_reg[6]_C [2:0],w_rgf_data2[0]}),
-        .i__carry_i_10_4(instruction_register_n_11),
-        .i__carry_i_10_5(instruction_register_n_1),
-        .i__carry_i_10_6(instruction_register_n_13),
-        .i__carry_i_10_7(instruction_register_n_9),
-        .i__carry_i_10_8(instruction_register_n_0),
-        .i__carry_i_10_9(instruction_register_n_10),
+        .i__carry__0_i_15(\r_data_reg[10]_P [4]),
+        .i__carry__6_i_12(\r_data_reg[6]_P [30:3]),
+        .i__carry_i_18(\r_data_reg[10]_P [0]),
+        .i__carry_i_18_0(\r_data_reg[10]_P [5]),
+        .i__carry_i_18_1({\r_data_reg[6]_P [2:0],w_rgf_data2}),
+        .i__carry_i_18_2(\r_data_reg[10]_P [1]),
+        .i__carry_i_18_3(\r_data_reg[7]_P ),
+        .i__carry_i_18_4(\r_data_reg[10]_P [2]),
+        .i__carry_i_18_5(\r_data_reg[10]_P [6]),
+        .i__carry_i_18_6(\r_data_reg[10]_P [3]),
+        .i_alu_input_datapath(i_alu_input_datapath),
+        .\o_data1_reg[3] ({alu_inst_n_32,alu_inst_n_33,alu_inst_n_34,alu_inst_n_35}),
+        .\o_data1_reg[7] ({alu_inst_n_36,alu_inst_n_37,alu_inst_n_38,alu_inst_n_39}),
         .p_1_in(p_1_in),
-        .\r_alu_input_reg[0] ({alu_inst_n_32,alu_inst_n_33,alu_inst_n_34,alu_inst_n_35}),
-        .\r_alu_input_reg[0]_0 ({alu_inst_n_36,alu_inst_n_37,alu_inst_n_38,alu_inst_n_39}),
-        .\r_alu_input_reg[0]_1 ({alu_inst_n_40,alu_inst_n_41,alu_inst_n_42,alu_inst_n_43}),
-        .\r_alu_input_reg[0]_2 ({alu_inst_n_44,alu_inst_n_45,alu_inst_n_46,alu_inst_n_47}),
-        .\r_alu_input_reg[0]_3 ({alu_inst_n_48,alu_inst_n_49,alu_inst_n_50,alu_inst_n_51}),
-        .\r_alu_input_reg[0]_4 ({alu_inst_n_52,alu_inst_n_53,alu_inst_n_54,alu_inst_n_55}),
-        .\r_alu_input_reg[0]_5 ({alu_inst_n_56,alu_inst_n_57,alu_inst_n_58,alu_inst_n_59}),
-        .\r_alu_input_reg[0]_6 ({alu_inst_n_60,alu_inst_n_61,alu_inst_n_62,alu_inst_n_63}),
-        .\r_reg_reg[1][0]_LDC_i_5 (core_register_n_1601),
-        .\r_reg_reg[1][12]_LDC_i_5 ({core_register_n_1645,core_register_n_1646,core_register_n_1647,core_register_n_1648}),
-        .\r_reg_reg[1][16]_LDC_i_4 ({core_register_n_1649,core_register_n_1650,core_register_n_1651,core_register_n_1652}),
-        .\r_reg_reg[1][20]_LDC_i_4 ({core_register_n_1653,core_register_n_1654,core_register_n_1655,core_register_n_1656}),
-        .\r_reg_reg[1][24]_LDC_i_5 ({core_register_n_1657,core_register_n_1658,core_register_n_1659,core_register_n_1660}),
-        .\r_reg_reg[1][28]_LDC_i_4 ({core_register_n_1661,core_register_n_1662,core_register_n_1663,core_register_n_1664}),
-        .\r_reg_reg[1][4]_LDC_i_4 ({core_register_n_1637,core_register_n_1638,core_register_n_1639,core_register_n_1640}),
-        .\r_reg_reg[1][8]_LDC_i_4 ({core_register_n_1641,core_register_n_1642,core_register_n_1643,core_register_n_1644}));
+        .\r_addr2_mux_reg[0] ({alu_inst_n_40,alu_inst_n_41,alu_inst_n_42,alu_inst_n_43}),
+        .\r_addr2_mux_reg[0]_0 ({alu_inst_n_44,alu_inst_n_45,alu_inst_n_46,alu_inst_n_47}),
+        .\r_addr2_mux_reg[0]_1 ({alu_inst_n_48,alu_inst_n_49,alu_inst_n_50,alu_inst_n_51}),
+        .\r_addr2_mux_reg[0]_2 ({alu_inst_n_52,alu_inst_n_53,alu_inst_n_54,alu_inst_n_55}),
+        .\r_addr2_mux_reg[0]_3 ({alu_inst_n_56,alu_inst_n_57,alu_inst_n_58,alu_inst_n_59}),
+        .\r_addr2_mux_reg[0]_4 ({alu_inst_n_60,alu_inst_n_61,alu_inst_n_62,alu_inst_n_63}),
+        .\r_reg_reg[1][0]_LDC_i_5 (\r_reg_reg[1][0]_LDC_i_5 ),
+        .\r_reg_reg[1][12]_LDC_i_5 (\r_reg_reg[1][12]_LDC_i_5 ),
+        .\r_reg_reg[1][16]_LDC_i_4 (\r_reg_reg[1][16]_LDC_i_4 ),
+        .\r_reg_reg[1][20]_LDC_i_4 (\r_reg_reg[1][20]_LDC_i_4 ),
+        .\r_reg_reg[1][24]_LDC_i_5 (\r_reg_reg[1][24]_LDC_i_5 ),
+        .\r_reg_reg[1][28]_LDC_i_4 (\r_reg_reg[1][28]_LDC_i_4 ),
+        .\r_reg_reg[1][4]_LDC_i_4 (\r_reg_reg[1][4]_LDC_i_4 ),
+        .\r_reg_reg[1][8]_LDC_i_4 (\r_reg_reg[1][8]_LDC_i_4 ));
   rgf core_register
-       (.E(E),
+       (.CLK(CLK),
         .Q(Q),
-        .S({core_register_n_1634,core_register_n_1635,core_register_n_1636}),
-        .\_inferred__1/i__carry (\r_data_reg[13]_P [4]),
-        .\_inferred__1/i__carry_0 (i__carry_i_10),
-        .\_inferred__1/i__carry_1 (r_data),
-        .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .data0(data0),
-        .i_alu_opcode_datapath(i_alu_opcode_datapath),
-        .\o_data1_reg[0]_0 (core_register_n_1601),
-        .\o_data1_reg[0]_1 (core_register_n_1673),
-        .\o_data1_reg[0]_2 (core_register_n_1675),
-        .\o_data1_reg[0]_3 (core_register_n_1679),
-        .\o_data1_reg[0]_4 (core_register_n_1683),
-        .\o_data1_reg[0]_5 (core_register_n_1686),
+        .i_re_rom_datapath(i_re_rom_datapath),
         .\o_data1_reg[0]_i_2_0 (\r_addr1_mux_reg[0]_0 [1]),
         .\o_data1_reg[0]_i_2_1 (\r_addr1_mux_reg[0]_15 ),
-        .\o_data1_reg[11]_i_2_0 (\r_addr1_mux_reg[0]_16 ),
-        .\o_data1_reg[1]_0 (core_register_n_1674),
-        .\o_data1_reg[1]_1 (core_register_n_1676),
-        .\o_data1_reg[1]_2 (core_register_n_1680),
-        .\o_data1_reg[1]_3 (core_register_n_1682),
-        .\o_data1_reg[1]_4 (core_register_n_1685),
+        .\o_data1_reg[1]_0 (core_register_n_1653),
+        .\o_data1_reg[1]_1 (core_register_n_1655),
         .\o_data1_reg[21]_i_2_0 (\r_addr1_mux_reg[0]_17 ),
         .\o_data1_reg[31]_0 (\o_data1_reg[31] ),
         .\o_data1_reg[31]_i_5_0 (\r_addr1_mux_reg[0]_0 [0]),
-        .o_instructions_datapath(o_instructions_datapath),
-        .\r_alu_opcode_reg[1] ({core_register_n_1637,core_register_n_1638,core_register_n_1639,core_register_n_1640}),
-        .\r_alu_opcode_reg[1]_0 ({core_register_n_1641,core_register_n_1642,core_register_n_1643,core_register_n_1644}),
-        .\r_alu_opcode_reg[1]_1 ({core_register_n_1645,core_register_n_1646,core_register_n_1647,core_register_n_1648}),
-        .\r_alu_opcode_reg[1]_2 ({core_register_n_1649,core_register_n_1650,core_register_n_1651,core_register_n_1652}),
-        .\r_alu_opcode_reg[1]_3 ({core_register_n_1653,core_register_n_1654,core_register_n_1655,core_register_n_1656}),
-        .\r_alu_opcode_reg[1]_4 ({core_register_n_1657,core_register_n_1658,core_register_n_1659,core_register_n_1660}),
-        .\r_alu_opcode_reg[1]_5 ({core_register_n_1661,core_register_n_1662,core_register_n_1663,core_register_n_1664}),
-        .\r_data_reg[6]_C ({\r_data_reg[6]_C [2:0],w_rgf_data2[0]}),
-        .\r_data_reg[6]_C_0 (\r_data_reg[6]_C [6:3]),
-        .\r_data_reg[6]_C_1 (\r_data_reg[6]_C [10:7]),
-        .\r_data_reg[6]_C_2 (\r_data_reg[6]_C [14:11]),
-        .\r_data_reg[6]_C_3 (\r_data_reg[6]_C [18:15]),
-        .\r_data_reg[6]_C_4 (\r_data_reg[6]_C [22:19]),
-        .\r_data_reg[6]_C_5 (\r_data_reg[6]_C [26:23]),
-        .\r_data_reg[6]_C_6 ({w_rgf_data2[31],\r_data_reg[6]_C [29:27]}),
+        .\o_data1_reg[3]_0 (core_register_n_1637),
+        .\o_data1_reg[3]_1 (core_register_n_1657),
+        .\o_data1_reg[3]_i_2_0 (\r_addr1_mux_reg[0]_16 ),
+        .\r_data_reg[15]_P (\r_data_reg[15]_P ),
+        .\r_data_reg[1]_LDC_i_3_0 (r_address),
+        .\r_data_reg[1]_LDC_i_3_1 (rom_inst_n_9),
+        .\r_data_reg[3]_C (rom_inst_n_8),
+        .\r_data_reg[6]_P ({\r_data_reg[6]_P [2:0],w_rgf_data2}),
+        .\r_data_reg[6]_P_0 (\r_data_reg[6]_P [30:3]),
+        .r_re_rom_reg(core_register_n_1647),
+        .r_re_rom_reg_0(core_register_n_1649),
         .\r_reg_reg[0][0]_C_0 (core_register_n_1534),
         .\r_reg_reg[0][0]_C_1 (\r_reg_reg[0][0]_C ),
         .\r_reg_reg[0][0]_C_2 (\r_reg[0][0]_C_i_1_n_0 ),
@@ -23788,18 +24281,26 @@ module datapath
         .r_we_cr_reg_rep__5_8(core_register_n_93),
         .r_we_cr_reg_rep__5_9(core_register_n_94),
         .r_we_ir(r_we_ir),
-        .r_we_ir_reg(core_register_n_1665),
-        .r_we_ir_reg_0(core_register_n_1666),
-        .r_we_ir_reg_1(core_register_n_1667),
-        .r_we_ir_reg_10(core_register_n_1684),
-        .r_we_ir_reg_2(core_register_n_1668),
-        .r_we_ir_reg_3(core_register_n_1669),
-        .r_we_ir_reg_4(core_register_n_1670),
-        .r_we_ir_reg_5(core_register_n_1671),
-        .r_we_ir_reg_6(core_register_n_1672),
-        .r_we_ir_reg_7(core_register_n_1677),
-        .r_we_ir_reg_8(core_register_n_1678),
-        .r_we_ir_reg_9(core_register_n_1681),
+        .r_we_ir_reg(core_register_n_1633),
+        .r_we_ir_reg_0(core_register_n_1634),
+        .r_we_ir_reg_1(core_register_n_1635),
+        .r_we_ir_reg_10(core_register_n_1645),
+        .r_we_ir_reg_11(core_register_n_1646),
+        .r_we_ir_reg_12(core_register_n_1648),
+        .r_we_ir_reg_13(core_register_n_1650),
+        .r_we_ir_reg_14(core_register_n_1651),
+        .r_we_ir_reg_15(core_register_n_1652),
+        .r_we_ir_reg_16(core_register_n_1654),
+        .r_we_ir_reg_17(core_register_n_1656),
+        .r_we_ir_reg_18(core_register_n_1658),
+        .r_we_ir_reg_2(core_register_n_1636),
+        .r_we_ir_reg_3(core_register_n_1638),
+        .r_we_ir_reg_4(core_register_n_1639),
+        .r_we_ir_reg_5(core_register_n_1640),
+        .r_we_ir_reg_6(core_register_n_1641),
+        .r_we_ir_reg_7(core_register_n_1642),
+        .r_we_ir_reg_8(core_register_n_1643),
+        .r_we_ir_reg_9(core_register_n_1644),
         .rst_n(rst_n),
         .rst_n_IBUF(rst_n_IBUF),
         .w_addr1_mux(w_addr1_mux[1]),
@@ -23807,18 +24308,20 @@ module datapath
   flg flags
        (.DI(p_2_in),
         .S(flags_n_1),
-        .\_inferred__1/i__carry (w_rgf_data2[0]),
+        .\_inferred__1/i__carry (w_rgf_data2),
         .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .i_alu_opcode_datapath(i_alu_opcode_datapath),
         .\r_data_reg[1]_C_0 (\r_data_reg[1]_C ),
-        .\r_data_reg[1]_P_0 (\r_data_reg[1]_P_0 ));
+        .\r_data_reg[1]_P_0 (\r_data_reg[1]_P ));
   r16 instruction_register
        (.\FSM_onehot_r_nstate_reg[2] (\FSM_onehot_r_nstate_reg[2] ),
+        .\FSM_onehot_r_nstate_reg[2]_0 (\FSM_onehot_r_nstate_reg[2]_0 ),
+        .\FSM_onehot_r_nstate_reg[2]_1 (\FSM_onehot_r_nstate_reg[2]_1 ),
         .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .i_addr1_mux_datapath(i_addr1_mux_datapath),
-        .i_addr2_mux_datapath(i_addr2_mux_datapath),
+        .i_alu_input_datapath(i_alu_input_datapath),
         .i_alu_opcode_datapath(i_alu_opcode_datapath),
-        .\o_data1_reg[0] (instruction_register_n_0),
+        .r_addr1_mux(r_addr1_mux),
         .\r_addr1_mux_reg[0] (\r_addr1_mux_reg[0] ),
         .\r_addr1_mux_reg[0]_0 (\r_addr1_mux_reg[0]_0 [1]),
         .\r_addr1_mux_reg[0]_1 (\r_addr1_mux_reg[0]_1 ),
@@ -23841,57 +24344,51 @@ module datapath
         .\r_addr1_mux_reg[0]_9 (\r_addr1_mux_reg[0]_8 ),
         .\r_alu_opcode_reg[1] (\r_alu_opcode_reg[1] ),
         .\r_data_reg[0]_C_0 (\r_data_reg[0]_C ),
-        .\r_data_reg[0]_C_1 (core_register_n_1668),
-        .\r_data_reg[0]_P_0 (\r_data_reg[0]_P ),
-        .\r_data_reg[0]_P_1 (core_register_n_1667),
-        .\r_data_reg[10]_C_0 (core_register_n_1684),
-        .\r_data_reg[10]_P_0 (\r_data_reg[13]_P [5]),
-        .\r_data_reg[10]_P_1 (core_register_n_1681),
-        .\r_data_reg[11]_C_0 (\r_data_reg[11]_C ),
-        .\r_data_reg[11]_C_1 (\r_data_reg[11]_C_0 ),
-        .\r_data_reg[11]_P_0 (\r_data_reg[13]_P [6]),
-        .\r_data_reg[12]_C_0 (\r_data_reg[12]_C ),
-        .\r_data_reg[12]_P_0 (\r_data_reg[13]_P [7]),
-        .\r_data_reg[13]_C_0 (core_register_n_1686),
-        .\r_data_reg[13]_P_0 (\r_data_reg[13]_P [8]),
-        .\r_data_reg[13]_P_1 (core_register_n_1685),
-        .\r_data_reg[1]_C_0 (core_register_n_1666),
-        .\r_data_reg[1]_P_0 (\r_data_reg[1]_P ),
-        .\r_data_reg[1]_P_1 (core_register_n_1665),
-        .\r_data_reg[2]_C_0 (core_register_n_1674),
-        .\r_data_reg[2]_P_0 (\r_data_reg[13]_P [1:0]),
-        .\r_data_reg[2]_P_1 (core_register_n_1673),
-        .\r_data_reg[3]_C_0 (core_register_n_1678),
-        .\r_data_reg[3]_P_0 (\r_data_reg[13]_P [2]),
-        .\r_data_reg[3]_P_1 (core_register_n_1677),
-        .\r_data_reg[4]_C_0 (core_register_n_1676),
-        .\r_data_reg[4]_P_0 (\r_data_reg[13]_P [3]),
-        .\r_data_reg[4]_P_1 (core_register_n_1675),
-        .\r_data_reg[6]_C_0 (instruction_register_n_14),
-        .\r_data_reg[6]_C_1 (core_register_n_1670),
-        .\r_data_reg[6]_P_0 (\r_data_reg[13]_P [4]),
-        .\r_data_reg[6]_P_1 (instruction_register_n_16),
-        .\r_data_reg[6]_P_2 (core_register_n_1669),
-        .\r_data_reg[7]_C_0 (instruction_register_n_11),
-        .\r_data_reg[7]_C_1 (core_register_n_1672),
-        .\r_data_reg[7]_P_0 (r_data),
-        .\r_data_reg[7]_P_1 (instruction_register_n_13),
-        .\r_data_reg[7]_P_2 (core_register_n_1671),
-        .\r_data_reg[8]_C_0 (instruction_register_n_9),
-        .\r_data_reg[8]_C_1 (core_register_n_1680),
-        .\r_data_reg[8]_P_0 (o_instructions_datapath),
-        .\r_data_reg[8]_P_1 (instruction_register_n_10),
-        .\r_data_reg[8]_P_2 (core_register_n_1679),
-        .\r_data_reg[9]_C_0 (\r_data_reg[9]_C ),
-        .\r_data_reg[9]_C_1 (\r_data_reg[9]_C_0 ),
-        .\r_data_reg[9]_C_2 (core_register_n_1683),
-        .\r_data_reg[9]_P_0 (core_register_n_1682),
+        .\r_data_reg[0]_C_1 (core_register_n_1636),
+        .\r_data_reg[0]_P_0 (\r_data_reg[10]_P [0]),
+        .\r_data_reg[0]_P_1 (\r_data_reg[0]_P ),
+        .\r_data_reg[0]_P_2 (core_register_n_1635),
+        .\r_data_reg[10]_C_0 (core_register_n_1650),
+        .\r_data_reg[10]_P_0 (\r_data_reg[10]_P [7]),
+        .\r_data_reg[10]_P_1 (core_register_n_1649),
+        .\r_data_reg[12]_P_0 (\r_data_reg[12]_P ),
+        .\r_data_reg[13]_C_0 (\r_data_reg[13]_C ),
+        .\r_data_reg[13]_C_1 (core_register_n_1654),
+        .\r_data_reg[13]_P_0 (core_register_n_1653),
+        .\r_data_reg[14]_C_0 (r_alu_input),
+        .\r_data_reg[14]_C_1 (core_register_n_1656),
+        .\r_data_reg[14]_P_0 (\r_data_reg[14]_P ),
+        .\r_data_reg[14]_P_1 (core_register_n_1655),
+        .\r_data_reg[15]_C_0 (core_register_n_1658),
+        .\r_data_reg[15]_P_0 (core_register_n_1657),
+        .\r_data_reg[1]_C_0 (core_register_n_1640),
+        .\r_data_reg[1]_P_0 (\r_data_reg[10]_P [1]),
+        .\r_data_reg[1]_P_1 (core_register_n_1639),
+        .\r_data_reg[2]_C_0 (core_register_n_1642),
+        .\r_data_reg[2]_P_0 (\r_data_reg[10]_P [2]),
+        .\r_data_reg[2]_P_1 (core_register_n_1641),
+        .\r_data_reg[3]_C_0 (core_register_n_1634),
+        .\r_data_reg[3]_P_0 (\r_data_reg[10]_P [3]),
+        .\r_data_reg[3]_P_1 (core_register_n_1633),
+        .\r_data_reg[4]_C_0 (core_register_n_1644),
+        .\r_data_reg[4]_P_0 (\r_data_reg[10]_P [4]),
+        .\r_data_reg[4]_P_1 (core_register_n_1643),
+        .\r_data_reg[6]_C_0 (core_register_n_1646),
+        .\r_data_reg[6]_P_0 (\r_data_reg[10]_P [5]),
+        .\r_data_reg[6]_P_1 (core_register_n_1645),
+        .\r_data_reg[7]_C_0 (core_register_n_1638),
+        .\r_data_reg[7]_P_0 (\r_data_reg[7]_P ),
+        .\r_data_reg[7]_P_1 (core_register_n_1637),
+        .\r_data_reg[8]_C_0 (core_register_n_1648),
+        .\r_data_reg[8]_P_0 (\r_data_reg[10]_P [6]),
+        .\r_data_reg[8]_P_1 (core_register_n_1647),
+        .\r_data_reg[9]_C_0 (core_register_n_1652),
+        .\r_data_reg[9]_P_0 (\r_data_reg[9]_P ),
+        .\r_data_reg[9]_P_1 (core_register_n_1651),
         .\r_reg_reg[12][2]_C (\r_reg_reg[12][2]_C_0 ),
         .\r_reg_reg[15][31]_C (\r_reg_reg[15][31]_C_0 ),
         .\r_reg_reg[9][3]_P (\r_reg_reg[9][3]_P_0 ),
-        .r_we_ir_reg(instruction_register_n_1),
-        .r_we_ir_reg_0(instruction_register_n_2),
-        .r_we_ir_reg_1(r_we_ir_reg),
+        .r_we_ir_reg(r_we_ir_reg),
         .rst_n_IBUF(rst_n_IBUF),
         .w_addr1_mux(w_addr1_mux),
         .w_addr2_mux(w_addr2_mux));
@@ -27551,6 +28048,12 @@ module datapath
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({NLW_r_rgf0_carry__6_O_UNCONNECTED[3],r_rgf0[30:28]}),
         .S({1'b0,Q[31:29]}));
+  rom rom_inst
+       (.D(Q[11:0]),
+        .Q(r_address),
+        .i_re_rom_datapath(i_re_rom_datapath),
+        .\o_data1_reg[7] (rom_inst_n_8),
+        .\o_data1_reg[9] (rom_inst_n_9));
 endmodule
 
 module flg
@@ -27634,28 +28137,18 @@ module flg
 endmodule
 
 module r16
-   (\o_data1_reg[0] ,
-    r_we_ir_reg,
-    r_we_ir_reg_0,
-    r_we_ir_reg_1,
-    \r_data_reg[13]_P_0 ,
-    \r_data_reg[12]_P_0 ,
-    \r_data_reg[11]_P_0 ,
+   (r_we_ir_reg,
     \r_data_reg[10]_P_0 ,
     \r_data_reg[8]_P_0 ,
-    \r_data_reg[8]_C_0 ,
-    \r_data_reg[8]_P_1 ,
-    \r_data_reg[7]_C_0 ,
     \r_data_reg[7]_P_0 ,
-    \r_data_reg[7]_P_1 ,
-    \r_data_reg[6]_C_0 ,
     \r_data_reg[6]_P_0 ,
-    \r_data_reg[6]_P_1 ,
     \r_data_reg[4]_P_0 ,
     \r_data_reg[3]_P_0 ,
     \r_data_reg[2]_P_0 ,
+    \r_data_reg[1]_P_0 ,
     \r_data_reg[0]_C_0 ,
     \r_data_reg[0]_P_0 ,
+    \r_data_reg[0]_P_1 ,
     \r_addr1_mux_reg[0] ,
     \r_addr1_mux_reg[0]_0 ,
     \r_addr1_mux_reg[0]_1 ,
@@ -27673,29 +28166,35 @@ module r16
     \r_addr1_mux_reg[0]_13 ,
     \r_addr1_mux_reg[0]_14 ,
     \r_addr1_mux_reg[0]_15 ,
+    \r_data_reg[9]_P_0 ,
+    \r_data_reg[14]_C_0 ,
     \FSM_onehot_r_nstate_reg[2] ,
-    \r_data_reg[1]_P_0 ,
-    \r_data_reg[12]_C_0 ,
-    \r_data_reg[9]_C_0 ,
-    \r_data_reg[11]_C_0 ,
+    \r_data_reg[14]_P_0 ,
+    \FSM_onehot_r_nstate_reg[2]_0 ,
+    \r_data_reg[12]_P_0 ,
+    r_addr1_mux,
+    \r_data_reg[13]_C_0 ,
     w_addr2_mux,
     \r_addr1_mux_reg[0]_16 ,
     \r_addr1_mux_reg[0]_17 ,
     \r_addr1_mux_reg[0]_18 ,
-    \r_data_reg[9]_C_1 ,
-    \r_data_reg[11]_C_1 ,
-    \r_data_reg[13]_P_1 ,
-    \r_data_reg[13]_C_0 ,
+    \FSM_onehot_r_nstate_reg[2]_1 ,
+    \r_data_reg[15]_P_0 ,
+    \r_data_reg[15]_C_0 ,
+    \r_data_reg[14]_P_1 ,
+    \r_data_reg[14]_C_1 ,
+    \r_data_reg[13]_P_0 ,
+    \r_data_reg[13]_C_1 ,
     \r_data_reg[10]_P_1 ,
     \r_data_reg[10]_C_0 ,
-    \r_data_reg[9]_P_0 ,
-    \r_data_reg[9]_C_2 ,
-    \r_data_reg[8]_P_2 ,
-    \r_data_reg[8]_C_1 ,
-    \r_data_reg[7]_P_2 ,
-    \r_data_reg[7]_C_1 ,
-    \r_data_reg[6]_P_2 ,
-    \r_data_reg[6]_C_1 ,
+    \r_data_reg[9]_P_1 ,
+    \r_data_reg[9]_C_0 ,
+    \r_data_reg[8]_P_1 ,
+    \r_data_reg[8]_C_0 ,
+    \r_data_reg[7]_P_1 ,
+    \r_data_reg[7]_C_0 ,
+    \r_data_reg[6]_P_1 ,
+    \r_data_reg[6]_C_0 ,
     \r_data_reg[4]_P_1 ,
     \r_data_reg[4]_C_0 ,
     \r_data_reg[3]_P_1 ,
@@ -27704,40 +28203,30 @@ module r16
     \r_data_reg[2]_C_0 ,
     \r_data_reg[1]_P_1 ,
     \r_data_reg[1]_C_0 ,
-    \r_data_reg[0]_P_1 ,
+    \r_data_reg[0]_P_2 ,
     \r_data_reg[0]_C_1 ,
     clk_IBUF_BUFG,
     \r_reg_reg[15][31]_C ,
     w_addr1_mux,
     \r_reg_reg[12][2]_C ,
     \r_reg_reg[9][3]_P ,
-    \r_alu_opcode_reg[1] ,
     rst_n_IBUF,
+    \r_alu_opcode_reg[1] ,
     i_addr1_mux_datapath,
-    i_addr2_mux_datapath,
+    i_alu_input_datapath,
     i_alu_opcode_datapath);
-  output \o_data1_reg[0] ;
   output r_we_ir_reg;
-  output r_we_ir_reg_0;
-  output r_we_ir_reg_1;
-  output \r_data_reg[13]_P_0 ;
-  output \r_data_reg[12]_P_0 ;
-  output \r_data_reg[11]_P_0 ;
   output \r_data_reg[10]_P_0 ;
-  output [0:0]\r_data_reg[8]_P_0 ;
-  output \r_data_reg[8]_C_0 ;
-  output \r_data_reg[8]_P_1 ;
-  output \r_data_reg[7]_C_0 ;
+  output \r_data_reg[8]_P_0 ;
   output \r_data_reg[7]_P_0 ;
-  output \r_data_reg[7]_P_1 ;
-  output \r_data_reg[6]_C_0 ;
   output \r_data_reg[6]_P_0 ;
-  output \r_data_reg[6]_P_1 ;
   output \r_data_reg[4]_P_0 ;
   output \r_data_reg[3]_P_0 ;
-  output [1:0]\r_data_reg[2]_P_0 ;
+  output \r_data_reg[2]_P_0 ;
+  output \r_data_reg[1]_P_0 ;
   output \r_data_reg[0]_C_0 ;
   output \r_data_reg[0]_P_0 ;
+  output \r_data_reg[0]_P_1 ;
   output \r_addr1_mux_reg[0] ;
   output \r_addr1_mux_reg[0]_0 ;
   output \r_addr1_mux_reg[0]_1 ;
@@ -27755,29 +28244,35 @@ module r16
   output \r_addr1_mux_reg[0]_13 ;
   output \r_addr1_mux_reg[0]_14 ;
   output \r_addr1_mux_reg[0]_15 ;
+  output \r_data_reg[9]_P_0 ;
+  output \r_data_reg[14]_C_0 ;
   output \FSM_onehot_r_nstate_reg[2] ;
-  output \r_data_reg[1]_P_0 ;
-  output \r_data_reg[12]_C_0 ;
-  output \r_data_reg[9]_C_0 ;
-  output \r_data_reg[11]_C_0 ;
+  output \r_data_reg[14]_P_0 ;
+  output \FSM_onehot_r_nstate_reg[2]_0 ;
+  output \r_data_reg[12]_P_0 ;
+  output [0:0]r_addr1_mux;
+  output \r_data_reg[13]_C_0 ;
   output [3:0]w_addr2_mux;
   output \r_addr1_mux_reg[0]_16 ;
   output \r_addr1_mux_reg[0]_17 ;
   output \r_addr1_mux_reg[0]_18 ;
-  output \r_data_reg[9]_C_1 ;
-  output \r_data_reg[11]_C_1 ;
-  input \r_data_reg[13]_P_1 ;
-  input \r_data_reg[13]_C_0 ;
+  output \FSM_onehot_r_nstate_reg[2]_1 ;
+  input \r_data_reg[15]_P_0 ;
+  input \r_data_reg[15]_C_0 ;
+  input \r_data_reg[14]_P_1 ;
+  input \r_data_reg[14]_C_1 ;
+  input \r_data_reg[13]_P_0 ;
+  input \r_data_reg[13]_C_1 ;
   input \r_data_reg[10]_P_1 ;
   input \r_data_reg[10]_C_0 ;
-  input \r_data_reg[9]_P_0 ;
-  input \r_data_reg[9]_C_2 ;
-  input \r_data_reg[8]_P_2 ;
-  input \r_data_reg[8]_C_1 ;
-  input \r_data_reg[7]_P_2 ;
-  input \r_data_reg[7]_C_1 ;
-  input \r_data_reg[6]_P_2 ;
-  input \r_data_reg[6]_C_1 ;
+  input \r_data_reg[9]_P_1 ;
+  input \r_data_reg[9]_C_0 ;
+  input \r_data_reg[8]_P_1 ;
+  input \r_data_reg[8]_C_0 ;
+  input \r_data_reg[7]_P_1 ;
+  input \r_data_reg[7]_C_0 ;
+  input \r_data_reg[6]_P_1 ;
+  input \r_data_reg[6]_C_0 ;
   input \r_data_reg[4]_P_1 ;
   input \r_data_reg[4]_C_0 ;
   input \r_data_reg[3]_P_1 ;
@@ -27786,26 +28281,28 @@ module r16
   input \r_data_reg[2]_C_0 ;
   input \r_data_reg[1]_P_1 ;
   input \r_data_reg[1]_C_0 ;
-  input \r_data_reg[0]_P_1 ;
+  input \r_data_reg[0]_P_2 ;
   input \r_data_reg[0]_C_1 ;
   input clk_IBUF_BUFG;
   input \r_reg_reg[15][31]_C ;
   input [1:0]w_addr1_mux;
   input \r_reg_reg[12][2]_C ;
   input \r_reg_reg[9][3]_P ;
-  input [0:0]\r_alu_opcode_reg[1] ;
   input rst_n_IBUF;
+  input [2:0]\r_alu_opcode_reg[1] ;
   input [1:0]i_addr1_mux_datapath;
-  input i_addr2_mux_datapath;
+  input [1:0]i_alu_input_datapath;
   input [0:0]i_alu_opcode_datapath;
 
   wire \FSM_onehot_r_nstate_reg[2] ;
+  wire \FSM_onehot_r_nstate_reg[2]_0 ;
+  wire \FSM_onehot_r_nstate_reg[2]_1 ;
   wire clk_IBUF_BUFG;
   wire [1:0]i_addr1_mux_datapath;
-  wire i_addr2_mux_datapath;
+  wire [1:0]i_alu_input_datapath;
   wire [0:0]i_alu_opcode_datapath;
-  wire \o_data1_reg[0] ;
-  wire [9:0]o_instructions_datapath;
+  wire [13:9]o_instructions_datapath;
+  wire [0:0]r_addr1_mux;
   wire \r_addr1_mux_reg[0] ;
   wire \r_addr1_mux_reg[0]_0 ;
   wire \r_addr1_mux_reg[0]_1 ;
@@ -27826,32 +28323,45 @@ module r16
   wire \r_addr1_mux_reg[0]_7 ;
   wire [0:0]\r_addr1_mux_reg[0]_8 ;
   wire \r_addr1_mux_reg[0]_9 ;
-  wire [0:0]\r_alu_opcode_reg[1] ;
+  wire \r_addr2_mux[1]_i_4_n_0 ;
+  wire \r_alu_opcode[1]_i_2_n_0 ;
+  wire [2:0]\r_alu_opcode_reg[1] ;
+  wire [15:14]r_data;
+  wire \r_data_mux[0]_i_3_n_0 ;
   wire \r_data_reg[0]_C_0 ;
   wire \r_data_reg[0]_C_1 ;
   wire \r_data_reg[0]_P_0 ;
   wire \r_data_reg[0]_P_1 ;
+  wire \r_data_reg[0]_P_2 ;
   wire \r_data_reg[10]_C_0 ;
   wire \r_data_reg[10]_C_n_0 ;
   wire \r_data_reg[10]_P_0 ;
   wire \r_data_reg[10]_P_1 ;
   wire \r_data_reg[10]_P_n_0 ;
-  wire \r_data_reg[11]_C_0 ;
-  wire \r_data_reg[11]_C_1 ;
   wire \r_data_reg[11]_C_n_0 ;
-  wire \r_data_reg[11]_P_0 ;
   wire \r_data_reg[11]_P_n_0 ;
-  wire \r_data_reg[12]_C_0 ;
   wire \r_data_reg[12]_C_n_0 ;
   wire \r_data_reg[12]_LDC_n_0 ;
   wire \r_data_reg[12]_P_0 ;
   wire \r_data_reg[12]_P_n_0 ;
   wire \r_data_reg[13]_C_0 ;
+  wire \r_data_reg[13]_C_1 ;
   wire \r_data_reg[13]_C_n_0 ;
   wire \r_data_reg[13]_LDC_n_0 ;
   wire \r_data_reg[13]_P_0 ;
-  wire \r_data_reg[13]_P_1 ;
   wire \r_data_reg[13]_P_n_0 ;
+  wire \r_data_reg[14]_C_0 ;
+  wire \r_data_reg[14]_C_1 ;
+  wire \r_data_reg[14]_C_n_0 ;
+  wire \r_data_reg[14]_LDC_n_0 ;
+  wire \r_data_reg[14]_P_0 ;
+  wire \r_data_reg[14]_P_1 ;
+  wire \r_data_reg[14]_P_n_0 ;
+  wire \r_data_reg[15]_C_0 ;
+  wire \r_data_reg[15]_C_n_0 ;
+  wire \r_data_reg[15]_LDC_n_0 ;
+  wire \r_data_reg[15]_P_0 ;
+  wire \r_data_reg[15]_P_n_0 ;
   wire \r_data_reg[1]_C_0 ;
   wire \r_data_reg[1]_C_n_0 ;
   wire \r_data_reg[1]_LDC_n_0 ;
@@ -27861,7 +28371,7 @@ module r16
   wire \r_data_reg[2]_C_0 ;
   wire \r_data_reg[2]_C_n_0 ;
   wire \r_data_reg[2]_LDC_n_0 ;
-  wire [1:0]\r_data_reg[2]_P_0 ;
+  wire \r_data_reg[2]_P_0 ;
   wire \r_data_reg[2]_P_1 ;
   wire \r_data_reg[2]_P_n_0 ;
   wire \r_data_reg[3]_C_0 ;
@@ -27877,96 +28387,147 @@ module r16
   wire \r_data_reg[4]_P_1 ;
   wire \r_data_reg[4]_P_n_0 ;
   wire \r_data_reg[6]_C_0 ;
-  wire \r_data_reg[6]_C_1 ;
+  wire \r_data_reg[6]_C_n_0 ;
+  wire \r_data_reg[6]_LDC_n_0 ;
   wire \r_data_reg[6]_P_0 ;
   wire \r_data_reg[6]_P_1 ;
-  wire \r_data_reg[6]_P_2 ;
+  wire \r_data_reg[6]_P_n_0 ;
   wire \r_data_reg[7]_C_0 ;
-  wire \r_data_reg[7]_C_1 ;
+  wire \r_data_reg[7]_C_n_0 ;
+  wire \r_data_reg[7]_LDC_n_0 ;
   wire \r_data_reg[7]_P_0 ;
   wire \r_data_reg[7]_P_1 ;
-  wire \r_data_reg[7]_P_2 ;
+  wire \r_data_reg[7]_P_n_0 ;
   wire \r_data_reg[8]_C_0 ;
-  wire \r_data_reg[8]_C_1 ;
-  wire [0:0]\r_data_reg[8]_P_0 ;
+  wire \r_data_reg[8]_C_n_0 ;
+  wire \r_data_reg[8]_LDC_n_0 ;
+  wire \r_data_reg[8]_P_0 ;
   wire \r_data_reg[8]_P_1 ;
-  wire \r_data_reg[8]_P_2 ;
+  wire \r_data_reg[8]_P_n_0 ;
   wire \r_data_reg[9]_C_0 ;
-  wire \r_data_reg[9]_C_1 ;
-  wire \r_data_reg[9]_C_2 ;
   wire \r_data_reg[9]_C_n_0 ;
   wire \r_data_reg[9]_LDC_n_0 ;
   wire \r_data_reg[9]_P_0 ;
+  wire \r_data_reg[9]_P_1 ;
   wire \r_data_reg[9]_P_n_0 ;
-  wire \r_execute[1]_i_6_n_0 ;
-  wire \r_execute[1]_i_7_n_0 ;
+  wire \r_execute[1]_i_3_n_0 ;
+  wire \r_execute[2]_i_3_n_0 ;
+  wire \r_execute[2]_i_4_n_0 ;
+  wire \r_execute[2]_i_5_n_0 ;
   wire \r_reg_reg[12][2]_C ;
   wire \r_reg_reg[15][31]_C ;
   wire \r_reg_reg[9][3]_P ;
   wire r_we_ir_reg;
-  wire r_we_ir_reg_0;
-  wire r_we_ir_reg_1;
   wire rst_n_IBUF;
   wire [1:0]w_addr1_mux;
   wire [3:0]w_addr2_mux;
 
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
-  LUT4 #(
-    .INIT(16'h00E2)) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  LUT5 #(
+    .INIT(32'h00FF00B8)) 
     i__carry_i_21
-       (.I0(\r_data_reg[6]_C_0 ),
-        .I1(r_we_ir_reg_0),
-        .I2(\r_data_reg[6]_P_1 ),
-        .I3(i_addr2_mux_datapath),
+       (.I0(\r_data_reg[6]_P_n_0 ),
+        .I1(\r_data_reg[6]_LDC_n_0 ),
+        .I2(\r_data_reg[6]_C_n_0 ),
+        .I3(i_alu_input_datapath[0]),
+        .I4(i_alu_input_datapath[1]),
         .O(w_addr2_mux[3]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  LUT5 #(
+    .INIT(32'h00FFB800)) 
     i__carry_i_23
-       (.I0(i_addr2_mux_datapath),
-        .I1(\r_data_reg[2]_C_n_0 ),
-        .I2(\r_data_reg[2]_LDC_n_0 ),
-        .I3(\r_data_reg[2]_P_n_0 ),
+       (.I0(\r_data_reg[2]_P_n_0 ),
+        .I1(\r_data_reg[2]_LDC_n_0 ),
+        .I2(\r_data_reg[2]_C_n_0 ),
+        .I3(i_alu_input_datapath[0]),
+        .I4(i_alu_input_datapath[1]),
         .O(w_addr2_mux[2]));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    i__carry_i_37
-       (.I0(\r_data_reg[1]_P_n_0 ),
-        .I1(\r_data_reg[1]_LDC_n_0 ),
-        .I2(\r_data_reg[1]_C_n_0 ),
-        .I3(i_addr2_mux_datapath),
-        .I4(\r_data_reg[4]_P_0 ),
-        .O(w_addr2_mux[1]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    i__carry_i_38
-       (.I0(\r_data_reg[0]_P_0 ),
-        .I1(r_we_ir_reg_1),
-        .I2(\r_data_reg[0]_C_0 ),
-        .I3(i_addr2_mux_datapath),
-        .I4(\r_data_reg[3]_P_0 ),
-        .O(w_addr2_mux[0]));
   LUT6 #(
-    .INIT(64'hFFFFE2FF0000E200)) 
+    .INIT(64'h0000FFFFFF00E2E2)) 
+    i__carry_i_41
+       (.I0(\r_data_reg[4]_C_n_0 ),
+        .I1(\r_data_reg[4]_LDC_n_0 ),
+        .I2(\r_data_reg[4]_P_n_0 ),
+        .I3(\r_data_reg[1]_P_0 ),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(w_addr2_mux[1]));
+  LUT6 #(
+    .INIT(64'h0000FFFFFF00E2E2)) 
+    i__carry_i_42
+       (.I0(\r_data_reg[3]_C_n_0 ),
+        .I1(\r_data_reg[3]_LDC_n_0 ),
+        .I2(\r_data_reg[3]_P_n_0 ),
+        .I3(\r_data_reg[0]_P_0 ),
+        .I4(i_alu_input_datapath[0]),
+        .I5(i_alu_input_datapath[1]),
+        .O(w_addr2_mux[0]));
+  LUT5 #(
+    .INIT(32'hFAEAFAFA)) 
+    \r_addr1_mux[1]_i_2 
+       (.I0(\r_alu_opcode_reg[1] [0]),
+        .I1(\r_data_reg[12]_P_0 ),
+        .I2(\r_alu_opcode_reg[1] [1]),
+        .I3(\r_data_reg[14]_C_0 ),
+        .I4(\r_data_reg[10]_P_0 ),
+        .O(r_addr1_mux));
+  LUT6 #(
+    .INIT(64'hFFFFFFE2E2E2FFE2)) 
+    \r_addr2_mux[1]_i_2 
+       (.I0(\r_data_reg[14]_C_n_0 ),
+        .I1(\r_data_reg[14]_LDC_n_0 ),
+        .I2(\r_data_reg[14]_P_n_0 ),
+        .I3(\r_data_reg[15]_C_n_0 ),
+        .I4(\r_data_reg[15]_LDC_n_0 ),
+        .I5(\r_data_reg[15]_P_n_0 ),
+        .O(\r_data_reg[14]_C_0 ));
+  LUT5 #(
+    .INIT(32'hFFFF0080)) 
+    \r_addr2_mux[1]_i_3 
+       (.I0(\r_addr2_mux[1]_i_4_n_0 ),
+        .I1(\r_alu_opcode_reg[1] [1]),
+        .I2(\r_data_reg[10]_P_0 ),
+        .I3(\r_data_reg[12]_P_0 ),
+        .I4(\r_alu_opcode_reg[1] [2]),
+        .O(\FSM_onehot_r_nstate_reg[2]_0 ));
+  LUT6 #(
+    .INIT(64'h200F2020200F0F0F)) 
+    \r_addr2_mux[1]_i_4 
+       (.I0(o_instructions_datapath[9]),
+        .I1(\r_data_reg[8]_P_0 ),
+        .I2(r_data[15]),
+        .I3(\r_data_reg[14]_P_n_0 ),
+        .I4(\r_data_reg[14]_LDC_n_0 ),
+        .I5(\r_data_reg[14]_C_n_0 ),
+        .O(\r_addr2_mux[1]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hF040FFFFF0400000)) 
     \r_alu_opcode[1]_i_1 
-       (.I0(\r_data_reg[9]_C_n_0 ),
-        .I1(\r_data_reg[9]_LDC_n_0 ),
-        .I2(\r_data_reg[9]_P_n_0 ),
-        .I3(\r_alu_opcode_reg[1] ),
-        .I4(\r_data_reg[11]_C_1 ),
+       (.I0(\r_data_reg[14]_C_0 ),
+        .I1(o_instructions_datapath[9]),
+        .I2(\r_alu_opcode_reg[1] [1]),
+        .I3(\r_alu_opcode[1]_i_2_n_0 ),
+        .I4(\FSM_onehot_r_nstate_reg[2]_0 ),
         .I5(i_alu_opcode_datapath),
-        .O(\r_data_reg[9]_C_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+        .O(\FSM_onehot_r_nstate_reg[2]_1 ));
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  LUT5 #(
+    .INIT(32'h0000BABF)) 
+    \r_alu_opcode[1]_i_2 
+       (.I0(\r_data_reg[12]_P_0 ),
+        .I1(\r_data_reg[10]_P_n_0 ),
+        .I2(\r_data_reg[12]_LDC_n_0 ),
+        .I3(\r_data_reg[10]_C_n_0 ),
+        .I4(\r_data_reg[14]_C_0 ),
+        .O(\r_alu_opcode[1]_i_2_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[0]_C_i_1 
-       (.I0(\r_data_reg[0]_P_0 ),
-        .I1(r_we_ir_reg_1),
+       (.I0(\r_data_reg[0]_P_1 ),
+        .I1(r_we_ir_reg),
         .I2(\r_data_reg[0]_C_0 ),
-        .O(o_instructions_datapath[0]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+        .O(\r_data_reg[0]_P_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[10]_C_i_1 
@@ -27974,44 +28535,57 @@ module r16
         .I1(\r_data_reg[12]_LDC_n_0 ),
         .I2(\r_data_reg[10]_C_n_0 ),
         .O(\r_data_reg[10]_P_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[11]_C_i_1 
        (.I0(\r_data_reg[11]_P_n_0 ),
         .I1(\r_data_reg[12]_LDC_n_0 ),
         .I2(\r_data_reg[11]_C_n_0 ),
-        .O(\r_data_reg[11]_P_0 ));
+        .O(o_instructions_datapath[11]));
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[12]_C_i_1 
        (.I0(\r_data_reg[12]_P_n_0 ),
         .I1(\r_data_reg[12]_LDC_n_0 ),
         .I2(\r_data_reg[12]_C_n_0 ),
-        .O(\r_data_reg[12]_P_0 ));
+        .O(o_instructions_datapath[12]));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[13]_C_i_1 
        (.I0(\r_data_reg[13]_P_n_0 ),
         .I1(\r_data_reg[13]_LDC_n_0 ),
         .I2(\r_data_reg[13]_C_n_0 ),
-        .O(\r_data_reg[13]_P_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+        .O(o_instructions_datapath[13]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data[14]_C_i_1 
+       (.I0(\r_data_reg[14]_P_n_0 ),
+        .I1(\r_data_reg[14]_LDC_n_0 ),
+        .I2(\r_data_reg[14]_C_n_0 ),
+        .O(r_data[14]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data[15]_C_i_1 
+       (.I0(\r_data_reg[15]_P_n_0 ),
+        .I1(\r_data_reg[15]_LDC_n_0 ),
+        .I2(\r_data_reg[15]_C_n_0 ),
+        .O(r_data[15]));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[1]_C_i_1 
        (.I0(\r_data_reg[1]_P_n_0 ),
         .I1(\r_data_reg[1]_LDC_n_0 ),
         .I2(\r_data_reg[1]_C_n_0 ),
-        .O(\r_data_reg[2]_P_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+        .O(\r_data_reg[1]_P_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[2]_C_i_1 
        (.I0(\r_data_reg[2]_P_n_0 ),
         .I1(\r_data_reg[2]_LDC_n_0 ),
         .I2(\r_data_reg[2]_C_n_0 ),
-        .O(\r_data_reg[2]_P_0 [1]));
+        .O(\r_data_reg[2]_P_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[3]_C_i_1 
@@ -28026,27 +28600,27 @@ module r16
         .I1(\r_data_reg[4]_LDC_n_0 ),
         .I2(\r_data_reg[4]_C_n_0 ),
         .O(\r_data_reg[4]_P_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[6]_C_i_1 
-       (.I0(\r_data_reg[6]_P_1 ),
-        .I1(r_we_ir_reg_0),
-        .I2(\r_data_reg[6]_C_0 ),
+       (.I0(\r_data_reg[6]_P_n_0 ),
+        .I1(\r_data_reg[6]_LDC_n_0 ),
+        .I2(\r_data_reg[6]_C_n_0 ),
         .O(\r_data_reg[6]_P_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[7]_C_i_1 
-       (.I0(\r_data_reg[7]_P_1 ),
-        .I1(r_we_ir_reg),
-        .I2(\r_data_reg[7]_C_0 ),
+       (.I0(\r_data_reg[7]_P_n_0 ),
+        .I1(\r_data_reg[7]_LDC_n_0 ),
+        .I2(\r_data_reg[7]_C_n_0 ),
         .O(\r_data_reg[7]_P_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \r_data[8]_C_i_1 
-       (.I0(\r_data_reg[8]_P_1 ),
-        .I1(\o_data1_reg[0] ),
-        .I2(\r_data_reg[8]_C_0 ),
+       (.I0(\r_data_reg[8]_P_n_0 ),
+        .I1(\r_data_reg[8]_LDC_n_0 ),
+        .I2(\r_data_reg[8]_C_n_0 ),
         .O(\r_data_reg[8]_P_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
@@ -28056,22 +28630,42 @@ module r16
         .I2(\r_data_reg[9]_C_n_0 ),
         .O(o_instructions_datapath[9]));
   LUT6 #(
-    .INIT(64'h0808083030300830)) 
+    .INIT(64'h0000000054040000)) 
+    \r_data_mux[0]_i_2 
+       (.I0(\r_data_reg[14]_C_0 ),
+        .I1(\r_data_reg[13]_C_n_0 ),
+        .I2(\r_data_reg[13]_LDC_n_0 ),
+        .I3(\r_data_reg[13]_P_n_0 ),
+        .I4(\r_alu_opcode_reg[1] [1]),
+        .I5(\r_data_mux[0]_i_3_n_0 ),
+        .O(\r_data_reg[13]_C_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  LUT5 #(
+    .INIT(32'hFFFACCFA)) 
+    \r_data_mux[0]_i_3 
+       (.I0(\r_data_reg[11]_C_n_0 ),
+        .I1(\r_data_reg[11]_P_n_0 ),
+        .I2(\r_data_reg[12]_C_n_0 ),
+        .I3(\r_data_reg[12]_LDC_n_0 ),
+        .I4(\r_data_reg[12]_P_n_0 ),
+        .O(\r_data_mux[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h00008000000F8000)) 
     \r_data_mux[1]_i_2 
-       (.I0(\r_data_reg[10]_P_0 ),
-        .I1(\r_data_reg[11]_P_0 ),
-        .I2(\r_data_reg[13]_P_0 ),
-        .I3(\r_data_reg[12]_C_n_0 ),
-        .I4(\r_data_reg[12]_LDC_n_0 ),
-        .I5(\r_data_reg[12]_P_n_0 ),
-        .O(\r_data_reg[12]_C_0 ));
+       (.I0(\r_addr2_mux[1]_i_4_n_0 ),
+        .I1(\r_data_reg[10]_P_0 ),
+        .I2(o_instructions_datapath[11]),
+        .I3(o_instructions_datapath[12]),
+        .I4(o_instructions_datapath[13]),
+        .I5(\r_data_reg[14]_C_0 ),
+        .O(\r_data_reg[14]_P_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[0]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .CLR(\r_data_reg[0]_C_1 ),
-        .D(o_instructions_datapath[0]),
+        .D(\r_data_reg[0]_P_0 ),
         .Q(\r_data_reg[0]_C_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
@@ -28080,17 +28674,17 @@ module r16
     \r_data_reg[0]_LDC 
        (.CLR(\r_data_reg[0]_C_1 ),
         .D(1'b1),
-        .G(\r_data_reg[0]_P_1 ),
+        .G(\r_data_reg[0]_P_2 ),
         .GE(1'b1),
-        .Q(r_we_ir_reg_1));
+        .Q(r_we_ir_reg));
   FDPE #(
     .INIT(1'b1)) 
     \r_data_reg[0]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(o_instructions_datapath[0]),
-        .PRE(\r_data_reg[0]_P_1 ),
-        .Q(\r_data_reg[0]_P_0 ));
+        .D(\r_data_reg[0]_P_0 ),
+        .PRE(\r_data_reg[0]_P_2 ),
+        .Q(\r_data_reg[0]_P_1 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[10]_C 
@@ -28113,14 +28707,14 @@ module r16
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .CLR(\r_data_reg[10]_C_0 ),
-        .D(\r_data_reg[11]_P_0 ),
+        .D(o_instructions_datapath[11]),
         .Q(\r_data_reg[11]_C_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \r_data_reg[11]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\r_data_reg[11]_P_0 ),
+        .D(o_instructions_datapath[11]),
         .PRE(\r_data_reg[10]_P_1 ),
         .Q(\r_data_reg[11]_P_n_0 ));
   FDCE #(
@@ -28129,7 +28723,7 @@ module r16
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .CLR(\r_data_reg[10]_C_0 ),
-        .D(\r_data_reg[12]_P_0 ),
+        .D(o_instructions_datapath[12]),
         .Q(\r_data_reg[12]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
@@ -28146,7 +28740,7 @@ module r16
     \r_data_reg[12]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\r_data_reg[12]_P_0 ),
+        .D(o_instructions_datapath[12]),
         .PRE(\r_data_reg[10]_P_1 ),
         .Q(\r_data_reg[12]_P_n_0 ));
   FDCE #(
@@ -28154,17 +28748,17 @@ module r16
     \r_data_reg[13]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(\r_data_reg[13]_C_0 ),
-        .D(\r_data_reg[13]_P_0 ),
+        .CLR(\r_data_reg[13]_C_1 ),
+        .D(o_instructions_datapath[13]),
         .Q(\r_data_reg[13]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
   LDCE #(
     .INIT(1'b0)) 
     \r_data_reg[13]_LDC 
-       (.CLR(\r_data_reg[13]_C_0 ),
+       (.CLR(\r_data_reg[13]_C_1 ),
         .D(1'b1),
-        .G(\r_data_reg[13]_P_1 ),
+        .G(\r_data_reg[13]_P_0 ),
         .GE(1'b1),
         .Q(\r_data_reg[13]_LDC_n_0 ));
   FDPE #(
@@ -28172,16 +28766,68 @@ module r16
     \r_data_reg[13]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\r_data_reg[13]_P_0 ),
-        .PRE(\r_data_reg[13]_P_1 ),
+        .D(o_instructions_datapath[13]),
+        .PRE(\r_data_reg[13]_P_0 ),
         .Q(\r_data_reg[13]_P_n_0 ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \r_data_reg[14]_C 
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .CLR(\r_data_reg[14]_C_1 ),
+        .D(r_data[14]),
+        .Q(\r_data_reg[14]_C_n_0 ));
+  (* XILINX_LEGACY_PRIM = "LDC" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_data_reg[14]_LDC 
+       (.CLR(\r_data_reg[14]_C_1 ),
+        .D(1'b1),
+        .G(\r_data_reg[14]_P_1 ),
+        .GE(1'b1),
+        .Q(\r_data_reg[14]_LDC_n_0 ));
+  FDPE #(
+    .INIT(1'b1)) 
+    \r_data_reg[14]_P 
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .D(r_data[14]),
+        .PRE(\r_data_reg[14]_P_1 ),
+        .Q(\r_data_reg[14]_P_n_0 ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \r_data_reg[15]_C 
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .CLR(\r_data_reg[15]_C_0 ),
+        .D(r_data[15]),
+        .Q(\r_data_reg[15]_C_n_0 ));
+  (* XILINX_LEGACY_PRIM = "LDC" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_data_reg[15]_LDC 
+       (.CLR(\r_data_reg[15]_C_0 ),
+        .D(1'b1),
+        .G(\r_data_reg[15]_P_0 ),
+        .GE(1'b1),
+        .Q(\r_data_reg[15]_LDC_n_0 ));
+  FDPE #(
+    .INIT(1'b1)) 
+    \r_data_reg[15]_P 
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .D(r_data[15]),
+        .PRE(\r_data_reg[15]_P_0 ),
+        .Q(\r_data_reg[15]_P_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[1]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .CLR(\r_data_reg[1]_C_0 ),
-        .D(\r_data_reg[2]_P_0 [0]),
+        .D(\r_data_reg[1]_P_0 ),
         .Q(\r_data_reg[1]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
@@ -28198,7 +28844,7 @@ module r16
     \r_data_reg[1]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\r_data_reg[2]_P_0 [0]),
+        .D(\r_data_reg[1]_P_0 ),
         .PRE(\r_data_reg[1]_P_1 ),
         .Q(\r_data_reg[1]_P_n_0 ));
   FDCE #(
@@ -28207,7 +28853,7 @@ module r16
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .CLR(\r_data_reg[2]_C_0 ),
-        .D(\r_data_reg[2]_P_0 [1]),
+        .D(\r_data_reg[2]_P_0 ),
         .Q(\r_data_reg[2]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
@@ -28224,7 +28870,7 @@ module r16
     \r_data_reg[2]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\r_data_reg[2]_P_0 [1]),
+        .D(\r_data_reg[2]_P_0 ),
         .PRE(\r_data_reg[2]_P_1 ),
         .Q(\r_data_reg[2]_P_n_0 ));
   FDCE #(
@@ -28284,85 +28930,85 @@ module r16
     \r_data_reg[6]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(\r_data_reg[6]_C_1 ),
+        .CLR(\r_data_reg[6]_C_0 ),
         .D(\r_data_reg[6]_P_0 ),
-        .Q(\r_data_reg[6]_C_0 ));
+        .Q(\r_data_reg[6]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
   LDCE #(
     .INIT(1'b0)) 
     \r_data_reg[6]_LDC 
-       (.CLR(\r_data_reg[6]_C_1 ),
+       (.CLR(\r_data_reg[6]_C_0 ),
         .D(1'b1),
-        .G(\r_data_reg[6]_P_2 ),
+        .G(\r_data_reg[6]_P_1 ),
         .GE(1'b1),
-        .Q(r_we_ir_reg_0));
+        .Q(\r_data_reg[6]_LDC_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \r_data_reg[6]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .D(\r_data_reg[6]_P_0 ),
-        .PRE(\r_data_reg[6]_P_2 ),
-        .Q(\r_data_reg[6]_P_1 ));
+        .PRE(\r_data_reg[6]_P_1 ),
+        .Q(\r_data_reg[6]_P_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[7]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(\r_data_reg[7]_C_1 ),
+        .CLR(\r_data_reg[7]_C_0 ),
         .D(\r_data_reg[7]_P_0 ),
-        .Q(\r_data_reg[7]_C_0 ));
+        .Q(\r_data_reg[7]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
   LDCE #(
     .INIT(1'b0)) 
     \r_data_reg[7]_LDC 
-       (.CLR(\r_data_reg[7]_C_1 ),
+       (.CLR(\r_data_reg[7]_C_0 ),
         .D(1'b1),
-        .G(\r_data_reg[7]_P_2 ),
+        .G(\r_data_reg[7]_P_1 ),
         .GE(1'b1),
-        .Q(r_we_ir_reg));
+        .Q(\r_data_reg[7]_LDC_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \r_data_reg[7]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .D(\r_data_reg[7]_P_0 ),
-        .PRE(\r_data_reg[7]_P_2 ),
-        .Q(\r_data_reg[7]_P_1 ));
+        .PRE(\r_data_reg[7]_P_1 ),
+        .Q(\r_data_reg[7]_P_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[8]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(\r_data_reg[8]_C_1 ),
+        .CLR(\r_data_reg[8]_C_0 ),
         .D(\r_data_reg[8]_P_0 ),
-        .Q(\r_data_reg[8]_C_0 ));
+        .Q(\r_data_reg[8]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE" *) 
   LDCE #(
     .INIT(1'b0)) 
     \r_data_reg[8]_LDC 
-       (.CLR(\r_data_reg[8]_C_1 ),
+       (.CLR(\r_data_reg[8]_C_0 ),
         .D(1'b1),
-        .G(\r_data_reg[8]_P_2 ),
+        .G(\r_data_reg[8]_P_1 ),
         .GE(1'b1),
-        .Q(\o_data1_reg[0] ));
+        .Q(\r_data_reg[8]_LDC_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \r_data_reg[8]_P 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .D(\r_data_reg[8]_P_0 ),
-        .PRE(\r_data_reg[8]_P_2 ),
-        .Q(\r_data_reg[8]_P_1 ));
+        .PRE(\r_data_reg[8]_P_1 ),
+        .Q(\r_data_reg[8]_P_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \r_data_reg[9]_C 
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .CLR(\r_data_reg[9]_C_2 ),
+        .CLR(\r_data_reg[9]_C_0 ),
         .D(o_instructions_datapath[9]),
         .Q(\r_data_reg[9]_C_n_0 ));
   (* XILINX_LEGACY_PRIM = "LDC" *) 
@@ -28370,9 +29016,9 @@ module r16
   LDCE #(
     .INIT(1'b0)) 
     \r_data_reg[9]_LDC 
-       (.CLR(\r_data_reg[9]_C_2 ),
+       (.CLR(\r_data_reg[9]_C_0 ),
         .D(1'b1),
-        .G(\r_data_reg[9]_P_0 ),
+        .G(\r_data_reg[9]_P_1 ),
         .GE(1'b1),
         .Q(\r_data_reg[9]_LDC_n_0 ));
   FDPE #(
@@ -28381,100 +29027,99 @@ module r16
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .D(o_instructions_datapath[9]),
-        .PRE(\r_data_reg[9]_P_0 ),
+        .PRE(\r_data_reg[9]_P_1 ),
         .Q(\r_data_reg[9]_P_n_0 ));
   LUT6 #(
-    .INIT(64'hDDDFFFDFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFF47CF77FF)) 
     \r_execute[0]_i_2 
-       (.I0(\r_data_reg[10]_P_0 ),
-        .I1(\r_data_reg[13]_P_0 ),
-        .I2(\r_data_reg[11]_C_n_0 ),
-        .I3(\r_data_reg[12]_LDC_n_0 ),
-        .I4(\r_data_reg[11]_P_n_0 ),
-        .I5(\r_data_reg[12]_P_0 ),
-        .O(\r_data_reg[11]_C_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
-  LUT5 #(
-    .INIT(32'hCCA000A0)) 
+       (.I0(\r_data_reg[12]_P_n_0 ),
+        .I1(\r_data_reg[12]_LDC_n_0 ),
+        .I2(\r_data_reg[12]_C_n_0 ),
+        .I3(\r_data_reg[11]_P_n_0 ),
+        .I4(\r_data_reg[11]_C_n_0 ),
+        .I5(o_instructions_datapath[13]),
+        .O(\r_data_reg[12]_P_0 ));
+  LUT6 #(
+    .INIT(64'h00FF00FF00FE00AE)) 
     \r_execute[1]_i_2 
+       (.I0(o_instructions_datapath[9]),
+        .I1(\r_execute[2]_i_4_n_0 ),
+        .I2(\r_data_reg[10]_P_0 ),
+        .I3(\r_data_reg[14]_C_0 ),
+        .I4(\r_execute[1]_i_3_n_0 ),
+        .I5(o_instructions_datapath[13]),
+        .O(\r_data_reg[9]_P_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  LUT5 #(
+    .INIT(32'h335FFF5F)) 
+    \r_execute[1]_i_3 
        (.I0(\r_data_reg[11]_C_n_0 ),
         .I1(\r_data_reg[11]_P_n_0 ),
         .I2(\r_data_reg[12]_C_n_0 ),
         .I3(\r_data_reg[12]_LDC_n_0 ),
         .I4(\r_data_reg[12]_P_n_0 ),
-        .O(\r_data_reg[11]_C_0 ));
+        .O(\r_execute[1]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFE2E2E2FFE2)) 
-    \r_execute[1]_i_3 
-       (.I0(\r_data_reg[9]_C_n_0 ),
-        .I1(\r_data_reg[9]_LDC_n_0 ),
-        .I2(\r_data_reg[9]_P_n_0 ),
-        .I3(\r_data_reg[13]_C_n_0 ),
-        .I4(\r_data_reg[13]_LDC_n_0 ),
-        .I5(\r_data_reg[13]_P_n_0 ),
-        .O(\r_data_reg[9]_C_0 ));
+    .INIT(64'h8080808080888080)) 
+    \r_execute[2]_i_2 
+       (.I0(rst_n_IBUF),
+        .I1(\r_alu_opcode_reg[1] [1]),
+        .I2(\r_data_reg[14]_P_0 ),
+        .I3(o_instructions_datapath[9]),
+        .I4(\r_execute[2]_i_3_n_0 ),
+        .I5(\r_execute[2]_i_4_n_0 ),
+        .O(\FSM_onehot_r_nstate_reg[2] ));
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  LUT4 #(
+    .INIT(16'h0151)) 
+    \r_execute[2]_i_3 
+       (.I0(\r_data_reg[14]_C_0 ),
+        .I1(\r_data_reg[10]_C_n_0 ),
+        .I2(\r_data_reg[12]_LDC_n_0 ),
+        .I3(\r_data_reg[10]_P_n_0 ),
+        .O(\r_execute[2]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFB)) 
-    \r_execute[1]_i_4 
-       (.I0(\r_data_reg[2]_P_0 [0]),
-        .I1(o_instructions_datapath[0]),
+    \r_execute[2]_i_4 
+       (.I0(\r_data_reg[1]_P_0 ),
+        .I1(\r_data_reg[0]_P_0 ),
         .I2(\r_data_reg[8]_P_0 ),
         .I3(\r_data_reg[7]_P_0 ),
-        .I4(\r_execute[1]_i_6_n_0 ),
-        .I5(\r_execute[1]_i_7_n_0 ),
-        .O(\r_data_reg[1]_P_0 ));
-  LUT6 #(
-    .INIT(64'hFF01000000000000)) 
-    \r_execute[1]_i_5 
-       (.I0(\r_data_reg[1]_P_0 ),
-        .I1(\r_data_reg[10]_P_0 ),
-        .I2(o_instructions_datapath[9]),
-        .I3(\r_data_reg[12]_C_0 ),
-        .I4(\r_alu_opcode_reg[1] ),
-        .I5(rst_n_IBUF),
-        .O(\FSM_onehot_r_nstate_reg[2] ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
-  LUT5 #(
-    .INIT(32'hFFFACCFA)) 
-    \r_execute[1]_i_6 
-       (.I0(\r_data_reg[11]_C_n_0 ),
-        .I1(\r_data_reg[11]_P_n_0 ),
-        .I2(\r_data_reg[12]_C_n_0 ),
-        .I3(\r_data_reg[12]_LDC_n_0 ),
-        .I4(\r_data_reg[12]_P_n_0 ),
-        .O(\r_execute[1]_i_6_n_0 ));
+        .I4(\r_data_mux[0]_i_3_n_0 ),
+        .I5(\r_execute[2]_i_5_n_0 ),
+        .O(\r_execute[2]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFEFEA)) 
-    \r_execute[1]_i_7 
+    \r_execute[2]_i_5 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(\r_data_reg[2]_P_n_0 ),
         .I2(\r_data_reg[2]_LDC_n_0 ),
         .I3(\r_data_reg[2]_C_n_0 ),
         .I4(\r_data_reg[6]_P_0 ),
         .I5(\r_data_reg[4]_P_0 ),
-        .O(\r_execute[1]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+        .O(\r_execute[2]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \r_reg_reg[10][31]_LDC_i_3 
        (.I0(\r_addr1_mux_reg[0]_3 ),
         .I1(w_addr1_mux[0]),
         .O(\r_addr1_mux_reg[0]_14 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \r_reg_reg[11][31]_LDC_i_4 
        (.I0(\r_addr1_mux_reg[0]_3 ),
         .I1(\r_addr1_mux_reg[0]_0 ),
         .O(\r_addr1_mux_reg[0]_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \r_reg_reg[12][31]_LDC_i_3 
        (.I0(\r_addr1_mux_reg[0]_0 ),
         .I1(\r_addr1_mux_reg[0]_1 ),
         .O(\r_addr1_mux_reg[0] ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \r_reg_reg[12][31]_LDC_i_5 
@@ -28486,26 +29131,26 @@ module r16
     \r_reg_reg[12][31]_LDC_i_6 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
         .O(\r_addr1_mux_reg[0]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \r_reg_reg[13][31]_LDC_i_3 
        (.I0(\r_addr1_mux_reg[0]_3 ),
         .I1(\r_reg_reg[12][2]_C ),
         .O(\r_addr1_mux_reg[0]_6 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \r_reg_reg[14][31]_LDC_i_3 
        (.I0(\r_addr1_mux_reg[0]_0 ),
         .I1(\r_reg_reg[12][2]_C ),
         .O(\r_addr1_mux_reg[0]_9 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \r_reg_reg[15][31]_LDC_i_3 
@@ -28513,7 +29158,7 @@ module r16
         .I1(\r_addr1_mux_reg[0]_3 ),
         .I2(\r_reg_reg[15][31]_C ),
         .O(\r_addr1_mux_reg[0]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \r_reg_reg[15][31]_LDC_i_4 
@@ -28527,7 +29172,7 @@ module r16
     \r_reg_reg[1][0]_LDC_i_3 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
@@ -28537,7 +29182,7 @@ module r16
     \r_reg_reg[1][12]_LDC_i_3 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
@@ -28547,7 +29192,7 @@ module r16
     \r_reg_reg[1][24]_LDC_i_3 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
@@ -28557,7 +29202,7 @@ module r16
     \r_reg_reg[1][31]_LDC_i_4 
        (.I0(\r_data_reg[4]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(\r_data_reg[2]_P_0 [0]),
+        .I2(\r_data_reg[1]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(o_instructions_datapath[9]),
@@ -28567,12 +29212,12 @@ module r16
     \r_reg_reg[1][31]_LDC_i_5 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
         .O(\r_addr1_mux_reg[0]_18 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \r_reg_reg[5][31]_LDC_i_3 
@@ -28585,7 +29230,7 @@ module r16
        (.I0(\r_addr1_mux_reg[0]_3 ),
         .I1(w_addr1_mux[1]),
         .O(\r_addr1_mux_reg[0]_15 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT4 #(
     .INIT(16'hDFFF)) 
     \r_reg_reg[7][31]_LDC_i_3 
@@ -28594,7 +29239,7 @@ module r16
         .I2(\r_addr1_mux_reg[0]_3 ),
         .I3(\r_reg_reg[15][31]_C ),
         .O(\r_addr1_mux_reg[0]_10 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \r_reg_reg[9][31]_LDC_i_3 
@@ -28606,12 +29251,12 @@ module r16
     \r_reg_reg[9][31]_LDC_i_4 
        (.I0(\r_data_reg[3]_P_0 ),
         .I1(i_addr1_mux_datapath[0]),
-        .I2(o_instructions_datapath[0]),
+        .I2(\r_data_reg[0]_P_0 ),
         .I3(w_addr1_mux[1]),
         .I4(i_addr1_mux_datapath[1]),
         .I5(\r_data_reg[8]_P_0 ),
         .O(\r_addr1_mux_reg[0]_8 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \r_reg_reg[9][31]_LDC_i_5 
@@ -30157,47 +30802,36 @@ module rgf
     \r_reg_reg[0][1]_P_0 ,
     \r_reg_reg[0][0]_C_0 ,
     \r_reg_reg[0][0]_P_0 ,
-    \r_data_reg[6]_C ,
-    \r_data_reg[6]_C_0 ,
-    \r_data_reg[6]_C_1 ,
-    \r_data_reg[6]_C_2 ,
-    \r_data_reg[6]_C_3 ,
-    \r_data_reg[6]_C_4 ,
-    \r_data_reg[6]_C_5 ,
-    \r_data_reg[6]_C_6 ,
+    \r_data_reg[6]_P ,
+    \r_data_reg[6]_P_0 ,
     data0,
-    \o_data1_reg[0]_0 ,
     Q,
-    S,
-    \r_alu_opcode_reg[1] ,
-    \r_alu_opcode_reg[1]_0 ,
-    \r_alu_opcode_reg[1]_1 ,
-    \r_alu_opcode_reg[1]_2 ,
-    \r_alu_opcode_reg[1]_3 ,
-    \r_alu_opcode_reg[1]_4 ,
-    \r_alu_opcode_reg[1]_5 ,
     r_we_ir_reg,
     r_we_ir_reg_0,
     r_we_ir_reg_1,
     r_we_ir_reg_2,
+    \o_data1_reg[3]_0 ,
     r_we_ir_reg_3,
     r_we_ir_reg_4,
     r_we_ir_reg_5,
     r_we_ir_reg_6,
-    \o_data1_reg[0]_1 ,
-    \o_data1_reg[1]_0 ,
-    \o_data1_reg[0]_2 ,
-    \o_data1_reg[1]_1 ,
     r_we_ir_reg_7,
     r_we_ir_reg_8,
-    \o_data1_reg[0]_3 ,
-    \o_data1_reg[1]_2 ,
     r_we_ir_reg_9,
-    \o_data1_reg[1]_3 ,
-    \o_data1_reg[0]_4 ,
     r_we_ir_reg_10,
-    \o_data1_reg[1]_4 ,
-    \o_data1_reg[0]_5 ,
+    r_we_ir_reg_11,
+    r_re_rom_reg,
+    r_we_ir_reg_12,
+    r_re_rom_reg_0,
+    r_we_ir_reg_13,
+    r_we_ir_reg_14,
+    r_we_ir_reg_15,
+    \o_data1_reg[1]_0 ,
+    r_we_ir_reg_16,
+    \o_data1_reg[1]_1 ,
+    r_we_ir_reg_17,
+    \o_data1_reg[3]_1 ,
+    r_we_ir_reg_18,
     rst_n,
     \r_reg_reg[1][31]_P_1 ,
     \r_reg_reg[1][31]_C_1 ,
@@ -31224,7 +31858,7 @@ module rgf
     \r_reg_reg[0][0]_P_1 ,
     \r_reg_reg[0][0]_C_1 ,
     \r_reg_reg[1][31]_C_2 ,
-    clk_IBUF_BUFG,
+    CLK,
     \r_reg_reg[1][30]_C_2 ,
     \r_reg_reg[1][29]_C_2 ,
     \r_reg_reg[1][28]_C_2 ,
@@ -31740,7 +32374,7 @@ module rgf
     \o_data1_reg[31]_0 ,
     \o_data1_reg[0]_i_2_0 ,
     \o_data1_reg[0]_i_2_1 ,
-    \o_data1_reg[11]_i_2_0 ,
+    \o_data1_reg[3]_i_2_0 ,
     \o_data1_reg[21]_i_2_0 ,
     \o_data1_reg[31]_i_5_0 ,
     w_addr2_mux,
@@ -31752,14 +32386,13 @@ module rgf
     \r_reg_reg[1][20]_LDC_i_4 ,
     \r_reg_reg[1][24]_LDC_i_5 ,
     \r_reg_reg[1][28]_LDC_i_4 ,
-    \_inferred__1/i__carry ,
-    \_inferred__1/i__carry_0 ,
-    i_alu_opcode_datapath,
-    \_inferred__1/i__carry_1 ,
-    o_instructions_datapath,
+    i_re_rom_datapath,
+    \r_data_reg[1]_LDC_i_3_0 ,
     rst_n_IBUF,
     r_we_ir,
-    E);
+    \r_data_reg[15]_P ,
+    \r_data_reg[3]_C ,
+    \r_data_reg[1]_LDC_i_3_1 );
   output r_we_cr_reg_rep__4;
   output r_we_cr_reg_rep__4_0;
   output r_we_cr_reg_rep__4_1;
@@ -33296,47 +33929,36 @@ module rgf
   output \r_reg_reg[0][1]_P_0 ;
   output \r_reg_reg[0][0]_C_0 ;
   output \r_reg_reg[0][0]_P_0 ;
-  output [3:0]\r_data_reg[6]_C ;
-  output [3:0]\r_data_reg[6]_C_0 ;
-  output [3:0]\r_data_reg[6]_C_1 ;
-  output [3:0]\r_data_reg[6]_C_2 ;
-  output [3:0]\r_data_reg[6]_C_3 ;
-  output [3:0]\r_data_reg[6]_C_4 ;
-  output [3:0]\r_data_reg[6]_C_5 ;
-  output [3:0]\r_data_reg[6]_C_6 ;
+  output [3:0]\r_data_reg[6]_P ;
+  output [27:0]\r_data_reg[6]_P_0 ;
   output [32:0]data0;
-  output \o_data1_reg[0]_0 ;
   output [31:0]Q;
-  output [2:0]S;
-  output [3:0]\r_alu_opcode_reg[1] ;
-  output [3:0]\r_alu_opcode_reg[1]_0 ;
-  output [3:0]\r_alu_opcode_reg[1]_1 ;
-  output [3:0]\r_alu_opcode_reg[1]_2 ;
-  output [3:0]\r_alu_opcode_reg[1]_3 ;
-  output [3:0]\r_alu_opcode_reg[1]_4 ;
-  output [3:0]\r_alu_opcode_reg[1]_5 ;
   output r_we_ir_reg;
   output r_we_ir_reg_0;
   output r_we_ir_reg_1;
   output r_we_ir_reg_2;
+  output \o_data1_reg[3]_0 ;
   output r_we_ir_reg_3;
   output r_we_ir_reg_4;
   output r_we_ir_reg_5;
   output r_we_ir_reg_6;
-  output \o_data1_reg[0]_1 ;
-  output \o_data1_reg[1]_0 ;
-  output \o_data1_reg[0]_2 ;
-  output \o_data1_reg[1]_1 ;
   output r_we_ir_reg_7;
   output r_we_ir_reg_8;
-  output \o_data1_reg[0]_3 ;
-  output \o_data1_reg[1]_2 ;
   output r_we_ir_reg_9;
-  output \o_data1_reg[1]_3 ;
-  output \o_data1_reg[0]_4 ;
   output r_we_ir_reg_10;
-  output \o_data1_reg[1]_4 ;
-  output \o_data1_reg[0]_5 ;
+  output r_we_ir_reg_11;
+  output r_re_rom_reg;
+  output r_we_ir_reg_12;
+  output r_re_rom_reg_0;
+  output r_we_ir_reg_13;
+  output r_we_ir_reg_14;
+  output r_we_ir_reg_15;
+  output \o_data1_reg[1]_0 ;
+  output r_we_ir_reg_16;
+  output \o_data1_reg[1]_1 ;
+  output r_we_ir_reg_17;
+  output \o_data1_reg[3]_1 ;
+  output r_we_ir_reg_18;
   output rst_n;
   input \r_reg_reg[1][31]_P_1 ;
   input \r_reg_reg[1][31]_C_1 ;
@@ -34363,7 +34985,7 @@ module rgf
   input \r_reg_reg[0][0]_P_1 ;
   input \r_reg_reg[0][0]_C_1 ;
   input \r_reg_reg[1][31]_C_2 ;
-  input clk_IBUF_BUFG;
+  input CLK;
   input \r_reg_reg[1][30]_C_2 ;
   input \r_reg_reg[1][29]_C_2 ;
   input \r_reg_reg[1][28]_C_2 ;
@@ -34879,7 +35501,7 @@ module rgf
   input \o_data1_reg[31]_0 ;
   input \o_data1_reg[0]_i_2_0 ;
   input \o_data1_reg[0]_i_2_1 ;
-  input \o_data1_reg[11]_i_2_0 ;
+  input \o_data1_reg[3]_i_2_0 ;
   input \o_data1_reg[21]_i_2_0 ;
   input [0:0]\o_data1_reg[31]_i_5_0 ;
   input [3:0]w_addr2_mux;
@@ -34891,30 +35513,21 @@ module rgf
   input [3:0]\r_reg_reg[1][20]_LDC_i_4 ;
   input [3:0]\r_reg_reg[1][24]_LDC_i_5 ;
   input [3:0]\r_reg_reg[1][28]_LDC_i_4 ;
-  input \_inferred__1/i__carry ;
-  input \_inferred__1/i__carry_0 ;
-  input [0:0]i_alu_opcode_datapath;
-  input \_inferred__1/i__carry_1 ;
-  input [0:0]o_instructions_datapath;
+  input i_re_rom_datapath;
+  input [7:0]\r_data_reg[1]_LDC_i_3_0 ;
   input rst_n_IBUF;
   input r_we_ir;
-  input [0:0]E;
+  input \r_data_reg[15]_P ;
+  input \r_data_reg[3]_C ;
+  input \r_data_reg[1]_LDC_i_3_1 ;
 
-  wire [0:0]E;
+  wire CLK;
   wire [31:0]Q;
-  wire [2:0]S;
-  wire \_inferred__1/i__carry ;
-  wire \_inferred__1/i__carry_0 ;
-  wire \_inferred__1/i__carry_1 ;
-  wire clk_IBUF_BUFG;
   wire [32:0]data0;
-  wire i__carry__0_i_13_n_0;
-  wire i__carry__0_i_13_n_1;
-  wire i__carry__0_i_13_n_2;
-  wire i__carry__0_i_13_n_3;
-  wire i__carry__0_i_14_n_0;
   wire i__carry__0_i_15_n_0;
-  wire i__carry__0_i_16_n_0;
+  wire i__carry__0_i_15_n_1;
+  wire i__carry__0_i_15_n_2;
+  wire i__carry__0_i_15_n_3;
   wire i__carry__0_i_17_n_0;
   wire i__carry__0_i_18_n_0;
   wire i__carry__0_i_19_n_0;
@@ -34928,6 +35541,9 @@ module rgf
   wire i__carry__0_i_27_n_0;
   wire i__carry__0_i_28_n_0;
   wire i__carry__0_i_29_n_0;
+  wire i__carry__0_i_30_n_0;
+  wire i__carry__0_i_31_n_0;
+  wire i__carry__0_i_32_n_0;
   wire i__carry__1_i_13_n_0;
   wire i__carry__1_i_13_n_1;
   wire i__carry__1_i_13_n_2;
@@ -35048,10 +35664,10 @@ module rgf
   wire i__carry__6_i_26_n_0;
   wire i__carry__6_i_27_n_0;
   wire i__carry__6_i_28_n_0;
-  wire i__carry_i_10_n_0;
-  wire i__carry_i_10_n_1;
-  wire i__carry_i_10_n_2;
-  wire i__carry_i_10_n_3;
+  wire i__carry_i_18_n_0;
+  wire i__carry_i_18_n_1;
+  wire i__carry_i_18_n_2;
+  wire i__carry_i_18_n_3;
   wire i__carry_i_19_n_0;
   wire i__carry_i_20_n_0;
   wire i__carry_i_22_n_0;
@@ -35068,7 +35684,8 @@ module rgf
   wire i__carry_i_34_n_0;
   wire i__carry_i_35_n_0;
   wire i__carry_i_36_n_0;
-  wire [0:0]i_alu_opcode_datapath;
+  wire i_data0;
+  wire i_re_rom_datapath;
   wire \o_data1[0]_i_4_n_0 ;
   wire \o_data1[0]_i_5_n_0 ;
   wire \o_data1[0]_i_6_n_0 ;
@@ -35197,19 +35814,12 @@ module rgf
   wire \o_data1[9]_i_5_n_0 ;
   wire \o_data1[9]_i_6_n_0 ;
   wire \o_data1[9]_i_7_n_0 ;
-  wire \o_data1_reg[0]_0 ;
-  wire \o_data1_reg[0]_1 ;
-  wire \o_data1_reg[0]_2 ;
-  wire \o_data1_reg[0]_3 ;
-  wire \o_data1_reg[0]_4 ;
-  wire \o_data1_reg[0]_5 ;
   wire \o_data1_reg[0]_i_2_0 ;
   wire \o_data1_reg[0]_i_2_1 ;
   wire \o_data1_reg[0]_i_2_n_0 ;
   wire \o_data1_reg[0]_i_3_n_0 ;
   wire \o_data1_reg[10]_i_2_n_0 ;
   wire \o_data1_reg[10]_i_3_n_0 ;
-  wire \o_data1_reg[11]_i_2_0 ;
   wire \o_data1_reg[11]_i_2_n_0 ;
   wire \o_data1_reg[11]_i_3_n_0 ;
   wire \o_data1_reg[12]_i_2_n_0 ;
@@ -35230,9 +35840,6 @@ module rgf
   wire \o_data1_reg[19]_i_3_n_0 ;
   wire \o_data1_reg[1]_0 ;
   wire \o_data1_reg[1]_1 ;
-  wire \o_data1_reg[1]_2 ;
-  wire \o_data1_reg[1]_3 ;
-  wire \o_data1_reg[1]_4 ;
   wire \o_data1_reg[1]_i_2_n_0 ;
   wire \o_data1_reg[1]_i_3_n_0 ;
   wire \o_data1_reg[20]_i_2_n_0 ;
@@ -35264,6 +35871,9 @@ module rgf
   wire \o_data1_reg[31]_i_4_n_0 ;
   wire [0:0]\o_data1_reg[31]_i_5_0 ;
   wire \o_data1_reg[31]_i_5_n_0 ;
+  wire \o_data1_reg[3]_0 ;
+  wire \o_data1_reg[3]_1 ;
+  wire \o_data1_reg[3]_i_2_0 ;
   wire \o_data1_reg[3]_i_2_n_0 ;
   wire \o_data1_reg[3]_i_3_n_0 ;
   wire \o_data1_reg[4]_i_2_n_0 ;
@@ -35278,33 +35888,32 @@ module rgf
   wire \o_data1_reg[8]_i_3_n_0 ;
   wire \o_data1_reg[9]_i_2_n_0 ;
   wire \o_data1_reg[9]_i_3_n_0 ;
-  wire [0:0]o_instructions_datapath;
-  wire [3:0]\r_alu_opcode_reg[1] ;
-  wire [3:0]\r_alu_opcode_reg[1]_0 ;
-  wire [3:0]\r_alu_opcode_reg[1]_1 ;
-  wire [3:0]\r_alu_opcode_reg[1]_2 ;
-  wire [3:0]\r_alu_opcode_reg[1]_3 ;
-  wire [3:0]\r_alu_opcode_reg[1]_4 ;
-  wire [3:0]\r_alu_opcode_reg[1]_5 ;
   wire \r_data_reg[0]_LDC_i_3_n_0 ;
-  wire \r_data_reg[12]_LDC_i_3_n_0 ;
+  wire \r_data_reg[0]_LDC_i_4_n_0 ;
   wire \r_data_reg[13]_LDC_i_3_n_0 ;
   wire \r_data_reg[13]_LDC_i_4_n_0 ;
-  wire \r_data_reg[13]_LDC_i_5_n_0 ;
+  wire \r_data_reg[14]_LDC_i_3_n_0 ;
+  wire \r_data_reg[15]_LDC_i_10_n_0 ;
+  wire \r_data_reg[15]_LDC_i_6_n_0 ;
+  wire \r_data_reg[15]_LDC_i_9_n_0 ;
+  wire \r_data_reg[15]_P ;
+  wire [7:0]\r_data_reg[1]_LDC_i_3_0 ;
+  wire \r_data_reg[1]_LDC_i_3_1 ;
   wire \r_data_reg[1]_LDC_i_3_n_0 ;
   wire \r_data_reg[2]_LDC_i_3_n_0 ;
+  wire \r_data_reg[3]_C ;
   wire \r_data_reg[3]_LDC_i_3_n_0 ;
+  wire \r_data_reg[3]_LDC_i_4_n_0 ;
   wire \r_data_reg[4]_LDC_i_3_n_0 ;
-  wire [3:0]\r_data_reg[6]_C ;
-  wire [3:0]\r_data_reg[6]_C_0 ;
-  wire [3:0]\r_data_reg[6]_C_1 ;
-  wire [3:0]\r_data_reg[6]_C_2 ;
-  wire [3:0]\r_data_reg[6]_C_3 ;
-  wire [3:0]\r_data_reg[6]_C_4 ;
-  wire [3:0]\r_data_reg[6]_C_5 ;
-  wire [3:0]\r_data_reg[6]_C_6 ;
   wire \r_data_reg[6]_LDC_i_3_n_0 ;
+  wire [3:0]\r_data_reg[6]_P ;
+  wire [27:0]\r_data_reg[6]_P_0 ;
   wire \r_data_reg[7]_LDC_i_3_n_0 ;
+  wire \r_data_reg[7]_LDC_i_4_n_0 ;
+  wire \r_data_reg[7]_LDC_i_5_n_0 ;
+  wire \r_data_reg[8]_LDC_i_3_n_0 ;
+  wire r_re_rom_reg;
+  wire r_re_rom_reg_0;
   wire [31:0]r_reg;
   wire \r_reg_reg[0][0]_C_0 ;
   wire \r_reg_reg[0][0]_C_1 ;
@@ -38391,6 +39000,14 @@ module rgf
   wire r_we_ir_reg_0;
   wire r_we_ir_reg_1;
   wire r_we_ir_reg_10;
+  wire r_we_ir_reg_11;
+  wire r_we_ir_reg_12;
+  wire r_we_ir_reg_13;
+  wire r_we_ir_reg_14;
+  wire r_we_ir_reg_15;
+  wire r_we_ir_reg_16;
+  wire r_we_ir_reg_17;
+  wire r_we_ir_reg_18;
   wire r_we_ir_reg_2;
   wire r_we_ir_reg_3;
   wire r_we_ir_reg_4;
@@ -38401,6 +39018,7 @@ module rgf
   wire r_we_ir_reg_9;
   wire rst_n;
   wire rst_n_IBUF;
+  wire [6:0]sel;
   wire [0:0]w_addr1_mux;
   wire [3:0]w_addr2_mux;
   wire [3:1]\NLW_r_data_reg[1]_LDC_i_3__0_CO_UNCONNECTED ;
@@ -38409,246 +39027,210 @@ module rgf
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__0_i_10
-       (.I0(i__carry__0_i_18_n_0),
-        .I1(i__carry__0_i_19_n_0),
+       (.I0(i__carry__0_i_21_n_0),
+        .I1(i__carry__0_i_22_n_0),
         .I2(w_addr2_mux[3]),
-        .I3(i__carry__0_i_20_n_0),
+        .I3(i__carry__0_i_23_n_0),
         .I4(w_addr2_mux[2]),
-        .I5(i__carry__0_i_21_n_0),
-        .O(\r_data_reg[6]_C_0 [2]));
+        .I5(i__carry__0_i_24_n_0),
+        .O(\r_data_reg[6]_P_0 [2]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__0_i_11
-       (.I0(i__carry__0_i_22_n_0),
-        .I1(i__carry__0_i_23_n_0),
+       (.I0(i__carry__0_i_25_n_0),
+        .I1(i__carry__0_i_26_n_0),
         .I2(w_addr2_mux[3]),
-        .I3(i__carry__0_i_24_n_0),
+        .I3(i__carry__0_i_27_n_0),
         .I4(w_addr2_mux[2]),
-        .I5(i__carry__0_i_25_n_0),
-        .O(\r_data_reg[6]_C_0 [1]));
+        .I5(i__carry__0_i_28_n_0),
+        .O(\r_data_reg[6]_P_0 [1]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__0_i_12
-       (.I0(i__carry__0_i_26_n_0),
-        .I1(i__carry__0_i_27_n_0),
+       (.I0(i__carry__0_i_29_n_0),
+        .I1(i__carry__0_i_30_n_0),
         .I2(w_addr2_mux[3]),
-        .I3(i__carry__0_i_28_n_0),
+        .I3(i__carry__0_i_31_n_0),
         .I4(w_addr2_mux[2]),
-        .I5(i__carry__0_i_29_n_0),
-        .O(\r_data_reg[6]_C_0 [0]));
-  CARRY4 i__carry__0_i_13
-       (.CI(i__carry_i_10_n_0),
-        .CO({i__carry__0_i_13_n_0,i__carry__0_i_13_n_1,i__carry__0_i_13_n_2,i__carry__0_i_13_n_3}),
+        .I5(i__carry__0_i_32_n_0),
+        .O(\r_data_reg[6]_P_0 [0]));
+  CARRY4 i__carry__0_i_15
+       (.CI(i__carry_i_18_n_0),
+        .CO({i__carry__0_i_15_n_0,i__carry__0_i_15_n_1,i__carry__0_i_15_n_2,i__carry__0_i_15_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_0 ),
+        .DI(\r_data_reg[6]_P_0 [3:0]),
         .O(data0[7:4]),
         .S(\r_reg_reg[1][4]_LDC_i_4 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_14
+    i__carry__0_i_17
        (.I0(\r_reg_reg[15][7]_C_2 ),
         .I1(\r_reg_reg[14][7]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[13][7]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[12][7]_C_2 ),
-        .O(i__carry__0_i_14_n_0));
+        .O(i__carry__0_i_17_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_15
+    i__carry__0_i_18
        (.I0(\r_reg_reg[11][7]_C_2 ),
         .I1(\r_reg_reg[10][7]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[9][7]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[8][7]_C_2 ),
-        .O(i__carry__0_i_15_n_0));
+        .O(i__carry__0_i_18_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_16
+    i__carry__0_i_19
        (.I0(\r_reg_reg[7][7]_C_2 ),
         .I1(\r_reg_reg[6][7]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[5][7]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[4][7]_C_2 ),
-        .O(i__carry__0_i_16_n_0));
+        .O(i__carry__0_i_19_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_17
+    i__carry__0_i_20
        (.I0(\r_reg_reg[3][7]_C_2 ),
         .I1(\r_reg_reg[2][7]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[1][7]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][7]_C_2 ),
-        .O(i__carry__0_i_17_n_0));
+        .O(i__carry__0_i_20_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_18
+    i__carry__0_i_21
        (.I0(\r_reg_reg[15][6]_C_2 ),
         .I1(\r_reg_reg[14][6]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[13][6]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[12][6]_C_2 ),
-        .O(i__carry__0_i_18_n_0));
+        .O(i__carry__0_i_21_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_19
+    i__carry__0_i_22
        (.I0(\r_reg_reg[11][6]_C_2 ),
         .I1(\r_reg_reg[10][6]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[9][6]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[8][6]_C_2 ),
-        .O(i__carry__0_i_19_n_0));
+        .O(i__carry__0_i_22_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_20
+    i__carry__0_i_23
        (.I0(\r_reg_reg[7][6]_C_2 ),
         .I1(\r_reg_reg[6][6]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[5][6]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[4][6]_C_2 ),
-        .O(i__carry__0_i_20_n_0));
+        .O(i__carry__0_i_23_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_21
+    i__carry__0_i_24
        (.I0(\r_reg_reg[3][6]_C_2 ),
         .I1(\r_reg_reg[2][6]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[1][6]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][6]_C_2 ),
-        .O(i__carry__0_i_21_n_0));
+        .O(i__carry__0_i_24_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_22
+    i__carry__0_i_25
        (.I0(\r_reg_reg[15][5]_C_2 ),
         .I1(\r_reg_reg[14][5]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[13][5]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[12][5]_C_2 ),
-        .O(i__carry__0_i_22_n_0));
+        .O(i__carry__0_i_25_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_23
+    i__carry__0_i_26
        (.I0(\r_reg_reg[11][5]_C_2 ),
         .I1(\r_reg_reg[10][5]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[9][5]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[8][5]_C_2 ),
-        .O(i__carry__0_i_23_n_0));
+        .O(i__carry__0_i_26_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_24
+    i__carry__0_i_27
        (.I0(\r_reg_reg[7][5]_C_2 ),
         .I1(\r_reg_reg[6][5]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[5][5]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[4][5]_C_2 ),
-        .O(i__carry__0_i_24_n_0));
+        .O(i__carry__0_i_27_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_25
+    i__carry__0_i_28
        (.I0(\r_reg_reg[3][5]_C_2 ),
         .I1(\r_reg_reg[2][5]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[1][5]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][5]_C_2 ),
-        .O(i__carry__0_i_25_n_0));
+        .O(i__carry__0_i_28_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_26
+    i__carry__0_i_29
        (.I0(\r_reg_reg[15][4]_C_2 ),
         .I1(\r_reg_reg[14][4]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[13][4]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[12][4]_C_2 ),
-        .O(i__carry__0_i_26_n_0));
+        .O(i__carry__0_i_29_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_27
+    i__carry__0_i_30
        (.I0(\r_reg_reg[11][4]_C_2 ),
         .I1(\r_reg_reg[10][4]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[9][4]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[8][4]_C_2 ),
-        .O(i__carry__0_i_27_n_0));
+        .O(i__carry__0_i_30_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_28
+    i__carry__0_i_31
        (.I0(\r_reg_reg[7][4]_C_2 ),
         .I1(\r_reg_reg[6][4]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[5][4]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[4][4]_C_2 ),
-        .O(i__carry__0_i_28_n_0));
+        .O(i__carry__0_i_31_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry__0_i_29
+    i__carry__0_i_32
        (.I0(\r_reg_reg[3][4]_C_2 ),
         .I1(\r_reg_reg[2][4]_C_2 ),
         .I2(w_addr2_mux[1]),
         .I3(\r_reg_reg[1][4]_C_2 ),
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][4]_C_2 ),
-        .O(i__carry__0_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__0_i_5
-       (.I0(\r_data_reg[6]_C_0 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[7]),
-        .I3(data0[7]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1] [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__0_i_6
-       (.I0(\r_data_reg[6]_C_0 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[6]),
-        .I3(data0[6]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1] [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__0_i_7
-       (.I0(\r_data_reg[6]_C_0 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[5]),
-        .I3(data0[5]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1] [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__0_i_8
-       (.I0(\r_data_reg[6]_C_0 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[4]),
-        .I3(data0[4]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1] [0]));
+        .O(i__carry__0_i_32_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__0_i_9
-       (.I0(i__carry__0_i_14_n_0),
-        .I1(i__carry__0_i_15_n_0),
+       (.I0(i__carry__0_i_17_n_0),
+        .I1(i__carry__0_i_18_n_0),
         .I2(w_addr2_mux[3]),
-        .I3(i__carry__0_i_16_n_0),
+        .I3(i__carry__0_i_19_n_0),
         .I4(w_addr2_mux[2]),
-        .I5(i__carry__0_i_17_n_0),
-        .O(\r_data_reg[6]_C_0 [3]));
+        .I5(i__carry__0_i_20_n_0),
+        .O(\r_data_reg[6]_P_0 [3]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__1_i_10
@@ -38658,7 +39240,7 @@ module rgf
         .I3(i__carry__1_i_20_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__1_i_21_n_0),
-        .O(\r_data_reg[6]_C_1 [2]));
+        .O(\r_data_reg[6]_P_0 [6]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__1_i_11
@@ -38668,7 +39250,7 @@ module rgf
         .I3(i__carry__1_i_24_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__1_i_25_n_0),
-        .O(\r_data_reg[6]_C_1 [1]));
+        .O(\r_data_reg[6]_P_0 [5]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__1_i_12
@@ -38678,12 +39260,12 @@ module rgf
         .I3(i__carry__1_i_28_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__1_i_29_n_0),
-        .O(\r_data_reg[6]_C_1 [0]));
+        .O(\r_data_reg[6]_P_0 [4]));
   CARRY4 i__carry__1_i_13
-       (.CI(i__carry__0_i_13_n_0),
+       (.CI(i__carry__0_i_15_n_0),
         .CO({i__carry__1_i_13_n_0,i__carry__1_i_13_n_1,i__carry__1_i_13_n_2,i__carry__1_i_13_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_1 ),
+        .DI(\r_data_reg[6]_P_0 [7:4]),
         .O(data0[11:8]),
         .S(\r_reg_reg[1][8]_LDC_i_4 ));
   LUT6 #(
@@ -38846,42 +39428,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][8]_C_2 ),
         .O(i__carry__1_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__1_i_5
-       (.I0(\r_data_reg[6]_C_1 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[11]),
-        .I3(data0[11]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_0 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__1_i_6
-       (.I0(\r_data_reg[6]_C_1 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[10]),
-        .I3(data0[10]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_0 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__1_i_7
-       (.I0(\r_data_reg[6]_C_1 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[9]),
-        .I3(data0[9]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_0 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__1_i_8
-       (.I0(\r_data_reg[6]_C_1 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[8]),
-        .I3(data0[8]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_0 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__1_i_9
@@ -38891,7 +39437,7 @@ module rgf
         .I3(i__carry__1_i_16_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__1_i_17_n_0),
-        .O(\r_data_reg[6]_C_1 [3]));
+        .O(\r_data_reg[6]_P_0 [7]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__2_i_10
@@ -38901,7 +39447,7 @@ module rgf
         .I3(i__carry__2_i_20_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__2_i_21_n_0),
-        .O(\r_data_reg[6]_C_2 [2]));
+        .O(\r_data_reg[6]_P_0 [10]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__2_i_11
@@ -38911,7 +39457,7 @@ module rgf
         .I3(i__carry__2_i_24_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__2_i_25_n_0),
-        .O(\r_data_reg[6]_C_2 [1]));
+        .O(\r_data_reg[6]_P_0 [9]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__2_i_12
@@ -38921,12 +39467,12 @@ module rgf
         .I3(i__carry__2_i_28_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__2_i_29_n_0),
-        .O(\r_data_reg[6]_C_2 [0]));
+        .O(\r_data_reg[6]_P_0 [8]));
   CARRY4 i__carry__2_i_13
        (.CI(i__carry__1_i_13_n_0),
         .CO({i__carry__2_i_13_n_0,i__carry__2_i_13_n_1,i__carry__2_i_13_n_2,i__carry__2_i_13_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_2 ),
+        .DI(\r_data_reg[6]_P_0 [11:8]),
         .O(data0[15:12]),
         .S(\r_reg_reg[1][12]_LDC_i_5 ));
   LUT6 #(
@@ -39089,42 +39635,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][12]_C_2 ),
         .O(i__carry__2_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__2_i_5
-       (.I0(\r_data_reg[6]_C_2 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[15]),
-        .I3(data0[15]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_1 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__2_i_6
-       (.I0(\r_data_reg[6]_C_2 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[14]),
-        .I3(data0[14]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_1 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__2_i_7
-       (.I0(\r_data_reg[6]_C_2 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[13]),
-        .I3(data0[13]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_1 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__2_i_8
-       (.I0(\r_data_reg[6]_C_2 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[12]),
-        .I3(data0[12]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_1 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__2_i_9
@@ -39134,7 +39644,7 @@ module rgf
         .I3(i__carry__2_i_16_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__2_i_17_n_0),
-        .O(\r_data_reg[6]_C_2 [3]));
+        .O(\r_data_reg[6]_P_0 [11]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__3_i_10
@@ -39144,7 +39654,7 @@ module rgf
         .I3(i__carry__3_i_20_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__3_i_21_n_0),
-        .O(\r_data_reg[6]_C_3 [2]));
+        .O(\r_data_reg[6]_P_0 [14]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__3_i_11
@@ -39154,7 +39664,7 @@ module rgf
         .I3(i__carry__3_i_24_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__3_i_25_n_0),
-        .O(\r_data_reg[6]_C_3 [1]));
+        .O(\r_data_reg[6]_P_0 [13]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__3_i_12
@@ -39164,12 +39674,12 @@ module rgf
         .I3(i__carry__3_i_28_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__3_i_29_n_0),
-        .O(\r_data_reg[6]_C_3 [0]));
+        .O(\r_data_reg[6]_P_0 [12]));
   CARRY4 i__carry__3_i_13
        (.CI(i__carry__2_i_13_n_0),
         .CO({i__carry__3_i_13_n_0,i__carry__3_i_13_n_1,i__carry__3_i_13_n_2,i__carry__3_i_13_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_3 ),
+        .DI(\r_data_reg[6]_P_0 [15:12]),
         .O(data0[19:16]),
         .S(\r_reg_reg[1][16]_LDC_i_4 ));
   LUT6 #(
@@ -39332,42 +39842,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][16]_C_2 ),
         .O(i__carry__3_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__3_i_5
-       (.I0(\r_data_reg[6]_C_3 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[19]),
-        .I3(data0[19]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_2 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__3_i_6
-       (.I0(\r_data_reg[6]_C_3 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[18]),
-        .I3(data0[18]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_2 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__3_i_7
-       (.I0(\r_data_reg[6]_C_3 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[17]),
-        .I3(data0[17]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_2 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__3_i_8
-       (.I0(\r_data_reg[6]_C_3 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[16]),
-        .I3(data0[16]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_2 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__3_i_9
@@ -39377,7 +39851,7 @@ module rgf
         .I3(i__carry__3_i_16_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__3_i_17_n_0),
-        .O(\r_data_reg[6]_C_3 [3]));
+        .O(\r_data_reg[6]_P_0 [15]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__4_i_10
@@ -39387,7 +39861,7 @@ module rgf
         .I3(i__carry__4_i_20_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__4_i_21_n_0),
-        .O(\r_data_reg[6]_C_4 [2]));
+        .O(\r_data_reg[6]_P_0 [18]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__4_i_11
@@ -39397,7 +39871,7 @@ module rgf
         .I3(i__carry__4_i_24_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__4_i_25_n_0),
-        .O(\r_data_reg[6]_C_4 [1]));
+        .O(\r_data_reg[6]_P_0 [17]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__4_i_12
@@ -39407,12 +39881,12 @@ module rgf
         .I3(i__carry__4_i_28_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__4_i_29_n_0),
-        .O(\r_data_reg[6]_C_4 [0]));
+        .O(\r_data_reg[6]_P_0 [16]));
   CARRY4 i__carry__4_i_13
        (.CI(i__carry__3_i_13_n_0),
         .CO({i__carry__4_i_13_n_0,i__carry__4_i_13_n_1,i__carry__4_i_13_n_2,i__carry__4_i_13_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_4 ),
+        .DI(\r_data_reg[6]_P_0 [19:16]),
         .O(data0[23:20]),
         .S(\r_reg_reg[1][20]_LDC_i_4 ));
   LUT6 #(
@@ -39575,42 +40049,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][20]_C_2 ),
         .O(i__carry__4_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__4_i_5
-       (.I0(\r_data_reg[6]_C_4 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[23]),
-        .I3(data0[23]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_3 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__4_i_6
-       (.I0(\r_data_reg[6]_C_4 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[22]),
-        .I3(data0[22]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_3 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__4_i_7
-       (.I0(\r_data_reg[6]_C_4 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[21]),
-        .I3(data0[21]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_3 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__4_i_8
-       (.I0(\r_data_reg[6]_C_4 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[20]),
-        .I3(data0[20]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_3 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__4_i_9
@@ -39620,7 +40058,7 @@ module rgf
         .I3(i__carry__4_i_16_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__4_i_17_n_0),
-        .O(\r_data_reg[6]_C_4 [3]));
+        .O(\r_data_reg[6]_P_0 [19]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__5_i_10
@@ -39630,7 +40068,7 @@ module rgf
         .I3(i__carry__5_i_20_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__5_i_21_n_0),
-        .O(\r_data_reg[6]_C_5 [2]));
+        .O(\r_data_reg[6]_P_0 [22]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__5_i_11
@@ -39640,7 +40078,7 @@ module rgf
         .I3(i__carry__5_i_24_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__5_i_25_n_0),
-        .O(\r_data_reg[6]_C_5 [1]));
+        .O(\r_data_reg[6]_P_0 [21]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__5_i_12
@@ -39650,12 +40088,12 @@ module rgf
         .I3(i__carry__5_i_28_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__5_i_29_n_0),
-        .O(\r_data_reg[6]_C_5 [0]));
+        .O(\r_data_reg[6]_P_0 [20]));
   CARRY4 i__carry__5_i_13
        (.CI(i__carry__4_i_13_n_0),
         .CO({i__carry__5_i_13_n_0,i__carry__5_i_13_n_1,i__carry__5_i_13_n_2,i__carry__5_i_13_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_5 ),
+        .DI(\r_data_reg[6]_P_0 [23:20]),
         .O(data0[27:24]),
         .S(\r_reg_reg[1][24]_LDC_i_5 ));
   LUT6 #(
@@ -39818,42 +40256,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][24]_C_2 ),
         .O(i__carry__5_i_29_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__5_i_5
-       (.I0(\r_data_reg[6]_C_5 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[27]),
-        .I3(data0[27]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_4 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__5_i_6
-       (.I0(\r_data_reg[6]_C_5 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[26]),
-        .I3(data0[26]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_4 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__5_i_7
-       (.I0(\r_data_reg[6]_C_5 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[25]),
-        .I3(data0[25]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_4 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__5_i_8
-       (.I0(\r_data_reg[6]_C_5 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[24]),
-        .I3(data0[24]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_4 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__5_i_9
@@ -39863,7 +40265,7 @@ module rgf
         .I3(i__carry__5_i_16_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__5_i_17_n_0),
-        .O(\r_data_reg[6]_C_5 [3]));
+        .O(\r_data_reg[6]_P_0 [23]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__6_i_10
@@ -39873,7 +40275,7 @@ module rgf
         .I3(i__carry__6_i_23_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__6_i_24_n_0),
-        .O(\r_data_reg[6]_C_6 [0]));
+        .O(\r_data_reg[6]_P_0 [24]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__6_i_11
@@ -39883,12 +40285,12 @@ module rgf
         .I3(i__carry__6_i_27_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__6_i_28_n_0),
-        .O(\r_data_reg[6]_C_6 [3]));
+        .O(\r_data_reg[6]_P_0 [27]));
   CARRY4 i__carry__6_i_12
        (.CI(i__carry__5_i_13_n_0),
         .CO({i__carry__6_i_12_n_0,i__carry__6_i_12_n_1,i__carry__6_i_12_n_2,i__carry__6_i_12_n_3}),
         .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C_6 ),
+        .DI(\r_data_reg[6]_P_0 [27:24]),
         .O(data0[31:28]),
         .S(\r_reg_reg[1][28]_LDC_i_4 ));
   LUT6 #(
@@ -40051,42 +40453,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][31]_C_2 ),
         .O(i__carry__6_i_28_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__6_i_4
-       (.I0(\r_data_reg[6]_C_6 [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[31]),
-        .I3(data0[31]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_5 [3]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__6_i_5
-       (.I0(\r_data_reg[6]_C_6 [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[30]),
-        .I3(data0[30]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_5 [2]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__6_i_6
-       (.I0(\r_data_reg[6]_C_6 [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[29]),
-        .I3(data0[29]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_5 [1]));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry__6_i_7
-       (.I0(\r_data_reg[6]_C_6 [0]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[28]),
-        .I3(data0[28]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(\r_alu_opcode_reg[1]_5 [0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__6_i_8
@@ -40096,7 +40462,7 @@ module rgf
         .I3(i__carry__6_i_15_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__6_i_16_n_0),
-        .O(\r_data_reg[6]_C_6 [2]));
+        .O(\r_data_reg[6]_P_0 [26]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry__6_i_9
@@ -40106,23 +40472,7 @@ module rgf
         .I3(i__carry__6_i_19_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry__6_i_20_n_0),
-        .O(\r_data_reg[6]_C_6 [1]));
-  LUT5 #(
-    .INIT(32'h0F33AAAA)) 
-    i__carry_i_1
-       (.I0(data0[0]),
-        .I1(Q[0]),
-        .I2(\_inferred__1/i__carry ),
-        .I3(\_inferred__1/i__carry_0 ),
-        .I4(i_alu_opcode_datapath),
-        .O(\o_data1_reg[0]_0 ));
-  CARRY4 i__carry_i_10
-       (.CI(1'b0),
-        .CO({i__carry_i_10_n_0,i__carry_i_10_n_1,i__carry_i_10_n_2,i__carry_i_10_n_3}),
-        .CYINIT(1'b0),
-        .DI(\r_data_reg[6]_C ),
-        .O(data0[3:0]),
-        .S(\r_reg_reg[1][0]_LDC_i_5 ));
+        .O(\r_data_reg[6]_P_0 [25]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry_i_11
@@ -40132,7 +40482,7 @@ module rgf
         .I3(i__carry_i_22_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry_i_24_n_0),
-        .O(\r_data_reg[6]_C [3]));
+        .O(\r_data_reg[6]_P [3]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry_i_12
@@ -40142,7 +40492,7 @@ module rgf
         .I3(i__carry_i_27_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry_i_28_n_0),
-        .O(\r_data_reg[6]_C [2]));
+        .O(\r_data_reg[6]_P [2]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry_i_13
@@ -40152,17 +40502,24 @@ module rgf
         .I3(i__carry_i_31_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry_i_32_n_0),
-        .O(\r_data_reg[6]_C [1]));
+        .O(\r_data_reg[6]_P [1]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    i__carry_i_14
+    i__carry_i_17
        (.I0(i__carry_i_33_n_0),
         .I1(i__carry_i_34_n_0),
         .I2(w_addr2_mux[3]),
         .I3(i__carry_i_35_n_0),
         .I4(w_addr2_mux[2]),
         .I5(i__carry_i_36_n_0),
-        .O(\r_data_reg[6]_C [0]));
+        .O(\r_data_reg[6]_P [0]));
+  CARRY4 i__carry_i_18
+       (.CI(1'b0),
+        .CO({i__carry_i_18_n_0,i__carry_i_18_n_1,i__carry_i_18_n_2,i__carry_i_18_n_3}),
+        .CYINIT(1'b0),
+        .DI(\r_data_reg[6]_P ),
+        .O(data0[3:0]),
+        .S(\r_reg_reg[1][0]_LDC_i_5 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     i__carry_i_19
@@ -40323,35 +40680,6 @@ module rgf
         .I4(w_addr2_mux[0]),
         .I5(\r_reg_reg[0][0]_C_2 ),
         .O(i__carry_i_36_n_0));
-  LUT5 #(
-    .INIT(32'h7744B784)) 
-    i__carry_i_6
-       (.I0(\r_data_reg[6]_C [3]),
-        .I1(i_alu_opcode_datapath),
-        .I2(Q[3]),
-        .I3(data0[3]),
-        .I4(\_inferred__1/i__carry_0 ),
-        .O(S[2]));
-  LUT6 #(
-    .INIT(64'hBB7BB77788488444)) 
-    i__carry_i_7
-       (.I0(\r_data_reg[6]_C [2]),
-        .I1(i_alu_opcode_datapath),
-        .I2(\_inferred__1/i__carry_0 ),
-        .I3(o_instructions_datapath),
-        .I4(Q[2]),
-        .I5(data0[2]),
-        .O(S[1]));
-  LUT6 #(
-    .INIT(64'hBB7BB77788488444)) 
-    i__carry_i_8
-       (.I0(\r_data_reg[6]_C [1]),
-        .I1(i_alu_opcode_datapath),
-        .I2(\_inferred__1/i__carry_0 ),
-        .I3(\_inferred__1/i__carry_1 ),
-        .I4(Q[1]),
-        .I5(data0[1]),
-        .O(S[0]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \o_data1[0]_i_4 
@@ -40449,7 +40777,7 @@ module rgf
         .I1(\r_reg_reg[6][11]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][11]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[4][11]_C_2 ),
         .O(\o_data1[11]_i_5_n_0 ));
   LUT6 #(
@@ -40459,7 +40787,7 @@ module rgf
         .I1(\r_reg_reg[10][11]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][11]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[8][11]_C_2 ),
         .O(\o_data1[11]_i_6_n_0 ));
   LUT6 #(
@@ -40469,7 +40797,7 @@ module rgf
         .I1(\r_reg_reg[14][11]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][11]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[12][11]_C_2 ),
         .O(\o_data1[11]_i_7_n_0 ));
   LUT6 #(
@@ -40479,7 +40807,7 @@ module rgf
         .I1(\r_reg_reg[2][12]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][12]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[0][12]_C_2 ),
         .O(\o_data1[12]_i_4_n_0 ));
   LUT6 #(
@@ -40489,7 +40817,7 @@ module rgf
         .I1(\r_reg_reg[6][12]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][12]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[4][12]_C_2 ),
         .O(\o_data1[12]_i_5_n_0 ));
   LUT6 #(
@@ -40499,7 +40827,7 @@ module rgf
         .I1(\r_reg_reg[10][12]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][12]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[8][12]_C_2 ),
         .O(\o_data1[12]_i_6_n_0 ));
   LUT6 #(
@@ -40509,7 +40837,7 @@ module rgf
         .I1(\r_reg_reg[14][12]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][12]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[0]_i_2_1 ),
         .I5(\r_reg_reg[12][12]_C_2 ),
         .O(\o_data1[12]_i_7_n_0 ));
   LUT6 #(
@@ -40519,7 +40847,7 @@ module rgf
         .I1(\r_reg_reg[2][13]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][13]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][13]_C_2 ),
         .O(\o_data1[13]_i_4_n_0 ));
   LUT6 #(
@@ -40529,7 +40857,7 @@ module rgf
         .I1(\r_reg_reg[6][13]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][13]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][13]_C_2 ),
         .O(\o_data1[13]_i_5_n_0 ));
   LUT6 #(
@@ -40539,7 +40867,7 @@ module rgf
         .I1(\r_reg_reg[10][13]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][13]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][13]_C_2 ),
         .O(\o_data1[13]_i_6_n_0 ));
   LUT6 #(
@@ -40549,7 +40877,7 @@ module rgf
         .I1(\r_reg_reg[14][13]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][13]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][13]_C_2 ),
         .O(\o_data1[13]_i_7_n_0 ));
   LUT6 #(
@@ -40559,7 +40887,7 @@ module rgf
         .I1(\r_reg_reg[2][14]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][14]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][14]_C_2 ),
         .O(\o_data1[14]_i_4_n_0 ));
   LUT6 #(
@@ -40569,7 +40897,7 @@ module rgf
         .I1(\r_reg_reg[6][14]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][14]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][14]_C_2 ),
         .O(\o_data1[14]_i_5_n_0 ));
   LUT6 #(
@@ -40579,7 +40907,7 @@ module rgf
         .I1(\r_reg_reg[10][14]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][14]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][14]_C_2 ),
         .O(\o_data1[14]_i_6_n_0 ));
   LUT6 #(
@@ -40589,7 +40917,7 @@ module rgf
         .I1(\r_reg_reg[14][14]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][14]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][14]_C_2 ),
         .O(\o_data1[14]_i_7_n_0 ));
   LUT6 #(
@@ -40599,7 +40927,7 @@ module rgf
         .I1(\r_reg_reg[2][15]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][15]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][15]_C_2 ),
         .O(\o_data1[15]_i_4_n_0 ));
   LUT6 #(
@@ -40609,7 +40937,7 @@ module rgf
         .I1(\r_reg_reg[6][15]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][15]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][15]_C_2 ),
         .O(\o_data1[15]_i_5_n_0 ));
   LUT6 #(
@@ -40619,7 +40947,7 @@ module rgf
         .I1(\r_reg_reg[10][15]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][15]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][15]_C_2 ),
         .O(\o_data1[15]_i_6_n_0 ));
   LUT6 #(
@@ -40629,7 +40957,7 @@ module rgf
         .I1(\r_reg_reg[14][15]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][15]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][15]_C_2 ),
         .O(\o_data1[15]_i_7_n_0 ));
   LUT6 #(
@@ -40639,7 +40967,7 @@ module rgf
         .I1(\r_reg_reg[2][16]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][16]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][16]_C_2 ),
         .O(\o_data1[16]_i_4_n_0 ));
   LUT6 #(
@@ -40649,7 +40977,7 @@ module rgf
         .I1(\r_reg_reg[6][16]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][16]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][16]_C_2 ),
         .O(\o_data1[16]_i_5_n_0 ));
   LUT6 #(
@@ -40659,7 +40987,7 @@ module rgf
         .I1(\r_reg_reg[10][16]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][16]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][16]_C_2 ),
         .O(\o_data1[16]_i_6_n_0 ));
   LUT6 #(
@@ -40669,7 +40997,7 @@ module rgf
         .I1(\r_reg_reg[14][16]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][16]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][16]_C_2 ),
         .O(\o_data1[16]_i_7_n_0 ));
   LUT6 #(
@@ -40679,7 +41007,7 @@ module rgf
         .I1(\r_reg_reg[2][17]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][17]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][17]_C_2 ),
         .O(\o_data1[17]_i_4_n_0 ));
   LUT6 #(
@@ -40689,7 +41017,7 @@ module rgf
         .I1(\r_reg_reg[6][17]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][17]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][17]_C_2 ),
         .O(\o_data1[17]_i_5_n_0 ));
   LUT6 #(
@@ -40699,7 +41027,7 @@ module rgf
         .I1(\r_reg_reg[10][17]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][17]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][17]_C_2 ),
         .O(\o_data1[17]_i_6_n_0 ));
   LUT6 #(
@@ -40709,7 +41037,7 @@ module rgf
         .I1(\r_reg_reg[14][17]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][17]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][17]_C_2 ),
         .O(\o_data1[17]_i_7_n_0 ));
   LUT6 #(
@@ -40719,7 +41047,7 @@ module rgf
         .I1(\r_reg_reg[2][18]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][18]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][18]_C_2 ),
         .O(\o_data1[18]_i_4_n_0 ));
   LUT6 #(
@@ -40729,7 +41057,7 @@ module rgf
         .I1(\r_reg_reg[6][18]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][18]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][18]_C_2 ),
         .O(\o_data1[18]_i_5_n_0 ));
   LUT6 #(
@@ -40739,7 +41067,7 @@ module rgf
         .I1(\r_reg_reg[10][18]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][18]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][18]_C_2 ),
         .O(\o_data1[18]_i_6_n_0 ));
   LUT6 #(
@@ -40749,7 +41077,7 @@ module rgf
         .I1(\r_reg_reg[14][18]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][18]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][18]_C_2 ),
         .O(\o_data1[18]_i_7_n_0 ));
   LUT6 #(
@@ -40759,7 +41087,7 @@ module rgf
         .I1(\r_reg_reg[2][19]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][19]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][19]_C_2 ),
         .O(\o_data1[19]_i_4_n_0 ));
   LUT6 #(
@@ -40769,7 +41097,7 @@ module rgf
         .I1(\r_reg_reg[6][19]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][19]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][19]_C_2 ),
         .O(\o_data1[19]_i_5_n_0 ));
   LUT6 #(
@@ -40779,7 +41107,7 @@ module rgf
         .I1(\r_reg_reg[10][19]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][19]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][19]_C_2 ),
         .O(\o_data1[19]_i_6_n_0 ));
   LUT6 #(
@@ -40789,7 +41117,7 @@ module rgf
         .I1(\r_reg_reg[14][19]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][19]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][19]_C_2 ),
         .O(\o_data1[19]_i_7_n_0 ));
   LUT6 #(
@@ -40839,7 +41167,7 @@ module rgf
         .I1(\r_reg_reg[2][20]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][20]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][20]_C_2 ),
         .O(\o_data1[20]_i_4_n_0 ));
   LUT6 #(
@@ -40849,7 +41177,7 @@ module rgf
         .I1(\r_reg_reg[6][20]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][20]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][20]_C_2 ),
         .O(\o_data1[20]_i_5_n_0 ));
   LUT6 #(
@@ -40859,7 +41187,7 @@ module rgf
         .I1(\r_reg_reg[10][20]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][20]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][20]_C_2 ),
         .O(\o_data1[20]_i_6_n_0 ));
   LUT6 #(
@@ -40869,7 +41197,7 @@ module rgf
         .I1(\r_reg_reg[14][20]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][20]_C_2 ),
-        .I4(\o_data1_reg[11]_i_2_0 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][20]_C_2 ),
         .O(\o_data1[20]_i_7_n_0 ));
   LUT6 #(
@@ -41374,7 +41702,7 @@ module rgf
         .I1(\r_reg_reg[6][3]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][3]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][3]_C_2 ),
         .O(\o_data1[3]_i_5_n_0 ));
   LUT6 #(
@@ -41384,7 +41712,7 @@ module rgf
         .I1(\r_reg_reg[10][3]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][3]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][3]_C_2 ),
         .O(\o_data1[3]_i_6_n_0 ));
   LUT6 #(
@@ -41394,7 +41722,7 @@ module rgf
         .I1(\r_reg_reg[14][3]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][3]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][3]_C_2 ),
         .O(\o_data1[3]_i_7_n_0 ));
   LUT6 #(
@@ -41404,7 +41732,7 @@ module rgf
         .I1(\r_reg_reg[2][4]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[1][4]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[0][4]_C_2 ),
         .O(\o_data1[4]_i_4_n_0 ));
   LUT6 #(
@@ -41414,7 +41742,7 @@ module rgf
         .I1(\r_reg_reg[6][4]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[5][4]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[4][4]_C_2 ),
         .O(\o_data1[4]_i_5_n_0 ));
   LUT6 #(
@@ -41424,7 +41752,7 @@ module rgf
         .I1(\r_reg_reg[10][4]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[9][4]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[8][4]_C_2 ),
         .O(\o_data1[4]_i_6_n_0 ));
   LUT6 #(
@@ -41434,7 +41762,7 @@ module rgf
         .I1(\r_reg_reg[14][4]_C_2 ),
         .I2(\o_data1_reg[0]_i_2_0 ),
         .I3(\r_reg_reg[13][4]_C_2 ),
-        .I4(\o_data1_reg[0]_i_2_1 ),
+        .I4(\o_data1_reg[3]_i_2_0 ),
         .I5(\r_reg_reg[12][4]_C_2 ),
         .O(\o_data1[4]_i_7_n_0 ));
   LUT6 #(
@@ -41640,8 +41968,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[0] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[0]),
         .Q(Q[0]));
@@ -41663,8 +41991,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[10] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[10]),
         .Q(Q[10]));
@@ -41686,8 +42014,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[11] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[11]),
         .Q(Q[11]));
@@ -41709,8 +42037,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[12] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[12]),
         .Q(Q[12]));
@@ -41732,8 +42060,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[13] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[13]),
         .Q(Q[13]));
@@ -41755,8 +42083,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[14] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[14]),
         .Q(Q[14]));
@@ -41778,8 +42106,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[15] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[15]),
         .Q(Q[15]));
@@ -41801,8 +42129,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[16] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[16]),
         .Q(Q[16]));
@@ -41824,8 +42152,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[17] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[17]),
         .Q(Q[17]));
@@ -41847,8 +42175,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[18] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[18]),
         .Q(Q[18]));
@@ -41870,8 +42198,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[19] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[19]),
         .Q(Q[19]));
@@ -41893,8 +42221,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[1] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[1]),
         .Q(Q[1]));
@@ -41916,8 +42244,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[20] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[20]),
         .Q(Q[20]));
@@ -41939,8 +42267,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[21] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[21]),
         .Q(Q[21]));
@@ -41962,8 +42290,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[22] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[22]),
         .Q(Q[22]));
@@ -41985,8 +42313,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[23] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[23]),
         .Q(Q[23]));
@@ -42008,8 +42336,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[24] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[24]),
         .Q(Q[24]));
@@ -42031,8 +42359,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[25] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[25]),
         .Q(Q[25]));
@@ -42054,8 +42382,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[26] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[26]),
         .Q(Q[26]));
@@ -42077,8 +42405,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[27] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[27]),
         .Q(Q[27]));
@@ -42100,8 +42428,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[28] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[28]),
         .Q(Q[28]));
@@ -42123,8 +42451,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[29] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[29]),
         .Q(Q[29]));
@@ -42146,8 +42474,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[2] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[2]),
         .Q(Q[2]));
@@ -42169,8 +42497,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[30] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[30]),
         .Q(Q[30]));
@@ -42192,8 +42520,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[31] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[31]),
         .Q(Q[31]));
@@ -42215,8 +42543,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[3] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[3]),
         .Q(Q[3]));
@@ -42238,8 +42566,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[4] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[4]),
         .Q(Q[4]));
@@ -42261,8 +42589,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[5] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[5]),
         .Q(Q[5]));
@@ -42284,8 +42612,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[6] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[6]),
         .Q(Q[6]));
@@ -42307,8 +42635,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[7] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[7]),
         .Q(Q[7]));
@@ -42330,8 +42658,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[8] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[8]),
         .Q(Q[8]));
@@ -42353,8 +42681,8 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \o_data1_reg[9] 
-       (.C(clk_IBUF_BUFG),
-        .CE(E),
+       (.C(CLK),
+        .CE(1'b1),
         .CLR(rst_n),
         .D(r_reg[9]),
         .Q(Q[9]));
@@ -42373,122 +42701,262 @@ module rgf
         .I1(\o_data1[9]_i_7_n_0 ),
         .O(\o_data1_reg[9]_i_3_n_0 ),
         .S(\o_data1_reg[31]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  LUT5 #(
+    .INIT(32'hE2000000)) 
     \r_data_reg[0]_LDC_i_1 
        (.I0(\r_data_reg[0]_LDC_i_3_n_0 ),
-        .I1(rst_n_IBUF),
-        .I2(r_we_ir),
+        .I1(sel[3]),
+        .I2(\r_data_reg[0]_LDC_i_4_n_0 ),
+        .I3(rst_n_IBUF),
+        .I4(r_we_ir),
         .O(r_we_ir_reg_1));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
-  LUT3 #(
-    .INIT(8'h4F)) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  LUT5 #(
+    .INIT(32'h4700FFFF)) 
     \r_data_reg[0]_LDC_i_2 
-       (.I0(\r_data_reg[0]_LDC_i_3_n_0 ),
-        .I1(r_we_ir),
-        .I2(rst_n_IBUF),
+       (.I0(\r_data_reg[0]_LDC_i_4_n_0 ),
+        .I1(sel[3]),
+        .I2(\r_data_reg[0]_LDC_i_3_n_0 ),
+        .I3(r_we_ir),
+        .I4(rst_n_IBUF),
         .O(r_we_ir_reg_2));
   LUT6 #(
-    .INIT(64'h20200000C17D0000)) 
+    .INIT(64'h00000000011D0000)) 
     \r_data_reg[0]_LDC_i_3 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[3]),
-        .I3(Q[0]),
-        .I4(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I5(Q[5]),
+       (.I0(sel[1]),
+        .I1(sel[2]),
+        .I2(sel[4]),
+        .I3(sel[0]),
+        .I4(\r_data_reg[3]_C ),
+        .I5(sel[5]),
         .O(\r_data_reg[0]_LDC_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  LUT5 #(
+    .INIT(32'h18006F00)) 
+    \r_data_reg[0]_LDC_i_4 
+       (.I0(sel[1]),
+        .I1(sel[0]),
+        .I2(sel[2]),
+        .I3(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I4(sel[5]),
+        .O(\r_data_reg[0]_LDC_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000220822A2)) 
     \r_data_reg[12]_LDC_i_1 
-       (.I0(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I1(rst_n_IBUF),
-        .I2(r_we_ir),
-        .O(r_we_ir_reg_9));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+       (.I0(\r_data_reg[15]_LDC_i_6_n_0 ),
+        .I1(sel[2]),
+        .I2(sel[0]),
+        .I3(sel[1]),
+        .I4(sel[3]),
+        .I5(\r_data_reg[15]_P ),
+        .O(r_re_rom_reg_0));
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \r_data_reg[12]_LDC_i_2 
-       (.I0(\r_data_reg[12]_LDC_i_3_n_0 ),
+       (.I0(i_data0),
         .I1(r_we_ir),
         .I2(rst_n_IBUF),
-        .O(r_we_ir_reg_10));
-  LUT2 #(
-    .INIT(4'h2)) 
+        .O(r_we_ir_reg_13));
+  LUT6 #(
+    .INIT(64'h0000000012DD0000)) 
     \r_data_reg[12]_LDC_i_3 
-       (.I0(\r_data_reg[13]_LDC_i_3_n_0 ),
-        .I1(Q[2]),
-        .O(\r_data_reg[12]_LDC_i_3_n_0 ));
+       (.I0(sel[3]),
+        .I1(sel[1]),
+        .I2(sel[0]),
+        .I3(sel[2]),
+        .I4(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I5(sel[5]),
+        .O(i_data0));
   LUT6 #(
-    .INIT(64'h0040000000000000)) 
+    .INIT(64'h0000000040401000)) 
     \r_data_reg[13]_LDC_i_1 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(\r_data_reg[13]_LDC_i_3_n_0 ),
-        .I3(Q[0]),
-        .I4(rst_n_IBUF),
-        .I5(r_we_ir),
-        .O(\o_data1_reg[1]_4 ));
+       (.I0(sel[1]),
+        .I1(sel[0]),
+        .I2(\r_data_reg[15]_LDC_i_6_n_0 ),
+        .I3(sel[2]),
+        .I4(sel[3]),
+        .I5(\r_data_reg[15]_P ),
+        .O(\o_data1_reg[1]_0 ));
   LUT6 #(
-    .INIT(64'hFFBF0000FFFFFFFF)) 
+    .INIT(64'hFF470000FFFFFFFF)) 
     \r_data_reg[13]_LDC_i_2 
-       (.I0(Q[0]),
-        .I1(\r_data_reg[13]_LDC_i_3_n_0 ),
-        .I2(Q[2]),
-        .I3(Q[1]),
+       (.I0(\r_data_reg[13]_LDC_i_3_n_0 ),
+        .I1(sel[3]),
+        .I2(\r_data_reg[13]_LDC_i_4_n_0 ),
+        .I3(sel[1]),
         .I4(r_we_ir),
         .I5(rst_n_IBUF),
-        .O(\o_data1_reg[0]_5 ));
-  LUT3 #(
-    .INIT(8'h04)) 
+        .O(r_we_ir_reg_16));
+  LUT6 #(
+    .INIT(64'h5050300000003000)) 
     \r_data_reg[13]_LDC_i_3 
-       (.I0(Q[3]),
-        .I1(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I2(Q[5]),
+       (.I0(Q[5]),
+        .I1(\r_data_reg[1]_LDC_i_3_0 [5]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(\r_data_reg[1]_LDC_i_3_0 [0]),
+        .I4(i_re_rom_datapath),
+        .I5(Q[0]),
         .O(\r_data_reg[13]_LDC_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT6 #(
+    .INIT(64'h0004440400000000)) 
     \r_data_reg[13]_LDC_i_4 
-       (.I0(\r_data_reg[13]_LDC_i_5_n_0 ),
-        .I1(Q[9]),
+       (.I0(sel[0]),
+        .I1(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [5]),
+        .I3(i_re_rom_datapath),
+        .I4(Q[5]),
+        .I5(sel[2]),
         .O(\r_data_reg[13]_LDC_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    \r_data_reg[13]_LDC_i_5 
-       (.I0(Q[7]),
-        .I1(Q[4]),
-        .I2(Q[10]),
-        .I3(Q[11]),
-        .I4(Q[6]),
-        .I5(Q[8]),
-        .O(\r_data_reg[13]_LDC_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+    .INIT(64'h0000000000104000)) 
+    \r_data_reg[14]_LDC_i_1 
+       (.I0(sel[1]),
+        .I1(sel[0]),
+        .I2(\r_data_reg[15]_LDC_i_6_n_0 ),
+        .I3(sel[2]),
+        .I4(sel[3]),
+        .I5(\r_data_reg[15]_P ),
+        .O(\o_data1_reg[1]_1 ));
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  LUT3 #(
+    .INIT(8'h4F)) 
+    \r_data_reg[14]_LDC_i_2 
+       (.I0(\r_data_reg[14]_LDC_i_3_n_0 ),
+        .I1(r_we_ir),
+        .I2(rst_n_IBUF),
+        .O(r_we_ir_reg_17));
+  LUT6 #(
+    .INIT(64'h0000000004000200)) 
+    \r_data_reg[14]_LDC_i_3 
+       (.I0(sel[3]),
+        .I1(sel[2]),
+        .I2(sel[5]),
+        .I3(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I4(sel[0]),
+        .I5(sel[1]),
+        .O(\r_data_reg[14]_LDC_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000014000000)) 
+    \r_data_reg[15]_LDC_i_1 
+       (.I0(sel[3]),
+        .I1(sel[1]),
+        .I2(sel[0]),
+        .I3(\r_data_reg[15]_LDC_i_6_n_0 ),
+        .I4(sel[2]),
+        .I5(\r_data_reg[15]_P ),
+        .O(\o_data1_reg[3]_1 ));
+  LUT6 #(
+    .INIT(64'h0000000000044404)) 
+    \r_data_reg[15]_LDC_i_10 
+       (.I0(sel[6]),
+        .I1(\r_data_reg[1]_LDC_i_3_1 ),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [7]),
+        .I3(i_re_rom_datapath),
+        .I4(Q[7]),
+        .I5(sel[4]),
+        .O(\r_data_reg[15]_LDC_i_10_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_11 
+       (.I0(Q[5]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [5]),
+        .O(sel[5]));
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_12 
+       (.I0(Q[6]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [6]),
+        .O(sel[6]));
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  LUT3 #(
+    .INIT(8'h4F)) 
+    \r_data_reg[15]_LDC_i_2 
+       (.I0(\r_data_reg[15]_LDC_i_9_n_0 ),
+        .I1(r_we_ir),
+        .I2(rst_n_IBUF),
+        .O(r_we_ir_reg_18));
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_3 
+       (.I0(Q[3]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [3]),
+        .O(sel[3]));
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_4 
+       (.I0(Q[1]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [1]),
+        .O(sel[1]));
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_5 
+       (.I0(Q[0]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [0]),
+        .O(sel[0]));
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  LUT4 #(
+    .INIT(16'h02A2)) 
+    \r_data_reg[15]_LDC_i_6 
+       (.I0(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I1(\r_data_reg[1]_LDC_i_3_0 [5]),
+        .I2(i_re_rom_datapath),
+        .I3(Q[5]),
+        .O(\r_data_reg[15]_LDC_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[15]_LDC_i_7 
+       (.I0(Q[2]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [2]),
+        .O(sel[2]));
+  LUT6 #(
+    .INIT(64'h0000000000202000)) 
+    \r_data_reg[15]_LDC_i_9 
+       (.I0(sel[2]),
+        .I1(sel[5]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(sel[0]),
+        .I4(sel[1]),
+        .I5(sel[3]),
+        .O(\r_data_reg[15]_LDC_i_9_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \r_data_reg[1]_LDC_i_1 
        (.I0(\r_data_reg[1]_LDC_i_3_n_0 ),
         .I1(rst_n_IBUF),
         .I2(r_we_ir),
-        .O(r_we_ir_reg));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+        .O(r_we_ir_reg_4));
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \r_data_reg[1]_LDC_i_2 
        (.I0(\r_data_reg[1]_LDC_i_3_n_0 ),
         .I1(r_we_ir),
         .I2(rst_n_IBUF),
-        .O(r_we_ir_reg_0));
+        .O(r_we_ir_reg_5));
   LUT6 #(
-    .INIT(64'h44000C0000000700)) 
+    .INIT(64'h001A0000083D0000)) 
     \r_data_reg[1]_LDC_i_3 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[5]),
-        .I3(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I4(Q[3]),
-        .I5(Q[0]),
+       (.I0(sel[3]),
+        .I1(sel[2]),
+        .I2(sel[1]),
+        .I3(sel[5]),
+        .I4(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I5(sel[0]),
         .O(\r_data_reg[1]_LDC_i_3_n_0 ));
   CARRY4 \r_data_reg[1]_LDC_i_3__0 
        (.CI(i__carry__6_i_12_n_0),
@@ -42497,187 +42965,233 @@ module rgf
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(\NLW_r_data_reg[1]_LDC_i_3__0_O_UNCONNECTED [3:0]),
         .S({1'b0,1'b0,1'b0,1'b1}));
-  LUT6 #(
-    .INIT(64'hF404000000000000)) 
-    \r_data_reg[2]_LDC_i_1 
-       (.I0(Q[0]),
-        .I1(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I2(Q[1]),
-        .I3(\r_data_reg[2]_LDC_i_3_n_0 ),
-        .I4(rst_n_IBUF),
-        .I5(r_we_ir),
-        .O(\o_data1_reg[0]_1 ));
-  LUT6 #(
-    .INIT(64'h77470000FFFFFFFF)) 
-    \r_data_reg[2]_LDC_i_2 
-       (.I0(\r_data_reg[2]_LDC_i_3_n_0 ),
-        .I1(Q[1]),
-        .I2(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I3(Q[0]),
-        .I4(r_we_ir),
-        .I5(rst_n_IBUF),
-        .O(\o_data1_reg[1]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
-  LUT5 #(
-    .INIT(32'h00008008)) 
-    \r_data_reg[2]_LDC_i_3 
-       (.I0(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[5]),
-        .I4(Q[2]),
-        .O(\r_data_reg[2]_LDC_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    \r_data_reg[3]_LDC_i_1 
-       (.I0(\r_data_reg[3]_LDC_i_3_n_0 ),
+    \r_data_reg[2]_LDC_i_1 
+       (.I0(\r_data_reg[2]_LDC_i_3_n_0 ),
         .I1(rst_n_IBUF),
         .I2(r_we_ir),
-        .O(r_we_ir_reg_7));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+        .O(r_we_ir_reg_6));
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'h4F)) 
-    \r_data_reg[3]_LDC_i_2 
-       (.I0(\r_data_reg[3]_LDC_i_3_n_0 ),
+    \r_data_reg[2]_LDC_i_2 
+       (.I0(\r_data_reg[2]_LDC_i_3_n_0 ),
         .I1(r_we_ir),
         .I2(rst_n_IBUF),
-        .O(r_we_ir_reg_8));
+        .O(r_we_ir_reg_7));
   LUT6 #(
-    .INIT(64'h2000820000000600)) 
-    \r_data_reg[3]_LDC_i_3 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[3]),
-        .I3(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I4(Q[5]),
-        .I5(Q[0]),
-        .O(\r_data_reg[3]_LDC_i_3_n_0 ));
+    .INIT(64'h0000002020400010)) 
+    \r_data_reg[2]_LDC_i_3 
+       (.I0(sel[3]),
+        .I1(sel[0]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(sel[5]),
+        .I4(sel[2]),
+        .I5(sel[1]),
+        .O(\r_data_reg[2]_LDC_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hA404000000000000)) 
-    \r_data_reg[4]_LDC_i_1 
-       (.I0(Q[0]),
-        .I1(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I2(Q[1]),
-        .I3(\r_data_reg[4]_LDC_i_3_n_0 ),
+    .INIT(64'h2E22000000000000)) 
+    \r_data_reg[3]_LDC_i_1 
+       (.I0(\r_data_reg[3]_LDC_i_3_n_0 ),
+        .I1(sel[3]),
+        .I2(sel[1]),
+        .I3(\r_data_reg[3]_LDC_i_4_n_0 ),
         .I4(rst_n_IBUF),
         .I5(r_we_ir),
-        .O(\o_data1_reg[0]_2 ));
+        .O(r_we_ir_reg));
   LUT6 #(
-    .INIT(64'h77CF0000FFFFFFFF)) 
-    \r_data_reg[4]_LDC_i_2 
-       (.I0(\r_data_reg[4]_LDC_i_3_n_0 ),
-        .I1(Q[1]),
-        .I2(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I3(Q[0]),
+    .INIT(64'hD0DF0000FFFFFFFF)) 
+    \r_data_reg[3]_LDC_i_2 
+       (.I0(\r_data_reg[3]_LDC_i_4_n_0 ),
+        .I1(sel[1]),
+        .I2(sel[3]),
+        .I3(\r_data_reg[3]_LDC_i_3_n_0 ),
         .I4(r_we_ir),
         .I5(rst_n_IBUF),
-        .O(\o_data1_reg[1]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
-  LUT4 #(
-    .INIT(16'h0080)) 
+        .O(r_we_ir_reg_0));
+  LUT6 #(
+    .INIT(64'h0000020001000600)) 
+    \r_data_reg[3]_LDC_i_3 
+       (.I0(sel[1]),
+        .I1(sel[2]),
+        .I2(sel[5]),
+        .I3(\r_data_reg[3]_C ),
+        .I4(sel[4]),
+        .I5(sel[0]),
+        .O(\r_data_reg[3]_LDC_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h5050300000003000)) 
+    \r_data_reg[3]_LDC_i_4 
+       (.I0(Q[0]),
+        .I1(\r_data_reg[1]_LDC_i_3_0 [0]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(\r_data_reg[1]_LDC_i_3_0 [2]),
+        .I4(i_re_rom_datapath),
+        .I5(Q[2]),
+        .O(\r_data_reg[3]_LDC_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \r_data_reg[4]_LDC_i_1 
+       (.I0(\r_data_reg[4]_LDC_i_3_n_0 ),
+        .I1(rst_n_IBUF),
+        .I2(r_we_ir),
+        .O(r_we_ir_reg_8));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  LUT3 #(
+    .INIT(8'h4F)) 
+    \r_data_reg[4]_LDC_i_2 
+       (.I0(\r_data_reg[4]_LDC_i_3_n_0 ),
+        .I1(r_we_ir),
+        .I2(rst_n_IBUF),
+        .O(r_we_ir_reg_9));
+  LUT6 #(
+    .INIT(64'h0000020000008100)) 
     \r_data_reg[4]_LDC_i_3 
-       (.I0(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I1(Q[3]),
-        .I2(Q[5]),
-        .I3(Q[2]),
+       (.I0(sel[3]),
+        .I1(sel[2]),
+        .I2(sel[5]),
+        .I3(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I4(sel[0]),
+        .I5(sel[1]),
         .O(\r_data_reg[4]_LDC_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \r_data_reg[6]_LDC_i_1 
        (.I0(\r_data_reg[6]_LDC_i_3_n_0 ),
         .I1(rst_n_IBUF),
         .I2(r_we_ir),
-        .O(r_we_ir_reg_3));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+        .O(r_we_ir_reg_10));
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \r_data_reg[6]_LDC_i_2 
        (.I0(\r_data_reg[6]_LDC_i_3_n_0 ),
         .I1(r_we_ir),
         .I2(rst_n_IBUF),
-        .O(r_we_ir_reg_4));
+        .O(r_we_ir_reg_11));
   LUT6 #(
-    .INIT(64'h0010000088370000)) 
+    .INIT(64'h1010000080AF0000)) 
     \r_data_reg[6]_LDC_i_3 
-       (.I0(Q[1]),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[5]),
-        .I4(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I5(Q[2]),
+       (.I0(sel[1]),
+        .I1(sel[0]),
+        .I2(sel[3]),
+        .I3(sel[5]),
+        .I4(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I5(sel[2]),
         .O(\r_data_reg[6]_LDC_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  LUT6 #(
+    .INIT(64'h00000000EEE222E2)) 
     \r_data_reg[7]_LDC_i_1 
        (.I0(\r_data_reg[7]_LDC_i_3_n_0 ),
-        .I1(rst_n_IBUF),
-        .I2(r_we_ir),
-        .O(r_we_ir_reg_5));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
-  LUT3 #(
-    .INIT(8'h4F)) 
+        .I1(sel[3]),
+        .I2(\r_data_reg[13]_LDC_i_4_n_0 ),
+        .I3(sel[1]),
+        .I4(\r_data_reg[7]_LDC_i_4_n_0 ),
+        .I5(\r_data_reg[15]_P ),
+        .O(\o_data1_reg[3]_0 ));
+  LUT5 #(
+    .INIT(32'h4700FFFF)) 
     \r_data_reg[7]_LDC_i_2 
-       (.I0(\r_data_reg[7]_LDC_i_3_n_0 ),
-        .I1(r_we_ir),
-        .I2(rst_n_IBUF),
-        .O(r_we_ir_reg_6));
-  LUT6 #(
-    .INIT(64'h0000000092270000)) 
-    \r_data_reg[7]_LDC_i_3 
-       (.I0(Q[1]),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(Q[3]),
-        .I4(\r_data_reg[13]_LDC_i_4_n_0 ),
-        .I5(Q[5]),
-        .O(\r_data_reg[7]_LDC_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h082A000000000000)) 
-    \r_data_reg[8]_LDC_i_1 
-       (.I0(\r_data_reg[13]_LDC_i_3_n_0 ),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(Q[1]),
-        .I4(rst_n_IBUF),
-        .I5(r_we_ir),
-        .O(\o_data1_reg[0]_3 ));
-  LUT6 #(
-    .INIT(64'hCAFF0000FFFFFFFF)) 
-    \r_data_reg[8]_LDC_i_2 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(\r_data_reg[13]_LDC_i_3_n_0 ),
-        .I4(r_we_ir),
-        .I5(rst_n_IBUF),
-        .O(\o_data1_reg[1]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \r_data_reg[9]_LDC_i_1 
-       (.I0(Q[1]),
-        .I1(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I2(Q[0]),
-        .I3(rst_n_IBUF),
-        .I4(r_we_ir),
-        .O(\o_data1_reg[1]_3 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
-  LUT5 #(
-    .INIT(32'h7F00FFFF)) 
-    \r_data_reg[9]_LDC_i_2 
-       (.I0(Q[0]),
-        .I1(\r_data_reg[12]_LDC_i_3_n_0 ),
-        .I2(Q[1]),
+       (.I0(\r_data_reg[7]_LDC_i_5_n_0 ),
+        .I1(sel[3]),
+        .I2(\r_data_reg[7]_LDC_i_3_n_0 ),
         .I3(r_we_ir),
         .I4(rst_n_IBUF),
-        .O(\o_data1_reg[0]_4 ));
+        .O(r_we_ir_reg_3));
+  LUT6 #(
+    .INIT(64'h0000000000101030)) 
+    \r_data_reg[7]_LDC_i_3 
+       (.I0(sel[1]),
+        .I1(sel[5]),
+        .I2(\r_data_reg[3]_C ),
+        .I3(sel[0]),
+        .I4(sel[4]),
+        .I5(sel[2]),
+        .O(\r_data_reg[7]_LDC_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000003050500030)) 
+    \r_data_reg[7]_LDC_i_4 
+       (.I0(Q[5]),
+        .I1(\r_data_reg[1]_LDC_i_3_0 [5]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(\r_data_reg[1]_LDC_i_3_0 [2]),
+        .I4(i_re_rom_datapath),
+        .I5(Q[2]),
+        .O(\r_data_reg[7]_LDC_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  LUT5 #(
+    .INIT(32'h001000A0)) 
+    \r_data_reg[7]_LDC_i_5 
+       (.I0(sel[1]),
+        .I1(sel[0]),
+        .I2(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I3(sel[5]),
+        .I4(sel[2]),
+        .O(\r_data_reg[7]_LDC_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \r_data_reg[7]_LDC_i_7 
+       (.I0(Q[4]),
+        .I1(i_re_rom_datapath),
+        .I2(\r_data_reg[1]_LDC_i_3_0 [4]),
+        .O(sel[4]));
+  LUT6 #(
+    .INIT(64'h0000000022A0202A)) 
+    \r_data_reg[8]_LDC_i_1 
+       (.I0(\r_data_reg[15]_LDC_i_6_n_0 ),
+        .I1(sel[2]),
+        .I2(sel[0]),
+        .I3(sel[1]),
+        .I4(sel[3]),
+        .I5(\r_data_reg[15]_P ),
+        .O(r_re_rom_reg));
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  LUT3 #(
+    .INIT(8'h4F)) 
+    \r_data_reg[8]_LDC_i_2 
+       (.I0(\r_data_reg[8]_LDC_i_3_n_0 ),
+        .I1(r_we_ir),
+        .I2(rst_n_IBUF),
+        .O(r_we_ir_reg_12));
+  LUT6 #(
+    .INIT(64'h0000000021F90000)) 
+    \r_data_reg[8]_LDC_i_3 
+       (.I0(sel[3]),
+        .I1(sel[1]),
+        .I2(sel[0]),
+        .I3(sel[2]),
+        .I4(\r_data_reg[15]_LDC_i_10_n_0 ),
+        .I5(sel[5]),
+        .O(\r_data_reg[8]_LDC_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h5040000000000000)) 
+    \r_data_reg[9]_LDC_i_1 
+       (.I0(sel[3]),
+        .I1(sel[1]),
+        .I2(\r_data_reg[13]_LDC_i_3_n_0 ),
+        .I3(sel[2]),
+        .I4(rst_n_IBUF),
+        .I5(r_we_ir),
+        .O(r_we_ir_reg_14));
+  LUT6 #(
+    .INIT(64'hFF370000FFFFFFFF)) 
+    \r_data_reg[9]_LDC_i_2 
+       (.I0(sel[2]),
+        .I1(\r_data_reg[13]_LDC_i_3_n_0 ),
+        .I2(sel[1]),
+        .I3(sel[3]),
+        .I4(r_we_ir),
+        .I5(rst_n_IBUF),
+        .O(r_we_ir_reg_15));
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][0]_C_1 ),
         .D(\r_reg_reg[0][0]_C_2 ),
@@ -42695,7 +43209,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][0]_C_2 ),
         .PRE(\r_reg_reg[0][0]_P_1 ),
@@ -42703,7 +43217,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][10]_C_1 ),
         .D(\r_reg_reg[0][10]_C_2 ),
@@ -42721,7 +43235,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][10]_C_2 ),
         .PRE(\r_reg_reg[0][10]_P_1 ),
@@ -42729,7 +43243,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][11]_C_1 ),
         .D(\r_reg_reg[0][11]_C_2 ),
@@ -42747,7 +43261,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][11]_C_2 ),
         .PRE(\r_reg_reg[0][11]_P_1 ),
@@ -42755,7 +43269,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][12]_C_1 ),
         .D(\r_reg_reg[0][12]_C_2 ),
@@ -42773,7 +43287,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][12]_C_2 ),
         .PRE(\r_reg_reg[0][12]_P_1 ),
@@ -42781,7 +43295,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][13]_C_1 ),
         .D(\r_reg_reg[0][13]_C_2 ),
@@ -42799,7 +43313,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][13]_C_2 ),
         .PRE(\r_reg_reg[0][13]_P_1 ),
@@ -42807,7 +43321,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][14]_C_1 ),
         .D(\r_reg_reg[0][14]_C_2 ),
@@ -42825,7 +43339,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][14]_C_2 ),
         .PRE(\r_reg_reg[0][14]_P_1 ),
@@ -42833,7 +43347,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][15]_C_1 ),
         .D(\r_reg_reg[0][15]_C_2 ),
@@ -42851,7 +43365,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][15]_C_2 ),
         .PRE(\r_reg_reg[0][15]_P_1 ),
@@ -42859,7 +43373,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][16]_C_1 ),
         .D(\r_reg_reg[0][16]_C_2 ),
@@ -42877,7 +43391,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][16]_C_2 ),
         .PRE(\r_reg_reg[0][16]_P_1 ),
@@ -42885,7 +43399,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][17]_C_1 ),
         .D(\r_reg_reg[0][17]_C_2 ),
@@ -42903,7 +43417,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][17]_C_2 ),
         .PRE(\r_reg_reg[0][17]_P_1 ),
@@ -42911,7 +43425,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][18]_C_1 ),
         .D(\r_reg_reg[0][18]_C_2 ),
@@ -42929,7 +43443,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][18]_C_2 ),
         .PRE(\r_reg_reg[0][18]_P_1 ),
@@ -42937,7 +43451,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][19]_C_1 ),
         .D(\r_reg_reg[0][19]_C_2 ),
@@ -42955,7 +43469,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][19]_C_2 ),
         .PRE(\r_reg_reg[0][19]_P_1 ),
@@ -42963,7 +43477,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][1]_C_1 ),
         .D(\r_reg_reg[0][1]_C_2 ),
@@ -42981,7 +43495,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][1]_C_2 ),
         .PRE(\r_reg_reg[0][1]_P_1 ),
@@ -42989,7 +43503,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][20]_C_1 ),
         .D(\r_reg_reg[0][20]_C_2 ),
@@ -43007,7 +43521,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][20]_C_2 ),
         .PRE(\r_reg_reg[0][20]_P_1 ),
@@ -43015,7 +43529,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][21]_C_1 ),
         .D(\r_reg_reg[0][21]_C_2 ),
@@ -43033,7 +43547,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][21]_C_2 ),
         .PRE(\r_reg_reg[0][21]_P_1 ),
@@ -43041,7 +43555,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][22]_C_1 ),
         .D(\r_reg_reg[0][22]_C_2 ),
@@ -43059,7 +43573,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][22]_C_2 ),
         .PRE(\r_reg_reg[0][22]_P_1 ),
@@ -43067,7 +43581,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][23]_C_1 ),
         .D(\r_reg_reg[0][23]_C_2 ),
@@ -43085,7 +43599,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][23]_C_2 ),
         .PRE(\r_reg_reg[0][23]_P_1 ),
@@ -43093,7 +43607,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][24]_C_1 ),
         .D(\r_reg_reg[0][24]_C_2 ),
@@ -43111,7 +43625,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][24]_C_2 ),
         .PRE(\r_reg_reg[0][24]_P_1 ),
@@ -43119,7 +43633,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][25]_C_1 ),
         .D(\r_reg_reg[0][25]_C_2 ),
@@ -43137,7 +43651,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][25]_C_2 ),
         .PRE(\r_reg_reg[0][25]_P_1 ),
@@ -43145,7 +43659,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][26]_C_1 ),
         .D(\r_reg_reg[0][26]_C_2 ),
@@ -43163,7 +43677,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][26]_C_2 ),
         .PRE(\r_reg_reg[0][26]_P_1 ),
@@ -43171,7 +43685,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][27]_C_1 ),
         .D(\r_reg_reg[0][27]_C_2 ),
@@ -43189,7 +43703,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][27]_C_2 ),
         .PRE(\r_reg_reg[0][27]_P_1 ),
@@ -43197,7 +43711,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][28]_C_1 ),
         .D(\r_reg_reg[0][28]_C_2 ),
@@ -43215,7 +43729,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][28]_C_2 ),
         .PRE(\r_reg_reg[0][28]_P_1 ),
@@ -43223,7 +43737,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][29]_C_1 ),
         .D(\r_reg_reg[0][29]_C_2 ),
@@ -43241,7 +43755,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][29]_C_2 ),
         .PRE(\r_reg_reg[0][29]_P_1 ),
@@ -43249,7 +43763,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][2]_C_1 ),
         .D(\r_reg_reg[0][2]_C_2 ),
@@ -43267,7 +43781,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][2]_C_2 ),
         .PRE(\r_reg_reg[0][2]_P_1 ),
@@ -43275,7 +43789,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][30]_C_1 ),
         .D(\r_reg_reg[0][30]_C_2 ),
@@ -43293,7 +43807,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][30]_C_2 ),
         .PRE(\r_reg_reg[0][30]_P_1 ),
@@ -43301,7 +43815,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][31]_C_1 ),
         .D(\r_reg_reg[0][31]_C_2 ),
@@ -43319,7 +43833,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][31]_C_2 ),
         .PRE(\r_reg_reg[0][31]_P_1 ),
@@ -43327,7 +43841,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][3]_C_1 ),
         .D(\r_reg_reg[0][3]_C_2 ),
@@ -43345,7 +43859,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][3]_C_2 ),
         .PRE(\r_reg_reg[0][3]_P_1 ),
@@ -43353,7 +43867,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][4]_C_1 ),
         .D(\r_reg_reg[0][4]_C_2 ),
@@ -43371,7 +43885,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][4]_C_2 ),
         .PRE(\r_reg_reg[0][4]_P_1 ),
@@ -43379,7 +43893,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][5]_C_1 ),
         .D(\r_reg_reg[0][5]_C_2 ),
@@ -43397,7 +43911,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][5]_C_2 ),
         .PRE(\r_reg_reg[0][5]_P_1 ),
@@ -43405,7 +43919,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][6]_C_1 ),
         .D(\r_reg_reg[0][6]_C_2 ),
@@ -43423,7 +43937,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][6]_C_2 ),
         .PRE(\r_reg_reg[0][6]_P_1 ),
@@ -43431,7 +43945,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][7]_C_1 ),
         .D(\r_reg_reg[0][7]_C_2 ),
@@ -43449,7 +43963,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][7]_C_2 ),
         .PRE(\r_reg_reg[0][7]_P_1 ),
@@ -43457,7 +43971,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][8]_C_1 ),
         .D(\r_reg_reg[0][8]_C_2 ),
@@ -43475,7 +43989,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][8]_C_2 ),
         .PRE(\r_reg_reg[0][8]_P_1 ),
@@ -43483,7 +43997,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[0][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[0][9]_C_1 ),
         .D(\r_reg_reg[0][9]_C_2 ),
@@ -43501,7 +44015,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[0][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[0][9]_C_2 ),
         .PRE(\r_reg_reg[0][9]_P_1 ),
@@ -43509,7 +44023,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][0]_C_1 ),
         .D(\r_reg_reg[10][0]_C_2 ),
@@ -43527,7 +44041,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][0]_C_2 ),
         .PRE(\r_reg_reg[10][0]_P_1 ),
@@ -43535,7 +44049,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][10]_C_1 ),
         .D(\r_reg_reg[10][10]_C_2 ),
@@ -43553,7 +44067,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][10]_C_2 ),
         .PRE(\r_reg_reg[10][10]_P_1 ),
@@ -43561,7 +44075,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][11]_C_1 ),
         .D(\r_reg_reg[10][11]_C_2 ),
@@ -43579,7 +44093,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][11]_C_2 ),
         .PRE(\r_reg_reg[10][11]_P_1 ),
@@ -43587,7 +44101,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][12]_C_1 ),
         .D(\r_reg_reg[10][12]_C_2 ),
@@ -43605,7 +44119,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][12]_C_2 ),
         .PRE(\r_reg_reg[10][12]_P_1 ),
@@ -43613,7 +44127,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][13]_C_1 ),
         .D(\r_reg_reg[10][13]_C_2 ),
@@ -43631,7 +44145,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][13]_C_2 ),
         .PRE(\r_reg_reg[10][13]_P_1 ),
@@ -43639,7 +44153,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][14]_C_1 ),
         .D(\r_reg_reg[10][14]_C_2 ),
@@ -43657,7 +44171,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][14]_C_2 ),
         .PRE(\r_reg_reg[10][14]_P_1 ),
@@ -43665,7 +44179,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][15]_C_1 ),
         .D(\r_reg_reg[10][15]_C_2 ),
@@ -43683,7 +44197,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][15]_C_2 ),
         .PRE(\r_reg_reg[10][15]_P_1 ),
@@ -43691,7 +44205,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][16]_C_1 ),
         .D(\r_reg_reg[10][16]_C_2 ),
@@ -43709,7 +44223,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][16]_C_2 ),
         .PRE(\r_reg_reg[10][16]_P_1 ),
@@ -43717,7 +44231,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][17]_C_1 ),
         .D(\r_reg_reg[10][17]_C_2 ),
@@ -43735,7 +44249,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][17]_C_2 ),
         .PRE(\r_reg_reg[10][17]_P_1 ),
@@ -43743,7 +44257,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][18]_C_1 ),
         .D(\r_reg_reg[10][18]_C_2 ),
@@ -43761,7 +44275,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][18]_C_2 ),
         .PRE(\r_reg_reg[10][18]_P_1 ),
@@ -43769,7 +44283,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][19]_C_1 ),
         .D(\r_reg_reg[10][19]_C_2 ),
@@ -43787,7 +44301,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][19]_C_2 ),
         .PRE(\r_reg_reg[10][19]_P_1 ),
@@ -43795,7 +44309,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][1]_C_1 ),
         .D(\r_reg_reg[10][1]_C_2 ),
@@ -43813,7 +44327,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][1]_C_2 ),
         .PRE(\r_reg_reg[10][1]_P_1 ),
@@ -43821,7 +44335,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][20]_C_1 ),
         .D(\r_reg_reg[10][20]_C_2 ),
@@ -43839,7 +44353,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][20]_C_2 ),
         .PRE(\r_reg_reg[10][20]_P_1 ),
@@ -43847,7 +44361,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][21]_C_1 ),
         .D(\r_reg_reg[10][21]_C_2 ),
@@ -43865,7 +44379,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][21]_C_2 ),
         .PRE(\r_reg_reg[10][21]_P_1 ),
@@ -43873,7 +44387,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][22]_C_1 ),
         .D(\r_reg_reg[10][22]_C_2 ),
@@ -43891,7 +44405,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][22]_C_2 ),
         .PRE(\r_reg_reg[10][22]_P_1 ),
@@ -43899,7 +44413,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][23]_C_1 ),
         .D(\r_reg_reg[10][23]_C_2 ),
@@ -43917,7 +44431,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][23]_C_2 ),
         .PRE(\r_reg_reg[10][23]_P_1 ),
@@ -43925,7 +44439,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][24]_C_1 ),
         .D(\r_reg_reg[10][24]_C_2 ),
@@ -43943,7 +44457,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][24]_C_2 ),
         .PRE(\r_reg_reg[10][24]_P_1 ),
@@ -43951,7 +44465,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][25]_C_1 ),
         .D(\r_reg_reg[10][25]_C_2 ),
@@ -43969,7 +44483,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][25]_C_2 ),
         .PRE(\r_reg_reg[10][25]_P_1 ),
@@ -43977,7 +44491,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][26]_C_1 ),
         .D(\r_reg_reg[10][26]_C_2 ),
@@ -43995,7 +44509,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][26]_C_2 ),
         .PRE(\r_reg_reg[10][26]_P_1 ),
@@ -44003,7 +44517,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][27]_C_1 ),
         .D(\r_reg_reg[10][27]_C_2 ),
@@ -44021,7 +44535,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][27]_C_2 ),
         .PRE(\r_reg_reg[10][27]_P_1 ),
@@ -44029,7 +44543,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][28]_C_1 ),
         .D(\r_reg_reg[10][28]_C_2 ),
@@ -44047,7 +44561,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][28]_C_2 ),
         .PRE(\r_reg_reg[10][28]_P_1 ),
@@ -44055,7 +44569,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][29]_C_1 ),
         .D(\r_reg_reg[10][29]_C_2 ),
@@ -44073,7 +44587,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][29]_C_2 ),
         .PRE(\r_reg_reg[10][29]_P_1 ),
@@ -44081,7 +44595,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][2]_C_1 ),
         .D(\r_reg_reg[10][2]_C_2 ),
@@ -44099,7 +44613,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][2]_C_2 ),
         .PRE(\r_reg_reg[10][2]_P_1 ),
@@ -44107,7 +44621,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][30]_C_1 ),
         .D(\r_reg_reg[10][30]_C_2 ),
@@ -44125,7 +44639,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][30]_C_2 ),
         .PRE(\r_reg_reg[10][30]_P_1 ),
@@ -44133,7 +44647,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][31]_C_1 ),
         .D(\r_reg_reg[10][31]_C_2 ),
@@ -44151,7 +44665,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][31]_C_2 ),
         .PRE(\r_reg_reg[10][31]_P_1 ),
@@ -44159,7 +44673,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][3]_C_1 ),
         .D(\r_reg_reg[10][3]_C_2 ),
@@ -44177,7 +44691,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][3]_C_2 ),
         .PRE(\r_reg_reg[10][3]_P_1 ),
@@ -44185,7 +44699,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][4]_C_1 ),
         .D(\r_reg_reg[10][4]_C_2 ),
@@ -44203,7 +44717,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][4]_C_2 ),
         .PRE(\r_reg_reg[10][4]_P_1 ),
@@ -44211,7 +44725,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][5]_C_1 ),
         .D(\r_reg_reg[10][5]_C_2 ),
@@ -44229,7 +44743,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][5]_C_2 ),
         .PRE(\r_reg_reg[10][5]_P_1 ),
@@ -44237,7 +44751,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][6]_C_1 ),
         .D(\r_reg_reg[10][6]_C_2 ),
@@ -44255,7 +44769,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][6]_C_2 ),
         .PRE(\r_reg_reg[10][6]_P_1 ),
@@ -44263,7 +44777,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][7]_C_1 ),
         .D(\r_reg_reg[10][7]_C_2 ),
@@ -44281,7 +44795,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][7]_C_2 ),
         .PRE(\r_reg_reg[10][7]_P_1 ),
@@ -44289,7 +44803,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][8]_C_1 ),
         .D(\r_reg_reg[10][8]_C_2 ),
@@ -44307,7 +44821,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][8]_C_2 ),
         .PRE(\r_reg_reg[10][8]_P_1 ),
@@ -44315,7 +44829,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[10][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[10][9]_C_1 ),
         .D(\r_reg_reg[10][9]_C_2 ),
@@ -44333,7 +44847,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[10][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[10][9]_C_2 ),
         .PRE(\r_reg_reg[10][9]_P_1 ),
@@ -44341,7 +44855,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][0]_C_1 ),
         .D(\r_reg_reg[11][0]_C_2 ),
@@ -44359,7 +44873,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][0]_C_2 ),
         .PRE(\r_reg_reg[11][0]_P_1 ),
@@ -44367,7 +44881,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][10]_C_1 ),
         .D(\r_reg_reg[11][10]_C_2 ),
@@ -44385,7 +44899,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][10]_C_2 ),
         .PRE(\r_reg_reg[11][10]_P_1 ),
@@ -44393,7 +44907,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][11]_C_1 ),
         .D(\r_reg_reg[11][11]_C_2 ),
@@ -44411,7 +44925,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][11]_C_2 ),
         .PRE(\r_reg_reg[11][11]_P_1 ),
@@ -44419,7 +44933,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][12]_C_1 ),
         .D(\r_reg_reg[11][12]_C_2 ),
@@ -44437,7 +44951,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][12]_C_2 ),
         .PRE(\r_reg_reg[11][12]_P_1 ),
@@ -44445,7 +44959,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][13]_C_1 ),
         .D(\r_reg_reg[11][13]_C_2 ),
@@ -44463,7 +44977,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][13]_C_2 ),
         .PRE(\r_reg_reg[11][13]_P_1 ),
@@ -44471,7 +44985,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][14]_C_1 ),
         .D(\r_reg_reg[11][14]_C_2 ),
@@ -44489,7 +45003,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][14]_C_2 ),
         .PRE(\r_reg_reg[11][14]_P_1 ),
@@ -44497,7 +45011,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][15]_C_1 ),
         .D(\r_reg_reg[11][15]_C_2 ),
@@ -44515,7 +45029,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][15]_C_2 ),
         .PRE(\r_reg_reg[11][15]_P_1 ),
@@ -44523,7 +45037,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][16]_C_1 ),
         .D(\r_reg_reg[11][16]_C_2 ),
@@ -44541,7 +45055,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][16]_C_2 ),
         .PRE(\r_reg_reg[11][16]_P_1 ),
@@ -44549,7 +45063,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][17]_C_1 ),
         .D(\r_reg_reg[11][17]_C_2 ),
@@ -44567,7 +45081,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][17]_C_2 ),
         .PRE(\r_reg_reg[11][17]_P_1 ),
@@ -44575,7 +45089,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][18]_C_1 ),
         .D(\r_reg_reg[11][18]_C_2 ),
@@ -44593,7 +45107,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][18]_C_2 ),
         .PRE(\r_reg_reg[11][18]_P_1 ),
@@ -44601,7 +45115,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][19]_C_1 ),
         .D(\r_reg_reg[11][19]_C_2 ),
@@ -44619,7 +45133,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][19]_C_2 ),
         .PRE(\r_reg_reg[11][19]_P_1 ),
@@ -44627,7 +45141,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][1]_C_1 ),
         .D(\r_reg_reg[11][1]_C_2 ),
@@ -44645,7 +45159,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][1]_C_2 ),
         .PRE(\r_reg_reg[11][1]_P_1 ),
@@ -44653,7 +45167,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][20]_C_1 ),
         .D(\r_reg_reg[11][20]_C_2 ),
@@ -44671,7 +45185,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][20]_C_2 ),
         .PRE(\r_reg_reg[11][20]_P_1 ),
@@ -44679,7 +45193,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][21]_C_1 ),
         .D(\r_reg_reg[11][21]_C_2 ),
@@ -44697,7 +45211,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][21]_C_2 ),
         .PRE(\r_reg_reg[11][21]_P_1 ),
@@ -44705,7 +45219,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][22]_C_1 ),
         .D(\r_reg_reg[11][22]_C_2 ),
@@ -44723,7 +45237,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][22]_C_2 ),
         .PRE(\r_reg_reg[11][22]_P_1 ),
@@ -44731,7 +45245,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][23]_C_1 ),
         .D(\r_reg_reg[11][23]_C_2 ),
@@ -44749,7 +45263,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][23]_C_2 ),
         .PRE(\r_reg_reg[11][23]_P_1 ),
@@ -44757,7 +45271,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][24]_C_1 ),
         .D(\r_reg_reg[11][24]_C_2 ),
@@ -44775,7 +45289,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][24]_C_2 ),
         .PRE(\r_reg_reg[11][24]_P_1 ),
@@ -44783,7 +45297,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][25]_C_1 ),
         .D(\r_reg_reg[11][25]_C_2 ),
@@ -44801,7 +45315,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][25]_C_2 ),
         .PRE(\r_reg_reg[11][25]_P_1 ),
@@ -44809,7 +45323,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][26]_C_1 ),
         .D(\r_reg_reg[11][26]_C_2 ),
@@ -44827,7 +45341,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][26]_C_2 ),
         .PRE(\r_reg_reg[11][26]_P_1 ),
@@ -44835,7 +45349,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][27]_C_1 ),
         .D(\r_reg_reg[11][27]_C_2 ),
@@ -44853,7 +45367,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][27]_C_2 ),
         .PRE(\r_reg_reg[11][27]_P_1 ),
@@ -44861,7 +45375,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][28]_C_1 ),
         .D(\r_reg_reg[11][28]_C_2 ),
@@ -44879,7 +45393,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][28]_C_2 ),
         .PRE(\r_reg_reg[11][28]_P_1 ),
@@ -44887,7 +45401,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][29]_C_1 ),
         .D(\r_reg_reg[11][29]_C_2 ),
@@ -44905,7 +45419,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][29]_C_2 ),
         .PRE(\r_reg_reg[11][29]_P_1 ),
@@ -44913,7 +45427,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][2]_C_1 ),
         .D(\r_reg_reg[11][2]_C_2 ),
@@ -44931,7 +45445,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][2]_C_2 ),
         .PRE(\r_reg_reg[11][2]_P_1 ),
@@ -44939,7 +45453,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][30]_C_1 ),
         .D(\r_reg_reg[11][30]_C_2 ),
@@ -44957,7 +45471,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][30]_C_2 ),
         .PRE(\r_reg_reg[11][30]_P_1 ),
@@ -44965,7 +45479,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][31]_C_1 ),
         .D(\r_reg_reg[11][31]_C_2 ),
@@ -44983,7 +45497,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][31]_C_2 ),
         .PRE(\r_reg_reg[11][31]_P_1 ),
@@ -44991,7 +45505,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][3]_C_1 ),
         .D(\r_reg_reg[11][3]_C_2 ),
@@ -45009,7 +45523,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][3]_C_2 ),
         .PRE(\r_reg_reg[11][3]_P_1 ),
@@ -45017,7 +45531,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][4]_C_1 ),
         .D(\r_reg_reg[11][4]_C_2 ),
@@ -45035,7 +45549,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][4]_C_2 ),
         .PRE(\r_reg_reg[11][4]_P_1 ),
@@ -45043,7 +45557,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][5]_C_1 ),
         .D(\r_reg_reg[11][5]_C_2 ),
@@ -45061,7 +45575,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][5]_C_2 ),
         .PRE(\r_reg_reg[11][5]_P_1 ),
@@ -45069,7 +45583,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][6]_C_1 ),
         .D(\r_reg_reg[11][6]_C_2 ),
@@ -45087,7 +45601,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][6]_C_2 ),
         .PRE(\r_reg_reg[11][6]_P_1 ),
@@ -45095,7 +45609,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][7]_C_1 ),
         .D(\r_reg_reg[11][7]_C_2 ),
@@ -45113,7 +45627,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][7]_C_2 ),
         .PRE(\r_reg_reg[11][7]_P_1 ),
@@ -45121,7 +45635,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][8]_C_1 ),
         .D(\r_reg_reg[11][8]_C_2 ),
@@ -45139,7 +45653,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][8]_C_2 ),
         .PRE(\r_reg_reg[11][8]_P_1 ),
@@ -45147,7 +45661,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[11][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[11][9]_C_1 ),
         .D(\r_reg_reg[11][9]_C_2 ),
@@ -45165,7 +45679,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[11][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[11][9]_C_2 ),
         .PRE(\r_reg_reg[11][9]_P_1 ),
@@ -45173,7 +45687,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][0]_C_1 ),
         .D(\r_reg_reg[12][0]_C_2 ),
@@ -45191,7 +45705,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][0]_C_2 ),
         .PRE(\r_reg_reg[12][0]_P_1 ),
@@ -45199,7 +45713,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][10]_C_1 ),
         .D(\r_reg_reg[12][10]_C_2 ),
@@ -45217,7 +45731,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][10]_C_2 ),
         .PRE(\r_reg_reg[12][10]_P_1 ),
@@ -45225,7 +45739,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][11]_C_1 ),
         .D(\r_reg_reg[12][11]_C_2 ),
@@ -45243,7 +45757,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][11]_C_2 ),
         .PRE(\r_reg_reg[12][11]_P_1 ),
@@ -45251,7 +45765,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][12]_C_1 ),
         .D(\r_reg_reg[12][12]_C_2 ),
@@ -45269,7 +45783,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][12]_C_2 ),
         .PRE(\r_reg_reg[12][12]_P_1 ),
@@ -45277,7 +45791,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][13]_C_1 ),
         .D(\r_reg_reg[12][13]_C_2 ),
@@ -45295,7 +45809,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][13]_C_2 ),
         .PRE(\r_reg_reg[12][13]_P_1 ),
@@ -45303,7 +45817,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][14]_C_1 ),
         .D(\r_reg_reg[12][14]_C_2 ),
@@ -45321,7 +45835,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][14]_C_2 ),
         .PRE(\r_reg_reg[12][14]_P_1 ),
@@ -45329,7 +45843,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][15]_C_1 ),
         .D(\r_reg_reg[12][15]_C_2 ),
@@ -45347,7 +45861,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][15]_C_2 ),
         .PRE(\r_reg_reg[12][15]_P_1 ),
@@ -45355,7 +45869,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][16]_C_1 ),
         .D(\r_reg_reg[12][16]_C_2 ),
@@ -45373,7 +45887,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][16]_C_2 ),
         .PRE(\r_reg_reg[12][16]_P_1 ),
@@ -45381,7 +45895,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][17]_C_1 ),
         .D(\r_reg_reg[12][17]_C_2 ),
@@ -45399,7 +45913,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][17]_C_2 ),
         .PRE(\r_reg_reg[12][17]_P_1 ),
@@ -45407,7 +45921,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][18]_C_1 ),
         .D(\r_reg_reg[12][18]_C_2 ),
@@ -45425,7 +45939,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][18]_C_2 ),
         .PRE(\r_reg_reg[12][18]_P_1 ),
@@ -45433,7 +45947,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][19]_C_1 ),
         .D(\r_reg_reg[12][19]_C_2 ),
@@ -45451,7 +45965,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][19]_C_2 ),
         .PRE(\r_reg_reg[12][19]_P_1 ),
@@ -45459,7 +45973,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][1]_C_1 ),
         .D(\r_reg_reg[12][1]_C_2 ),
@@ -45477,7 +45991,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][1]_C_2 ),
         .PRE(\r_reg_reg[12][1]_P_1 ),
@@ -45485,7 +45999,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][20]_C_1 ),
         .D(\r_reg_reg[12][20]_C_2 ),
@@ -45503,7 +46017,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][20]_C_2 ),
         .PRE(\r_reg_reg[12][20]_P_1 ),
@@ -45511,7 +46025,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][21]_C_1 ),
         .D(\r_reg_reg[12][21]_C_2 ),
@@ -45529,7 +46043,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][21]_C_2 ),
         .PRE(\r_reg_reg[12][21]_P_1 ),
@@ -45537,7 +46051,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][22]_C_1 ),
         .D(\r_reg_reg[12][22]_C_2 ),
@@ -45555,7 +46069,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][22]_C_2 ),
         .PRE(\r_reg_reg[12][22]_P_1 ),
@@ -45563,7 +46077,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][23]_C_1 ),
         .D(\r_reg_reg[12][23]_C_2 ),
@@ -45581,7 +46095,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][23]_C_2 ),
         .PRE(\r_reg_reg[12][23]_P_1 ),
@@ -45589,7 +46103,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][24]_C_1 ),
         .D(\r_reg_reg[12][24]_C_2 ),
@@ -45607,7 +46121,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][24]_C_2 ),
         .PRE(\r_reg_reg[12][24]_P_1 ),
@@ -45615,7 +46129,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][25]_C_1 ),
         .D(\r_reg_reg[12][25]_C_2 ),
@@ -45633,7 +46147,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][25]_C_2 ),
         .PRE(\r_reg_reg[12][25]_P_1 ),
@@ -45641,7 +46155,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][26]_C_1 ),
         .D(\r_reg_reg[12][26]_C_2 ),
@@ -45659,7 +46173,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][26]_C_2 ),
         .PRE(\r_reg_reg[12][26]_P_1 ),
@@ -45667,7 +46181,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][27]_C_1 ),
         .D(\r_reg_reg[12][27]_C_2 ),
@@ -45685,7 +46199,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][27]_C_2 ),
         .PRE(\r_reg_reg[12][27]_P_1 ),
@@ -45693,7 +46207,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][28]_C_1 ),
         .D(\r_reg_reg[12][28]_C_2 ),
@@ -45711,7 +46225,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][28]_C_2 ),
         .PRE(\r_reg_reg[12][28]_P_1 ),
@@ -45719,7 +46233,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][29]_C_1 ),
         .D(\r_reg_reg[12][29]_C_2 ),
@@ -45737,7 +46251,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][29]_C_2 ),
         .PRE(\r_reg_reg[12][29]_P_1 ),
@@ -45745,7 +46259,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][2]_C_1 ),
         .D(\r_reg_reg[12][2]_C_2 ),
@@ -45763,7 +46277,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][2]_C_2 ),
         .PRE(\r_reg_reg[12][2]_P_1 ),
@@ -45771,7 +46285,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][30]_C_1 ),
         .D(\r_reg_reg[12][30]_C_2 ),
@@ -45789,7 +46303,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][30]_C_2 ),
         .PRE(\r_reg_reg[12][30]_P_1 ),
@@ -45797,7 +46311,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][31]_C_1 ),
         .D(\r_reg_reg[12][31]_C_2 ),
@@ -45815,7 +46329,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][31]_C_2 ),
         .PRE(\r_reg_reg[12][31]_P_1 ),
@@ -45823,7 +46337,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][3]_C_1 ),
         .D(\r_reg_reg[12][3]_C_2 ),
@@ -45841,7 +46355,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][3]_C_2 ),
         .PRE(\r_reg_reg[12][3]_P_1 ),
@@ -45849,7 +46363,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][4]_C_1 ),
         .D(\r_reg_reg[12][4]_C_2 ),
@@ -45867,7 +46381,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][4]_C_2 ),
         .PRE(\r_reg_reg[12][4]_P_1 ),
@@ -45875,7 +46389,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][5]_C_1 ),
         .D(\r_reg_reg[12][5]_C_2 ),
@@ -45893,7 +46407,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][5]_C_2 ),
         .PRE(\r_reg_reg[12][5]_P_1 ),
@@ -45901,7 +46415,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][6]_C_1 ),
         .D(\r_reg_reg[12][6]_C_2 ),
@@ -45919,7 +46433,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][6]_C_2 ),
         .PRE(\r_reg_reg[12][6]_P_1 ),
@@ -45927,7 +46441,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][7]_C_1 ),
         .D(\r_reg_reg[12][7]_C_2 ),
@@ -45945,7 +46459,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][7]_C_2 ),
         .PRE(\r_reg_reg[12][7]_P_1 ),
@@ -45953,7 +46467,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][8]_C_1 ),
         .D(\r_reg_reg[12][8]_C_2 ),
@@ -45971,7 +46485,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][8]_C_2 ),
         .PRE(\r_reg_reg[12][8]_P_1 ),
@@ -45979,7 +46493,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[12][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[12][9]_C_1 ),
         .D(\r_reg_reg[12][9]_C_2 ),
@@ -45997,7 +46511,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[12][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[12][9]_C_2 ),
         .PRE(\r_reg_reg[12][9]_P_1 ),
@@ -46005,7 +46519,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][0]_C_1 ),
         .D(\r_reg_reg[13][0]_C_2 ),
@@ -46023,7 +46537,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][0]_C_2 ),
         .PRE(\r_reg_reg[13][0]_P_1 ),
@@ -46031,7 +46545,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][10]_C_1 ),
         .D(\r_reg_reg[13][10]_C_2 ),
@@ -46049,7 +46563,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][10]_C_2 ),
         .PRE(\r_reg_reg[13][10]_P_1 ),
@@ -46057,7 +46571,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][11]_C_1 ),
         .D(\r_reg_reg[13][11]_C_2 ),
@@ -46075,7 +46589,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][11]_C_2 ),
         .PRE(\r_reg_reg[13][11]_P_1 ),
@@ -46083,7 +46597,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][12]_C_1 ),
         .D(\r_reg_reg[13][12]_C_2 ),
@@ -46101,7 +46615,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][12]_C_2 ),
         .PRE(\r_reg_reg[13][12]_P_1 ),
@@ -46109,7 +46623,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][13]_C_1 ),
         .D(\r_reg_reg[13][13]_C_2 ),
@@ -46127,7 +46641,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][13]_C_2 ),
         .PRE(\r_reg_reg[13][13]_P_1 ),
@@ -46135,7 +46649,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][14]_C_1 ),
         .D(\r_reg_reg[13][14]_C_2 ),
@@ -46153,7 +46667,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][14]_C_2 ),
         .PRE(\r_reg_reg[13][14]_P_1 ),
@@ -46161,7 +46675,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][15]_C_1 ),
         .D(\r_reg_reg[13][15]_C_2 ),
@@ -46179,7 +46693,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][15]_C_2 ),
         .PRE(\r_reg_reg[13][15]_P_1 ),
@@ -46187,7 +46701,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][16]_C_1 ),
         .D(\r_reg_reg[13][16]_C_2 ),
@@ -46205,7 +46719,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][16]_C_2 ),
         .PRE(\r_reg_reg[13][16]_P_1 ),
@@ -46213,7 +46727,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][17]_C_1 ),
         .D(\r_reg_reg[13][17]_C_2 ),
@@ -46231,7 +46745,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][17]_C_2 ),
         .PRE(\r_reg_reg[13][17]_P_1 ),
@@ -46239,7 +46753,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][18]_C_1 ),
         .D(\r_reg_reg[13][18]_C_2 ),
@@ -46257,7 +46771,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][18]_C_2 ),
         .PRE(\r_reg_reg[13][18]_P_1 ),
@@ -46265,7 +46779,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][19]_C_1 ),
         .D(\r_reg_reg[13][19]_C_2 ),
@@ -46283,7 +46797,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][19]_C_2 ),
         .PRE(\r_reg_reg[13][19]_P_1 ),
@@ -46291,7 +46805,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][1]_C_1 ),
         .D(\r_reg_reg[13][1]_C_2 ),
@@ -46309,7 +46823,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][1]_C_2 ),
         .PRE(\r_reg_reg[13][1]_P_1 ),
@@ -46317,7 +46831,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][20]_C_1 ),
         .D(\r_reg_reg[13][20]_C_2 ),
@@ -46335,7 +46849,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][20]_C_2 ),
         .PRE(\r_reg_reg[13][20]_P_1 ),
@@ -46343,7 +46857,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][21]_C_1 ),
         .D(\r_reg_reg[13][21]_C_2 ),
@@ -46361,7 +46875,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][21]_C_2 ),
         .PRE(\r_reg_reg[13][21]_P_1 ),
@@ -46369,7 +46883,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][22]_C_1 ),
         .D(\r_reg_reg[13][22]_C_2 ),
@@ -46387,7 +46901,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][22]_C_2 ),
         .PRE(\r_reg_reg[13][22]_P_1 ),
@@ -46395,7 +46909,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][23]_C_1 ),
         .D(\r_reg_reg[13][23]_C_2 ),
@@ -46413,7 +46927,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][23]_C_2 ),
         .PRE(\r_reg_reg[13][23]_P_1 ),
@@ -46421,7 +46935,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][24]_C_1 ),
         .D(\r_reg_reg[13][24]_C_2 ),
@@ -46439,7 +46953,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][24]_C_2 ),
         .PRE(\r_reg_reg[13][24]_P_1 ),
@@ -46447,7 +46961,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][25]_C_1 ),
         .D(\r_reg_reg[13][25]_C_2 ),
@@ -46465,7 +46979,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][25]_C_2 ),
         .PRE(\r_reg_reg[13][25]_P_1 ),
@@ -46473,7 +46987,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][26]_C_1 ),
         .D(\r_reg_reg[13][26]_C_2 ),
@@ -46491,7 +47005,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][26]_C_2 ),
         .PRE(\r_reg_reg[13][26]_P_1 ),
@@ -46499,7 +47013,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][27]_C_1 ),
         .D(\r_reg_reg[13][27]_C_2 ),
@@ -46517,7 +47031,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][27]_C_2 ),
         .PRE(\r_reg_reg[13][27]_P_1 ),
@@ -46525,7 +47039,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][28]_C_1 ),
         .D(\r_reg_reg[13][28]_C_2 ),
@@ -46543,7 +47057,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][28]_C_2 ),
         .PRE(\r_reg_reg[13][28]_P_1 ),
@@ -46551,7 +47065,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][29]_C_1 ),
         .D(\r_reg_reg[13][29]_C_2 ),
@@ -46569,7 +47083,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][29]_C_2 ),
         .PRE(\r_reg_reg[13][29]_P_1 ),
@@ -46577,7 +47091,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][2]_C_1 ),
         .D(\r_reg_reg[13][2]_C_2 ),
@@ -46595,7 +47109,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][2]_C_2 ),
         .PRE(\r_reg_reg[13][2]_P_1 ),
@@ -46603,7 +47117,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][30]_C_1 ),
         .D(\r_reg_reg[13][30]_C_2 ),
@@ -46621,7 +47135,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][30]_C_2 ),
         .PRE(\r_reg_reg[13][30]_P_1 ),
@@ -46629,7 +47143,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][31]_C_1 ),
         .D(\r_reg_reg[13][31]_C_2 ),
@@ -46647,7 +47161,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][31]_C_2 ),
         .PRE(\r_reg_reg[13][31]_P_1 ),
@@ -46655,7 +47169,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][3]_C_1 ),
         .D(\r_reg_reg[13][3]_C_2 ),
@@ -46673,7 +47187,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][3]_C_2 ),
         .PRE(\r_reg_reg[13][3]_P_1 ),
@@ -46681,7 +47195,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][4]_C_1 ),
         .D(\r_reg_reg[13][4]_C_2 ),
@@ -46699,7 +47213,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][4]_C_2 ),
         .PRE(\r_reg_reg[13][4]_P_1 ),
@@ -46707,7 +47221,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][5]_C_1 ),
         .D(\r_reg_reg[13][5]_C_2 ),
@@ -46725,7 +47239,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][5]_C_2 ),
         .PRE(\r_reg_reg[13][5]_P_1 ),
@@ -46733,7 +47247,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][6]_C_1 ),
         .D(\r_reg_reg[13][6]_C_2 ),
@@ -46751,7 +47265,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][6]_C_2 ),
         .PRE(\r_reg_reg[13][6]_P_1 ),
@@ -46759,7 +47273,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][7]_C_1 ),
         .D(\r_reg_reg[13][7]_C_2 ),
@@ -46777,7 +47291,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][7]_C_2 ),
         .PRE(\r_reg_reg[13][7]_P_1 ),
@@ -46785,7 +47299,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][8]_C_1 ),
         .D(\r_reg_reg[13][8]_C_2 ),
@@ -46803,7 +47317,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][8]_C_2 ),
         .PRE(\r_reg_reg[13][8]_P_1 ),
@@ -46811,7 +47325,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[13][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[13][9]_C_1 ),
         .D(\r_reg_reg[13][9]_C_2 ),
@@ -46829,7 +47343,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[13][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[13][9]_C_2 ),
         .PRE(\r_reg_reg[13][9]_P_1 ),
@@ -46837,7 +47351,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][0]_C_1 ),
         .D(\r_reg_reg[14][0]_C_2 ),
@@ -46855,7 +47369,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][0]_C_2 ),
         .PRE(\r_reg_reg[14][0]_P_1 ),
@@ -46863,7 +47377,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][10]_C_1 ),
         .D(\r_reg_reg[14][10]_C_2 ),
@@ -46881,7 +47395,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][10]_C_2 ),
         .PRE(\r_reg_reg[14][10]_P_1 ),
@@ -46889,7 +47403,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][11]_C_1 ),
         .D(\r_reg_reg[14][11]_C_2 ),
@@ -46907,7 +47421,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][11]_C_2 ),
         .PRE(\r_reg_reg[14][11]_P_1 ),
@@ -46915,7 +47429,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][12]_C_1 ),
         .D(\r_reg_reg[14][12]_C_2 ),
@@ -46933,7 +47447,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][12]_C_2 ),
         .PRE(\r_reg_reg[14][12]_P_1 ),
@@ -46941,7 +47455,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][13]_C_1 ),
         .D(\r_reg_reg[14][13]_C_2 ),
@@ -46959,7 +47473,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][13]_C_2 ),
         .PRE(\r_reg_reg[14][13]_P_1 ),
@@ -46967,7 +47481,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][14]_C_1 ),
         .D(\r_reg_reg[14][14]_C_2 ),
@@ -46985,7 +47499,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][14]_C_2 ),
         .PRE(\r_reg_reg[14][14]_P_1 ),
@@ -46993,7 +47507,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][15]_C_1 ),
         .D(\r_reg_reg[14][15]_C_2 ),
@@ -47011,7 +47525,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][15]_C_2 ),
         .PRE(\r_reg_reg[14][15]_P_1 ),
@@ -47019,7 +47533,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][16]_C_1 ),
         .D(\r_reg_reg[14][16]_C_2 ),
@@ -47037,7 +47551,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][16]_C_2 ),
         .PRE(\r_reg_reg[14][16]_P_1 ),
@@ -47045,7 +47559,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][17]_C_1 ),
         .D(\r_reg_reg[14][17]_C_2 ),
@@ -47063,7 +47577,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][17]_C_2 ),
         .PRE(\r_reg_reg[14][17]_P_1 ),
@@ -47071,7 +47585,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][18]_C_1 ),
         .D(\r_reg_reg[14][18]_C_2 ),
@@ -47089,7 +47603,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][18]_C_2 ),
         .PRE(\r_reg_reg[14][18]_P_1 ),
@@ -47097,7 +47611,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][19]_C_1 ),
         .D(\r_reg_reg[14][19]_C_2 ),
@@ -47115,7 +47629,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][19]_C_2 ),
         .PRE(\r_reg_reg[14][19]_P_1 ),
@@ -47123,7 +47637,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][1]_C_1 ),
         .D(\r_reg_reg[14][1]_C_2 ),
@@ -47141,7 +47655,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][1]_C_2 ),
         .PRE(\r_reg_reg[14][1]_P_1 ),
@@ -47149,7 +47663,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][20]_C_1 ),
         .D(\r_reg_reg[14][20]_C_2 ),
@@ -47167,7 +47681,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][20]_C_2 ),
         .PRE(\r_reg_reg[14][20]_P_1 ),
@@ -47175,7 +47689,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][21]_C_1 ),
         .D(\r_reg_reg[14][21]_C_2 ),
@@ -47193,7 +47707,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][21]_C_2 ),
         .PRE(\r_reg_reg[14][21]_P_1 ),
@@ -47201,7 +47715,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][22]_C_1 ),
         .D(\r_reg_reg[14][22]_C_2 ),
@@ -47219,7 +47733,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][22]_C_2 ),
         .PRE(\r_reg_reg[14][22]_P_1 ),
@@ -47227,7 +47741,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][23]_C_1 ),
         .D(\r_reg_reg[14][23]_C_2 ),
@@ -47245,7 +47759,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][23]_C_2 ),
         .PRE(\r_reg_reg[14][23]_P_1 ),
@@ -47253,7 +47767,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][24]_C_1 ),
         .D(\r_reg_reg[14][24]_C_2 ),
@@ -47271,7 +47785,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][24]_C_2 ),
         .PRE(\r_reg_reg[14][24]_P_1 ),
@@ -47279,7 +47793,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][25]_C_1 ),
         .D(\r_reg_reg[14][25]_C_2 ),
@@ -47297,7 +47811,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][25]_C_2 ),
         .PRE(\r_reg_reg[14][25]_P_1 ),
@@ -47305,7 +47819,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][26]_C_1 ),
         .D(\r_reg_reg[14][26]_C_2 ),
@@ -47323,7 +47837,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][26]_C_2 ),
         .PRE(\r_reg_reg[14][26]_P_1 ),
@@ -47331,7 +47845,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][27]_C_1 ),
         .D(\r_reg_reg[14][27]_C_2 ),
@@ -47349,7 +47863,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][27]_C_2 ),
         .PRE(\r_reg_reg[14][27]_P_1 ),
@@ -47357,7 +47871,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][28]_C_1 ),
         .D(\r_reg_reg[14][28]_C_2 ),
@@ -47375,7 +47889,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][28]_C_2 ),
         .PRE(\r_reg_reg[14][28]_P_1 ),
@@ -47383,7 +47897,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][29]_C_1 ),
         .D(\r_reg_reg[14][29]_C_2 ),
@@ -47401,7 +47915,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][29]_C_2 ),
         .PRE(\r_reg_reg[14][29]_P_1 ),
@@ -47409,7 +47923,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][2]_C_1 ),
         .D(\r_reg_reg[14][2]_C_2 ),
@@ -47427,7 +47941,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][2]_C_2 ),
         .PRE(\r_reg_reg[14][2]_P_1 ),
@@ -47435,7 +47949,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][30]_C_1 ),
         .D(\r_reg_reg[14][30]_C_2 ),
@@ -47453,7 +47967,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][30]_C_2 ),
         .PRE(\r_reg_reg[14][30]_P_1 ),
@@ -47461,7 +47975,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][31]_C_1 ),
         .D(\r_reg_reg[14][31]_C_2 ),
@@ -47479,7 +47993,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][31]_C_2 ),
         .PRE(\r_reg_reg[14][31]_P_1 ),
@@ -47487,7 +48001,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][3]_C_1 ),
         .D(\r_reg_reg[14][3]_C_2 ),
@@ -47505,7 +48019,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][3]_C_2 ),
         .PRE(\r_reg_reg[14][3]_P_1 ),
@@ -47513,7 +48027,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][4]_C_1 ),
         .D(\r_reg_reg[14][4]_C_2 ),
@@ -47531,7 +48045,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][4]_C_2 ),
         .PRE(\r_reg_reg[14][4]_P_1 ),
@@ -47539,7 +48053,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][5]_C_1 ),
         .D(\r_reg_reg[14][5]_C_2 ),
@@ -47557,7 +48071,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][5]_C_2 ),
         .PRE(\r_reg_reg[14][5]_P_1 ),
@@ -47565,7 +48079,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][6]_C_1 ),
         .D(\r_reg_reg[14][6]_C_2 ),
@@ -47583,7 +48097,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][6]_C_2 ),
         .PRE(\r_reg_reg[14][6]_P_1 ),
@@ -47591,7 +48105,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][7]_C_1 ),
         .D(\r_reg_reg[14][7]_C_2 ),
@@ -47609,7 +48123,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][7]_C_2 ),
         .PRE(\r_reg_reg[14][7]_P_1 ),
@@ -47617,7 +48131,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][8]_C_1 ),
         .D(\r_reg_reg[14][8]_C_2 ),
@@ -47635,7 +48149,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][8]_C_2 ),
         .PRE(\r_reg_reg[14][8]_P_1 ),
@@ -47643,7 +48157,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[14][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[14][9]_C_1 ),
         .D(\r_reg_reg[14][9]_C_2 ),
@@ -47661,7 +48175,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[14][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[14][9]_C_2 ),
         .PRE(\r_reg_reg[14][9]_P_1 ),
@@ -47669,7 +48183,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][0]_C_1 ),
         .D(\r_reg_reg[15][0]_C_2 ),
@@ -47687,7 +48201,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][0]_C_2 ),
         .PRE(\r_reg_reg[15][0]_P_1 ),
@@ -47695,7 +48209,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][10]_C_1 ),
         .D(\r_reg_reg[15][10]_C_2 ),
@@ -47713,7 +48227,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][10]_C_2 ),
         .PRE(\r_reg_reg[15][10]_P_1 ),
@@ -47721,7 +48235,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][11]_C_1 ),
         .D(\r_reg_reg[15][11]_C_2 ),
@@ -47739,7 +48253,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][11]_C_2 ),
         .PRE(\r_reg_reg[15][11]_P_1 ),
@@ -47747,7 +48261,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][12]_C_1 ),
         .D(\r_reg_reg[15][12]_C_2 ),
@@ -47765,7 +48279,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][12]_C_2 ),
         .PRE(\r_reg_reg[15][12]_P_1 ),
@@ -47773,7 +48287,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][13]_C_1 ),
         .D(\r_reg_reg[15][13]_C_2 ),
@@ -47791,7 +48305,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][13]_C_2 ),
         .PRE(\r_reg_reg[15][13]_P_1 ),
@@ -47799,7 +48313,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][14]_C_1 ),
         .D(\r_reg_reg[15][14]_C_2 ),
@@ -47817,7 +48331,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][14]_C_2 ),
         .PRE(\r_reg_reg[15][14]_P_1 ),
@@ -47825,7 +48339,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][15]_C_1 ),
         .D(\r_reg_reg[15][15]_C_2 ),
@@ -47843,7 +48357,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][15]_C_2 ),
         .PRE(\r_reg_reg[15][15]_P_1 ),
@@ -47851,7 +48365,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][16]_C_1 ),
         .D(\r_reg_reg[15][16]_C_2 ),
@@ -47869,7 +48383,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][16]_C_2 ),
         .PRE(\r_reg_reg[15][16]_P_1 ),
@@ -47877,7 +48391,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][17]_C_1 ),
         .D(\r_reg_reg[15][17]_C_2 ),
@@ -47895,7 +48409,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][17]_C_2 ),
         .PRE(\r_reg_reg[15][17]_P_1 ),
@@ -47903,7 +48417,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][18]_C_1 ),
         .D(\r_reg_reg[15][18]_C_2 ),
@@ -47921,7 +48435,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][18]_C_2 ),
         .PRE(\r_reg_reg[15][18]_P_1 ),
@@ -47929,7 +48443,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][19]_C_1 ),
         .D(\r_reg_reg[15][19]_C_2 ),
@@ -47947,7 +48461,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][19]_C_2 ),
         .PRE(\r_reg_reg[15][19]_P_1 ),
@@ -47955,7 +48469,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][1]_C_1 ),
         .D(\r_reg_reg[15][1]_C_2 ),
@@ -47973,7 +48487,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][1]_C_2 ),
         .PRE(\r_reg_reg[15][1]_P_1 ),
@@ -47981,7 +48495,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][20]_C_1 ),
         .D(\r_reg_reg[15][20]_C_2 ),
@@ -47999,7 +48513,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][20]_C_2 ),
         .PRE(\r_reg_reg[15][20]_P_1 ),
@@ -48007,7 +48521,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][21]_C_1 ),
         .D(\r_reg_reg[15][21]_C_2 ),
@@ -48025,7 +48539,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][21]_C_2 ),
         .PRE(\r_reg_reg[15][21]_P_1 ),
@@ -48033,7 +48547,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][22]_C_1 ),
         .D(\r_reg_reg[15][22]_C_2 ),
@@ -48051,7 +48565,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][22]_C_2 ),
         .PRE(\r_reg_reg[15][22]_P_1 ),
@@ -48059,7 +48573,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][23]_C_1 ),
         .D(\r_reg_reg[15][23]_C_2 ),
@@ -48077,7 +48591,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][23]_C_2 ),
         .PRE(\r_reg_reg[15][23]_P_1 ),
@@ -48085,7 +48599,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][24]_C_1 ),
         .D(\r_reg_reg[15][24]_C_2 ),
@@ -48103,7 +48617,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][24]_C_2 ),
         .PRE(\r_reg_reg[15][24]_P_1 ),
@@ -48111,7 +48625,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][25]_C_1 ),
         .D(\r_reg_reg[15][25]_C_2 ),
@@ -48129,7 +48643,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][25]_C_2 ),
         .PRE(\r_reg_reg[15][25]_P_1 ),
@@ -48137,7 +48651,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][26]_C_1 ),
         .D(\r_reg_reg[15][26]_C_2 ),
@@ -48155,7 +48669,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][26]_C_2 ),
         .PRE(\r_reg_reg[15][26]_P_1 ),
@@ -48163,7 +48677,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][27]_C_1 ),
         .D(\r_reg_reg[15][27]_C_2 ),
@@ -48181,7 +48695,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][27]_C_2 ),
         .PRE(\r_reg_reg[15][27]_P_1 ),
@@ -48189,7 +48703,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][28]_C_1 ),
         .D(\r_reg_reg[15][28]_C_2 ),
@@ -48207,7 +48721,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][28]_C_2 ),
         .PRE(\r_reg_reg[15][28]_P_1 ),
@@ -48215,7 +48729,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][29]_C_1 ),
         .D(\r_reg_reg[15][29]_C_2 ),
@@ -48233,7 +48747,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][29]_C_2 ),
         .PRE(\r_reg_reg[15][29]_P_1 ),
@@ -48241,7 +48755,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][2]_C_1 ),
         .D(\r_reg_reg[15][2]_C_2 ),
@@ -48259,7 +48773,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][2]_C_2 ),
         .PRE(\r_reg_reg[15][2]_P_1 ),
@@ -48267,7 +48781,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][30]_C_1 ),
         .D(\r_reg_reg[15][30]_C_2 ),
@@ -48285,7 +48799,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][30]_C_2 ),
         .PRE(\r_reg_reg[15][30]_P_1 ),
@@ -48293,7 +48807,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][31]_C_1 ),
         .D(\r_reg_reg[15][31]_C_2 ),
@@ -48311,7 +48825,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][31]_C_2 ),
         .PRE(\r_reg_reg[15][31]_P_1 ),
@@ -48319,7 +48833,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][3]_C_1 ),
         .D(\r_reg_reg[15][3]_C_2 ),
@@ -48337,7 +48851,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][3]_C_2 ),
         .PRE(\r_reg_reg[15][3]_P_1 ),
@@ -48345,7 +48859,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][4]_C_1 ),
         .D(\r_reg_reg[15][4]_C_2 ),
@@ -48363,7 +48877,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][4]_C_2 ),
         .PRE(\r_reg_reg[15][4]_P_1 ),
@@ -48371,7 +48885,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][5]_C_1 ),
         .D(\r_reg_reg[15][5]_C_2 ),
@@ -48389,7 +48903,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][5]_C_2 ),
         .PRE(\r_reg_reg[15][5]_P_1 ),
@@ -48397,7 +48911,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][6]_C_1 ),
         .D(\r_reg_reg[15][6]_C_2 ),
@@ -48415,7 +48929,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][6]_C_2 ),
         .PRE(\r_reg_reg[15][6]_P_1 ),
@@ -48423,7 +48937,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][7]_C_1 ),
         .D(\r_reg_reg[15][7]_C_2 ),
@@ -48441,7 +48955,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][7]_C_2 ),
         .PRE(\r_reg_reg[15][7]_P_1 ),
@@ -48449,7 +48963,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][8]_C_1 ),
         .D(\r_reg_reg[15][8]_C_2 ),
@@ -48467,7 +48981,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][8]_C_2 ),
         .PRE(\r_reg_reg[15][8]_P_1 ),
@@ -48475,7 +48989,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[15][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[15][9]_C_1 ),
         .D(\r_reg_reg[15][9]_C_2 ),
@@ -48493,7 +49007,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[15][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[15][9]_C_2 ),
         .PRE(\r_reg_reg[15][9]_P_1 ),
@@ -48501,7 +49015,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][0]_C_1 ),
         .D(\r_reg_reg[1][0]_P_2 ),
@@ -48519,7 +49033,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][0]_P_2 ),
         .PRE(\r_reg_reg[1][0]_P_1 ),
@@ -48527,7 +49041,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][10]_C_1 ),
         .D(\r_reg_reg[1][10]_C_2 ),
@@ -48545,7 +49059,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][10]_C_2 ),
         .PRE(\r_reg_reg[1][10]_P_1 ),
@@ -48553,7 +49067,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][11]_C_1 ),
         .D(\r_reg_reg[1][11]_C_2 ),
@@ -48571,7 +49085,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][11]_C_2 ),
         .PRE(\r_reg_reg[1][11]_P_1 ),
@@ -48579,7 +49093,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][12]_C_1 ),
         .D(\r_reg_reg[1][12]_C_2 ),
@@ -48597,7 +49111,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][12]_C_2 ),
         .PRE(\r_reg_reg[1][12]_P_1 ),
@@ -48605,7 +49119,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][13]_C_1 ),
         .D(\r_reg_reg[1][13]_C_2 ),
@@ -48623,7 +49137,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][13]_C_2 ),
         .PRE(\r_reg_reg[1][13]_P_1 ),
@@ -48631,7 +49145,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][14]_C_1 ),
         .D(\r_reg_reg[1][14]_C_2 ),
@@ -48649,7 +49163,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][14]_C_2 ),
         .PRE(\r_reg_reg[1][14]_P_1 ),
@@ -48657,7 +49171,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][15]_C_1 ),
         .D(\r_reg_reg[1][15]_C_2 ),
@@ -48675,7 +49189,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][15]_C_2 ),
         .PRE(\r_reg_reg[1][15]_P_1 ),
@@ -48683,7 +49197,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][16]_C_1 ),
         .D(\r_reg_reg[1][16]_C_2 ),
@@ -48701,7 +49215,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][16]_C_2 ),
         .PRE(\r_reg_reg[1][16]_P_1 ),
@@ -48709,7 +49223,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][17]_C_1 ),
         .D(\r_reg_reg[1][17]_C_2 ),
@@ -48727,7 +49241,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][17]_C_2 ),
         .PRE(\r_reg_reg[1][17]_P_1 ),
@@ -48735,7 +49249,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][18]_C_1 ),
         .D(\r_reg_reg[1][18]_C_2 ),
@@ -48753,7 +49267,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][18]_C_2 ),
         .PRE(\r_reg_reg[1][18]_P_1 ),
@@ -48761,7 +49275,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][19]_C_1 ),
         .D(\r_reg_reg[1][19]_C_2 ),
@@ -48779,7 +49293,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][19]_C_2 ),
         .PRE(\r_reg_reg[1][19]_P_1 ),
@@ -48787,7 +49301,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][1]_C_1 ),
         .D(\r_reg_reg[1][1]_P_2 ),
@@ -48805,7 +49319,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][1]_P_2 ),
         .PRE(\r_reg_reg[1][1]_P_1 ),
@@ -48813,7 +49327,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][20]_C_1 ),
         .D(\r_reg_reg[1][20]_C_2 ),
@@ -48831,7 +49345,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][20]_C_2 ),
         .PRE(\r_reg_reg[1][20]_P_1 ),
@@ -48839,7 +49353,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][21]_C_1 ),
         .D(\r_reg_reg[1][21]_C_2 ),
@@ -48857,7 +49371,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][21]_C_2 ),
         .PRE(\r_reg_reg[1][21]_P_1 ),
@@ -48865,7 +49379,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][22]_C_1 ),
         .D(\r_reg_reg[1][22]_C_2 ),
@@ -48883,7 +49397,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][22]_C_2 ),
         .PRE(\r_reg_reg[1][22]_P_1 ),
@@ -48891,7 +49405,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][23]_C_1 ),
         .D(\r_reg_reg[1][23]_C_2 ),
@@ -48909,7 +49423,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][23]_C_2 ),
         .PRE(\r_reg_reg[1][23]_P_1 ),
@@ -48917,7 +49431,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][24]_C_1 ),
         .D(\r_reg_reg[1][24]_C_2 ),
@@ -48935,7 +49449,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][24]_C_2 ),
         .PRE(\r_reg_reg[1][24]_P_1 ),
@@ -48943,7 +49457,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][25]_C_1 ),
         .D(\r_reg_reg[1][25]_C_2 ),
@@ -48961,7 +49475,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][25]_C_2 ),
         .PRE(\r_reg_reg[1][25]_P_1 ),
@@ -48969,7 +49483,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][26]_C_1 ),
         .D(\r_reg_reg[1][26]_C_2 ),
@@ -48987,7 +49501,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][26]_C_2 ),
         .PRE(\r_reg_reg[1][26]_P_1 ),
@@ -48995,7 +49509,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][27]_C_1 ),
         .D(\r_reg_reg[1][27]_C_2 ),
@@ -49013,7 +49527,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][27]_C_2 ),
         .PRE(\r_reg_reg[1][27]_P_1 ),
@@ -49021,7 +49535,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][28]_C_1 ),
         .D(\r_reg_reg[1][28]_C_2 ),
@@ -49039,7 +49553,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][28]_C_2 ),
         .PRE(\r_reg_reg[1][28]_P_1 ),
@@ -49047,7 +49561,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][29]_C_1 ),
         .D(\r_reg_reg[1][29]_C_2 ),
@@ -49065,7 +49579,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][29]_C_2 ),
         .PRE(\r_reg_reg[1][29]_P_1 ),
@@ -49073,7 +49587,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][2]_C_1 ),
         .D(\r_reg_reg[1][2]_P_2 ),
@@ -49091,7 +49605,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][2]_P_2 ),
         .PRE(\r_reg_reg[1][2]_P_1 ),
@@ -49099,7 +49613,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][30]_C_1 ),
         .D(\r_reg_reg[1][30]_C_2 ),
@@ -49117,7 +49631,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][30]_C_2 ),
         .PRE(\r_reg_reg[1][30]_P_1 ),
@@ -49125,7 +49639,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][31]_C_1 ),
         .D(\r_reg_reg[1][31]_C_2 ),
@@ -49143,7 +49657,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][31]_C_2 ),
         .PRE(\r_reg_reg[1][31]_P_1 ),
@@ -49151,7 +49665,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][3]_C_1 ),
         .D(\r_reg_reg[1][3]_P_2 ),
@@ -49169,7 +49683,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][3]_P_2 ),
         .PRE(\r_reg_reg[1][3]_P_1 ),
@@ -49177,7 +49691,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][4]_C_1 ),
         .D(\r_reg_reg[1][4]_C_2 ),
@@ -49195,7 +49709,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][4]_C_2 ),
         .PRE(\r_reg_reg[1][4]_P_1 ),
@@ -49203,7 +49717,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][5]_C_1 ),
         .D(\r_reg_reg[1][5]_C_2 ),
@@ -49221,7 +49735,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][5]_C_2 ),
         .PRE(\r_reg_reg[1][5]_P_1 ),
@@ -49229,7 +49743,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][6]_C_1 ),
         .D(\r_reg_reg[1][6]_C_2 ),
@@ -49247,7 +49761,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][6]_C_2 ),
         .PRE(\r_reg_reg[1][6]_P_1 ),
@@ -49255,7 +49769,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][7]_C_1 ),
         .D(\r_reg_reg[1][7]_C_2 ),
@@ -49273,7 +49787,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][7]_C_2 ),
         .PRE(\r_reg_reg[1][7]_P_1 ),
@@ -49281,7 +49795,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][8]_C_1 ),
         .D(\r_reg_reg[1][8]_C_2 ),
@@ -49299,7 +49813,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][8]_C_2 ),
         .PRE(\r_reg_reg[1][8]_P_1 ),
@@ -49307,7 +49821,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[1][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[1][9]_C_1 ),
         .D(\r_reg_reg[1][9]_C_2 ),
@@ -49325,7 +49839,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[1][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[1][9]_C_2 ),
         .PRE(\r_reg_reg[1][9]_P_1 ),
@@ -49333,7 +49847,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][0]_C_1 ),
         .D(\r_reg_reg[2][0]_C_2 ),
@@ -49351,7 +49865,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][0]_C_2 ),
         .PRE(\r_reg_reg[2][0]_P_1 ),
@@ -49359,7 +49873,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][10]_C_1 ),
         .D(\r_reg_reg[2][10]_C_2 ),
@@ -49377,7 +49891,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][10]_C_2 ),
         .PRE(\r_reg_reg[2][10]_P_1 ),
@@ -49385,7 +49899,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][11]_C_1 ),
         .D(\r_reg_reg[2][11]_C_2 ),
@@ -49403,7 +49917,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][11]_C_2 ),
         .PRE(\r_reg_reg[2][11]_P_1 ),
@@ -49411,7 +49925,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][12]_C_1 ),
         .D(\r_reg_reg[2][12]_C_2 ),
@@ -49429,7 +49943,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][12]_C_2 ),
         .PRE(\r_reg_reg[2][12]_P_1 ),
@@ -49437,7 +49951,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][13]_C_1 ),
         .D(\r_reg_reg[2][13]_C_2 ),
@@ -49455,7 +49969,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][13]_C_2 ),
         .PRE(\r_reg_reg[2][13]_P_1 ),
@@ -49463,7 +49977,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][14]_C_1 ),
         .D(\r_reg_reg[2][14]_C_2 ),
@@ -49481,7 +49995,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][14]_C_2 ),
         .PRE(\r_reg_reg[2][14]_P_1 ),
@@ -49489,7 +50003,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][15]_C_1 ),
         .D(\r_reg_reg[2][15]_C_2 ),
@@ -49507,7 +50021,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][15]_C_2 ),
         .PRE(\r_reg_reg[2][15]_P_1 ),
@@ -49515,7 +50029,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][16]_C_1 ),
         .D(\r_reg_reg[2][16]_C_2 ),
@@ -49533,7 +50047,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][16]_C_2 ),
         .PRE(\r_reg_reg[2][16]_P_1 ),
@@ -49541,7 +50055,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][17]_C_1 ),
         .D(\r_reg_reg[2][17]_C_2 ),
@@ -49559,7 +50073,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][17]_C_2 ),
         .PRE(\r_reg_reg[2][17]_P_1 ),
@@ -49567,7 +50081,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][18]_C_1 ),
         .D(\r_reg_reg[2][18]_C_2 ),
@@ -49585,7 +50099,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][18]_C_2 ),
         .PRE(\r_reg_reg[2][18]_P_1 ),
@@ -49593,7 +50107,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][19]_C_1 ),
         .D(\r_reg_reg[2][19]_C_2 ),
@@ -49611,7 +50125,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][19]_C_2 ),
         .PRE(\r_reg_reg[2][19]_P_1 ),
@@ -49619,7 +50133,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][1]_C_1 ),
         .D(\r_reg_reg[2][1]_C_2 ),
@@ -49637,7 +50151,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][1]_C_2 ),
         .PRE(\r_reg_reg[2][1]_P_1 ),
@@ -49645,7 +50159,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][20]_C_1 ),
         .D(\r_reg_reg[2][20]_C_2 ),
@@ -49663,7 +50177,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][20]_C_2 ),
         .PRE(\r_reg_reg[2][20]_P_1 ),
@@ -49671,7 +50185,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][21]_C_1 ),
         .D(\r_reg_reg[2][21]_C_2 ),
@@ -49689,7 +50203,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][21]_C_2 ),
         .PRE(\r_reg_reg[2][21]_P_1 ),
@@ -49697,7 +50211,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][22]_C_1 ),
         .D(\r_reg_reg[2][22]_C_2 ),
@@ -49715,7 +50229,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][22]_C_2 ),
         .PRE(\r_reg_reg[2][22]_P_1 ),
@@ -49723,7 +50237,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][23]_C_1 ),
         .D(\r_reg_reg[2][23]_C_2 ),
@@ -49741,7 +50255,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][23]_C_2 ),
         .PRE(\r_reg_reg[2][23]_P_1 ),
@@ -49749,7 +50263,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][24]_C_1 ),
         .D(\r_reg_reg[2][24]_C_2 ),
@@ -49767,7 +50281,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][24]_C_2 ),
         .PRE(\r_reg_reg[2][24]_P_1 ),
@@ -49775,7 +50289,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][25]_C_1 ),
         .D(\r_reg_reg[2][25]_C_2 ),
@@ -49793,7 +50307,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][25]_C_2 ),
         .PRE(\r_reg_reg[2][25]_P_1 ),
@@ -49801,7 +50315,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][26]_C_1 ),
         .D(\r_reg_reg[2][26]_C_2 ),
@@ -49819,7 +50333,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][26]_C_2 ),
         .PRE(\r_reg_reg[2][26]_P_1 ),
@@ -49827,7 +50341,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][27]_C_1 ),
         .D(\r_reg_reg[2][27]_C_2 ),
@@ -49845,7 +50359,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][27]_C_2 ),
         .PRE(\r_reg_reg[2][27]_P_1 ),
@@ -49853,7 +50367,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][28]_C_1 ),
         .D(\r_reg_reg[2][28]_C_2 ),
@@ -49871,7 +50385,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][28]_C_2 ),
         .PRE(\r_reg_reg[2][28]_P_1 ),
@@ -49879,7 +50393,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][29]_C_1 ),
         .D(\r_reg_reg[2][29]_C_2 ),
@@ -49897,7 +50411,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][29]_C_2 ),
         .PRE(\r_reg_reg[2][29]_P_1 ),
@@ -49905,7 +50419,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][2]_C_1 ),
         .D(\r_reg_reg[2][2]_C_2 ),
@@ -49923,7 +50437,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][2]_C_2 ),
         .PRE(\r_reg_reg[2][2]_P_1 ),
@@ -49931,7 +50445,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][30]_C_1 ),
         .D(\r_reg_reg[2][30]_C_2 ),
@@ -49949,7 +50463,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][30]_C_2 ),
         .PRE(\r_reg_reg[2][30]_P_1 ),
@@ -49957,7 +50471,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][31]_C_1 ),
         .D(\r_reg_reg[2][31]_C_2 ),
@@ -49975,7 +50489,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][31]_C_2 ),
         .PRE(\r_reg_reg[2][31]_P_1 ),
@@ -49983,7 +50497,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][3]_C_1 ),
         .D(\r_reg_reg[2][3]_C_2 ),
@@ -50001,7 +50515,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][3]_C_2 ),
         .PRE(\r_reg_reg[2][3]_P_1 ),
@@ -50009,7 +50523,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][4]_C_1 ),
         .D(\r_reg_reg[2][4]_C_2 ),
@@ -50027,7 +50541,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][4]_C_2 ),
         .PRE(\r_reg_reg[2][4]_P_1 ),
@@ -50035,7 +50549,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][5]_C_1 ),
         .D(\r_reg_reg[2][5]_C_2 ),
@@ -50053,7 +50567,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][5]_C_2 ),
         .PRE(\r_reg_reg[2][5]_P_1 ),
@@ -50061,7 +50575,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][6]_C_1 ),
         .D(\r_reg_reg[2][6]_C_2 ),
@@ -50079,7 +50593,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][6]_C_2 ),
         .PRE(\r_reg_reg[2][6]_P_1 ),
@@ -50087,7 +50601,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][7]_C_1 ),
         .D(\r_reg_reg[2][7]_C_2 ),
@@ -50105,7 +50619,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][7]_C_2 ),
         .PRE(\r_reg_reg[2][7]_P_1 ),
@@ -50113,7 +50627,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][8]_C_1 ),
         .D(\r_reg_reg[2][8]_C_2 ),
@@ -50131,7 +50645,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][8]_C_2 ),
         .PRE(\r_reg_reg[2][8]_P_1 ),
@@ -50139,7 +50653,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[2][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[2][9]_C_1 ),
         .D(\r_reg_reg[2][9]_C_2 ),
@@ -50157,7 +50671,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[2][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[2][9]_C_2 ),
         .PRE(\r_reg_reg[2][9]_P_1 ),
@@ -50165,7 +50679,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][0]_C_1 ),
         .D(\r_reg_reg[3][0]_C_2 ),
@@ -50183,7 +50697,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][0]_C_2 ),
         .PRE(\r_reg_reg[3][0]_P_1 ),
@@ -50191,7 +50705,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][10]_C_1 ),
         .D(\r_reg_reg[3][10]_C_2 ),
@@ -50209,7 +50723,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][10]_C_2 ),
         .PRE(\r_reg_reg[3][10]_P_1 ),
@@ -50217,7 +50731,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][11]_C_1 ),
         .D(\r_reg_reg[3][11]_C_2 ),
@@ -50235,7 +50749,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][11]_C_2 ),
         .PRE(\r_reg_reg[3][11]_P_1 ),
@@ -50243,7 +50757,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][12]_C_1 ),
         .D(\r_reg_reg[3][12]_C_2 ),
@@ -50261,7 +50775,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][12]_C_2 ),
         .PRE(\r_reg_reg[3][12]_P_1 ),
@@ -50269,7 +50783,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][13]_C_1 ),
         .D(\r_reg_reg[3][13]_C_2 ),
@@ -50287,7 +50801,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][13]_C_2 ),
         .PRE(\r_reg_reg[3][13]_P_1 ),
@@ -50295,7 +50809,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][14]_C_1 ),
         .D(\r_reg_reg[3][14]_C_2 ),
@@ -50313,7 +50827,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][14]_C_2 ),
         .PRE(\r_reg_reg[3][14]_P_1 ),
@@ -50321,7 +50835,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][15]_C_1 ),
         .D(\r_reg_reg[3][15]_C_2 ),
@@ -50339,7 +50853,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][15]_C_2 ),
         .PRE(\r_reg_reg[3][15]_P_1 ),
@@ -50347,7 +50861,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][16]_C_1 ),
         .D(\r_reg_reg[3][16]_C_2 ),
@@ -50365,7 +50879,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][16]_C_2 ),
         .PRE(\r_reg_reg[3][16]_P_1 ),
@@ -50373,7 +50887,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][17]_C_1 ),
         .D(\r_reg_reg[3][17]_C_2 ),
@@ -50391,7 +50905,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][17]_C_2 ),
         .PRE(\r_reg_reg[3][17]_P_1 ),
@@ -50399,7 +50913,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][18]_C_1 ),
         .D(\r_reg_reg[3][18]_C_2 ),
@@ -50417,7 +50931,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][18]_C_2 ),
         .PRE(\r_reg_reg[3][18]_P_1 ),
@@ -50425,7 +50939,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][19]_C_1 ),
         .D(\r_reg_reg[3][19]_C_2 ),
@@ -50443,7 +50957,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][19]_C_2 ),
         .PRE(\r_reg_reg[3][19]_P_1 ),
@@ -50451,7 +50965,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][1]_C_1 ),
         .D(\r_reg_reg[3][1]_C_2 ),
@@ -50469,7 +50983,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][1]_C_2 ),
         .PRE(\r_reg_reg[3][1]_P_1 ),
@@ -50477,7 +50991,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][20]_C_1 ),
         .D(\r_reg_reg[3][20]_C_2 ),
@@ -50495,7 +51009,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][20]_C_2 ),
         .PRE(\r_reg_reg[3][20]_P_1 ),
@@ -50503,7 +51017,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][21]_C_1 ),
         .D(\r_reg_reg[3][21]_C_2 ),
@@ -50521,7 +51035,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][21]_C_2 ),
         .PRE(\r_reg_reg[3][21]_P_1 ),
@@ -50529,7 +51043,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][22]_C_1 ),
         .D(\r_reg_reg[3][22]_C_2 ),
@@ -50547,7 +51061,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][22]_C_2 ),
         .PRE(\r_reg_reg[3][22]_P_1 ),
@@ -50555,7 +51069,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][23]_C_1 ),
         .D(\r_reg_reg[3][23]_C_2 ),
@@ -50573,7 +51087,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][23]_C_2 ),
         .PRE(\r_reg_reg[3][23]_P_1 ),
@@ -50581,7 +51095,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][24]_C_1 ),
         .D(\r_reg_reg[3][24]_C_2 ),
@@ -50599,7 +51113,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][24]_C_2 ),
         .PRE(\r_reg_reg[3][24]_P_1 ),
@@ -50607,7 +51121,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][25]_C_1 ),
         .D(\r_reg_reg[3][25]_C_2 ),
@@ -50625,7 +51139,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][25]_C_2 ),
         .PRE(\r_reg_reg[3][25]_P_1 ),
@@ -50633,7 +51147,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][26]_C_1 ),
         .D(\r_reg_reg[3][26]_C_2 ),
@@ -50651,7 +51165,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][26]_C_2 ),
         .PRE(\r_reg_reg[3][26]_P_1 ),
@@ -50659,7 +51173,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][27]_C_1 ),
         .D(\r_reg_reg[3][27]_C_2 ),
@@ -50677,7 +51191,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][27]_C_2 ),
         .PRE(\r_reg_reg[3][27]_P_1 ),
@@ -50685,7 +51199,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][28]_C_1 ),
         .D(\r_reg_reg[3][28]_C_2 ),
@@ -50703,7 +51217,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][28]_C_2 ),
         .PRE(\r_reg_reg[3][28]_P_1 ),
@@ -50711,7 +51225,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][29]_C_1 ),
         .D(\r_reg_reg[3][29]_C_2 ),
@@ -50729,7 +51243,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][29]_C_2 ),
         .PRE(\r_reg_reg[3][29]_P_1 ),
@@ -50737,7 +51251,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][2]_C_1 ),
         .D(\r_reg_reg[3][2]_C_2 ),
@@ -50755,7 +51269,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][2]_C_2 ),
         .PRE(\r_reg_reg[3][2]_P_1 ),
@@ -50763,7 +51277,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][30]_C_1 ),
         .D(\r_reg_reg[3][30]_C_2 ),
@@ -50781,7 +51295,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][30]_C_2 ),
         .PRE(\r_reg_reg[3][30]_P_1 ),
@@ -50789,7 +51303,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][31]_C_1 ),
         .D(\r_reg_reg[3][31]_C_2 ),
@@ -50807,7 +51321,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][31]_C_2 ),
         .PRE(\r_reg_reg[3][31]_P_1 ),
@@ -50815,7 +51329,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][3]_C_1 ),
         .D(\r_reg_reg[3][3]_C_2 ),
@@ -50833,7 +51347,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][3]_C_2 ),
         .PRE(\r_reg_reg[3][3]_P_1 ),
@@ -50841,7 +51355,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][4]_C_1 ),
         .D(\r_reg_reg[3][4]_C_2 ),
@@ -50859,7 +51373,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][4]_C_2 ),
         .PRE(\r_reg_reg[3][4]_P_1 ),
@@ -50867,7 +51381,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][5]_C_1 ),
         .D(\r_reg_reg[3][5]_C_2 ),
@@ -50885,7 +51399,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][5]_C_2 ),
         .PRE(\r_reg_reg[3][5]_P_1 ),
@@ -50893,7 +51407,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][6]_C_1 ),
         .D(\r_reg_reg[3][6]_C_2 ),
@@ -50911,7 +51425,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][6]_C_2 ),
         .PRE(\r_reg_reg[3][6]_P_1 ),
@@ -50919,7 +51433,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][7]_C_1 ),
         .D(\r_reg_reg[3][7]_C_2 ),
@@ -50937,7 +51451,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][7]_C_2 ),
         .PRE(\r_reg_reg[3][7]_P_1 ),
@@ -50945,7 +51459,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][8]_C_1 ),
         .D(\r_reg_reg[3][8]_C_2 ),
@@ -50963,7 +51477,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][8]_C_2 ),
         .PRE(\r_reg_reg[3][8]_P_1 ),
@@ -50971,7 +51485,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[3][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[3][9]_C_1 ),
         .D(\r_reg_reg[3][9]_C_2 ),
@@ -50989,7 +51503,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[3][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[3][9]_C_2 ),
         .PRE(\r_reg_reg[3][9]_P_1 ),
@@ -50997,7 +51511,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][0]_C_1 ),
         .D(\r_reg_reg[4][0]_C_2 ),
@@ -51015,7 +51529,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][0]_C_2 ),
         .PRE(\r_reg_reg[4][0]_P_1 ),
@@ -51023,7 +51537,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][10]_C_1 ),
         .D(\r_reg_reg[4][10]_C_2 ),
@@ -51041,7 +51555,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][10]_C_2 ),
         .PRE(\r_reg_reg[4][10]_P_1 ),
@@ -51049,7 +51563,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][11]_C_1 ),
         .D(\r_reg_reg[4][11]_C_2 ),
@@ -51067,7 +51581,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][11]_C_2 ),
         .PRE(\r_reg_reg[4][11]_P_1 ),
@@ -51075,7 +51589,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][12]_C_1 ),
         .D(\r_reg_reg[4][12]_C_2 ),
@@ -51093,7 +51607,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][12]_C_2 ),
         .PRE(\r_reg_reg[4][12]_P_1 ),
@@ -51101,7 +51615,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][13]_C_1 ),
         .D(\r_reg_reg[4][13]_C_2 ),
@@ -51119,7 +51633,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][13]_C_2 ),
         .PRE(\r_reg_reg[4][13]_P_1 ),
@@ -51127,7 +51641,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][14]_C_1 ),
         .D(\r_reg_reg[4][14]_C_2 ),
@@ -51145,7 +51659,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][14]_C_2 ),
         .PRE(\r_reg_reg[4][14]_P_1 ),
@@ -51153,7 +51667,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][15]_C_1 ),
         .D(\r_reg_reg[4][15]_C_2 ),
@@ -51171,7 +51685,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][15]_C_2 ),
         .PRE(\r_reg_reg[4][15]_P_1 ),
@@ -51179,7 +51693,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][16]_C_1 ),
         .D(\r_reg_reg[4][16]_C_2 ),
@@ -51197,7 +51711,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][16]_C_2 ),
         .PRE(\r_reg_reg[4][16]_P_1 ),
@@ -51205,7 +51719,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][17]_C_1 ),
         .D(\r_reg_reg[4][17]_C_2 ),
@@ -51223,7 +51737,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][17]_C_2 ),
         .PRE(\r_reg_reg[4][17]_P_1 ),
@@ -51231,7 +51745,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][18]_C_1 ),
         .D(\r_reg_reg[4][18]_C_2 ),
@@ -51249,7 +51763,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][18]_C_2 ),
         .PRE(\r_reg_reg[4][18]_P_1 ),
@@ -51257,7 +51771,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][19]_C_1 ),
         .D(\r_reg_reg[4][19]_C_2 ),
@@ -51275,7 +51789,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][19]_C_2 ),
         .PRE(\r_reg_reg[4][19]_P_1 ),
@@ -51283,7 +51797,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][1]_C_1 ),
         .D(\r_reg_reg[4][1]_C_2 ),
@@ -51301,7 +51815,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][1]_C_2 ),
         .PRE(\r_reg_reg[4][1]_P_1 ),
@@ -51309,7 +51823,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][20]_C_1 ),
         .D(\r_reg_reg[4][20]_C_2 ),
@@ -51327,7 +51841,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][20]_C_2 ),
         .PRE(\r_reg_reg[4][20]_P_1 ),
@@ -51335,7 +51849,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][21]_C_1 ),
         .D(\r_reg_reg[4][21]_C_2 ),
@@ -51353,7 +51867,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][21]_C_2 ),
         .PRE(\r_reg_reg[4][21]_P_1 ),
@@ -51361,7 +51875,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][22]_C_1 ),
         .D(\r_reg_reg[4][22]_C_2 ),
@@ -51379,7 +51893,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][22]_C_2 ),
         .PRE(\r_reg_reg[4][22]_P_1 ),
@@ -51387,7 +51901,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][23]_C_1 ),
         .D(\r_reg_reg[4][23]_C_2 ),
@@ -51405,7 +51919,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][23]_C_2 ),
         .PRE(\r_reg_reg[4][23]_P_1 ),
@@ -51413,7 +51927,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][24]_C_1 ),
         .D(\r_reg_reg[4][24]_C_2 ),
@@ -51431,7 +51945,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][24]_C_2 ),
         .PRE(\r_reg_reg[4][24]_P_1 ),
@@ -51439,7 +51953,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][25]_C_1 ),
         .D(\r_reg_reg[4][25]_C_2 ),
@@ -51457,7 +51971,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][25]_C_2 ),
         .PRE(\r_reg_reg[4][25]_P_1 ),
@@ -51465,7 +51979,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][26]_C_1 ),
         .D(\r_reg_reg[4][26]_C_2 ),
@@ -51483,7 +51997,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][26]_C_2 ),
         .PRE(\r_reg_reg[4][26]_P_1 ),
@@ -51491,7 +52005,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][27]_C_1 ),
         .D(\r_reg_reg[4][27]_C_2 ),
@@ -51509,7 +52023,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][27]_C_2 ),
         .PRE(\r_reg_reg[4][27]_P_1 ),
@@ -51517,7 +52031,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][28]_C_1 ),
         .D(\r_reg_reg[4][28]_C_2 ),
@@ -51535,7 +52049,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][28]_C_2 ),
         .PRE(\r_reg_reg[4][28]_P_1 ),
@@ -51543,7 +52057,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][29]_C_1 ),
         .D(\r_reg_reg[4][29]_C_2 ),
@@ -51561,7 +52075,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][29]_C_2 ),
         .PRE(\r_reg_reg[4][29]_P_1 ),
@@ -51569,7 +52083,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][2]_C_1 ),
         .D(\r_reg_reg[4][2]_C_2 ),
@@ -51587,7 +52101,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][2]_C_2 ),
         .PRE(\r_reg_reg[4][2]_P_1 ),
@@ -51595,7 +52109,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][30]_C_1 ),
         .D(\r_reg_reg[4][30]_C_2 ),
@@ -51613,7 +52127,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][30]_C_2 ),
         .PRE(\r_reg_reg[4][30]_P_1 ),
@@ -51621,7 +52135,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][31]_C_1 ),
         .D(\r_reg_reg[4][31]_C_2 ),
@@ -51639,7 +52153,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][31]_C_2 ),
         .PRE(\r_reg_reg[4][31]_P_1 ),
@@ -51647,7 +52161,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][3]_C_1 ),
         .D(\r_reg_reg[4][3]_C_2 ),
@@ -51665,7 +52179,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][3]_C_2 ),
         .PRE(\r_reg_reg[4][3]_P_1 ),
@@ -51673,7 +52187,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][4]_C_1 ),
         .D(\r_reg_reg[4][4]_C_2 ),
@@ -51691,7 +52205,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][4]_C_2 ),
         .PRE(\r_reg_reg[4][4]_P_1 ),
@@ -51699,7 +52213,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][5]_C_1 ),
         .D(\r_reg_reg[4][5]_C_2 ),
@@ -51717,7 +52231,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][5]_C_2 ),
         .PRE(\r_reg_reg[4][5]_P_1 ),
@@ -51725,7 +52239,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][6]_C_1 ),
         .D(\r_reg_reg[4][6]_C_2 ),
@@ -51743,7 +52257,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][6]_C_2 ),
         .PRE(\r_reg_reg[4][6]_P_1 ),
@@ -51751,7 +52265,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][7]_C_1 ),
         .D(\r_reg_reg[4][7]_C_2 ),
@@ -51769,7 +52283,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][7]_C_2 ),
         .PRE(\r_reg_reg[4][7]_P_1 ),
@@ -51777,7 +52291,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][8]_C_1 ),
         .D(\r_reg_reg[4][8]_C_2 ),
@@ -51795,7 +52309,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][8]_C_2 ),
         .PRE(\r_reg_reg[4][8]_P_1 ),
@@ -51803,7 +52317,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[4][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[4][9]_C_1 ),
         .D(\r_reg_reg[4][9]_C_2 ),
@@ -51821,7 +52335,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[4][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[4][9]_C_2 ),
         .PRE(\r_reg_reg[4][9]_P_1 ),
@@ -51829,7 +52343,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][0]_C_1 ),
         .D(\r_reg_reg[5][0]_C_2 ),
@@ -51847,7 +52361,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][0]_C_2 ),
         .PRE(\r_reg_reg[5][0]_P_1 ),
@@ -51855,7 +52369,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][10]_C_1 ),
         .D(\r_reg_reg[5][10]_C_2 ),
@@ -51873,7 +52387,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][10]_C_2 ),
         .PRE(\r_reg_reg[5][10]_P_1 ),
@@ -51881,7 +52395,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][11]_C_1 ),
         .D(\r_reg_reg[5][11]_C_2 ),
@@ -51899,7 +52413,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][11]_C_2 ),
         .PRE(\r_reg_reg[5][11]_P_1 ),
@@ -51907,7 +52421,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][12]_C_1 ),
         .D(\r_reg_reg[5][12]_C_2 ),
@@ -51925,7 +52439,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][12]_C_2 ),
         .PRE(\r_reg_reg[5][12]_P_1 ),
@@ -51933,7 +52447,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][13]_C_1 ),
         .D(\r_reg_reg[5][13]_C_2 ),
@@ -51951,7 +52465,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][13]_C_2 ),
         .PRE(\r_reg_reg[5][13]_P_1 ),
@@ -51959,7 +52473,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][14]_C_1 ),
         .D(\r_reg_reg[5][14]_C_2 ),
@@ -51977,7 +52491,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][14]_C_2 ),
         .PRE(\r_reg_reg[5][14]_P_1 ),
@@ -51985,7 +52499,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][15]_C_1 ),
         .D(\r_reg_reg[5][15]_C_2 ),
@@ -52003,7 +52517,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][15]_C_2 ),
         .PRE(\r_reg_reg[5][15]_P_1 ),
@@ -52011,7 +52525,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][16]_C_1 ),
         .D(\r_reg_reg[5][16]_C_2 ),
@@ -52029,7 +52543,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][16]_C_2 ),
         .PRE(\r_reg_reg[5][16]_P_1 ),
@@ -52037,7 +52551,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][17]_C_1 ),
         .D(\r_reg_reg[5][17]_C_2 ),
@@ -52055,7 +52569,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][17]_C_2 ),
         .PRE(\r_reg_reg[5][17]_P_1 ),
@@ -52063,7 +52577,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][18]_C_1 ),
         .D(\r_reg_reg[5][18]_C_2 ),
@@ -52081,7 +52595,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][18]_C_2 ),
         .PRE(\r_reg_reg[5][18]_P_1 ),
@@ -52089,7 +52603,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][19]_C_1 ),
         .D(\r_reg_reg[5][19]_C_2 ),
@@ -52107,7 +52621,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][19]_C_2 ),
         .PRE(\r_reg_reg[5][19]_P_1 ),
@@ -52115,7 +52629,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][1]_C_1 ),
         .D(\r_reg_reg[5][1]_C_2 ),
@@ -52133,7 +52647,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][1]_C_2 ),
         .PRE(\r_reg_reg[5][1]_P_1 ),
@@ -52141,7 +52655,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][20]_C_1 ),
         .D(\r_reg_reg[5][20]_C_2 ),
@@ -52159,7 +52673,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][20]_C_2 ),
         .PRE(\r_reg_reg[5][20]_P_1 ),
@@ -52167,7 +52681,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][21]_C_1 ),
         .D(\r_reg_reg[5][21]_C_2 ),
@@ -52185,7 +52699,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][21]_C_2 ),
         .PRE(\r_reg_reg[5][21]_P_1 ),
@@ -52193,7 +52707,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][22]_C_1 ),
         .D(\r_reg_reg[5][22]_C_2 ),
@@ -52211,7 +52725,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][22]_C_2 ),
         .PRE(\r_reg_reg[5][22]_P_1 ),
@@ -52219,7 +52733,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][23]_C_1 ),
         .D(\r_reg_reg[5][23]_C_2 ),
@@ -52237,7 +52751,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][23]_C_2 ),
         .PRE(\r_reg_reg[5][23]_P_1 ),
@@ -52245,7 +52759,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][24]_C_1 ),
         .D(\r_reg_reg[5][24]_C_2 ),
@@ -52263,7 +52777,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][24]_C_2 ),
         .PRE(\r_reg_reg[5][24]_P_1 ),
@@ -52271,7 +52785,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][25]_C_1 ),
         .D(\r_reg_reg[5][25]_C_2 ),
@@ -52289,7 +52803,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][25]_C_2 ),
         .PRE(\r_reg_reg[5][25]_P_1 ),
@@ -52297,7 +52811,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][26]_C_1 ),
         .D(\r_reg_reg[5][26]_C_2 ),
@@ -52315,7 +52829,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][26]_C_2 ),
         .PRE(\r_reg_reg[5][26]_P_1 ),
@@ -52323,7 +52837,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][27]_C_1 ),
         .D(\r_reg_reg[5][27]_C_2 ),
@@ -52341,7 +52855,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][27]_C_2 ),
         .PRE(\r_reg_reg[5][27]_P_1 ),
@@ -52349,7 +52863,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][28]_C_1 ),
         .D(\r_reg_reg[5][28]_C_2 ),
@@ -52367,7 +52881,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][28]_C_2 ),
         .PRE(\r_reg_reg[5][28]_P_1 ),
@@ -52375,7 +52889,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][29]_C_1 ),
         .D(\r_reg_reg[5][29]_C_2 ),
@@ -52393,7 +52907,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][29]_C_2 ),
         .PRE(\r_reg_reg[5][29]_P_1 ),
@@ -52401,7 +52915,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][2]_C_1 ),
         .D(\r_reg_reg[5][2]_C_2 ),
@@ -52419,7 +52933,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][2]_C_2 ),
         .PRE(\r_reg_reg[5][2]_P_1 ),
@@ -52427,7 +52941,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][30]_C_1 ),
         .D(\r_reg_reg[5][30]_C_2 ),
@@ -52445,7 +52959,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][30]_C_2 ),
         .PRE(\r_reg_reg[5][30]_P_1 ),
@@ -52453,7 +52967,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][31]_C_1 ),
         .D(\r_reg_reg[5][31]_C_2 ),
@@ -52471,7 +52985,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][31]_C_2 ),
         .PRE(\r_reg_reg[5][31]_P_1 ),
@@ -52479,7 +52993,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][3]_C_1 ),
         .D(\r_reg_reg[5][3]_C_2 ),
@@ -52497,7 +53011,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][3]_C_2 ),
         .PRE(\r_reg_reg[5][3]_P_1 ),
@@ -52505,7 +53019,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][4]_C_1 ),
         .D(\r_reg_reg[5][4]_C_2 ),
@@ -52523,7 +53037,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][4]_C_2 ),
         .PRE(\r_reg_reg[5][4]_P_1 ),
@@ -52531,7 +53045,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][5]_C_1 ),
         .D(\r_reg_reg[5][5]_C_2 ),
@@ -52549,7 +53063,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][5]_C_2 ),
         .PRE(\r_reg_reg[5][5]_P_1 ),
@@ -52557,7 +53071,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][6]_C_1 ),
         .D(\r_reg_reg[5][6]_C_2 ),
@@ -52575,7 +53089,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][6]_C_2 ),
         .PRE(\r_reg_reg[5][6]_P_1 ),
@@ -52583,7 +53097,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][7]_C_1 ),
         .D(\r_reg_reg[5][7]_C_2 ),
@@ -52601,7 +53115,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][7]_C_2 ),
         .PRE(\r_reg_reg[5][7]_P_1 ),
@@ -52609,7 +53123,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][8]_C_1 ),
         .D(\r_reg_reg[5][8]_C_2 ),
@@ -52627,7 +53141,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][8]_C_2 ),
         .PRE(\r_reg_reg[5][8]_P_1 ),
@@ -52635,7 +53149,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[5][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[5][9]_C_1 ),
         .D(\r_reg_reg[5][9]_C_2 ),
@@ -52653,7 +53167,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[5][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[5][9]_C_2 ),
         .PRE(\r_reg_reg[5][9]_P_1 ),
@@ -52661,7 +53175,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][0]_C_1 ),
         .D(\r_reg_reg[6][0]_C_2 ),
@@ -52679,7 +53193,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][0]_C_2 ),
         .PRE(\r_reg_reg[6][0]_P_1 ),
@@ -52687,7 +53201,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][10]_C_1 ),
         .D(\r_reg_reg[6][10]_C_2 ),
@@ -52705,7 +53219,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][10]_C_2 ),
         .PRE(\r_reg_reg[6][10]_P_1 ),
@@ -52713,7 +53227,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][11]_C_1 ),
         .D(\r_reg_reg[6][11]_C_2 ),
@@ -52731,7 +53245,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][11]_C_2 ),
         .PRE(\r_reg_reg[6][11]_P_1 ),
@@ -52739,7 +53253,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][12]_C_1 ),
         .D(\r_reg_reg[6][12]_C_2 ),
@@ -52757,7 +53271,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][12]_C_2 ),
         .PRE(\r_reg_reg[6][12]_P_1 ),
@@ -52765,7 +53279,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][13]_C_1 ),
         .D(\r_reg_reg[6][13]_C_2 ),
@@ -52783,7 +53297,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][13]_C_2 ),
         .PRE(\r_reg_reg[6][13]_P_1 ),
@@ -52791,7 +53305,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][14]_C_1 ),
         .D(\r_reg_reg[6][14]_C_2 ),
@@ -52809,7 +53323,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][14]_C_2 ),
         .PRE(\r_reg_reg[6][14]_P_1 ),
@@ -52817,7 +53331,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][15]_C_1 ),
         .D(\r_reg_reg[6][15]_C_2 ),
@@ -52835,7 +53349,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][15]_C_2 ),
         .PRE(\r_reg_reg[6][15]_P_1 ),
@@ -52843,7 +53357,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][16]_C_1 ),
         .D(\r_reg_reg[6][16]_C_2 ),
@@ -52861,7 +53375,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][16]_C_2 ),
         .PRE(\r_reg_reg[6][16]_P_1 ),
@@ -52869,7 +53383,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][17]_C_1 ),
         .D(\r_reg_reg[6][17]_C_2 ),
@@ -52887,7 +53401,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][17]_C_2 ),
         .PRE(\r_reg_reg[6][17]_P_1 ),
@@ -52895,7 +53409,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][18]_C_1 ),
         .D(\r_reg_reg[6][18]_C_2 ),
@@ -52913,7 +53427,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][18]_C_2 ),
         .PRE(\r_reg_reg[6][18]_P_1 ),
@@ -52921,7 +53435,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][19]_C_1 ),
         .D(\r_reg_reg[6][19]_C_2 ),
@@ -52939,7 +53453,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][19]_C_2 ),
         .PRE(\r_reg_reg[6][19]_P_1 ),
@@ -52947,7 +53461,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][1]_C_1 ),
         .D(\r_reg_reg[6][1]_C_2 ),
@@ -52965,7 +53479,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][1]_C_2 ),
         .PRE(\r_reg_reg[6][1]_P_1 ),
@@ -52973,7 +53487,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][20]_C_1 ),
         .D(\r_reg_reg[6][20]_C_2 ),
@@ -52991,7 +53505,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][20]_C_2 ),
         .PRE(\r_reg_reg[6][20]_P_1 ),
@@ -52999,7 +53513,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][21]_C_1 ),
         .D(\r_reg_reg[6][21]_C_2 ),
@@ -53017,7 +53531,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][21]_C_2 ),
         .PRE(\r_reg_reg[6][21]_P_1 ),
@@ -53025,7 +53539,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][22]_C_1 ),
         .D(\r_reg_reg[6][22]_C_2 ),
@@ -53043,7 +53557,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][22]_C_2 ),
         .PRE(\r_reg_reg[6][22]_P_1 ),
@@ -53051,7 +53565,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][23]_C_1 ),
         .D(\r_reg_reg[6][23]_C_2 ),
@@ -53069,7 +53583,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][23]_C_2 ),
         .PRE(\r_reg_reg[6][23]_P_1 ),
@@ -53077,7 +53591,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][24]_C_1 ),
         .D(\r_reg_reg[6][24]_C_2 ),
@@ -53095,7 +53609,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][24]_C_2 ),
         .PRE(\r_reg_reg[6][24]_P_1 ),
@@ -53103,7 +53617,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][25]_C_1 ),
         .D(\r_reg_reg[6][25]_C_2 ),
@@ -53121,7 +53635,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][25]_C_2 ),
         .PRE(\r_reg_reg[6][25]_P_1 ),
@@ -53129,7 +53643,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][26]_C_1 ),
         .D(\r_reg_reg[6][26]_C_2 ),
@@ -53147,7 +53661,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][26]_C_2 ),
         .PRE(\r_reg_reg[6][26]_P_1 ),
@@ -53155,7 +53669,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][27]_C_1 ),
         .D(\r_reg_reg[6][27]_C_2 ),
@@ -53173,7 +53687,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][27]_C_2 ),
         .PRE(\r_reg_reg[6][27]_P_1 ),
@@ -53181,7 +53695,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][28]_C_1 ),
         .D(\r_reg_reg[6][28]_C_2 ),
@@ -53199,7 +53713,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][28]_C_2 ),
         .PRE(\r_reg_reg[6][28]_P_1 ),
@@ -53207,7 +53721,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][29]_C_1 ),
         .D(\r_reg_reg[6][29]_C_2 ),
@@ -53225,7 +53739,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][29]_C_2 ),
         .PRE(\r_reg_reg[6][29]_P_1 ),
@@ -53233,7 +53747,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][2]_C_1 ),
         .D(\r_reg_reg[6][2]_C_2 ),
@@ -53251,7 +53765,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][2]_C_2 ),
         .PRE(\r_reg_reg[6][2]_P_1 ),
@@ -53259,7 +53773,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][30]_C_1 ),
         .D(\r_reg_reg[6][30]_C_2 ),
@@ -53277,7 +53791,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][30]_C_2 ),
         .PRE(\r_reg_reg[6][30]_P_1 ),
@@ -53285,7 +53799,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][31]_C_1 ),
         .D(\r_reg_reg[6][31]_C_2 ),
@@ -53303,7 +53817,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][31]_C_2 ),
         .PRE(\r_reg_reg[6][31]_P_1 ),
@@ -53311,7 +53825,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][3]_C_1 ),
         .D(\r_reg_reg[6][3]_C_2 ),
@@ -53329,7 +53843,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][3]_C_2 ),
         .PRE(\r_reg_reg[6][3]_P_1 ),
@@ -53337,7 +53851,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][4]_C_1 ),
         .D(\r_reg_reg[6][4]_C_2 ),
@@ -53355,7 +53869,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][4]_C_2 ),
         .PRE(\r_reg_reg[6][4]_P_1 ),
@@ -53363,7 +53877,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][5]_C_1 ),
         .D(\r_reg_reg[6][5]_C_2 ),
@@ -53381,7 +53895,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][5]_C_2 ),
         .PRE(\r_reg_reg[6][5]_P_1 ),
@@ -53389,7 +53903,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][6]_C_1 ),
         .D(\r_reg_reg[6][6]_C_2 ),
@@ -53407,7 +53921,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][6]_C_2 ),
         .PRE(\r_reg_reg[6][6]_P_1 ),
@@ -53415,7 +53929,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][7]_C_1 ),
         .D(\r_reg_reg[6][7]_C_2 ),
@@ -53433,7 +53947,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][7]_C_2 ),
         .PRE(\r_reg_reg[6][7]_P_1 ),
@@ -53441,7 +53955,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][8]_C_1 ),
         .D(\r_reg_reg[6][8]_C_2 ),
@@ -53459,7 +53973,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][8]_C_2 ),
         .PRE(\r_reg_reg[6][8]_P_1 ),
@@ -53467,7 +53981,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[6][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[6][9]_C_1 ),
         .D(\r_reg_reg[6][9]_C_2 ),
@@ -53485,7 +53999,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[6][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[6][9]_C_2 ),
         .PRE(\r_reg_reg[6][9]_P_1 ),
@@ -53493,7 +54007,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][0]_C_1 ),
         .D(\r_reg_reg[7][0]_C_2 ),
@@ -53511,7 +54025,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][0]_C_2 ),
         .PRE(\r_reg_reg[7][0]_P_1 ),
@@ -53519,7 +54033,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][10]_C_1 ),
         .D(\r_reg_reg[7][10]_C_2 ),
@@ -53537,7 +54051,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][10]_C_2 ),
         .PRE(\r_reg_reg[7][10]_P_1 ),
@@ -53545,7 +54059,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][11]_C_1 ),
         .D(\r_reg_reg[7][11]_C_2 ),
@@ -53563,7 +54077,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][11]_C_2 ),
         .PRE(\r_reg_reg[7][11]_P_1 ),
@@ -53571,7 +54085,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][12]_C_1 ),
         .D(\r_reg_reg[7][12]_C_2 ),
@@ -53589,7 +54103,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][12]_C_2 ),
         .PRE(\r_reg_reg[7][12]_P_1 ),
@@ -53597,7 +54111,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][13]_C_1 ),
         .D(\r_reg_reg[7][13]_C_2 ),
@@ -53615,7 +54129,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][13]_C_2 ),
         .PRE(\r_reg_reg[7][13]_P_1 ),
@@ -53623,7 +54137,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][14]_C_1 ),
         .D(\r_reg_reg[7][14]_C_2 ),
@@ -53641,7 +54155,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][14]_C_2 ),
         .PRE(\r_reg_reg[7][14]_P_1 ),
@@ -53649,7 +54163,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][15]_C_1 ),
         .D(\r_reg_reg[7][15]_C_2 ),
@@ -53667,7 +54181,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][15]_C_2 ),
         .PRE(\r_reg_reg[7][15]_P_1 ),
@@ -53675,7 +54189,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][16]_C_1 ),
         .D(\r_reg_reg[7][16]_C_2 ),
@@ -53693,7 +54207,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][16]_C_2 ),
         .PRE(\r_reg_reg[7][16]_P_1 ),
@@ -53701,7 +54215,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][17]_C_1 ),
         .D(\r_reg_reg[7][17]_C_2 ),
@@ -53719,7 +54233,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][17]_C_2 ),
         .PRE(\r_reg_reg[7][17]_P_1 ),
@@ -53727,7 +54241,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][18]_C_1 ),
         .D(\r_reg_reg[7][18]_C_2 ),
@@ -53745,7 +54259,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][18]_C_2 ),
         .PRE(\r_reg_reg[7][18]_P_1 ),
@@ -53753,7 +54267,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][19]_C_1 ),
         .D(\r_reg_reg[7][19]_C_2 ),
@@ -53771,7 +54285,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][19]_C_2 ),
         .PRE(\r_reg_reg[7][19]_P_1 ),
@@ -53779,7 +54293,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][1]_C_1 ),
         .D(\r_reg_reg[7][1]_C_2 ),
@@ -53797,7 +54311,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][1]_C_2 ),
         .PRE(\r_reg_reg[7][1]_P_1 ),
@@ -53805,7 +54319,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][20]_C_1 ),
         .D(\r_reg_reg[7][20]_C_2 ),
@@ -53823,7 +54337,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][20]_C_2 ),
         .PRE(\r_reg_reg[7][20]_P_1 ),
@@ -53831,7 +54345,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][21]_C_1 ),
         .D(\r_reg_reg[7][21]_C_2 ),
@@ -53849,7 +54363,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][21]_C_2 ),
         .PRE(\r_reg_reg[7][21]_P_1 ),
@@ -53857,7 +54371,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][22]_C_1 ),
         .D(\r_reg_reg[7][22]_C_2 ),
@@ -53875,7 +54389,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][22]_C_2 ),
         .PRE(\r_reg_reg[7][22]_P_1 ),
@@ -53883,7 +54397,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][23]_C_1 ),
         .D(\r_reg_reg[7][23]_C_2 ),
@@ -53901,7 +54415,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][23]_C_2 ),
         .PRE(\r_reg_reg[7][23]_P_1 ),
@@ -53909,7 +54423,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][24]_C_1 ),
         .D(\r_reg_reg[7][24]_C_2 ),
@@ -53927,7 +54441,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][24]_C_2 ),
         .PRE(\r_reg_reg[7][24]_P_1 ),
@@ -53935,7 +54449,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][25]_C_1 ),
         .D(\r_reg_reg[7][25]_C_2 ),
@@ -53953,7 +54467,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][25]_C_2 ),
         .PRE(\r_reg_reg[7][25]_P_1 ),
@@ -53961,7 +54475,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][26]_C_1 ),
         .D(\r_reg_reg[7][26]_C_2 ),
@@ -53979,7 +54493,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][26]_C_2 ),
         .PRE(\r_reg_reg[7][26]_P_1 ),
@@ -53987,7 +54501,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][27]_C_1 ),
         .D(\r_reg_reg[7][27]_C_2 ),
@@ -54005,7 +54519,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][27]_C_2 ),
         .PRE(\r_reg_reg[7][27]_P_1 ),
@@ -54013,7 +54527,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][28]_C_1 ),
         .D(\r_reg_reg[7][28]_C_2 ),
@@ -54031,7 +54545,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][28]_C_2 ),
         .PRE(\r_reg_reg[7][28]_P_1 ),
@@ -54039,7 +54553,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][29]_C_1 ),
         .D(\r_reg_reg[7][29]_C_2 ),
@@ -54057,7 +54571,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][29]_C_2 ),
         .PRE(\r_reg_reg[7][29]_P_1 ),
@@ -54065,7 +54579,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][2]_C_1 ),
         .D(\r_reg_reg[7][2]_C_2 ),
@@ -54083,7 +54597,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][2]_C_2 ),
         .PRE(\r_reg_reg[7][2]_P_1 ),
@@ -54091,7 +54605,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][30]_C_1 ),
         .D(\r_reg_reg[7][30]_C_2 ),
@@ -54109,7 +54623,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][30]_C_2 ),
         .PRE(\r_reg_reg[7][30]_P_1 ),
@@ -54117,7 +54631,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][31]_C_1 ),
         .D(\r_reg_reg[7][31]_C_2 ),
@@ -54135,7 +54649,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][31]_C_2 ),
         .PRE(\r_reg_reg[7][31]_P_1 ),
@@ -54143,7 +54657,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][3]_C_1 ),
         .D(\r_reg_reg[7][3]_C_2 ),
@@ -54161,7 +54675,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][3]_C_2 ),
         .PRE(\r_reg_reg[7][3]_P_1 ),
@@ -54169,7 +54683,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][4]_C_1 ),
         .D(\r_reg_reg[7][4]_C_2 ),
@@ -54187,7 +54701,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][4]_C_2 ),
         .PRE(\r_reg_reg[7][4]_P_1 ),
@@ -54195,7 +54709,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][5]_C_1 ),
         .D(\r_reg_reg[7][5]_C_2 ),
@@ -54213,7 +54727,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][5]_C_2 ),
         .PRE(\r_reg_reg[7][5]_P_1 ),
@@ -54221,7 +54735,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][6]_C_1 ),
         .D(\r_reg_reg[7][6]_C_2 ),
@@ -54239,7 +54753,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][6]_C_2 ),
         .PRE(\r_reg_reg[7][6]_P_1 ),
@@ -54247,7 +54761,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][7]_C_1 ),
         .D(\r_reg_reg[7][7]_C_2 ),
@@ -54265,7 +54779,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][7]_C_2 ),
         .PRE(\r_reg_reg[7][7]_P_1 ),
@@ -54273,7 +54787,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][8]_C_1 ),
         .D(\r_reg_reg[7][8]_C_2 ),
@@ -54291,7 +54805,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][8]_C_2 ),
         .PRE(\r_reg_reg[7][8]_P_1 ),
@@ -54299,7 +54813,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[7][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[7][9]_C_1 ),
         .D(\r_reg_reg[7][9]_C_2 ),
@@ -54317,7 +54831,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[7][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[7][9]_C_2 ),
         .PRE(\r_reg_reg[7][9]_P_1 ),
@@ -54325,7 +54839,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][0]_C_1 ),
         .D(\r_reg_reg[8][0]_C_2 ),
@@ -54343,7 +54857,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][0]_C_2 ),
         .PRE(\r_reg_reg[8][0]_P_1 ),
@@ -54351,7 +54865,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][10]_C_1 ),
         .D(\r_reg_reg[8][10]_C_2 ),
@@ -54369,7 +54883,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][10]_C_2 ),
         .PRE(\r_reg_reg[8][10]_P_1 ),
@@ -54377,7 +54891,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][11]_C_1 ),
         .D(\r_reg_reg[8][11]_C_2 ),
@@ -54395,7 +54909,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][11]_C_2 ),
         .PRE(\r_reg_reg[8][11]_P_1 ),
@@ -54403,7 +54917,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][12]_C_1 ),
         .D(\r_reg_reg[8][12]_C_2 ),
@@ -54421,7 +54935,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][12]_C_2 ),
         .PRE(\r_reg_reg[8][12]_P_1 ),
@@ -54429,7 +54943,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][13]_C_1 ),
         .D(\r_reg_reg[8][13]_C_2 ),
@@ -54447,7 +54961,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][13]_C_2 ),
         .PRE(\r_reg_reg[8][13]_P_1 ),
@@ -54455,7 +54969,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][14]_C_1 ),
         .D(\r_reg_reg[8][14]_C_2 ),
@@ -54473,7 +54987,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][14]_C_2 ),
         .PRE(\r_reg_reg[8][14]_P_1 ),
@@ -54481,7 +54995,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][15]_C_1 ),
         .D(\r_reg_reg[8][15]_C_2 ),
@@ -54499,7 +55013,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][15]_C_2 ),
         .PRE(\r_reg_reg[8][15]_P_1 ),
@@ -54507,7 +55021,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][16]_C_1 ),
         .D(\r_reg_reg[8][16]_C_2 ),
@@ -54525,7 +55039,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][16]_C_2 ),
         .PRE(\r_reg_reg[8][16]_P_1 ),
@@ -54533,7 +55047,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][17]_C_1 ),
         .D(\r_reg_reg[8][17]_C_2 ),
@@ -54551,7 +55065,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][17]_C_2 ),
         .PRE(\r_reg_reg[8][17]_P_1 ),
@@ -54559,7 +55073,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][18]_C_1 ),
         .D(\r_reg_reg[8][18]_C_2 ),
@@ -54577,7 +55091,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][18]_C_2 ),
         .PRE(\r_reg_reg[8][18]_P_1 ),
@@ -54585,7 +55099,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][19]_C_1 ),
         .D(\r_reg_reg[8][19]_C_2 ),
@@ -54603,7 +55117,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][19]_C_2 ),
         .PRE(\r_reg_reg[8][19]_P_1 ),
@@ -54611,7 +55125,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][1]_C_1 ),
         .D(\r_reg_reg[8][1]_C_2 ),
@@ -54629,7 +55143,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][1]_C_2 ),
         .PRE(\r_reg_reg[8][1]_P_1 ),
@@ -54637,7 +55151,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][20]_C_1 ),
         .D(\r_reg_reg[8][20]_C_2 ),
@@ -54655,7 +55169,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][20]_C_2 ),
         .PRE(\r_reg_reg[8][20]_P_1 ),
@@ -54663,7 +55177,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][21]_C_1 ),
         .D(\r_reg_reg[8][21]_C_2 ),
@@ -54681,7 +55195,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][21]_C_2 ),
         .PRE(\r_reg_reg[8][21]_P_1 ),
@@ -54689,7 +55203,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][22]_C_1 ),
         .D(\r_reg_reg[8][22]_C_2 ),
@@ -54707,7 +55221,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][22]_C_2 ),
         .PRE(\r_reg_reg[8][22]_P_1 ),
@@ -54715,7 +55229,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][23]_C_1 ),
         .D(\r_reg_reg[8][23]_C_2 ),
@@ -54733,7 +55247,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][23]_C_2 ),
         .PRE(\r_reg_reg[8][23]_P_1 ),
@@ -54741,7 +55255,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][24]_C_1 ),
         .D(\r_reg_reg[8][24]_C_2 ),
@@ -54759,7 +55273,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][24]_C_2 ),
         .PRE(\r_reg_reg[8][24]_P_1 ),
@@ -54767,7 +55281,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][25]_C_1 ),
         .D(\r_reg_reg[8][25]_C_2 ),
@@ -54785,7 +55299,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][25]_C_2 ),
         .PRE(\r_reg_reg[8][25]_P_1 ),
@@ -54793,7 +55307,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][26]_C_1 ),
         .D(\r_reg_reg[8][26]_C_2 ),
@@ -54811,7 +55325,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][26]_C_2 ),
         .PRE(\r_reg_reg[8][26]_P_1 ),
@@ -54819,7 +55333,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][27]_C_1 ),
         .D(\r_reg_reg[8][27]_C_2 ),
@@ -54837,7 +55351,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][27]_C_2 ),
         .PRE(\r_reg_reg[8][27]_P_1 ),
@@ -54845,7 +55359,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][28]_C_1 ),
         .D(\r_reg_reg[8][28]_C_2 ),
@@ -54863,7 +55377,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][28]_C_2 ),
         .PRE(\r_reg_reg[8][28]_P_1 ),
@@ -54871,7 +55385,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][29]_C_1 ),
         .D(\r_reg_reg[8][29]_C_2 ),
@@ -54889,7 +55403,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][29]_C_2 ),
         .PRE(\r_reg_reg[8][29]_P_1 ),
@@ -54897,7 +55411,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][2]_C_1 ),
         .D(\r_reg_reg[8][2]_C_2 ),
@@ -54915,7 +55429,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][2]_C_2 ),
         .PRE(\r_reg_reg[8][2]_P_1 ),
@@ -54923,7 +55437,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][30]_C_1 ),
         .D(\r_reg_reg[8][30]_C_2 ),
@@ -54941,7 +55455,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][30]_C_2 ),
         .PRE(\r_reg_reg[8][30]_P_1 ),
@@ -54949,7 +55463,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][31]_C_1 ),
         .D(\r_reg_reg[8][31]_C_2 ),
@@ -54967,7 +55481,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][31]_C_2 ),
         .PRE(\r_reg_reg[8][31]_P_1 ),
@@ -54975,7 +55489,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][3]_C_1 ),
         .D(\r_reg_reg[8][3]_C_2 ),
@@ -54993,7 +55507,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][3]_C_2 ),
         .PRE(\r_reg_reg[8][3]_P_1 ),
@@ -55001,7 +55515,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][4]_C_1 ),
         .D(\r_reg_reg[8][4]_C_2 ),
@@ -55019,7 +55533,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][4]_C_2 ),
         .PRE(\r_reg_reg[8][4]_P_1 ),
@@ -55027,7 +55541,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][5]_C_1 ),
         .D(\r_reg_reg[8][5]_C_2 ),
@@ -55045,7 +55559,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][5]_C_2 ),
         .PRE(\r_reg_reg[8][5]_P_1 ),
@@ -55053,7 +55567,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][6]_C_1 ),
         .D(\r_reg_reg[8][6]_C_2 ),
@@ -55071,7 +55585,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][6]_C_2 ),
         .PRE(\r_reg_reg[8][6]_P_1 ),
@@ -55079,7 +55593,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][7]_C_1 ),
         .D(\r_reg_reg[8][7]_C_2 ),
@@ -55097,7 +55611,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][7]_C_2 ),
         .PRE(\r_reg_reg[8][7]_P_1 ),
@@ -55105,7 +55619,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][8]_C_1 ),
         .D(\r_reg_reg[8][8]_C_2 ),
@@ -55123,7 +55637,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][8]_C_2 ),
         .PRE(\r_reg_reg[8][8]_P_1 ),
@@ -55131,7 +55645,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[8][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[8][9]_C_1 ),
         .D(\r_reg_reg[8][9]_C_2 ),
@@ -55149,7 +55663,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[8][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[8][9]_C_2 ),
         .PRE(\r_reg_reg[8][9]_P_1 ),
@@ -55157,7 +55671,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][0]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][0]_C_1 ),
         .D(\r_reg_reg[9][0]_C_2 ),
@@ -55175,7 +55689,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][0]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][0]_C_2 ),
         .PRE(\r_reg_reg[9][0]_P_1 ),
@@ -55183,7 +55697,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][10]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][10]_C_1 ),
         .D(\r_reg_reg[9][10]_C_2 ),
@@ -55201,7 +55715,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][10]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][10]_C_2 ),
         .PRE(\r_reg_reg[9][10]_P_1 ),
@@ -55209,7 +55723,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][11]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][11]_C_1 ),
         .D(\r_reg_reg[9][11]_C_2 ),
@@ -55227,7 +55741,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][11]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][11]_C_2 ),
         .PRE(\r_reg_reg[9][11]_P_1 ),
@@ -55235,7 +55749,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][12]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][12]_C_1 ),
         .D(\r_reg_reg[9][12]_C_2 ),
@@ -55253,7 +55767,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][12]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][12]_C_2 ),
         .PRE(\r_reg_reg[9][12]_P_1 ),
@@ -55261,7 +55775,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][13]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][13]_C_1 ),
         .D(\r_reg_reg[9][13]_C_2 ),
@@ -55279,7 +55793,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][13]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][13]_C_2 ),
         .PRE(\r_reg_reg[9][13]_P_1 ),
@@ -55287,7 +55801,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][14]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][14]_C_1 ),
         .D(\r_reg_reg[9][14]_C_2 ),
@@ -55305,7 +55819,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][14]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][14]_C_2 ),
         .PRE(\r_reg_reg[9][14]_P_1 ),
@@ -55313,7 +55827,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][15]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][15]_C_1 ),
         .D(\r_reg_reg[9][15]_C_2 ),
@@ -55331,7 +55845,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][15]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][15]_C_2 ),
         .PRE(\r_reg_reg[9][15]_P_1 ),
@@ -55339,7 +55853,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][16]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][16]_C_1 ),
         .D(\r_reg_reg[9][16]_C_2 ),
@@ -55357,7 +55871,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][16]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][16]_C_2 ),
         .PRE(\r_reg_reg[9][16]_P_1 ),
@@ -55365,7 +55879,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][17]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][17]_C_1 ),
         .D(\r_reg_reg[9][17]_C_2 ),
@@ -55383,7 +55897,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][17]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][17]_C_2 ),
         .PRE(\r_reg_reg[9][17]_P_1 ),
@@ -55391,7 +55905,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][18]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][18]_C_1 ),
         .D(\r_reg_reg[9][18]_C_2 ),
@@ -55409,7 +55923,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][18]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][18]_C_2 ),
         .PRE(\r_reg_reg[9][18]_P_1 ),
@@ -55417,7 +55931,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][19]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][19]_C_1 ),
         .D(\r_reg_reg[9][19]_C_2 ),
@@ -55435,7 +55949,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][19]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][19]_C_2 ),
         .PRE(\r_reg_reg[9][19]_P_1 ),
@@ -55443,7 +55957,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][1]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][1]_C_1 ),
         .D(\r_reg_reg[9][1]_C_2 ),
@@ -55461,7 +55975,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][1]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][1]_C_2 ),
         .PRE(\r_reg_reg[9][1]_P_1 ),
@@ -55469,7 +55983,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][20]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][20]_C_1 ),
         .D(\r_reg_reg[9][20]_C_2 ),
@@ -55487,7 +56001,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][20]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][20]_C_2 ),
         .PRE(\r_reg_reg[9][20]_P_1 ),
@@ -55495,7 +56009,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][21]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][21]_C_1 ),
         .D(\r_reg_reg[9][21]_C_2 ),
@@ -55513,7 +56027,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][21]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][21]_C_2 ),
         .PRE(\r_reg_reg[9][21]_P_1 ),
@@ -55521,7 +56035,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][22]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][22]_C_1 ),
         .D(\r_reg_reg[9][22]_C_2 ),
@@ -55539,7 +56053,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][22]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][22]_C_2 ),
         .PRE(\r_reg_reg[9][22]_P_1 ),
@@ -55547,7 +56061,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][23]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][23]_C_1 ),
         .D(\r_reg_reg[9][23]_C_2 ),
@@ -55565,7 +56079,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][23]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][23]_C_2 ),
         .PRE(\r_reg_reg[9][23]_P_1 ),
@@ -55573,7 +56087,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][24]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][24]_C_1 ),
         .D(\r_reg_reg[9][24]_C_2 ),
@@ -55591,7 +56105,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][24]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][24]_C_2 ),
         .PRE(\r_reg_reg[9][24]_P_1 ),
@@ -55599,7 +56113,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][25]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][25]_C_1 ),
         .D(\r_reg_reg[9][25]_C_2 ),
@@ -55617,7 +56131,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][25]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][25]_C_2 ),
         .PRE(\r_reg_reg[9][25]_P_1 ),
@@ -55625,7 +56139,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][26]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][26]_C_1 ),
         .D(\r_reg_reg[9][26]_C_2 ),
@@ -55643,7 +56157,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][26]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][26]_C_2 ),
         .PRE(\r_reg_reg[9][26]_P_1 ),
@@ -55651,7 +56165,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][27]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][27]_C_1 ),
         .D(\r_reg_reg[9][27]_C_2 ),
@@ -55669,7 +56183,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][27]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][27]_C_2 ),
         .PRE(\r_reg_reg[9][27]_P_1 ),
@@ -55677,7 +56191,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][28]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][28]_C_1 ),
         .D(\r_reg_reg[9][28]_C_2 ),
@@ -55695,7 +56209,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][28]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][28]_C_2 ),
         .PRE(\r_reg_reg[9][28]_P_1 ),
@@ -55703,7 +56217,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][29]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][29]_C_1 ),
         .D(\r_reg_reg[9][29]_C_2 ),
@@ -55721,7 +56235,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][29]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][29]_C_2 ),
         .PRE(\r_reg_reg[9][29]_P_1 ),
@@ -55729,7 +56243,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][2]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][2]_C_1 ),
         .D(\r_reg_reg[9][2]_C_2 ),
@@ -55747,7 +56261,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][2]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][2]_C_2 ),
         .PRE(\r_reg_reg[9][2]_P_1 ),
@@ -55755,7 +56269,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][30]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][30]_C_1 ),
         .D(\r_reg_reg[9][30]_C_2 ),
@@ -55773,7 +56287,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][30]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][30]_C_2 ),
         .PRE(\r_reg_reg[9][30]_P_1 ),
@@ -55781,7 +56295,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][31]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][31]_C_1 ),
         .D(\r_reg_reg[9][31]_C_2 ),
@@ -55799,7 +56313,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][31]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][31]_C_2 ),
         .PRE(\r_reg_reg[9][31]_P_1 ),
@@ -55807,7 +56321,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][3]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][3]_C_1 ),
         .D(\r_reg_reg[9][3]_C_2 ),
@@ -55825,7 +56339,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][3]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][3]_C_2 ),
         .PRE(\r_reg_reg[9][3]_P_1 ),
@@ -55833,7 +56347,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][4]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][4]_C_1 ),
         .D(\r_reg_reg[9][4]_C_2 ),
@@ -55851,7 +56365,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][4]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][4]_C_2 ),
         .PRE(\r_reg_reg[9][4]_P_1 ),
@@ -55859,7 +56373,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][5]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][5]_C_1 ),
         .D(\r_reg_reg[9][5]_C_2 ),
@@ -55877,7 +56391,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][5]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][5]_C_2 ),
         .PRE(\r_reg_reg[9][5]_P_1 ),
@@ -55885,7 +56399,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][6]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][6]_C_1 ),
         .D(\r_reg_reg[9][6]_C_2 ),
@@ -55903,7 +56417,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][6]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][6]_C_2 ),
         .PRE(\r_reg_reg[9][6]_P_1 ),
@@ -55911,7 +56425,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][7]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][7]_C_1 ),
         .D(\r_reg_reg[9][7]_C_2 ),
@@ -55929,7 +56443,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][7]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][7]_C_2 ),
         .PRE(\r_reg_reg[9][7]_P_1 ),
@@ -55937,7 +56451,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][8]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][8]_C_1 ),
         .D(\r_reg_reg[9][8]_C_2 ),
@@ -55955,7 +56469,7 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][8]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][8]_C_2 ),
         .PRE(\r_reg_reg[9][8]_P_1 ),
@@ -55963,7 +56477,7 @@ module rgf
   FDCE #(
     .INIT(1'b0)) 
     \r_reg_reg[9][9]_C 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .CLR(\r_reg_reg[9][9]_C_1 ),
         .D(\r_reg_reg[9][9]_C_2 ),
@@ -55981,11 +56495,182 @@ module rgf
   FDPE #(
     .INIT(1'b1)) 
     \r_reg_reg[9][9]_P 
-       (.C(clk_IBUF_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\r_reg_reg[9][9]_C_2 ),
         .PRE(\r_reg_reg[9][9]_P_1 ),
         .Q(\r_reg_reg[9][9]_P_0 ));
+endmodule
+
+module rom
+   (Q,
+    \o_data1_reg[7] ,
+    \o_data1_reg[9] ,
+    D,
+    i_re_rom_datapath);
+  output [7:0]Q;
+  output \o_data1_reg[7] ;
+  output \o_data1_reg[9] ;
+  input [11:0]D;
+  input i_re_rom_datapath;
+
+  wire [11:0]D;
+  wire [7:0]Q;
+  wire i_re_rom_datapath;
+  wire \o_data1_reg[7] ;
+  wire \o_data1_reg[9] ;
+  wire [11:8]r_address;
+  wire \r_data_reg[15]_LDC_i_14_n_0 ;
+
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[0] 
+       (.CLR(1'b0),
+        .D(D[0]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[0]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[10] 
+       (.CLR(1'b0),
+        .D(D[10]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(r_address[10]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[11] 
+       (.CLR(1'b0),
+        .D(D[11]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(r_address[11]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[1] 
+       (.CLR(1'b0),
+        .D(D[1]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[1]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[2] 
+       (.CLR(1'b0),
+        .D(D[2]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[2]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[3] 
+       (.CLR(1'b0),
+        .D(D[3]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[3]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[4] 
+       (.CLR(1'b0),
+        .D(D[4]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[4]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[5] 
+       (.CLR(1'b0),
+        .D(D[5]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[5]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[6] 
+       (.CLR(1'b0),
+        .D(D[6]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[6]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[7] 
+       (.CLR(1'b0),
+        .D(D[7]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(Q[7]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[8] 
+       (.CLR(1'b0),
+        .D(D[8]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(r_address[8]));
+  (* XILINX_LEGACY_PRIM = "LD" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    \r_address_reg[9] 
+       (.CLR(1'b0),
+        .D(D[9]),
+        .G(i_re_rom_datapath),
+        .GE(1'b1),
+        .Q(r_address[9]));
+  LUT6 #(
+    .INIT(64'h0000003050500030)) 
+    \r_data_reg[15]_LDC_i_13 
+       (.I0(D[9]),
+        .I1(r_address[9]),
+        .I2(\r_data_reg[15]_LDC_i_14_n_0 ),
+        .I3(r_address[8]),
+        .I4(i_re_rom_datapath),
+        .I5(D[8]),
+        .O(\o_data1_reg[9] ));
+  LUT5 #(
+    .INIT(32'h00053305)) 
+    \r_data_reg[15]_LDC_i_14 
+       (.I0(r_address[10]),
+        .I1(D[10]),
+        .I2(r_address[11]),
+        .I3(i_re_rom_datapath),
+        .I4(D[11]),
+        .O(\r_data_reg[15]_LDC_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000003050500030)) 
+    \r_data_reg[7]_LDC_i_6 
+       (.I0(D[7]),
+        .I1(Q[7]),
+        .I2(\o_data1_reg[9] ),
+        .I3(Q[6]),
+        .I4(i_re_rom_datapath),
+        .I5(D[6]),
+        .O(\o_data1_reg[7] ));
 endmodule
 
 (* NotValidForBitStream *)
@@ -56000,7 +56685,6 @@ module top_layer
   wire clk;
   wire clk_IBUF;
   wire clk_IBUF_BUFG;
-  wire control_unit_inst_n_1;
   wire control_unit_inst_n_100;
   wire control_unit_inst_n_1000;
   wire control_unit_inst_n_1001;
@@ -56079,9 +56763,45 @@ module top_layer
   wire control_unit_inst_n_1068;
   wire control_unit_inst_n_1069;
   wire control_unit_inst_n_107;
+  wire control_unit_inst_n_1070;
+  wire control_unit_inst_n_1071;
+  wire control_unit_inst_n_1072;
+  wire control_unit_inst_n_1073;
+  wire control_unit_inst_n_1074;
+  wire control_unit_inst_n_1075;
+  wire control_unit_inst_n_1076;
+  wire control_unit_inst_n_1077;
+  wire control_unit_inst_n_1078;
+  wire control_unit_inst_n_1079;
   wire control_unit_inst_n_108;
+  wire control_unit_inst_n_1080;
+  wire control_unit_inst_n_1081;
+  wire control_unit_inst_n_1082;
+  wire control_unit_inst_n_1083;
+  wire control_unit_inst_n_1084;
+  wire control_unit_inst_n_1085;
+  wire control_unit_inst_n_1086;
+  wire control_unit_inst_n_1087;
+  wire control_unit_inst_n_1088;
+  wire control_unit_inst_n_1089;
   wire control_unit_inst_n_109;
+  wire control_unit_inst_n_1090;
+  wire control_unit_inst_n_1091;
+  wire control_unit_inst_n_1092;
+  wire control_unit_inst_n_1093;
+  wire control_unit_inst_n_1094;
+  wire control_unit_inst_n_1095;
+  wire control_unit_inst_n_1096;
+  wire control_unit_inst_n_1097;
+  wire control_unit_inst_n_1098;
+  wire control_unit_inst_n_1099;
   wire control_unit_inst_n_110;
+  wire control_unit_inst_n_1100;
+  wire control_unit_inst_n_1101;
+  wire control_unit_inst_n_1102;
+  wire control_unit_inst_n_1103;
+  wire control_unit_inst_n_1104;
+  wire control_unit_inst_n_1105;
   wire control_unit_inst_n_111;
   wire control_unit_inst_n_112;
   wire control_unit_inst_n_113;
@@ -56371,6 +57091,7 @@ module top_layer
   wire control_unit_inst_n_397;
   wire control_unit_inst_n_398;
   wire control_unit_inst_n_399;
+  wire control_unit_inst_n_4;
   wire control_unit_inst_n_400;
   wire control_unit_inst_n_401;
   wire control_unit_inst_n_402;
@@ -56381,7 +57102,6 @@ module top_layer
   wire control_unit_inst_n_407;
   wire control_unit_inst_n_408;
   wire control_unit_inst_n_409;
-  wire control_unit_inst_n_41;
   wire control_unit_inst_n_410;
   wire control_unit_inst_n_411;
   wire control_unit_inst_n_412;
@@ -56425,7 +57145,6 @@ module top_layer
   wire control_unit_inst_n_447;
   wire control_unit_inst_n_448;
   wire control_unit_inst_n_449;
-  wire control_unit_inst_n_45;
   wire control_unit_inst_n_450;
   wire control_unit_inst_n_451;
   wire control_unit_inst_n_452;
@@ -56480,7 +57199,6 @@ module top_layer
   wire control_unit_inst_n_497;
   wire control_unit_inst_n_498;
   wire control_unit_inst_n_499;
-  wire control_unit_inst_n_5;
   wire control_unit_inst_n_50;
   wire control_unit_inst_n_500;
   wire control_unit_inst_n_501;
@@ -56701,6 +57419,7 @@ module top_layer
   wire control_unit_inst_n_697;
   wire control_unit_inst_n_698;
   wire control_unit_inst_n_699;
+  wire control_unit_inst_n_7;
   wire control_unit_inst_n_70;
   wire control_unit_inst_n_700;
   wire control_unit_inst_n_701;
@@ -56811,7 +57530,6 @@ module top_layer
   wire control_unit_inst_n_797;
   wire control_unit_inst_n_798;
   wire control_unit_inst_n_799;
-  wire control_unit_inst_n_8;
   wire control_unit_inst_n_80;
   wire control_unit_inst_n_800;
   wire control_unit_inst_n_801;
@@ -57034,9 +57752,10 @@ module top_layer
   wire control_unit_inst_n_999;
   wire [32:0]data0;
   wire [31:0]data1;
+  wire datapath_inst_n_109;
   wire datapath_inst_n_110;
   wire datapath_inst_n_111;
-  wire datapath_inst_n_112;
+  wire datapath_inst_n_114;
   wire datapath_inst_n_115;
   wire datapath_inst_n_116;
   wire datapath_inst_n_117;
@@ -57053,32 +57772,36 @@ module top_layer
   wire datapath_inst_n_128;
   wire datapath_inst_n_129;
   wire datapath_inst_n_130;
-  wire datapath_inst_n_131;
   wire datapath_inst_n_195;
-  wire datapath_inst_n_196;
   wire datapath_inst_n_197;
   wire datapath_inst_n_198;
   wire datapath_inst_n_199;
   wire datapath_inst_n_200;
-  wire datapath_inst_n_201;
   wire datapath_inst_n_202;
+  wire datapath_inst_n_203;
+  wire datapath_inst_n_204;
   wire datapath_inst_n_4;
   wire [1:0]i_addr1_mux_datapath;
-  wire i_addr2_mux_datapath;
+  wire [1:0]i_alu_input_datapath;
   wire [1:1]i_alu_opcode_datapath;
   wire i_re_cr_datapath;
+  wire i_re_cr_datapath_BUFG;
+  wire i_re_rom_datapath;
   wire [3:0]o_bits;
   wire [3:0]o_bits_OBUF;
-  wire [13:1]o_instructions_datapath;
+  wire [10:0]o_instructions_datapath;
   wire [30:1]p_1_in;
+  wire [1:1]r_addr1_mux;
+  wire [1:1]r_alu_input;
   wire [7:7]r_data;
+  wire r_re_rom;
   wire [31:1]r_rgf0;
   wire r_we_ir;
   wire rst_n;
   wire rst_n_IBUF;
   wire [3:0]w_addr1_mux;
   wire [31:0]w_rgf_data1;
-  wire [30:1]w_rgf_data2;
+  wire [31:1]w_rgf_data2;
 
   BUFG clk_IBUF_BUFG_inst
        (.I(clk_IBUF),
@@ -57089,2164 +57812,2191 @@ module top_layer
        (.I(clk),
         .O(clk_IBUF));
   control_unit control_unit_inst
-       (.E(i_re_cr_datapath),
-        .Q(control_unit_inst_n_41),
+       (.\FSM_onehot_r_nstate_reg[4]_0 ({control_unit_inst_n_43,control_unit_inst_n_44,r_re_rom}),
+        .Q(w_rgf_data1),
+        .S({control_unit_inst_n_49,control_unit_inst_n_50,control_unit_inst_n_51}),
         .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .data0(data0),
         .data1(data1),
         .i_addr1_mux_datapath(i_addr1_mux_datapath),
-        .i_addr2_mux_datapath(i_addr2_mux_datapath),
+        .i_alu_input_datapath(i_alu_input_datapath),
         .i_alu_opcode_datapath(i_alu_opcode_datapath),
-        .o_instructions_datapath({o_instructions_datapath[13:10],o_instructions_datapath[6],o_instructions_datapath[4:1]}),
+        .i_re_cr_datapath(i_re_cr_datapath),
+        .i_re_rom_datapath(i_re_rom_datapath),
+        .o_instructions_datapath({o_instructions_datapath[10],o_instructions_datapath[8],o_instructions_datapath[6],o_instructions_datapath[4:0]}),
         .p_1_in(p_1_in),
-        .\r_addr1_mux_reg[1]_0 (control_unit_inst_n_5),
-        .\r_addr1_mux_reg[1]_1 (control_unit_inst_n_8),
-        .\r_addr1_mux_reg[1]_2 (control_unit_inst_n_42),
-        .\r_addr1_mux_reg[1]_3 (control_unit_inst_n_43),
-        .r_addr2_mux_reg_0(datapath_inst_n_202),
-        .\r_alu_input_reg[0]_0 (control_unit_inst_n_1),
-        .\r_alu_opcode_reg[1]_0 (datapath_inst_n_200),
+        .r_addr1_mux(r_addr1_mux),
+        .\r_addr1_mux_reg[0]_0 (datapath_inst_n_198),
+        .\r_addr1_mux_reg[1]_0 (control_unit_inst_n_4),
+        .\r_addr1_mux_reg[1]_1 (control_unit_inst_n_7),
+        .\r_addr1_mux_reg[1]_2 (control_unit_inst_n_47),
+        .\r_addr1_mux_reg[1]_3 (control_unit_inst_n_48),
+        .\r_addr1_mux_reg[1]_4 (datapath_inst_n_204),
+        .\r_addr2_mux_reg[1]_0 (control_unit_inst_n_42),
+        .\r_addr2_mux_reg[1]_1 (datapath_inst_n_199),
+        .r_alu_input(r_alu_input),
+        .\r_alu_opcode_reg[1]_0 ({control_unit_inst_n_52,control_unit_inst_n_53,control_unit_inst_n_54,control_unit_inst_n_55}),
+        .\r_alu_opcode_reg[1]_1 ({control_unit_inst_n_56,control_unit_inst_n_57,control_unit_inst_n_58,control_unit_inst_n_59}),
+        .\r_alu_opcode_reg[1]_2 ({control_unit_inst_n_60,control_unit_inst_n_61,control_unit_inst_n_62,control_unit_inst_n_63}),
+        .\r_alu_opcode_reg[1]_3 ({control_unit_inst_n_64,control_unit_inst_n_65,control_unit_inst_n_66,control_unit_inst_n_67}),
+        .\r_alu_opcode_reg[1]_4 ({control_unit_inst_n_68,control_unit_inst_n_69,control_unit_inst_n_70,control_unit_inst_n_71}),
+        .\r_alu_opcode_reg[1]_5 ({control_unit_inst_n_72,control_unit_inst_n_73,control_unit_inst_n_74,control_unit_inst_n_75}),
+        .\r_alu_opcode_reg[1]_6 ({control_unit_inst_n_76,control_unit_inst_n_77,control_unit_inst_n_78,control_unit_inst_n_79}),
+        .\r_alu_opcode_reg[1]_7 (datapath_inst_n_203),
         .r_data(r_data),
-        .\r_data_mux_reg[1]_0 (datapath_inst_n_197),
-        .\r_execute_reg[0]_0 (datapath_inst_n_201),
-        .\r_execute_reg[1]_0 (datapath_inst_n_199),
-        .\r_execute_reg[1]_1 (datapath_inst_n_198),
-        .\r_execute_reg[1]_2 (datapath_inst_n_196),
-        .\r_execute_reg[1]_3 (datapath_inst_n_195),
-        .\r_reg_reg[0][2]_P (datapath_inst_n_115),
-        .\r_reg_reg[10][2]_P (datapath_inst_n_127),
-        .\r_reg_reg[10][4]_C (datapath_inst_n_117),
-        .\r_reg_reg[11][2]_C (datapath_inst_n_118),
-        .\r_reg_reg[12][0]_P (datapath_inst_n_112),
-        .\r_reg_reg[12][2]_C (datapath_inst_n_126),
-        .\r_reg_reg[13][0]_P (datapath_inst_n_120),
-        .\r_reg_reg[14][0]_P (datapath_inst_n_122),
-        .\r_reg_reg[15][31]_C (datapath_inst_n_125),
-        .\r_reg_reg[15][31]_P (datapath_inst_n_116),
-        .\r_reg_reg[1][0]_P (datapath_inst_n_129),
-        .\r_reg_reg[1][16]_C (datapath_inst_n_130),
-        .\r_reg_reg[1][31]_LDC_i_6_0 (w_rgf_data1),
+        .\r_data_mux_reg[0]_0 (datapath_inst_n_202),
+        .\r_execute_reg[0]_0 (datapath_inst_n_200),
+        .\r_execute_reg[1]_0 (datapath_inst_n_195),
+        .\r_execute_reg[2]_0 (datapath_inst_n_197),
+        .\r_reg_reg[0][2]_P (datapath_inst_n_114),
+        .\r_reg_reg[10][2]_P (datapath_inst_n_126),
+        .\r_reg_reg[10][4]_C (datapath_inst_n_116),
+        .\r_reg_reg[11][2]_C (datapath_inst_n_117),
+        .\r_reg_reg[12][0]_P (datapath_inst_n_111),
+        .\r_reg_reg[12][2]_C (datapath_inst_n_125),
+        .\r_reg_reg[13][0]_P (datapath_inst_n_119),
+        .\r_reg_reg[14][0]_P (datapath_inst_n_121),
+        .\r_reg_reg[15][31]_C (datapath_inst_n_124),
+        .\r_reg_reg[15][31]_P (datapath_inst_n_115),
+        .\r_reg_reg[1][0]_P (datapath_inst_n_128),
+        .\r_reg_reg[1][16]_C (datapath_inst_n_129),
         .\r_reg_reg[1][3]_P (w_addr1_mux[1:0]),
-        .\r_reg_reg[2][22]_P (datapath_inst_n_131),
-        .\r_reg_reg[4][2]_P (datapath_inst_n_119),
-        .\r_reg_reg[5][2]_C (datapath_inst_n_121),
-        .\r_reg_reg[6][0]_C (datapath_inst_n_111),
+        .\r_reg_reg[2][22]_P (datapath_inst_n_130),
+        .\r_reg_reg[4][2]_P (datapath_inst_n_118),
+        .\r_reg_reg[5][2]_C (datapath_inst_n_120),
+        .\r_reg_reg[6][0]_C (datapath_inst_n_110),
         .\r_reg_reg[6][0]_C_0 (datapath_inst_n_4),
-        .\r_reg_reg[6][0]_C_1 (datapath_inst_n_110),
-        .\r_reg_reg[6][0]_P (datapath_inst_n_128),
-        .\r_reg_reg[7][31]_C (datapath_inst_n_123),
-        .\r_reg_reg[9][3]_P (datapath_inst_n_124),
+        .\r_reg_reg[6][0]_C_1 (datapath_inst_n_109),
+        .\r_reg_reg[6][0]_P (datapath_inst_n_127),
+        .\r_reg_reg[7][31]_C (datapath_inst_n_122),
+        .\r_reg_reg[9][3]_P (datapath_inst_n_123),
         .r_rgf0(r_rgf0),
-        .r_we_cr_reg_0(control_unit_inst_n_71),
-        .r_we_cr_reg_1(control_unit_inst_n_72),
-        .r_we_cr_reg_10(control_unit_inst_n_137),
-        .r_we_cr_reg_100(control_unit_inst_n_873),
-        .r_we_cr_reg_101(control_unit_inst_n_874),
-        .r_we_cr_reg_102(control_unit_inst_n_875),
-        .r_we_cr_reg_103(control_unit_inst_n_876),
-        .r_we_cr_reg_104(control_unit_inst_n_884),
-        .r_we_cr_reg_105(control_unit_inst_n_885),
-        .r_we_cr_reg_106(control_unit_inst_n_886),
-        .r_we_cr_reg_107(control_unit_inst_n_887),
-        .r_we_cr_reg_108(control_unit_inst_n_1020),
-        .r_we_cr_reg_109(control_unit_inst_n_1021),
-        .r_we_cr_reg_11(control_unit_inst_n_138),
-        .r_we_cr_reg_110(control_unit_inst_n_1022),
-        .r_we_cr_reg_111(control_unit_inst_n_1023),
-        .r_we_cr_reg_112(control_unit_inst_n_1024),
-        .r_we_cr_reg_113(control_unit_inst_n_1025),
-        .r_we_cr_reg_114(control_unit_inst_n_1026),
-        .r_we_cr_reg_115(control_unit_inst_n_1027),
-        .r_we_cr_reg_116(control_unit_inst_n_1028),
-        .r_we_cr_reg_117(control_unit_inst_n_1029),
-        .r_we_cr_reg_118(control_unit_inst_n_1030),
-        .r_we_cr_reg_119(control_unit_inst_n_1031),
-        .r_we_cr_reg_12(control_unit_inst_n_167),
-        .r_we_cr_reg_120(control_unit_inst_n_1032),
-        .r_we_cr_reg_121(control_unit_inst_n_1033),
-        .r_we_cr_reg_122(control_unit_inst_n_1034),
-        .r_we_cr_reg_123(control_unit_inst_n_1035),
-        .r_we_cr_reg_124(control_unit_inst_n_1039),
-        .r_we_cr_reg_125(control_unit_inst_n_1040),
-        .r_we_cr_reg_126(control_unit_inst_n_1041),
-        .r_we_cr_reg_127(control_unit_inst_n_1042),
-        .r_we_cr_reg_13(control_unit_inst_n_168),
-        .r_we_cr_reg_14(control_unit_inst_n_169),
-        .r_we_cr_reg_15(control_unit_inst_n_170),
-        .r_we_cr_reg_16(control_unit_inst_n_199),
-        .r_we_cr_reg_17(control_unit_inst_n_200),
-        .r_we_cr_reg_18(control_unit_inst_n_201),
-        .r_we_cr_reg_19(control_unit_inst_n_202),
-        .r_we_cr_reg_2(control_unit_inst_n_73),
-        .r_we_cr_reg_20(control_unit_inst_n_209),
-        .r_we_cr_reg_21(control_unit_inst_n_210),
-        .r_we_cr_reg_22(control_unit_inst_n_211),
-        .r_we_cr_reg_23(control_unit_inst_n_212),
-        .r_we_cr_reg_24(control_unit_inst_n_243),
-        .r_we_cr_reg_25(control_unit_inst_n_244),
-        .r_we_cr_reg_26(control_unit_inst_n_245),
-        .r_we_cr_reg_27(control_unit_inst_n_246),
-        .r_we_cr_reg_28(control_unit_inst_n_297),
-        .r_we_cr_reg_29(control_unit_inst_n_298),
-        .r_we_cr_reg_3(control_unit_inst_n_74),
-        .r_we_cr_reg_30(control_unit_inst_n_299),
-        .r_we_cr_reg_31(control_unit_inst_n_300),
-        .r_we_cr_reg_32(control_unit_inst_n_310),
-        .r_we_cr_reg_33(control_unit_inst_n_311),
-        .r_we_cr_reg_34(control_unit_inst_n_312),
-        .r_we_cr_reg_35(control_unit_inst_n_313),
-        .r_we_cr_reg_36(control_unit_inst_n_314),
-        .r_we_cr_reg_37(control_unit_inst_n_315),
-        .r_we_cr_reg_38(control_unit_inst_n_316),
-        .r_we_cr_reg_39(control_unit_inst_n_317),
-        .r_we_cr_reg_4(control_unit_inst_n_81),
-        .r_we_cr_reg_40(control_unit_inst_n_393),
-        .r_we_cr_reg_41(control_unit_inst_n_394),
-        .r_we_cr_reg_42(control_unit_inst_n_395),
-        .r_we_cr_reg_43(control_unit_inst_n_396),
-        .r_we_cr_reg_44(control_unit_inst_n_404),
-        .r_we_cr_reg_45(control_unit_inst_n_405),
-        .r_we_cr_reg_46(control_unit_inst_n_406),
-        .r_we_cr_reg_47(control_unit_inst_n_407),
-        .r_we_cr_reg_48(control_unit_inst_n_458),
-        .r_we_cr_reg_49(control_unit_inst_n_459),
-        .r_we_cr_reg_5(control_unit_inst_n_82),
-        .r_we_cr_reg_50(control_unit_inst_n_460),
-        .r_we_cr_reg_51(control_unit_inst_n_461),
-        .r_we_cr_reg_52(control_unit_inst_n_468),
-        .r_we_cr_reg_53(control_unit_inst_n_469),
-        .r_we_cr_reg_54(control_unit_inst_n_470),
-        .r_we_cr_reg_55(control_unit_inst_n_471),
-        .r_we_cr_reg_56(control_unit_inst_n_525),
-        .r_we_cr_reg_57(control_unit_inst_n_526),
-        .r_we_cr_reg_58(control_unit_inst_n_527),
-        .r_we_cr_reg_59(control_unit_inst_n_528),
-        .r_we_cr_reg_6(control_unit_inst_n_83),
-        .r_we_cr_reg_60(control_unit_inst_n_535),
-        .r_we_cr_reg_61(control_unit_inst_n_536),
-        .r_we_cr_reg_62(control_unit_inst_n_537),
-        .r_we_cr_reg_63(control_unit_inst_n_538),
-        .r_we_cr_reg_64(control_unit_inst_n_566),
-        .r_we_cr_reg_65(control_unit_inst_n_567),
-        .r_we_cr_reg_66(control_unit_inst_n_568),
-        .r_we_cr_reg_67(control_unit_inst_n_569),
-        .r_we_cr_reg_68(control_unit_inst_n_599),
-        .r_we_cr_reg_69(control_unit_inst_n_600),
-        .r_we_cr_reg_7(control_unit_inst_n_84),
-        .r_we_cr_reg_70(control_unit_inst_n_601),
-        .r_we_cr_reg_71(control_unit_inst_n_602),
-        .r_we_cr_reg_72(control_unit_inst_n_651),
-        .r_we_cr_reg_73(control_unit_inst_n_652),
-        .r_we_cr_reg_74(control_unit_inst_n_653),
-        .r_we_cr_reg_75(control_unit_inst_n_654),
-        .r_we_cr_reg_76(control_unit_inst_n_664),
-        .r_we_cr_reg_77(control_unit_inst_n_665),
-        .r_we_cr_reg_78(control_unit_inst_n_666),
-        .r_we_cr_reg_79(control_unit_inst_n_667),
-        .r_we_cr_reg_8(control_unit_inst_n_135),
-        .r_we_cr_reg_80(control_unit_inst_n_668),
-        .r_we_cr_reg_81(control_unit_inst_n_669),
-        .r_we_cr_reg_82(control_unit_inst_n_670),
-        .r_we_cr_reg_83(control_unit_inst_n_671),
-        .r_we_cr_reg_84(control_unit_inst_n_747),
-        .r_we_cr_reg_85(control_unit_inst_n_748),
-        .r_we_cr_reg_86(control_unit_inst_n_749),
-        .r_we_cr_reg_87(control_unit_inst_n_750),
-        .r_we_cr_reg_88(control_unit_inst_n_778),
-        .r_we_cr_reg_89(control_unit_inst_n_779),
-        .r_we_cr_reg_9(control_unit_inst_n_136),
-        .r_we_cr_reg_90(control_unit_inst_n_780),
-        .r_we_cr_reg_91(control_unit_inst_n_781),
-        .r_we_cr_reg_92(control_unit_inst_n_811),
-        .r_we_cr_reg_93(control_unit_inst_n_812),
-        .r_we_cr_reg_94(control_unit_inst_n_813),
-        .r_we_cr_reg_95(control_unit_inst_n_814),
-        .r_we_cr_reg_96(control_unit_inst_n_818),
-        .r_we_cr_reg_97(control_unit_inst_n_819),
-        .r_we_cr_reg_98(control_unit_inst_n_820),
-        .r_we_cr_reg_99(control_unit_inst_n_821),
-        .r_we_cr_reg_rep_0(control_unit_inst_n_67),
-        .r_we_cr_reg_rep_1(control_unit_inst_n_68),
-        .r_we_cr_reg_rep_10(control_unit_inst_n_133),
-        .r_we_cr_reg_rep_100(control_unit_inst_n_869),
-        .r_we_cr_reg_rep_101(control_unit_inst_n_870),
-        .r_we_cr_reg_rep_102(control_unit_inst_n_871),
-        .r_we_cr_reg_rep_103(control_unit_inst_n_872),
-        .r_we_cr_reg_rep_104(control_unit_inst_n_888),
-        .r_we_cr_reg_rep_105(control_unit_inst_n_889),
-        .r_we_cr_reg_rep_106(control_unit_inst_n_890),
-        .r_we_cr_reg_rep_107(control_unit_inst_n_891),
-        .r_we_cr_reg_rep_108(control_unit_inst_n_1004),
-        .r_we_cr_reg_rep_109(control_unit_inst_n_1005),
-        .r_we_cr_reg_rep_11(control_unit_inst_n_134),
-        .r_we_cr_reg_rep_110(control_unit_inst_n_1006),
-        .r_we_cr_reg_rep_111(control_unit_inst_n_1007),
-        .r_we_cr_reg_rep_112(control_unit_inst_n_1008),
-        .r_we_cr_reg_rep_113(control_unit_inst_n_1009),
-        .r_we_cr_reg_rep_114(control_unit_inst_n_1010),
-        .r_we_cr_reg_rep_115(control_unit_inst_n_1011),
-        .r_we_cr_reg_rep_116(control_unit_inst_n_1012),
-        .r_we_cr_reg_rep_117(control_unit_inst_n_1013),
-        .r_we_cr_reg_rep_118(control_unit_inst_n_1014),
-        .r_we_cr_reg_rep_119(control_unit_inst_n_1015),
-        .r_we_cr_reg_rep_12(control_unit_inst_n_163),
-        .r_we_cr_reg_rep_120(control_unit_inst_n_1016),
-        .r_we_cr_reg_rep_121(control_unit_inst_n_1017),
-        .r_we_cr_reg_rep_122(control_unit_inst_n_1018),
-        .r_we_cr_reg_rep_123(control_unit_inst_n_1019),
-        .r_we_cr_reg_rep_124(control_unit_inst_n_1043),
-        .r_we_cr_reg_rep_125(control_unit_inst_n_1044),
-        .r_we_cr_reg_rep_126(control_unit_inst_n_1045),
-        .r_we_cr_reg_rep_127(control_unit_inst_n_1046),
-        .r_we_cr_reg_rep_13(control_unit_inst_n_164),
-        .r_we_cr_reg_rep_14(control_unit_inst_n_165),
-        .r_we_cr_reg_rep_15(control_unit_inst_n_166),
-        .r_we_cr_reg_rep_16(control_unit_inst_n_195),
-        .r_we_cr_reg_rep_17(control_unit_inst_n_196),
-        .r_we_cr_reg_rep_18(control_unit_inst_n_197),
-        .r_we_cr_reg_rep_19(control_unit_inst_n_198),
-        .r_we_cr_reg_rep_2(control_unit_inst_n_69),
-        .r_we_cr_reg_rep_20(control_unit_inst_n_213),
-        .r_we_cr_reg_rep_21(control_unit_inst_n_214),
-        .r_we_cr_reg_rep_22(control_unit_inst_n_215),
-        .r_we_cr_reg_rep_23(control_unit_inst_n_216),
-        .r_we_cr_reg_rep_24(control_unit_inst_n_247),
-        .r_we_cr_reg_rep_25(control_unit_inst_n_248),
-        .r_we_cr_reg_rep_26(control_unit_inst_n_249),
-        .r_we_cr_reg_rep_27(control_unit_inst_n_250),
-        .r_we_cr_reg_rep_28(control_unit_inst_n_293),
-        .r_we_cr_reg_rep_29(control_unit_inst_n_294),
-        .r_we_cr_reg_rep_3(control_unit_inst_n_70),
-        .r_we_cr_reg_rep_30(control_unit_inst_n_295),
-        .r_we_cr_reg_rep_31(control_unit_inst_n_296),
-        .r_we_cr_reg_rep_32(control_unit_inst_n_318),
-        .r_we_cr_reg_rep_33(control_unit_inst_n_319),
-        .r_we_cr_reg_rep_34(control_unit_inst_n_320),
-        .r_we_cr_reg_rep_35(control_unit_inst_n_321),
-        .r_we_cr_reg_rep_36(control_unit_inst_n_322),
-        .r_we_cr_reg_rep_37(control_unit_inst_n_323),
-        .r_we_cr_reg_rep_38(control_unit_inst_n_324),
-        .r_we_cr_reg_rep_39(control_unit_inst_n_325),
-        .r_we_cr_reg_rep_4(control_unit_inst_n_85),
-        .r_we_cr_reg_rep_40(control_unit_inst_n_389),
-        .r_we_cr_reg_rep_41(control_unit_inst_n_390),
-        .r_we_cr_reg_rep_42(control_unit_inst_n_391),
-        .r_we_cr_reg_rep_43(control_unit_inst_n_392),
-        .r_we_cr_reg_rep_44(control_unit_inst_n_408),
-        .r_we_cr_reg_rep_45(control_unit_inst_n_409),
-        .r_we_cr_reg_rep_46(control_unit_inst_n_410),
-        .r_we_cr_reg_rep_47(control_unit_inst_n_411),
-        .r_we_cr_reg_rep_48(control_unit_inst_n_454),
-        .r_we_cr_reg_rep_49(control_unit_inst_n_455),
-        .r_we_cr_reg_rep_5(control_unit_inst_n_86),
-        .r_we_cr_reg_rep_50(control_unit_inst_n_456),
-        .r_we_cr_reg_rep_51(control_unit_inst_n_457),
-        .r_we_cr_reg_rep_52(control_unit_inst_n_472),
-        .r_we_cr_reg_rep_53(control_unit_inst_n_473),
-        .r_we_cr_reg_rep_54(control_unit_inst_n_474),
-        .r_we_cr_reg_rep_55(control_unit_inst_n_475),
-        .r_we_cr_reg_rep_56(control_unit_inst_n_521),
-        .r_we_cr_reg_rep_57(control_unit_inst_n_522),
-        .r_we_cr_reg_rep_58(control_unit_inst_n_523),
-        .r_we_cr_reg_rep_59(control_unit_inst_n_524),
-        .r_we_cr_reg_rep_6(control_unit_inst_n_87),
-        .r_we_cr_reg_rep_60(control_unit_inst_n_539),
-        .r_we_cr_reg_rep_61(control_unit_inst_n_540),
-        .r_we_cr_reg_rep_62(control_unit_inst_n_541),
-        .r_we_cr_reg_rep_63(control_unit_inst_n_542),
-        .r_we_cr_reg_rep_64(control_unit_inst_n_570),
-        .r_we_cr_reg_rep_65(control_unit_inst_n_571),
-        .r_we_cr_reg_rep_66(control_unit_inst_n_572),
-        .r_we_cr_reg_rep_67(control_unit_inst_n_573),
-        .r_we_cr_reg_rep_68(control_unit_inst_n_603),
-        .r_we_cr_reg_rep_69(control_unit_inst_n_604),
-        .r_we_cr_reg_rep_7(control_unit_inst_n_88),
-        .r_we_cr_reg_rep_70(control_unit_inst_n_605),
-        .r_we_cr_reg_rep_71(control_unit_inst_n_606),
-        .r_we_cr_reg_rep_72(control_unit_inst_n_647),
-        .r_we_cr_reg_rep_73(control_unit_inst_n_648),
-        .r_we_cr_reg_rep_74(control_unit_inst_n_649),
-        .r_we_cr_reg_rep_75(control_unit_inst_n_650),
-        .r_we_cr_reg_rep_76(control_unit_inst_n_672),
-        .r_we_cr_reg_rep_77(control_unit_inst_n_673),
-        .r_we_cr_reg_rep_78(control_unit_inst_n_674),
-        .r_we_cr_reg_rep_79(control_unit_inst_n_675),
-        .r_we_cr_reg_rep_8(control_unit_inst_n_131),
-        .r_we_cr_reg_rep_80(control_unit_inst_n_676),
-        .r_we_cr_reg_rep_81(control_unit_inst_n_677),
-        .r_we_cr_reg_rep_82(control_unit_inst_n_678),
-        .r_we_cr_reg_rep_83(control_unit_inst_n_679),
-        .r_we_cr_reg_rep_84(control_unit_inst_n_743),
-        .r_we_cr_reg_rep_85(control_unit_inst_n_744),
-        .r_we_cr_reg_rep_86(control_unit_inst_n_745),
-        .r_we_cr_reg_rep_87(control_unit_inst_n_746),
-        .r_we_cr_reg_rep_88(control_unit_inst_n_774),
-        .r_we_cr_reg_rep_89(control_unit_inst_n_775),
-        .r_we_cr_reg_rep_9(control_unit_inst_n_132),
-        .r_we_cr_reg_rep_90(control_unit_inst_n_776),
-        .r_we_cr_reg_rep_91(control_unit_inst_n_777),
-        .r_we_cr_reg_rep_92(control_unit_inst_n_807),
-        .r_we_cr_reg_rep_93(control_unit_inst_n_808),
-        .r_we_cr_reg_rep_94(control_unit_inst_n_809),
-        .r_we_cr_reg_rep_95(control_unit_inst_n_810),
-        .r_we_cr_reg_rep_96(control_unit_inst_n_822),
-        .r_we_cr_reg_rep_97(control_unit_inst_n_823),
-        .r_we_cr_reg_rep_98(control_unit_inst_n_824),
-        .r_we_cr_reg_rep_99(control_unit_inst_n_825),
-        .r_we_cr_reg_rep__0_0(control_unit_inst_n_63),
-        .r_we_cr_reg_rep__0_1(control_unit_inst_n_64),
-        .r_we_cr_reg_rep__0_10(control_unit_inst_n_129),
-        .r_we_cr_reg_rep__0_100(control_unit_inst_n_865),
-        .r_we_cr_reg_rep__0_101(control_unit_inst_n_866),
-        .r_we_cr_reg_rep__0_102(control_unit_inst_n_867),
-        .r_we_cr_reg_rep__0_103(control_unit_inst_n_868),
-        .r_we_cr_reg_rep__0_104(control_unit_inst_n_892),
-        .r_we_cr_reg_rep__0_105(control_unit_inst_n_893),
-        .r_we_cr_reg_rep__0_106(control_unit_inst_n_894),
-        .r_we_cr_reg_rep__0_107(control_unit_inst_n_895),
-        .r_we_cr_reg_rep__0_108(control_unit_inst_n_988),
-        .r_we_cr_reg_rep__0_109(control_unit_inst_n_989),
-        .r_we_cr_reg_rep__0_11(control_unit_inst_n_130),
-        .r_we_cr_reg_rep__0_110(control_unit_inst_n_990),
-        .r_we_cr_reg_rep__0_111(control_unit_inst_n_991),
-        .r_we_cr_reg_rep__0_112(control_unit_inst_n_992),
-        .r_we_cr_reg_rep__0_113(control_unit_inst_n_993),
-        .r_we_cr_reg_rep__0_114(control_unit_inst_n_994),
-        .r_we_cr_reg_rep__0_115(control_unit_inst_n_995),
-        .r_we_cr_reg_rep__0_116(control_unit_inst_n_996),
-        .r_we_cr_reg_rep__0_117(control_unit_inst_n_997),
-        .r_we_cr_reg_rep__0_118(control_unit_inst_n_998),
-        .r_we_cr_reg_rep__0_119(control_unit_inst_n_999),
-        .r_we_cr_reg_rep__0_12(control_unit_inst_n_159),
-        .r_we_cr_reg_rep__0_120(control_unit_inst_n_1000),
-        .r_we_cr_reg_rep__0_121(control_unit_inst_n_1001),
-        .r_we_cr_reg_rep__0_122(control_unit_inst_n_1002),
-        .r_we_cr_reg_rep__0_123(control_unit_inst_n_1003),
-        .r_we_cr_reg_rep__0_124(control_unit_inst_n_1047),
-        .r_we_cr_reg_rep__0_125(control_unit_inst_n_1048),
-        .r_we_cr_reg_rep__0_126(control_unit_inst_n_1049),
-        .r_we_cr_reg_rep__0_127(control_unit_inst_n_1050),
-        .r_we_cr_reg_rep__0_13(control_unit_inst_n_160),
-        .r_we_cr_reg_rep__0_14(control_unit_inst_n_161),
-        .r_we_cr_reg_rep__0_15(control_unit_inst_n_162),
-        .r_we_cr_reg_rep__0_16(control_unit_inst_n_191),
-        .r_we_cr_reg_rep__0_17(control_unit_inst_n_192),
-        .r_we_cr_reg_rep__0_18(control_unit_inst_n_193),
-        .r_we_cr_reg_rep__0_19(control_unit_inst_n_194),
-        .r_we_cr_reg_rep__0_2(control_unit_inst_n_65),
-        .r_we_cr_reg_rep__0_20(control_unit_inst_n_217),
-        .r_we_cr_reg_rep__0_21(control_unit_inst_n_218),
-        .r_we_cr_reg_rep__0_22(control_unit_inst_n_219),
-        .r_we_cr_reg_rep__0_23(control_unit_inst_n_220),
-        .r_we_cr_reg_rep__0_24(control_unit_inst_n_251),
-        .r_we_cr_reg_rep__0_25(control_unit_inst_n_252),
-        .r_we_cr_reg_rep__0_26(control_unit_inst_n_253),
-        .r_we_cr_reg_rep__0_27(control_unit_inst_n_254),
-        .r_we_cr_reg_rep__0_28(control_unit_inst_n_289),
-        .r_we_cr_reg_rep__0_29(control_unit_inst_n_290),
-        .r_we_cr_reg_rep__0_3(control_unit_inst_n_66),
-        .r_we_cr_reg_rep__0_30(control_unit_inst_n_291),
-        .r_we_cr_reg_rep__0_31(control_unit_inst_n_292),
-        .r_we_cr_reg_rep__0_32(control_unit_inst_n_326),
-        .r_we_cr_reg_rep__0_33(control_unit_inst_n_327),
-        .r_we_cr_reg_rep__0_34(control_unit_inst_n_328),
-        .r_we_cr_reg_rep__0_35(control_unit_inst_n_329),
-        .r_we_cr_reg_rep__0_36(control_unit_inst_n_330),
-        .r_we_cr_reg_rep__0_37(control_unit_inst_n_331),
-        .r_we_cr_reg_rep__0_38(control_unit_inst_n_332),
-        .r_we_cr_reg_rep__0_39(control_unit_inst_n_333),
-        .r_we_cr_reg_rep__0_4(control_unit_inst_n_89),
-        .r_we_cr_reg_rep__0_40(control_unit_inst_n_385),
-        .r_we_cr_reg_rep__0_41(control_unit_inst_n_386),
-        .r_we_cr_reg_rep__0_42(control_unit_inst_n_387),
-        .r_we_cr_reg_rep__0_43(control_unit_inst_n_388),
-        .r_we_cr_reg_rep__0_44(control_unit_inst_n_412),
-        .r_we_cr_reg_rep__0_45(control_unit_inst_n_413),
-        .r_we_cr_reg_rep__0_46(control_unit_inst_n_414),
-        .r_we_cr_reg_rep__0_47(control_unit_inst_n_415),
-        .r_we_cr_reg_rep__0_48(control_unit_inst_n_450),
-        .r_we_cr_reg_rep__0_49(control_unit_inst_n_451),
-        .r_we_cr_reg_rep__0_5(control_unit_inst_n_90),
-        .r_we_cr_reg_rep__0_50(control_unit_inst_n_452),
-        .r_we_cr_reg_rep__0_51(control_unit_inst_n_453),
-        .r_we_cr_reg_rep__0_52(control_unit_inst_n_476),
-        .r_we_cr_reg_rep__0_53(control_unit_inst_n_477),
-        .r_we_cr_reg_rep__0_54(control_unit_inst_n_478),
-        .r_we_cr_reg_rep__0_55(control_unit_inst_n_479),
-        .r_we_cr_reg_rep__0_56(control_unit_inst_n_517),
-        .r_we_cr_reg_rep__0_57(control_unit_inst_n_518),
-        .r_we_cr_reg_rep__0_58(control_unit_inst_n_519),
-        .r_we_cr_reg_rep__0_59(control_unit_inst_n_520),
-        .r_we_cr_reg_rep__0_6(control_unit_inst_n_91),
-        .r_we_cr_reg_rep__0_60(control_unit_inst_n_543),
-        .r_we_cr_reg_rep__0_61(control_unit_inst_n_544),
-        .r_we_cr_reg_rep__0_62(control_unit_inst_n_545),
-        .r_we_cr_reg_rep__0_63(control_unit_inst_n_546),
-        .r_we_cr_reg_rep__0_64(control_unit_inst_n_574),
-        .r_we_cr_reg_rep__0_65(control_unit_inst_n_575),
-        .r_we_cr_reg_rep__0_66(control_unit_inst_n_576),
-        .r_we_cr_reg_rep__0_67(control_unit_inst_n_577),
-        .r_we_cr_reg_rep__0_68(control_unit_inst_n_607),
-        .r_we_cr_reg_rep__0_69(control_unit_inst_n_608),
-        .r_we_cr_reg_rep__0_7(control_unit_inst_n_92),
-        .r_we_cr_reg_rep__0_70(control_unit_inst_n_609),
-        .r_we_cr_reg_rep__0_71(control_unit_inst_n_610),
-        .r_we_cr_reg_rep__0_72(control_unit_inst_n_643),
-        .r_we_cr_reg_rep__0_73(control_unit_inst_n_644),
-        .r_we_cr_reg_rep__0_74(control_unit_inst_n_645),
-        .r_we_cr_reg_rep__0_75(control_unit_inst_n_646),
-        .r_we_cr_reg_rep__0_76(control_unit_inst_n_680),
-        .r_we_cr_reg_rep__0_77(control_unit_inst_n_681),
-        .r_we_cr_reg_rep__0_78(control_unit_inst_n_682),
-        .r_we_cr_reg_rep__0_79(control_unit_inst_n_683),
-        .r_we_cr_reg_rep__0_8(control_unit_inst_n_127),
-        .r_we_cr_reg_rep__0_80(control_unit_inst_n_684),
-        .r_we_cr_reg_rep__0_81(control_unit_inst_n_685),
-        .r_we_cr_reg_rep__0_82(control_unit_inst_n_686),
-        .r_we_cr_reg_rep__0_83(control_unit_inst_n_687),
-        .r_we_cr_reg_rep__0_84(control_unit_inst_n_739),
-        .r_we_cr_reg_rep__0_85(control_unit_inst_n_740),
-        .r_we_cr_reg_rep__0_86(control_unit_inst_n_741),
-        .r_we_cr_reg_rep__0_87(control_unit_inst_n_742),
-        .r_we_cr_reg_rep__0_88(control_unit_inst_n_770),
-        .r_we_cr_reg_rep__0_89(control_unit_inst_n_771),
-        .r_we_cr_reg_rep__0_9(control_unit_inst_n_128),
-        .r_we_cr_reg_rep__0_90(control_unit_inst_n_772),
-        .r_we_cr_reg_rep__0_91(control_unit_inst_n_773),
-        .r_we_cr_reg_rep__0_92(control_unit_inst_n_803),
-        .r_we_cr_reg_rep__0_93(control_unit_inst_n_804),
-        .r_we_cr_reg_rep__0_94(control_unit_inst_n_805),
-        .r_we_cr_reg_rep__0_95(control_unit_inst_n_806),
-        .r_we_cr_reg_rep__0_96(control_unit_inst_n_826),
-        .r_we_cr_reg_rep__0_97(control_unit_inst_n_827),
-        .r_we_cr_reg_rep__0_98(control_unit_inst_n_828),
-        .r_we_cr_reg_rep__0_99(control_unit_inst_n_829),
-        .r_we_cr_reg_rep__1_0(control_unit_inst_n_59),
-        .r_we_cr_reg_rep__1_1(control_unit_inst_n_60),
-        .r_we_cr_reg_rep__1_10(control_unit_inst_n_125),
-        .r_we_cr_reg_rep__1_100(control_unit_inst_n_861),
-        .r_we_cr_reg_rep__1_101(control_unit_inst_n_862),
-        .r_we_cr_reg_rep__1_102(control_unit_inst_n_863),
-        .r_we_cr_reg_rep__1_103(control_unit_inst_n_864),
-        .r_we_cr_reg_rep__1_104(control_unit_inst_n_896),
-        .r_we_cr_reg_rep__1_105(control_unit_inst_n_897),
-        .r_we_cr_reg_rep__1_106(control_unit_inst_n_898),
-        .r_we_cr_reg_rep__1_107(control_unit_inst_n_899),
-        .r_we_cr_reg_rep__1_108(control_unit_inst_n_972),
-        .r_we_cr_reg_rep__1_109(control_unit_inst_n_973),
-        .r_we_cr_reg_rep__1_11(control_unit_inst_n_126),
-        .r_we_cr_reg_rep__1_110(control_unit_inst_n_974),
-        .r_we_cr_reg_rep__1_111(control_unit_inst_n_975),
-        .r_we_cr_reg_rep__1_112(control_unit_inst_n_976),
-        .r_we_cr_reg_rep__1_113(control_unit_inst_n_977),
-        .r_we_cr_reg_rep__1_114(control_unit_inst_n_978),
-        .r_we_cr_reg_rep__1_115(control_unit_inst_n_979),
-        .r_we_cr_reg_rep__1_116(control_unit_inst_n_980),
-        .r_we_cr_reg_rep__1_117(control_unit_inst_n_981),
-        .r_we_cr_reg_rep__1_118(control_unit_inst_n_982),
-        .r_we_cr_reg_rep__1_119(control_unit_inst_n_983),
-        .r_we_cr_reg_rep__1_12(control_unit_inst_n_155),
-        .r_we_cr_reg_rep__1_120(control_unit_inst_n_984),
-        .r_we_cr_reg_rep__1_121(control_unit_inst_n_985),
-        .r_we_cr_reg_rep__1_122(control_unit_inst_n_986),
-        .r_we_cr_reg_rep__1_123(control_unit_inst_n_987),
-        .r_we_cr_reg_rep__1_124(control_unit_inst_n_1051),
-        .r_we_cr_reg_rep__1_125(control_unit_inst_n_1052),
-        .r_we_cr_reg_rep__1_126(control_unit_inst_n_1053),
-        .r_we_cr_reg_rep__1_127(control_unit_inst_n_1054),
-        .r_we_cr_reg_rep__1_13(control_unit_inst_n_156),
-        .r_we_cr_reg_rep__1_14(control_unit_inst_n_157),
-        .r_we_cr_reg_rep__1_15(control_unit_inst_n_158),
-        .r_we_cr_reg_rep__1_16(control_unit_inst_n_187),
-        .r_we_cr_reg_rep__1_17(control_unit_inst_n_188),
-        .r_we_cr_reg_rep__1_18(control_unit_inst_n_189),
-        .r_we_cr_reg_rep__1_19(control_unit_inst_n_190),
-        .r_we_cr_reg_rep__1_2(control_unit_inst_n_61),
-        .r_we_cr_reg_rep__1_20(control_unit_inst_n_221),
-        .r_we_cr_reg_rep__1_21(control_unit_inst_n_222),
-        .r_we_cr_reg_rep__1_22(control_unit_inst_n_223),
-        .r_we_cr_reg_rep__1_23(control_unit_inst_n_224),
-        .r_we_cr_reg_rep__1_24(control_unit_inst_n_255),
-        .r_we_cr_reg_rep__1_25(control_unit_inst_n_256),
-        .r_we_cr_reg_rep__1_26(control_unit_inst_n_257),
-        .r_we_cr_reg_rep__1_27(control_unit_inst_n_258),
-        .r_we_cr_reg_rep__1_28(control_unit_inst_n_285),
-        .r_we_cr_reg_rep__1_29(control_unit_inst_n_286),
-        .r_we_cr_reg_rep__1_3(control_unit_inst_n_62),
-        .r_we_cr_reg_rep__1_30(control_unit_inst_n_287),
-        .r_we_cr_reg_rep__1_31(control_unit_inst_n_288),
-        .r_we_cr_reg_rep__1_32(control_unit_inst_n_334),
-        .r_we_cr_reg_rep__1_33(control_unit_inst_n_335),
-        .r_we_cr_reg_rep__1_34(control_unit_inst_n_336),
-        .r_we_cr_reg_rep__1_35(control_unit_inst_n_337),
-        .r_we_cr_reg_rep__1_36(control_unit_inst_n_338),
-        .r_we_cr_reg_rep__1_37(control_unit_inst_n_339),
-        .r_we_cr_reg_rep__1_38(control_unit_inst_n_340),
-        .r_we_cr_reg_rep__1_39(control_unit_inst_n_341),
-        .r_we_cr_reg_rep__1_4(control_unit_inst_n_93),
-        .r_we_cr_reg_rep__1_40(control_unit_inst_n_381),
-        .r_we_cr_reg_rep__1_41(control_unit_inst_n_382),
-        .r_we_cr_reg_rep__1_42(control_unit_inst_n_383),
-        .r_we_cr_reg_rep__1_43(control_unit_inst_n_384),
-        .r_we_cr_reg_rep__1_44(control_unit_inst_n_416),
-        .r_we_cr_reg_rep__1_45(control_unit_inst_n_417),
-        .r_we_cr_reg_rep__1_46(control_unit_inst_n_418),
-        .r_we_cr_reg_rep__1_47(control_unit_inst_n_419),
-        .r_we_cr_reg_rep__1_48(control_unit_inst_n_446),
-        .r_we_cr_reg_rep__1_49(control_unit_inst_n_447),
-        .r_we_cr_reg_rep__1_5(control_unit_inst_n_94),
-        .r_we_cr_reg_rep__1_50(control_unit_inst_n_448),
-        .r_we_cr_reg_rep__1_51(control_unit_inst_n_449),
-        .r_we_cr_reg_rep__1_52(control_unit_inst_n_480),
-        .r_we_cr_reg_rep__1_53(control_unit_inst_n_481),
-        .r_we_cr_reg_rep__1_54(control_unit_inst_n_482),
-        .r_we_cr_reg_rep__1_55(control_unit_inst_n_483),
-        .r_we_cr_reg_rep__1_56(control_unit_inst_n_513),
-        .r_we_cr_reg_rep__1_57(control_unit_inst_n_514),
-        .r_we_cr_reg_rep__1_58(control_unit_inst_n_515),
-        .r_we_cr_reg_rep__1_59(control_unit_inst_n_516),
-        .r_we_cr_reg_rep__1_6(control_unit_inst_n_95),
-        .r_we_cr_reg_rep__1_60(control_unit_inst_n_547),
-        .r_we_cr_reg_rep__1_61(control_unit_inst_n_548),
-        .r_we_cr_reg_rep__1_62(control_unit_inst_n_549),
-        .r_we_cr_reg_rep__1_63(control_unit_inst_n_550),
-        .r_we_cr_reg_rep__1_64(control_unit_inst_n_578),
-        .r_we_cr_reg_rep__1_65(control_unit_inst_n_579),
-        .r_we_cr_reg_rep__1_66(control_unit_inst_n_580),
-        .r_we_cr_reg_rep__1_67(control_unit_inst_n_581),
-        .r_we_cr_reg_rep__1_68(control_unit_inst_n_611),
-        .r_we_cr_reg_rep__1_69(control_unit_inst_n_612),
-        .r_we_cr_reg_rep__1_7(control_unit_inst_n_96),
-        .r_we_cr_reg_rep__1_70(control_unit_inst_n_613),
-        .r_we_cr_reg_rep__1_71(control_unit_inst_n_614),
-        .r_we_cr_reg_rep__1_72(control_unit_inst_n_639),
-        .r_we_cr_reg_rep__1_73(control_unit_inst_n_640),
-        .r_we_cr_reg_rep__1_74(control_unit_inst_n_641),
-        .r_we_cr_reg_rep__1_75(control_unit_inst_n_642),
-        .r_we_cr_reg_rep__1_76(control_unit_inst_n_688),
-        .r_we_cr_reg_rep__1_77(control_unit_inst_n_689),
-        .r_we_cr_reg_rep__1_78(control_unit_inst_n_690),
-        .r_we_cr_reg_rep__1_79(control_unit_inst_n_691),
-        .r_we_cr_reg_rep__1_8(control_unit_inst_n_123),
-        .r_we_cr_reg_rep__1_80(control_unit_inst_n_692),
-        .r_we_cr_reg_rep__1_81(control_unit_inst_n_693),
-        .r_we_cr_reg_rep__1_82(control_unit_inst_n_694),
-        .r_we_cr_reg_rep__1_83(control_unit_inst_n_695),
-        .r_we_cr_reg_rep__1_84(control_unit_inst_n_735),
-        .r_we_cr_reg_rep__1_85(control_unit_inst_n_736),
-        .r_we_cr_reg_rep__1_86(control_unit_inst_n_737),
-        .r_we_cr_reg_rep__1_87(control_unit_inst_n_738),
-        .r_we_cr_reg_rep__1_88(control_unit_inst_n_766),
-        .r_we_cr_reg_rep__1_89(control_unit_inst_n_767),
-        .r_we_cr_reg_rep__1_9(control_unit_inst_n_124),
-        .r_we_cr_reg_rep__1_90(control_unit_inst_n_768),
-        .r_we_cr_reg_rep__1_91(control_unit_inst_n_769),
-        .r_we_cr_reg_rep__1_92(control_unit_inst_n_799),
-        .r_we_cr_reg_rep__1_93(control_unit_inst_n_800),
-        .r_we_cr_reg_rep__1_94(control_unit_inst_n_801),
-        .r_we_cr_reg_rep__1_95(control_unit_inst_n_802),
-        .r_we_cr_reg_rep__1_96(control_unit_inst_n_830),
-        .r_we_cr_reg_rep__1_97(control_unit_inst_n_831),
-        .r_we_cr_reg_rep__1_98(control_unit_inst_n_832),
-        .r_we_cr_reg_rep__1_99(control_unit_inst_n_833),
-        .r_we_cr_reg_rep__2_0(control_unit_inst_n_55),
-        .r_we_cr_reg_rep__2_1(control_unit_inst_n_56),
-        .r_we_cr_reg_rep__2_10(control_unit_inst_n_121),
-        .r_we_cr_reg_rep__2_100(control_unit_inst_n_857),
-        .r_we_cr_reg_rep__2_101(control_unit_inst_n_858),
-        .r_we_cr_reg_rep__2_102(control_unit_inst_n_859),
-        .r_we_cr_reg_rep__2_103(control_unit_inst_n_860),
-        .r_we_cr_reg_rep__2_104(control_unit_inst_n_900),
-        .r_we_cr_reg_rep__2_105(control_unit_inst_n_901),
-        .r_we_cr_reg_rep__2_106(control_unit_inst_n_902),
-        .r_we_cr_reg_rep__2_107(control_unit_inst_n_903),
-        .r_we_cr_reg_rep__2_108(control_unit_inst_n_956),
-        .r_we_cr_reg_rep__2_109(control_unit_inst_n_957),
-        .r_we_cr_reg_rep__2_11(control_unit_inst_n_122),
-        .r_we_cr_reg_rep__2_110(control_unit_inst_n_958),
-        .r_we_cr_reg_rep__2_111(control_unit_inst_n_959),
-        .r_we_cr_reg_rep__2_112(control_unit_inst_n_960),
-        .r_we_cr_reg_rep__2_113(control_unit_inst_n_961),
-        .r_we_cr_reg_rep__2_114(control_unit_inst_n_962),
-        .r_we_cr_reg_rep__2_115(control_unit_inst_n_963),
-        .r_we_cr_reg_rep__2_116(control_unit_inst_n_964),
-        .r_we_cr_reg_rep__2_117(control_unit_inst_n_965),
-        .r_we_cr_reg_rep__2_118(control_unit_inst_n_966),
-        .r_we_cr_reg_rep__2_119(control_unit_inst_n_967),
-        .r_we_cr_reg_rep__2_12(control_unit_inst_n_151),
-        .r_we_cr_reg_rep__2_120(control_unit_inst_n_968),
-        .r_we_cr_reg_rep__2_121(control_unit_inst_n_969),
-        .r_we_cr_reg_rep__2_122(control_unit_inst_n_970),
-        .r_we_cr_reg_rep__2_123(control_unit_inst_n_971),
-        .r_we_cr_reg_rep__2_124(control_unit_inst_n_1055),
-        .r_we_cr_reg_rep__2_125(control_unit_inst_n_1056),
-        .r_we_cr_reg_rep__2_126(control_unit_inst_n_1057),
-        .r_we_cr_reg_rep__2_127(control_unit_inst_n_1058),
-        .r_we_cr_reg_rep__2_13(control_unit_inst_n_152),
-        .r_we_cr_reg_rep__2_14(control_unit_inst_n_153),
-        .r_we_cr_reg_rep__2_15(control_unit_inst_n_154),
-        .r_we_cr_reg_rep__2_16(control_unit_inst_n_183),
-        .r_we_cr_reg_rep__2_17(control_unit_inst_n_184),
-        .r_we_cr_reg_rep__2_18(control_unit_inst_n_185),
-        .r_we_cr_reg_rep__2_19(control_unit_inst_n_186),
-        .r_we_cr_reg_rep__2_2(control_unit_inst_n_57),
-        .r_we_cr_reg_rep__2_20(control_unit_inst_n_225),
-        .r_we_cr_reg_rep__2_21(control_unit_inst_n_226),
-        .r_we_cr_reg_rep__2_22(control_unit_inst_n_227),
-        .r_we_cr_reg_rep__2_23(control_unit_inst_n_228),
-        .r_we_cr_reg_rep__2_24(control_unit_inst_n_259),
-        .r_we_cr_reg_rep__2_25(control_unit_inst_n_260),
-        .r_we_cr_reg_rep__2_26(control_unit_inst_n_261),
-        .r_we_cr_reg_rep__2_27(control_unit_inst_n_262),
-        .r_we_cr_reg_rep__2_28(control_unit_inst_n_281),
-        .r_we_cr_reg_rep__2_29(control_unit_inst_n_282),
-        .r_we_cr_reg_rep__2_3(control_unit_inst_n_58),
-        .r_we_cr_reg_rep__2_30(control_unit_inst_n_283),
-        .r_we_cr_reg_rep__2_31(control_unit_inst_n_284),
-        .r_we_cr_reg_rep__2_32(control_unit_inst_n_342),
-        .r_we_cr_reg_rep__2_33(control_unit_inst_n_343),
-        .r_we_cr_reg_rep__2_34(control_unit_inst_n_344),
-        .r_we_cr_reg_rep__2_35(control_unit_inst_n_345),
-        .r_we_cr_reg_rep__2_36(control_unit_inst_n_346),
-        .r_we_cr_reg_rep__2_37(control_unit_inst_n_347),
-        .r_we_cr_reg_rep__2_38(control_unit_inst_n_348),
-        .r_we_cr_reg_rep__2_39(control_unit_inst_n_349),
-        .r_we_cr_reg_rep__2_4(control_unit_inst_n_97),
-        .r_we_cr_reg_rep__2_40(control_unit_inst_n_377),
-        .r_we_cr_reg_rep__2_41(control_unit_inst_n_378),
-        .r_we_cr_reg_rep__2_42(control_unit_inst_n_379),
-        .r_we_cr_reg_rep__2_43(control_unit_inst_n_380),
-        .r_we_cr_reg_rep__2_44(control_unit_inst_n_420),
-        .r_we_cr_reg_rep__2_45(control_unit_inst_n_421),
-        .r_we_cr_reg_rep__2_46(control_unit_inst_n_422),
-        .r_we_cr_reg_rep__2_47(control_unit_inst_n_423),
-        .r_we_cr_reg_rep__2_48(control_unit_inst_n_442),
-        .r_we_cr_reg_rep__2_49(control_unit_inst_n_443),
-        .r_we_cr_reg_rep__2_5(control_unit_inst_n_98),
-        .r_we_cr_reg_rep__2_50(control_unit_inst_n_444),
-        .r_we_cr_reg_rep__2_51(control_unit_inst_n_445),
-        .r_we_cr_reg_rep__2_52(control_unit_inst_n_484),
-        .r_we_cr_reg_rep__2_53(control_unit_inst_n_485),
-        .r_we_cr_reg_rep__2_54(control_unit_inst_n_486),
-        .r_we_cr_reg_rep__2_55(control_unit_inst_n_487),
-        .r_we_cr_reg_rep__2_56(control_unit_inst_n_509),
-        .r_we_cr_reg_rep__2_57(control_unit_inst_n_510),
-        .r_we_cr_reg_rep__2_58(control_unit_inst_n_511),
-        .r_we_cr_reg_rep__2_59(control_unit_inst_n_512),
-        .r_we_cr_reg_rep__2_6(control_unit_inst_n_99),
-        .r_we_cr_reg_rep__2_60(control_unit_inst_n_551),
-        .r_we_cr_reg_rep__2_61(control_unit_inst_n_552),
-        .r_we_cr_reg_rep__2_62(control_unit_inst_n_553),
-        .r_we_cr_reg_rep__2_63(control_unit_inst_n_554),
-        .r_we_cr_reg_rep__2_64(control_unit_inst_n_582),
-        .r_we_cr_reg_rep__2_65(control_unit_inst_n_583),
-        .r_we_cr_reg_rep__2_66(control_unit_inst_n_584),
-        .r_we_cr_reg_rep__2_67(control_unit_inst_n_585),
-        .r_we_cr_reg_rep__2_68(control_unit_inst_n_615),
-        .r_we_cr_reg_rep__2_69(control_unit_inst_n_616),
-        .r_we_cr_reg_rep__2_7(control_unit_inst_n_100),
-        .r_we_cr_reg_rep__2_70(control_unit_inst_n_617),
-        .r_we_cr_reg_rep__2_71(control_unit_inst_n_618),
-        .r_we_cr_reg_rep__2_72(control_unit_inst_n_635),
-        .r_we_cr_reg_rep__2_73(control_unit_inst_n_636),
-        .r_we_cr_reg_rep__2_74(control_unit_inst_n_637),
-        .r_we_cr_reg_rep__2_75(control_unit_inst_n_638),
-        .r_we_cr_reg_rep__2_76(control_unit_inst_n_696),
-        .r_we_cr_reg_rep__2_77(control_unit_inst_n_697),
-        .r_we_cr_reg_rep__2_78(control_unit_inst_n_698),
-        .r_we_cr_reg_rep__2_79(control_unit_inst_n_699),
-        .r_we_cr_reg_rep__2_8(control_unit_inst_n_119),
-        .r_we_cr_reg_rep__2_80(control_unit_inst_n_700),
-        .r_we_cr_reg_rep__2_81(control_unit_inst_n_701),
-        .r_we_cr_reg_rep__2_82(control_unit_inst_n_702),
-        .r_we_cr_reg_rep__2_83(control_unit_inst_n_703),
-        .r_we_cr_reg_rep__2_84(control_unit_inst_n_731),
-        .r_we_cr_reg_rep__2_85(control_unit_inst_n_732),
-        .r_we_cr_reg_rep__2_86(control_unit_inst_n_733),
-        .r_we_cr_reg_rep__2_87(control_unit_inst_n_734),
-        .r_we_cr_reg_rep__2_88(control_unit_inst_n_762),
-        .r_we_cr_reg_rep__2_89(control_unit_inst_n_763),
-        .r_we_cr_reg_rep__2_9(control_unit_inst_n_120),
-        .r_we_cr_reg_rep__2_90(control_unit_inst_n_764),
-        .r_we_cr_reg_rep__2_91(control_unit_inst_n_765),
-        .r_we_cr_reg_rep__2_92(control_unit_inst_n_795),
-        .r_we_cr_reg_rep__2_93(control_unit_inst_n_796),
-        .r_we_cr_reg_rep__2_94(control_unit_inst_n_797),
-        .r_we_cr_reg_rep__2_95(control_unit_inst_n_798),
-        .r_we_cr_reg_rep__2_96(control_unit_inst_n_834),
-        .r_we_cr_reg_rep__2_97(control_unit_inst_n_835),
-        .r_we_cr_reg_rep__2_98(control_unit_inst_n_836),
-        .r_we_cr_reg_rep__2_99(control_unit_inst_n_837),
-        .r_we_cr_reg_rep__3_0(control_unit_inst_n_51),
-        .r_we_cr_reg_rep__3_1(control_unit_inst_n_52),
-        .r_we_cr_reg_rep__3_10(control_unit_inst_n_117),
-        .r_we_cr_reg_rep__3_100(control_unit_inst_n_853),
-        .r_we_cr_reg_rep__3_101(control_unit_inst_n_854),
-        .r_we_cr_reg_rep__3_102(control_unit_inst_n_855),
-        .r_we_cr_reg_rep__3_103(control_unit_inst_n_856),
-        .r_we_cr_reg_rep__3_104(control_unit_inst_n_904),
-        .r_we_cr_reg_rep__3_105(control_unit_inst_n_905),
-        .r_we_cr_reg_rep__3_106(control_unit_inst_n_906),
-        .r_we_cr_reg_rep__3_107(control_unit_inst_n_907),
-        .r_we_cr_reg_rep__3_108(control_unit_inst_n_940),
-        .r_we_cr_reg_rep__3_109(control_unit_inst_n_941),
-        .r_we_cr_reg_rep__3_11(control_unit_inst_n_118),
-        .r_we_cr_reg_rep__3_110(control_unit_inst_n_942),
-        .r_we_cr_reg_rep__3_111(control_unit_inst_n_943),
-        .r_we_cr_reg_rep__3_112(control_unit_inst_n_944),
-        .r_we_cr_reg_rep__3_113(control_unit_inst_n_945),
-        .r_we_cr_reg_rep__3_114(control_unit_inst_n_946),
-        .r_we_cr_reg_rep__3_115(control_unit_inst_n_947),
-        .r_we_cr_reg_rep__3_116(control_unit_inst_n_948),
-        .r_we_cr_reg_rep__3_117(control_unit_inst_n_949),
-        .r_we_cr_reg_rep__3_118(control_unit_inst_n_950),
-        .r_we_cr_reg_rep__3_119(control_unit_inst_n_951),
-        .r_we_cr_reg_rep__3_12(control_unit_inst_n_147),
-        .r_we_cr_reg_rep__3_120(control_unit_inst_n_952),
-        .r_we_cr_reg_rep__3_121(control_unit_inst_n_953),
-        .r_we_cr_reg_rep__3_122(control_unit_inst_n_954),
-        .r_we_cr_reg_rep__3_123(control_unit_inst_n_955),
-        .r_we_cr_reg_rep__3_124(control_unit_inst_n_1059),
-        .r_we_cr_reg_rep__3_125(control_unit_inst_n_1060),
-        .r_we_cr_reg_rep__3_126(control_unit_inst_n_1061),
-        .r_we_cr_reg_rep__3_127(control_unit_inst_n_1062),
-        .r_we_cr_reg_rep__3_13(control_unit_inst_n_148),
-        .r_we_cr_reg_rep__3_14(control_unit_inst_n_149),
-        .r_we_cr_reg_rep__3_15(control_unit_inst_n_150),
-        .r_we_cr_reg_rep__3_16(control_unit_inst_n_179),
-        .r_we_cr_reg_rep__3_17(control_unit_inst_n_180),
-        .r_we_cr_reg_rep__3_18(control_unit_inst_n_181),
-        .r_we_cr_reg_rep__3_19(control_unit_inst_n_182),
-        .r_we_cr_reg_rep__3_2(control_unit_inst_n_53),
-        .r_we_cr_reg_rep__3_20(control_unit_inst_n_229),
-        .r_we_cr_reg_rep__3_21(control_unit_inst_n_230),
-        .r_we_cr_reg_rep__3_22(control_unit_inst_n_231),
-        .r_we_cr_reg_rep__3_23(control_unit_inst_n_232),
-        .r_we_cr_reg_rep__3_24(control_unit_inst_n_263),
-        .r_we_cr_reg_rep__3_25(control_unit_inst_n_264),
-        .r_we_cr_reg_rep__3_26(control_unit_inst_n_265),
-        .r_we_cr_reg_rep__3_27(control_unit_inst_n_266),
-        .r_we_cr_reg_rep__3_28(control_unit_inst_n_277),
-        .r_we_cr_reg_rep__3_29(control_unit_inst_n_278),
-        .r_we_cr_reg_rep__3_3(control_unit_inst_n_54),
-        .r_we_cr_reg_rep__3_30(control_unit_inst_n_279),
-        .r_we_cr_reg_rep__3_31(control_unit_inst_n_280),
-        .r_we_cr_reg_rep__3_32(control_unit_inst_n_350),
-        .r_we_cr_reg_rep__3_33(control_unit_inst_n_351),
-        .r_we_cr_reg_rep__3_34(control_unit_inst_n_352),
-        .r_we_cr_reg_rep__3_35(control_unit_inst_n_353),
-        .r_we_cr_reg_rep__3_36(control_unit_inst_n_354),
-        .r_we_cr_reg_rep__3_37(control_unit_inst_n_355),
-        .r_we_cr_reg_rep__3_38(control_unit_inst_n_356),
-        .r_we_cr_reg_rep__3_39(control_unit_inst_n_357),
-        .r_we_cr_reg_rep__3_4(control_unit_inst_n_101),
-        .r_we_cr_reg_rep__3_40(control_unit_inst_n_373),
-        .r_we_cr_reg_rep__3_41(control_unit_inst_n_374),
-        .r_we_cr_reg_rep__3_42(control_unit_inst_n_375),
-        .r_we_cr_reg_rep__3_43(control_unit_inst_n_376),
-        .r_we_cr_reg_rep__3_44(control_unit_inst_n_424),
-        .r_we_cr_reg_rep__3_45(control_unit_inst_n_425),
-        .r_we_cr_reg_rep__3_46(control_unit_inst_n_426),
-        .r_we_cr_reg_rep__3_47(control_unit_inst_n_427),
-        .r_we_cr_reg_rep__3_48(control_unit_inst_n_438),
-        .r_we_cr_reg_rep__3_49(control_unit_inst_n_439),
-        .r_we_cr_reg_rep__3_5(control_unit_inst_n_102),
-        .r_we_cr_reg_rep__3_50(control_unit_inst_n_440),
-        .r_we_cr_reg_rep__3_51(control_unit_inst_n_441),
-        .r_we_cr_reg_rep__3_52(control_unit_inst_n_488),
-        .r_we_cr_reg_rep__3_53(control_unit_inst_n_489),
-        .r_we_cr_reg_rep__3_54(control_unit_inst_n_490),
-        .r_we_cr_reg_rep__3_55(control_unit_inst_n_491),
-        .r_we_cr_reg_rep__3_56(control_unit_inst_n_505),
-        .r_we_cr_reg_rep__3_57(control_unit_inst_n_506),
-        .r_we_cr_reg_rep__3_58(control_unit_inst_n_507),
-        .r_we_cr_reg_rep__3_59(control_unit_inst_n_508),
-        .r_we_cr_reg_rep__3_6(control_unit_inst_n_103),
-        .r_we_cr_reg_rep__3_60(control_unit_inst_n_555),
-        .r_we_cr_reg_rep__3_61(control_unit_inst_n_556),
-        .r_we_cr_reg_rep__3_62(control_unit_inst_n_557),
-        .r_we_cr_reg_rep__3_63(control_unit_inst_n_558),
-        .r_we_cr_reg_rep__3_64(control_unit_inst_n_586),
-        .r_we_cr_reg_rep__3_65(control_unit_inst_n_587),
-        .r_we_cr_reg_rep__3_66(control_unit_inst_n_588),
-        .r_we_cr_reg_rep__3_67(control_unit_inst_n_589),
-        .r_we_cr_reg_rep__3_68(control_unit_inst_n_619),
-        .r_we_cr_reg_rep__3_69(control_unit_inst_n_620),
-        .r_we_cr_reg_rep__3_7(control_unit_inst_n_104),
-        .r_we_cr_reg_rep__3_70(control_unit_inst_n_621),
-        .r_we_cr_reg_rep__3_71(control_unit_inst_n_622),
-        .r_we_cr_reg_rep__3_72(control_unit_inst_n_631),
-        .r_we_cr_reg_rep__3_73(control_unit_inst_n_632),
-        .r_we_cr_reg_rep__3_74(control_unit_inst_n_633),
-        .r_we_cr_reg_rep__3_75(control_unit_inst_n_634),
-        .r_we_cr_reg_rep__3_76(control_unit_inst_n_704),
-        .r_we_cr_reg_rep__3_77(control_unit_inst_n_705),
-        .r_we_cr_reg_rep__3_78(control_unit_inst_n_706),
-        .r_we_cr_reg_rep__3_79(control_unit_inst_n_707),
-        .r_we_cr_reg_rep__3_8(control_unit_inst_n_115),
-        .r_we_cr_reg_rep__3_80(control_unit_inst_n_708),
-        .r_we_cr_reg_rep__3_81(control_unit_inst_n_709),
-        .r_we_cr_reg_rep__3_82(control_unit_inst_n_710),
-        .r_we_cr_reg_rep__3_83(control_unit_inst_n_711),
-        .r_we_cr_reg_rep__3_84(control_unit_inst_n_727),
-        .r_we_cr_reg_rep__3_85(control_unit_inst_n_728),
-        .r_we_cr_reg_rep__3_86(control_unit_inst_n_729),
-        .r_we_cr_reg_rep__3_87(control_unit_inst_n_730),
-        .r_we_cr_reg_rep__3_88(control_unit_inst_n_758),
-        .r_we_cr_reg_rep__3_89(control_unit_inst_n_759),
-        .r_we_cr_reg_rep__3_9(control_unit_inst_n_116),
-        .r_we_cr_reg_rep__3_90(control_unit_inst_n_760),
-        .r_we_cr_reg_rep__3_91(control_unit_inst_n_761),
-        .r_we_cr_reg_rep__3_92(control_unit_inst_n_791),
-        .r_we_cr_reg_rep__3_93(control_unit_inst_n_792),
-        .r_we_cr_reg_rep__3_94(control_unit_inst_n_793),
-        .r_we_cr_reg_rep__3_95(control_unit_inst_n_794),
-        .r_we_cr_reg_rep__3_96(control_unit_inst_n_838),
-        .r_we_cr_reg_rep__3_97(control_unit_inst_n_839),
-        .r_we_cr_reg_rep__3_98(control_unit_inst_n_840),
-        .r_we_cr_reg_rep__3_99(control_unit_inst_n_841),
-        .r_we_cr_reg_rep__4_0(control_unit_inst_n_47),
-        .r_we_cr_reg_rep__4_1(control_unit_inst_n_48),
-        .r_we_cr_reg_rep__4_10(control_unit_inst_n_113),
-        .r_we_cr_reg_rep__4_100(control_unit_inst_n_849),
-        .r_we_cr_reg_rep__4_101(control_unit_inst_n_850),
-        .r_we_cr_reg_rep__4_102(control_unit_inst_n_851),
-        .r_we_cr_reg_rep__4_103(control_unit_inst_n_852),
-        .r_we_cr_reg_rep__4_104(control_unit_inst_n_908),
-        .r_we_cr_reg_rep__4_105(control_unit_inst_n_909),
-        .r_we_cr_reg_rep__4_106(control_unit_inst_n_910),
-        .r_we_cr_reg_rep__4_107(control_unit_inst_n_911),
-        .r_we_cr_reg_rep__4_108(control_unit_inst_n_924),
-        .r_we_cr_reg_rep__4_109(control_unit_inst_n_925),
-        .r_we_cr_reg_rep__4_11(control_unit_inst_n_114),
-        .r_we_cr_reg_rep__4_110(control_unit_inst_n_926),
-        .r_we_cr_reg_rep__4_111(control_unit_inst_n_927),
-        .r_we_cr_reg_rep__4_112(control_unit_inst_n_928),
-        .r_we_cr_reg_rep__4_113(control_unit_inst_n_929),
-        .r_we_cr_reg_rep__4_114(control_unit_inst_n_930),
-        .r_we_cr_reg_rep__4_115(control_unit_inst_n_931),
-        .r_we_cr_reg_rep__4_116(control_unit_inst_n_932),
-        .r_we_cr_reg_rep__4_117(control_unit_inst_n_933),
-        .r_we_cr_reg_rep__4_118(control_unit_inst_n_934),
-        .r_we_cr_reg_rep__4_119(control_unit_inst_n_935),
-        .r_we_cr_reg_rep__4_12(control_unit_inst_n_143),
-        .r_we_cr_reg_rep__4_120(control_unit_inst_n_936),
-        .r_we_cr_reg_rep__4_121(control_unit_inst_n_937),
-        .r_we_cr_reg_rep__4_122(control_unit_inst_n_938),
-        .r_we_cr_reg_rep__4_123(control_unit_inst_n_939),
-        .r_we_cr_reg_rep__4_124(control_unit_inst_n_1063),
-        .r_we_cr_reg_rep__4_125(control_unit_inst_n_1064),
-        .r_we_cr_reg_rep__4_126(control_unit_inst_n_1065),
-        .r_we_cr_reg_rep__4_127(control_unit_inst_n_1066),
-        .r_we_cr_reg_rep__4_13(control_unit_inst_n_144),
-        .r_we_cr_reg_rep__4_14(control_unit_inst_n_145),
-        .r_we_cr_reg_rep__4_15(control_unit_inst_n_146),
-        .r_we_cr_reg_rep__4_16(control_unit_inst_n_175),
-        .r_we_cr_reg_rep__4_17(control_unit_inst_n_176),
-        .r_we_cr_reg_rep__4_18(control_unit_inst_n_177),
-        .r_we_cr_reg_rep__4_19(control_unit_inst_n_178),
-        .r_we_cr_reg_rep__4_2(control_unit_inst_n_49),
-        .r_we_cr_reg_rep__4_20(control_unit_inst_n_233),
-        .r_we_cr_reg_rep__4_21(control_unit_inst_n_234),
-        .r_we_cr_reg_rep__4_22(control_unit_inst_n_235),
-        .r_we_cr_reg_rep__4_23(control_unit_inst_n_236),
-        .r_we_cr_reg_rep__4_24(control_unit_inst_n_267),
-        .r_we_cr_reg_rep__4_25(control_unit_inst_n_268),
-        .r_we_cr_reg_rep__4_26(control_unit_inst_n_269),
-        .r_we_cr_reg_rep__4_27(control_unit_inst_n_270),
-        .r_we_cr_reg_rep__4_28(control_unit_inst_n_273),
-        .r_we_cr_reg_rep__4_29(control_unit_inst_n_274),
-        .r_we_cr_reg_rep__4_3(control_unit_inst_n_50),
-        .r_we_cr_reg_rep__4_30(control_unit_inst_n_275),
-        .r_we_cr_reg_rep__4_31(control_unit_inst_n_276),
-        .r_we_cr_reg_rep__4_32(control_unit_inst_n_358),
-        .r_we_cr_reg_rep__4_33(control_unit_inst_n_359),
-        .r_we_cr_reg_rep__4_34(control_unit_inst_n_360),
-        .r_we_cr_reg_rep__4_35(control_unit_inst_n_361),
-        .r_we_cr_reg_rep__4_36(control_unit_inst_n_362),
-        .r_we_cr_reg_rep__4_37(control_unit_inst_n_363),
-        .r_we_cr_reg_rep__4_38(control_unit_inst_n_364),
-        .r_we_cr_reg_rep__4_39(control_unit_inst_n_365),
-        .r_we_cr_reg_rep__4_4(control_unit_inst_n_105),
-        .r_we_cr_reg_rep__4_40(control_unit_inst_n_369),
-        .r_we_cr_reg_rep__4_41(control_unit_inst_n_370),
-        .r_we_cr_reg_rep__4_42(control_unit_inst_n_371),
-        .r_we_cr_reg_rep__4_43(control_unit_inst_n_372),
-        .r_we_cr_reg_rep__4_44(control_unit_inst_n_428),
-        .r_we_cr_reg_rep__4_45(control_unit_inst_n_429),
-        .r_we_cr_reg_rep__4_46(control_unit_inst_n_430),
-        .r_we_cr_reg_rep__4_47(control_unit_inst_n_431),
-        .r_we_cr_reg_rep__4_48(control_unit_inst_n_434),
-        .r_we_cr_reg_rep__4_49(control_unit_inst_n_435),
-        .r_we_cr_reg_rep__4_5(control_unit_inst_n_106),
-        .r_we_cr_reg_rep__4_50(control_unit_inst_n_436),
-        .r_we_cr_reg_rep__4_51(control_unit_inst_n_437),
-        .r_we_cr_reg_rep__4_52(control_unit_inst_n_492),
-        .r_we_cr_reg_rep__4_53(control_unit_inst_n_493),
-        .r_we_cr_reg_rep__4_54(control_unit_inst_n_494),
-        .r_we_cr_reg_rep__4_55(control_unit_inst_n_495),
-        .r_we_cr_reg_rep__4_56(control_unit_inst_n_501),
-        .r_we_cr_reg_rep__4_57(control_unit_inst_n_502),
-        .r_we_cr_reg_rep__4_58(control_unit_inst_n_503),
-        .r_we_cr_reg_rep__4_59(control_unit_inst_n_504),
-        .r_we_cr_reg_rep__4_6(control_unit_inst_n_107),
-        .r_we_cr_reg_rep__4_60(control_unit_inst_n_559),
-        .r_we_cr_reg_rep__4_61(control_unit_inst_n_560),
-        .r_we_cr_reg_rep__4_62(control_unit_inst_n_561),
-        .r_we_cr_reg_rep__4_63(control_unit_inst_n_562),
-        .r_we_cr_reg_rep__4_64(control_unit_inst_n_590),
-        .r_we_cr_reg_rep__4_65(control_unit_inst_n_591),
-        .r_we_cr_reg_rep__4_66(control_unit_inst_n_592),
-        .r_we_cr_reg_rep__4_67(control_unit_inst_n_593),
-        .r_we_cr_reg_rep__4_68(control_unit_inst_n_623),
-        .r_we_cr_reg_rep__4_69(control_unit_inst_n_624),
-        .r_we_cr_reg_rep__4_7(control_unit_inst_n_108),
-        .r_we_cr_reg_rep__4_70(control_unit_inst_n_625),
-        .r_we_cr_reg_rep__4_71(control_unit_inst_n_626),
-        .r_we_cr_reg_rep__4_72(control_unit_inst_n_627),
-        .r_we_cr_reg_rep__4_73(control_unit_inst_n_628),
-        .r_we_cr_reg_rep__4_74(control_unit_inst_n_629),
-        .r_we_cr_reg_rep__4_75(control_unit_inst_n_630),
-        .r_we_cr_reg_rep__4_76(control_unit_inst_n_712),
-        .r_we_cr_reg_rep__4_77(control_unit_inst_n_713),
-        .r_we_cr_reg_rep__4_78(control_unit_inst_n_714),
-        .r_we_cr_reg_rep__4_79(control_unit_inst_n_715),
-        .r_we_cr_reg_rep__4_8(control_unit_inst_n_111),
-        .r_we_cr_reg_rep__4_80(control_unit_inst_n_716),
-        .r_we_cr_reg_rep__4_81(control_unit_inst_n_717),
-        .r_we_cr_reg_rep__4_82(control_unit_inst_n_718),
-        .r_we_cr_reg_rep__4_83(control_unit_inst_n_719),
-        .r_we_cr_reg_rep__4_84(control_unit_inst_n_723),
-        .r_we_cr_reg_rep__4_85(control_unit_inst_n_724),
-        .r_we_cr_reg_rep__4_86(control_unit_inst_n_725),
-        .r_we_cr_reg_rep__4_87(control_unit_inst_n_726),
-        .r_we_cr_reg_rep__4_88(control_unit_inst_n_754),
-        .r_we_cr_reg_rep__4_89(control_unit_inst_n_755),
-        .r_we_cr_reg_rep__4_9(control_unit_inst_n_112),
-        .r_we_cr_reg_rep__4_90(control_unit_inst_n_756),
-        .r_we_cr_reg_rep__4_91(control_unit_inst_n_757),
-        .r_we_cr_reg_rep__4_92(control_unit_inst_n_787),
-        .r_we_cr_reg_rep__4_93(control_unit_inst_n_788),
-        .r_we_cr_reg_rep__4_94(control_unit_inst_n_789),
-        .r_we_cr_reg_rep__4_95(control_unit_inst_n_790),
-        .r_we_cr_reg_rep__4_96(control_unit_inst_n_842),
-        .r_we_cr_reg_rep__4_97(control_unit_inst_n_843),
-        .r_we_cr_reg_rep__4_98(control_unit_inst_n_844),
-        .r_we_cr_reg_rep__4_99(control_unit_inst_n_845),
-        .r_we_cr_reg_rep__5_0(control_unit_inst_n_44),
-        .r_we_cr_reg_rep__5_1(control_unit_inst_n_45),
-        .r_we_cr_reg_rep__5_10(control_unit_inst_n_110),
-        .r_we_cr_reg_rep__5_100(control_unit_inst_n_816),
-        .r_we_cr_reg_rep__5_101(control_unit_inst_n_817),
-        .r_we_cr_reg_rep__5_102(control_unit_inst_n_846),
-        .r_we_cr_reg_rep__5_103(control_unit_inst_n_847),
-        .r_we_cr_reg_rep__5_104(control_unit_inst_n_848),
-        .r_we_cr_reg_rep__5_105(control_unit_inst_n_877),
-        .r_we_cr_reg_rep__5_106(control_unit_inst_n_878),
-        .r_we_cr_reg_rep__5_107(control_unit_inst_n_879),
-        .r_we_cr_reg_rep__5_108(control_unit_inst_n_880),
-        .r_we_cr_reg_rep__5_109(control_unit_inst_n_881),
-        .r_we_cr_reg_rep__5_11(control_unit_inst_n_139),
-        .r_we_cr_reg_rep__5_110(control_unit_inst_n_882),
-        .r_we_cr_reg_rep__5_111(control_unit_inst_n_883),
-        .r_we_cr_reg_rep__5_112(control_unit_inst_n_912),
-        .r_we_cr_reg_rep__5_113(control_unit_inst_n_913),
-        .r_we_cr_reg_rep__5_114(control_unit_inst_n_914),
-        .r_we_cr_reg_rep__5_115(control_unit_inst_n_915),
-        .r_we_cr_reg_rep__5_116(control_unit_inst_n_916),
-        .r_we_cr_reg_rep__5_117(control_unit_inst_n_917),
-        .r_we_cr_reg_rep__5_118(control_unit_inst_n_918),
-        .r_we_cr_reg_rep__5_119(control_unit_inst_n_919),
-        .r_we_cr_reg_rep__5_12(control_unit_inst_n_140),
-        .r_we_cr_reg_rep__5_120(control_unit_inst_n_920),
-        .r_we_cr_reg_rep__5_121(control_unit_inst_n_921),
-        .r_we_cr_reg_rep__5_122(control_unit_inst_n_922),
-        .r_we_cr_reg_rep__5_123(control_unit_inst_n_923),
-        .r_we_cr_reg_rep__5_124(control_unit_inst_n_1036),
-        .r_we_cr_reg_rep__5_125(control_unit_inst_n_1037),
-        .r_we_cr_reg_rep__5_126(control_unit_inst_n_1038),
-        .r_we_cr_reg_rep__5_127(control_unit_inst_n_1067),
-        .r_we_cr_reg_rep__5_128(control_unit_inst_n_1068),
-        .r_we_cr_reg_rep__5_129(control_unit_inst_n_1069),
-        .r_we_cr_reg_rep__5_13(control_unit_inst_n_141),
-        .r_we_cr_reg_rep__5_14(control_unit_inst_n_142),
-        .r_we_cr_reg_rep__5_15(control_unit_inst_n_171),
-        .r_we_cr_reg_rep__5_16(control_unit_inst_n_172),
-        .r_we_cr_reg_rep__5_17(control_unit_inst_n_173),
-        .r_we_cr_reg_rep__5_18(control_unit_inst_n_174),
-        .r_we_cr_reg_rep__5_19(control_unit_inst_n_203),
-        .r_we_cr_reg_rep__5_2(control_unit_inst_n_46),
-        .r_we_cr_reg_rep__5_20(control_unit_inst_n_204),
-        .r_we_cr_reg_rep__5_21(control_unit_inst_n_205),
-        .r_we_cr_reg_rep__5_22(control_unit_inst_n_206),
-        .r_we_cr_reg_rep__5_23(control_unit_inst_n_207),
-        .r_we_cr_reg_rep__5_24(control_unit_inst_n_208),
-        .r_we_cr_reg_rep__5_25(control_unit_inst_n_237),
-        .r_we_cr_reg_rep__5_26(control_unit_inst_n_238),
-        .r_we_cr_reg_rep__5_27(control_unit_inst_n_239),
-        .r_we_cr_reg_rep__5_28(control_unit_inst_n_240),
-        .r_we_cr_reg_rep__5_29(control_unit_inst_n_241),
-        .r_we_cr_reg_rep__5_3(control_unit_inst_n_75),
-        .r_we_cr_reg_rep__5_30(control_unit_inst_n_242),
-        .r_we_cr_reg_rep__5_31(control_unit_inst_n_271),
-        .r_we_cr_reg_rep__5_32(control_unit_inst_n_272),
-        .r_we_cr_reg_rep__5_33(control_unit_inst_n_301),
-        .r_we_cr_reg_rep__5_34(control_unit_inst_n_302),
-        .r_we_cr_reg_rep__5_35(control_unit_inst_n_303),
-        .r_we_cr_reg_rep__5_36(control_unit_inst_n_304),
-        .r_we_cr_reg_rep__5_37(control_unit_inst_n_305),
-        .r_we_cr_reg_rep__5_38(control_unit_inst_n_306),
-        .r_we_cr_reg_rep__5_39(control_unit_inst_n_307),
-        .r_we_cr_reg_rep__5_4(control_unit_inst_n_76),
-        .r_we_cr_reg_rep__5_40(control_unit_inst_n_308),
-        .r_we_cr_reg_rep__5_41(control_unit_inst_n_309),
-        .r_we_cr_reg_rep__5_42(control_unit_inst_n_366),
-        .r_we_cr_reg_rep__5_43(control_unit_inst_n_367),
-        .r_we_cr_reg_rep__5_44(control_unit_inst_n_368),
-        .r_we_cr_reg_rep__5_45(control_unit_inst_n_397),
-        .r_we_cr_reg_rep__5_46(control_unit_inst_n_398),
-        .r_we_cr_reg_rep__5_47(control_unit_inst_n_399),
-        .r_we_cr_reg_rep__5_48(control_unit_inst_n_400),
-        .r_we_cr_reg_rep__5_49(control_unit_inst_n_401),
-        .r_we_cr_reg_rep__5_5(control_unit_inst_n_77),
-        .r_we_cr_reg_rep__5_50(control_unit_inst_n_402),
-        .r_we_cr_reg_rep__5_51(control_unit_inst_n_403),
-        .r_we_cr_reg_rep__5_52(control_unit_inst_n_432),
-        .r_we_cr_reg_rep__5_53(control_unit_inst_n_433),
-        .r_we_cr_reg_rep__5_54(control_unit_inst_n_462),
-        .r_we_cr_reg_rep__5_55(control_unit_inst_n_463),
-        .r_we_cr_reg_rep__5_56(control_unit_inst_n_464),
-        .r_we_cr_reg_rep__5_57(control_unit_inst_n_465),
-        .r_we_cr_reg_rep__5_58(control_unit_inst_n_466),
-        .r_we_cr_reg_rep__5_59(control_unit_inst_n_467),
-        .r_we_cr_reg_rep__5_6(control_unit_inst_n_78),
-        .r_we_cr_reg_rep__5_60(control_unit_inst_n_496),
-        .r_we_cr_reg_rep__5_61(control_unit_inst_n_497),
-        .r_we_cr_reg_rep__5_62(control_unit_inst_n_498),
-        .r_we_cr_reg_rep__5_63(control_unit_inst_n_499),
-        .r_we_cr_reg_rep__5_64(control_unit_inst_n_500),
-        .r_we_cr_reg_rep__5_65(control_unit_inst_n_529),
-        .r_we_cr_reg_rep__5_66(control_unit_inst_n_530),
-        .r_we_cr_reg_rep__5_67(control_unit_inst_n_531),
-        .r_we_cr_reg_rep__5_68(control_unit_inst_n_532),
-        .r_we_cr_reg_rep__5_69(control_unit_inst_n_533),
-        .r_we_cr_reg_rep__5_7(control_unit_inst_n_79),
-        .r_we_cr_reg_rep__5_70(control_unit_inst_n_534),
-        .r_we_cr_reg_rep__5_71(control_unit_inst_n_563),
-        .r_we_cr_reg_rep__5_72(control_unit_inst_n_564),
-        .r_we_cr_reg_rep__5_73(control_unit_inst_n_565),
-        .r_we_cr_reg_rep__5_74(control_unit_inst_n_594),
-        .r_we_cr_reg_rep__5_75(control_unit_inst_n_595),
-        .r_we_cr_reg_rep__5_76(control_unit_inst_n_596),
-        .r_we_cr_reg_rep__5_77(control_unit_inst_n_597),
-        .r_we_cr_reg_rep__5_78(control_unit_inst_n_598),
-        .r_we_cr_reg_rep__5_79(control_unit_inst_n_655),
-        .r_we_cr_reg_rep__5_8(control_unit_inst_n_80),
-        .r_we_cr_reg_rep__5_80(control_unit_inst_n_656),
-        .r_we_cr_reg_rep__5_81(control_unit_inst_n_657),
-        .r_we_cr_reg_rep__5_82(control_unit_inst_n_658),
-        .r_we_cr_reg_rep__5_83(control_unit_inst_n_659),
-        .r_we_cr_reg_rep__5_84(control_unit_inst_n_660),
-        .r_we_cr_reg_rep__5_85(control_unit_inst_n_661),
-        .r_we_cr_reg_rep__5_86(control_unit_inst_n_662),
-        .r_we_cr_reg_rep__5_87(control_unit_inst_n_663),
-        .r_we_cr_reg_rep__5_88(control_unit_inst_n_720),
-        .r_we_cr_reg_rep__5_89(control_unit_inst_n_721),
-        .r_we_cr_reg_rep__5_9(control_unit_inst_n_109),
-        .r_we_cr_reg_rep__5_90(control_unit_inst_n_722),
-        .r_we_cr_reg_rep__5_91(control_unit_inst_n_751),
-        .r_we_cr_reg_rep__5_92(control_unit_inst_n_752),
-        .r_we_cr_reg_rep__5_93(control_unit_inst_n_753),
-        .r_we_cr_reg_rep__5_94(control_unit_inst_n_782),
-        .r_we_cr_reg_rep__5_95(control_unit_inst_n_783),
-        .r_we_cr_reg_rep__5_96(control_unit_inst_n_784),
-        .r_we_cr_reg_rep__5_97(control_unit_inst_n_785),
-        .r_we_cr_reg_rep__5_98(control_unit_inst_n_786),
-        .r_we_cr_reg_rep__5_99(control_unit_inst_n_815),
+        .r_we_cr_reg_0(control_unit_inst_n_107),
+        .r_we_cr_reg_1(control_unit_inst_n_108),
+        .r_we_cr_reg_10(control_unit_inst_n_173),
+        .r_we_cr_reg_100(control_unit_inst_n_909),
+        .r_we_cr_reg_101(control_unit_inst_n_910),
+        .r_we_cr_reg_102(control_unit_inst_n_911),
+        .r_we_cr_reg_103(control_unit_inst_n_912),
+        .r_we_cr_reg_104(control_unit_inst_n_920),
+        .r_we_cr_reg_105(control_unit_inst_n_921),
+        .r_we_cr_reg_106(control_unit_inst_n_922),
+        .r_we_cr_reg_107(control_unit_inst_n_923),
+        .r_we_cr_reg_108(control_unit_inst_n_1056),
+        .r_we_cr_reg_109(control_unit_inst_n_1057),
+        .r_we_cr_reg_11(control_unit_inst_n_174),
+        .r_we_cr_reg_110(control_unit_inst_n_1058),
+        .r_we_cr_reg_111(control_unit_inst_n_1059),
+        .r_we_cr_reg_112(control_unit_inst_n_1060),
+        .r_we_cr_reg_113(control_unit_inst_n_1061),
+        .r_we_cr_reg_114(control_unit_inst_n_1062),
+        .r_we_cr_reg_115(control_unit_inst_n_1063),
+        .r_we_cr_reg_116(control_unit_inst_n_1064),
+        .r_we_cr_reg_117(control_unit_inst_n_1065),
+        .r_we_cr_reg_118(control_unit_inst_n_1066),
+        .r_we_cr_reg_119(control_unit_inst_n_1067),
+        .r_we_cr_reg_12(control_unit_inst_n_203),
+        .r_we_cr_reg_120(control_unit_inst_n_1068),
+        .r_we_cr_reg_121(control_unit_inst_n_1069),
+        .r_we_cr_reg_122(control_unit_inst_n_1070),
+        .r_we_cr_reg_123(control_unit_inst_n_1071),
+        .r_we_cr_reg_124(control_unit_inst_n_1075),
+        .r_we_cr_reg_125(control_unit_inst_n_1076),
+        .r_we_cr_reg_126(control_unit_inst_n_1077),
+        .r_we_cr_reg_127(control_unit_inst_n_1078),
+        .r_we_cr_reg_13(control_unit_inst_n_204),
+        .r_we_cr_reg_14(control_unit_inst_n_205),
+        .r_we_cr_reg_15(control_unit_inst_n_206),
+        .r_we_cr_reg_16(control_unit_inst_n_235),
+        .r_we_cr_reg_17(control_unit_inst_n_236),
+        .r_we_cr_reg_18(control_unit_inst_n_237),
+        .r_we_cr_reg_19(control_unit_inst_n_238),
+        .r_we_cr_reg_2(control_unit_inst_n_109),
+        .r_we_cr_reg_20(control_unit_inst_n_245),
+        .r_we_cr_reg_21(control_unit_inst_n_246),
+        .r_we_cr_reg_22(control_unit_inst_n_247),
+        .r_we_cr_reg_23(control_unit_inst_n_248),
+        .r_we_cr_reg_24(control_unit_inst_n_279),
+        .r_we_cr_reg_25(control_unit_inst_n_280),
+        .r_we_cr_reg_26(control_unit_inst_n_281),
+        .r_we_cr_reg_27(control_unit_inst_n_282),
+        .r_we_cr_reg_28(control_unit_inst_n_333),
+        .r_we_cr_reg_29(control_unit_inst_n_334),
+        .r_we_cr_reg_3(control_unit_inst_n_110),
+        .r_we_cr_reg_30(control_unit_inst_n_335),
+        .r_we_cr_reg_31(control_unit_inst_n_336),
+        .r_we_cr_reg_32(control_unit_inst_n_346),
+        .r_we_cr_reg_33(control_unit_inst_n_347),
+        .r_we_cr_reg_34(control_unit_inst_n_348),
+        .r_we_cr_reg_35(control_unit_inst_n_349),
+        .r_we_cr_reg_36(control_unit_inst_n_350),
+        .r_we_cr_reg_37(control_unit_inst_n_351),
+        .r_we_cr_reg_38(control_unit_inst_n_352),
+        .r_we_cr_reg_39(control_unit_inst_n_353),
+        .r_we_cr_reg_4(control_unit_inst_n_117),
+        .r_we_cr_reg_40(control_unit_inst_n_429),
+        .r_we_cr_reg_41(control_unit_inst_n_430),
+        .r_we_cr_reg_42(control_unit_inst_n_431),
+        .r_we_cr_reg_43(control_unit_inst_n_432),
+        .r_we_cr_reg_44(control_unit_inst_n_440),
+        .r_we_cr_reg_45(control_unit_inst_n_441),
+        .r_we_cr_reg_46(control_unit_inst_n_442),
+        .r_we_cr_reg_47(control_unit_inst_n_443),
+        .r_we_cr_reg_48(control_unit_inst_n_494),
+        .r_we_cr_reg_49(control_unit_inst_n_495),
+        .r_we_cr_reg_5(control_unit_inst_n_118),
+        .r_we_cr_reg_50(control_unit_inst_n_496),
+        .r_we_cr_reg_51(control_unit_inst_n_497),
+        .r_we_cr_reg_52(control_unit_inst_n_504),
+        .r_we_cr_reg_53(control_unit_inst_n_505),
+        .r_we_cr_reg_54(control_unit_inst_n_506),
+        .r_we_cr_reg_55(control_unit_inst_n_507),
+        .r_we_cr_reg_56(control_unit_inst_n_561),
+        .r_we_cr_reg_57(control_unit_inst_n_562),
+        .r_we_cr_reg_58(control_unit_inst_n_563),
+        .r_we_cr_reg_59(control_unit_inst_n_564),
+        .r_we_cr_reg_6(control_unit_inst_n_119),
+        .r_we_cr_reg_60(control_unit_inst_n_571),
+        .r_we_cr_reg_61(control_unit_inst_n_572),
+        .r_we_cr_reg_62(control_unit_inst_n_573),
+        .r_we_cr_reg_63(control_unit_inst_n_574),
+        .r_we_cr_reg_64(control_unit_inst_n_602),
+        .r_we_cr_reg_65(control_unit_inst_n_603),
+        .r_we_cr_reg_66(control_unit_inst_n_604),
+        .r_we_cr_reg_67(control_unit_inst_n_605),
+        .r_we_cr_reg_68(control_unit_inst_n_635),
+        .r_we_cr_reg_69(control_unit_inst_n_636),
+        .r_we_cr_reg_7(control_unit_inst_n_120),
+        .r_we_cr_reg_70(control_unit_inst_n_637),
+        .r_we_cr_reg_71(control_unit_inst_n_638),
+        .r_we_cr_reg_72(control_unit_inst_n_687),
+        .r_we_cr_reg_73(control_unit_inst_n_688),
+        .r_we_cr_reg_74(control_unit_inst_n_689),
+        .r_we_cr_reg_75(control_unit_inst_n_690),
+        .r_we_cr_reg_76(control_unit_inst_n_700),
+        .r_we_cr_reg_77(control_unit_inst_n_701),
+        .r_we_cr_reg_78(control_unit_inst_n_702),
+        .r_we_cr_reg_79(control_unit_inst_n_703),
+        .r_we_cr_reg_8(control_unit_inst_n_171),
+        .r_we_cr_reg_80(control_unit_inst_n_704),
+        .r_we_cr_reg_81(control_unit_inst_n_705),
+        .r_we_cr_reg_82(control_unit_inst_n_706),
+        .r_we_cr_reg_83(control_unit_inst_n_707),
+        .r_we_cr_reg_84(control_unit_inst_n_783),
+        .r_we_cr_reg_85(control_unit_inst_n_784),
+        .r_we_cr_reg_86(control_unit_inst_n_785),
+        .r_we_cr_reg_87(control_unit_inst_n_786),
+        .r_we_cr_reg_88(control_unit_inst_n_814),
+        .r_we_cr_reg_89(control_unit_inst_n_815),
+        .r_we_cr_reg_9(control_unit_inst_n_172),
+        .r_we_cr_reg_90(control_unit_inst_n_816),
+        .r_we_cr_reg_91(control_unit_inst_n_817),
+        .r_we_cr_reg_92(control_unit_inst_n_847),
+        .r_we_cr_reg_93(control_unit_inst_n_848),
+        .r_we_cr_reg_94(control_unit_inst_n_849),
+        .r_we_cr_reg_95(control_unit_inst_n_850),
+        .r_we_cr_reg_96(control_unit_inst_n_854),
+        .r_we_cr_reg_97(control_unit_inst_n_855),
+        .r_we_cr_reg_98(control_unit_inst_n_856),
+        .r_we_cr_reg_99(control_unit_inst_n_857),
+        .r_we_cr_reg_rep_0(control_unit_inst_n_103),
+        .r_we_cr_reg_rep_1(control_unit_inst_n_104),
+        .r_we_cr_reg_rep_10(control_unit_inst_n_169),
+        .r_we_cr_reg_rep_100(control_unit_inst_n_905),
+        .r_we_cr_reg_rep_101(control_unit_inst_n_906),
+        .r_we_cr_reg_rep_102(control_unit_inst_n_907),
+        .r_we_cr_reg_rep_103(control_unit_inst_n_908),
+        .r_we_cr_reg_rep_104(control_unit_inst_n_924),
+        .r_we_cr_reg_rep_105(control_unit_inst_n_925),
+        .r_we_cr_reg_rep_106(control_unit_inst_n_926),
+        .r_we_cr_reg_rep_107(control_unit_inst_n_927),
+        .r_we_cr_reg_rep_108(control_unit_inst_n_1040),
+        .r_we_cr_reg_rep_109(control_unit_inst_n_1041),
+        .r_we_cr_reg_rep_11(control_unit_inst_n_170),
+        .r_we_cr_reg_rep_110(control_unit_inst_n_1042),
+        .r_we_cr_reg_rep_111(control_unit_inst_n_1043),
+        .r_we_cr_reg_rep_112(control_unit_inst_n_1044),
+        .r_we_cr_reg_rep_113(control_unit_inst_n_1045),
+        .r_we_cr_reg_rep_114(control_unit_inst_n_1046),
+        .r_we_cr_reg_rep_115(control_unit_inst_n_1047),
+        .r_we_cr_reg_rep_116(control_unit_inst_n_1048),
+        .r_we_cr_reg_rep_117(control_unit_inst_n_1049),
+        .r_we_cr_reg_rep_118(control_unit_inst_n_1050),
+        .r_we_cr_reg_rep_119(control_unit_inst_n_1051),
+        .r_we_cr_reg_rep_12(control_unit_inst_n_199),
+        .r_we_cr_reg_rep_120(control_unit_inst_n_1052),
+        .r_we_cr_reg_rep_121(control_unit_inst_n_1053),
+        .r_we_cr_reg_rep_122(control_unit_inst_n_1054),
+        .r_we_cr_reg_rep_123(control_unit_inst_n_1055),
+        .r_we_cr_reg_rep_124(control_unit_inst_n_1079),
+        .r_we_cr_reg_rep_125(control_unit_inst_n_1080),
+        .r_we_cr_reg_rep_126(control_unit_inst_n_1081),
+        .r_we_cr_reg_rep_127(control_unit_inst_n_1082),
+        .r_we_cr_reg_rep_13(control_unit_inst_n_200),
+        .r_we_cr_reg_rep_14(control_unit_inst_n_201),
+        .r_we_cr_reg_rep_15(control_unit_inst_n_202),
+        .r_we_cr_reg_rep_16(control_unit_inst_n_231),
+        .r_we_cr_reg_rep_17(control_unit_inst_n_232),
+        .r_we_cr_reg_rep_18(control_unit_inst_n_233),
+        .r_we_cr_reg_rep_19(control_unit_inst_n_234),
+        .r_we_cr_reg_rep_2(control_unit_inst_n_105),
+        .r_we_cr_reg_rep_20(control_unit_inst_n_249),
+        .r_we_cr_reg_rep_21(control_unit_inst_n_250),
+        .r_we_cr_reg_rep_22(control_unit_inst_n_251),
+        .r_we_cr_reg_rep_23(control_unit_inst_n_252),
+        .r_we_cr_reg_rep_24(control_unit_inst_n_283),
+        .r_we_cr_reg_rep_25(control_unit_inst_n_284),
+        .r_we_cr_reg_rep_26(control_unit_inst_n_285),
+        .r_we_cr_reg_rep_27(control_unit_inst_n_286),
+        .r_we_cr_reg_rep_28(control_unit_inst_n_329),
+        .r_we_cr_reg_rep_29(control_unit_inst_n_330),
+        .r_we_cr_reg_rep_3(control_unit_inst_n_106),
+        .r_we_cr_reg_rep_30(control_unit_inst_n_331),
+        .r_we_cr_reg_rep_31(control_unit_inst_n_332),
+        .r_we_cr_reg_rep_32(control_unit_inst_n_354),
+        .r_we_cr_reg_rep_33(control_unit_inst_n_355),
+        .r_we_cr_reg_rep_34(control_unit_inst_n_356),
+        .r_we_cr_reg_rep_35(control_unit_inst_n_357),
+        .r_we_cr_reg_rep_36(control_unit_inst_n_358),
+        .r_we_cr_reg_rep_37(control_unit_inst_n_359),
+        .r_we_cr_reg_rep_38(control_unit_inst_n_360),
+        .r_we_cr_reg_rep_39(control_unit_inst_n_361),
+        .r_we_cr_reg_rep_4(control_unit_inst_n_121),
+        .r_we_cr_reg_rep_40(control_unit_inst_n_425),
+        .r_we_cr_reg_rep_41(control_unit_inst_n_426),
+        .r_we_cr_reg_rep_42(control_unit_inst_n_427),
+        .r_we_cr_reg_rep_43(control_unit_inst_n_428),
+        .r_we_cr_reg_rep_44(control_unit_inst_n_444),
+        .r_we_cr_reg_rep_45(control_unit_inst_n_445),
+        .r_we_cr_reg_rep_46(control_unit_inst_n_446),
+        .r_we_cr_reg_rep_47(control_unit_inst_n_447),
+        .r_we_cr_reg_rep_48(control_unit_inst_n_490),
+        .r_we_cr_reg_rep_49(control_unit_inst_n_491),
+        .r_we_cr_reg_rep_5(control_unit_inst_n_122),
+        .r_we_cr_reg_rep_50(control_unit_inst_n_492),
+        .r_we_cr_reg_rep_51(control_unit_inst_n_493),
+        .r_we_cr_reg_rep_52(control_unit_inst_n_508),
+        .r_we_cr_reg_rep_53(control_unit_inst_n_509),
+        .r_we_cr_reg_rep_54(control_unit_inst_n_510),
+        .r_we_cr_reg_rep_55(control_unit_inst_n_511),
+        .r_we_cr_reg_rep_56(control_unit_inst_n_557),
+        .r_we_cr_reg_rep_57(control_unit_inst_n_558),
+        .r_we_cr_reg_rep_58(control_unit_inst_n_559),
+        .r_we_cr_reg_rep_59(control_unit_inst_n_560),
+        .r_we_cr_reg_rep_6(control_unit_inst_n_123),
+        .r_we_cr_reg_rep_60(control_unit_inst_n_575),
+        .r_we_cr_reg_rep_61(control_unit_inst_n_576),
+        .r_we_cr_reg_rep_62(control_unit_inst_n_577),
+        .r_we_cr_reg_rep_63(control_unit_inst_n_578),
+        .r_we_cr_reg_rep_64(control_unit_inst_n_606),
+        .r_we_cr_reg_rep_65(control_unit_inst_n_607),
+        .r_we_cr_reg_rep_66(control_unit_inst_n_608),
+        .r_we_cr_reg_rep_67(control_unit_inst_n_609),
+        .r_we_cr_reg_rep_68(control_unit_inst_n_639),
+        .r_we_cr_reg_rep_69(control_unit_inst_n_640),
+        .r_we_cr_reg_rep_7(control_unit_inst_n_124),
+        .r_we_cr_reg_rep_70(control_unit_inst_n_641),
+        .r_we_cr_reg_rep_71(control_unit_inst_n_642),
+        .r_we_cr_reg_rep_72(control_unit_inst_n_683),
+        .r_we_cr_reg_rep_73(control_unit_inst_n_684),
+        .r_we_cr_reg_rep_74(control_unit_inst_n_685),
+        .r_we_cr_reg_rep_75(control_unit_inst_n_686),
+        .r_we_cr_reg_rep_76(control_unit_inst_n_708),
+        .r_we_cr_reg_rep_77(control_unit_inst_n_709),
+        .r_we_cr_reg_rep_78(control_unit_inst_n_710),
+        .r_we_cr_reg_rep_79(control_unit_inst_n_711),
+        .r_we_cr_reg_rep_8(control_unit_inst_n_167),
+        .r_we_cr_reg_rep_80(control_unit_inst_n_712),
+        .r_we_cr_reg_rep_81(control_unit_inst_n_713),
+        .r_we_cr_reg_rep_82(control_unit_inst_n_714),
+        .r_we_cr_reg_rep_83(control_unit_inst_n_715),
+        .r_we_cr_reg_rep_84(control_unit_inst_n_779),
+        .r_we_cr_reg_rep_85(control_unit_inst_n_780),
+        .r_we_cr_reg_rep_86(control_unit_inst_n_781),
+        .r_we_cr_reg_rep_87(control_unit_inst_n_782),
+        .r_we_cr_reg_rep_88(control_unit_inst_n_810),
+        .r_we_cr_reg_rep_89(control_unit_inst_n_811),
+        .r_we_cr_reg_rep_9(control_unit_inst_n_168),
+        .r_we_cr_reg_rep_90(control_unit_inst_n_812),
+        .r_we_cr_reg_rep_91(control_unit_inst_n_813),
+        .r_we_cr_reg_rep_92(control_unit_inst_n_843),
+        .r_we_cr_reg_rep_93(control_unit_inst_n_844),
+        .r_we_cr_reg_rep_94(control_unit_inst_n_845),
+        .r_we_cr_reg_rep_95(control_unit_inst_n_846),
+        .r_we_cr_reg_rep_96(control_unit_inst_n_858),
+        .r_we_cr_reg_rep_97(control_unit_inst_n_859),
+        .r_we_cr_reg_rep_98(control_unit_inst_n_860),
+        .r_we_cr_reg_rep_99(control_unit_inst_n_861),
+        .r_we_cr_reg_rep__0_0(control_unit_inst_n_99),
+        .r_we_cr_reg_rep__0_1(control_unit_inst_n_100),
+        .r_we_cr_reg_rep__0_10(control_unit_inst_n_165),
+        .r_we_cr_reg_rep__0_100(control_unit_inst_n_901),
+        .r_we_cr_reg_rep__0_101(control_unit_inst_n_902),
+        .r_we_cr_reg_rep__0_102(control_unit_inst_n_903),
+        .r_we_cr_reg_rep__0_103(control_unit_inst_n_904),
+        .r_we_cr_reg_rep__0_104(control_unit_inst_n_928),
+        .r_we_cr_reg_rep__0_105(control_unit_inst_n_929),
+        .r_we_cr_reg_rep__0_106(control_unit_inst_n_930),
+        .r_we_cr_reg_rep__0_107(control_unit_inst_n_931),
+        .r_we_cr_reg_rep__0_108(control_unit_inst_n_1024),
+        .r_we_cr_reg_rep__0_109(control_unit_inst_n_1025),
+        .r_we_cr_reg_rep__0_11(control_unit_inst_n_166),
+        .r_we_cr_reg_rep__0_110(control_unit_inst_n_1026),
+        .r_we_cr_reg_rep__0_111(control_unit_inst_n_1027),
+        .r_we_cr_reg_rep__0_112(control_unit_inst_n_1028),
+        .r_we_cr_reg_rep__0_113(control_unit_inst_n_1029),
+        .r_we_cr_reg_rep__0_114(control_unit_inst_n_1030),
+        .r_we_cr_reg_rep__0_115(control_unit_inst_n_1031),
+        .r_we_cr_reg_rep__0_116(control_unit_inst_n_1032),
+        .r_we_cr_reg_rep__0_117(control_unit_inst_n_1033),
+        .r_we_cr_reg_rep__0_118(control_unit_inst_n_1034),
+        .r_we_cr_reg_rep__0_119(control_unit_inst_n_1035),
+        .r_we_cr_reg_rep__0_12(control_unit_inst_n_195),
+        .r_we_cr_reg_rep__0_120(control_unit_inst_n_1036),
+        .r_we_cr_reg_rep__0_121(control_unit_inst_n_1037),
+        .r_we_cr_reg_rep__0_122(control_unit_inst_n_1038),
+        .r_we_cr_reg_rep__0_123(control_unit_inst_n_1039),
+        .r_we_cr_reg_rep__0_124(control_unit_inst_n_1083),
+        .r_we_cr_reg_rep__0_125(control_unit_inst_n_1084),
+        .r_we_cr_reg_rep__0_126(control_unit_inst_n_1085),
+        .r_we_cr_reg_rep__0_127(control_unit_inst_n_1086),
+        .r_we_cr_reg_rep__0_13(control_unit_inst_n_196),
+        .r_we_cr_reg_rep__0_14(control_unit_inst_n_197),
+        .r_we_cr_reg_rep__0_15(control_unit_inst_n_198),
+        .r_we_cr_reg_rep__0_16(control_unit_inst_n_227),
+        .r_we_cr_reg_rep__0_17(control_unit_inst_n_228),
+        .r_we_cr_reg_rep__0_18(control_unit_inst_n_229),
+        .r_we_cr_reg_rep__0_19(control_unit_inst_n_230),
+        .r_we_cr_reg_rep__0_2(control_unit_inst_n_101),
+        .r_we_cr_reg_rep__0_20(control_unit_inst_n_253),
+        .r_we_cr_reg_rep__0_21(control_unit_inst_n_254),
+        .r_we_cr_reg_rep__0_22(control_unit_inst_n_255),
+        .r_we_cr_reg_rep__0_23(control_unit_inst_n_256),
+        .r_we_cr_reg_rep__0_24(control_unit_inst_n_287),
+        .r_we_cr_reg_rep__0_25(control_unit_inst_n_288),
+        .r_we_cr_reg_rep__0_26(control_unit_inst_n_289),
+        .r_we_cr_reg_rep__0_27(control_unit_inst_n_290),
+        .r_we_cr_reg_rep__0_28(control_unit_inst_n_325),
+        .r_we_cr_reg_rep__0_29(control_unit_inst_n_326),
+        .r_we_cr_reg_rep__0_3(control_unit_inst_n_102),
+        .r_we_cr_reg_rep__0_30(control_unit_inst_n_327),
+        .r_we_cr_reg_rep__0_31(control_unit_inst_n_328),
+        .r_we_cr_reg_rep__0_32(control_unit_inst_n_362),
+        .r_we_cr_reg_rep__0_33(control_unit_inst_n_363),
+        .r_we_cr_reg_rep__0_34(control_unit_inst_n_364),
+        .r_we_cr_reg_rep__0_35(control_unit_inst_n_365),
+        .r_we_cr_reg_rep__0_36(control_unit_inst_n_366),
+        .r_we_cr_reg_rep__0_37(control_unit_inst_n_367),
+        .r_we_cr_reg_rep__0_38(control_unit_inst_n_368),
+        .r_we_cr_reg_rep__0_39(control_unit_inst_n_369),
+        .r_we_cr_reg_rep__0_4(control_unit_inst_n_125),
+        .r_we_cr_reg_rep__0_40(control_unit_inst_n_421),
+        .r_we_cr_reg_rep__0_41(control_unit_inst_n_422),
+        .r_we_cr_reg_rep__0_42(control_unit_inst_n_423),
+        .r_we_cr_reg_rep__0_43(control_unit_inst_n_424),
+        .r_we_cr_reg_rep__0_44(control_unit_inst_n_448),
+        .r_we_cr_reg_rep__0_45(control_unit_inst_n_449),
+        .r_we_cr_reg_rep__0_46(control_unit_inst_n_450),
+        .r_we_cr_reg_rep__0_47(control_unit_inst_n_451),
+        .r_we_cr_reg_rep__0_48(control_unit_inst_n_486),
+        .r_we_cr_reg_rep__0_49(control_unit_inst_n_487),
+        .r_we_cr_reg_rep__0_5(control_unit_inst_n_126),
+        .r_we_cr_reg_rep__0_50(control_unit_inst_n_488),
+        .r_we_cr_reg_rep__0_51(control_unit_inst_n_489),
+        .r_we_cr_reg_rep__0_52(control_unit_inst_n_512),
+        .r_we_cr_reg_rep__0_53(control_unit_inst_n_513),
+        .r_we_cr_reg_rep__0_54(control_unit_inst_n_514),
+        .r_we_cr_reg_rep__0_55(control_unit_inst_n_515),
+        .r_we_cr_reg_rep__0_56(control_unit_inst_n_553),
+        .r_we_cr_reg_rep__0_57(control_unit_inst_n_554),
+        .r_we_cr_reg_rep__0_58(control_unit_inst_n_555),
+        .r_we_cr_reg_rep__0_59(control_unit_inst_n_556),
+        .r_we_cr_reg_rep__0_6(control_unit_inst_n_127),
+        .r_we_cr_reg_rep__0_60(control_unit_inst_n_579),
+        .r_we_cr_reg_rep__0_61(control_unit_inst_n_580),
+        .r_we_cr_reg_rep__0_62(control_unit_inst_n_581),
+        .r_we_cr_reg_rep__0_63(control_unit_inst_n_582),
+        .r_we_cr_reg_rep__0_64(control_unit_inst_n_610),
+        .r_we_cr_reg_rep__0_65(control_unit_inst_n_611),
+        .r_we_cr_reg_rep__0_66(control_unit_inst_n_612),
+        .r_we_cr_reg_rep__0_67(control_unit_inst_n_613),
+        .r_we_cr_reg_rep__0_68(control_unit_inst_n_643),
+        .r_we_cr_reg_rep__0_69(control_unit_inst_n_644),
+        .r_we_cr_reg_rep__0_7(control_unit_inst_n_128),
+        .r_we_cr_reg_rep__0_70(control_unit_inst_n_645),
+        .r_we_cr_reg_rep__0_71(control_unit_inst_n_646),
+        .r_we_cr_reg_rep__0_72(control_unit_inst_n_679),
+        .r_we_cr_reg_rep__0_73(control_unit_inst_n_680),
+        .r_we_cr_reg_rep__0_74(control_unit_inst_n_681),
+        .r_we_cr_reg_rep__0_75(control_unit_inst_n_682),
+        .r_we_cr_reg_rep__0_76(control_unit_inst_n_716),
+        .r_we_cr_reg_rep__0_77(control_unit_inst_n_717),
+        .r_we_cr_reg_rep__0_78(control_unit_inst_n_718),
+        .r_we_cr_reg_rep__0_79(control_unit_inst_n_719),
+        .r_we_cr_reg_rep__0_8(control_unit_inst_n_163),
+        .r_we_cr_reg_rep__0_80(control_unit_inst_n_720),
+        .r_we_cr_reg_rep__0_81(control_unit_inst_n_721),
+        .r_we_cr_reg_rep__0_82(control_unit_inst_n_722),
+        .r_we_cr_reg_rep__0_83(control_unit_inst_n_723),
+        .r_we_cr_reg_rep__0_84(control_unit_inst_n_775),
+        .r_we_cr_reg_rep__0_85(control_unit_inst_n_776),
+        .r_we_cr_reg_rep__0_86(control_unit_inst_n_777),
+        .r_we_cr_reg_rep__0_87(control_unit_inst_n_778),
+        .r_we_cr_reg_rep__0_88(control_unit_inst_n_806),
+        .r_we_cr_reg_rep__0_89(control_unit_inst_n_807),
+        .r_we_cr_reg_rep__0_9(control_unit_inst_n_164),
+        .r_we_cr_reg_rep__0_90(control_unit_inst_n_808),
+        .r_we_cr_reg_rep__0_91(control_unit_inst_n_809),
+        .r_we_cr_reg_rep__0_92(control_unit_inst_n_839),
+        .r_we_cr_reg_rep__0_93(control_unit_inst_n_840),
+        .r_we_cr_reg_rep__0_94(control_unit_inst_n_841),
+        .r_we_cr_reg_rep__0_95(control_unit_inst_n_842),
+        .r_we_cr_reg_rep__0_96(control_unit_inst_n_862),
+        .r_we_cr_reg_rep__0_97(control_unit_inst_n_863),
+        .r_we_cr_reg_rep__0_98(control_unit_inst_n_864),
+        .r_we_cr_reg_rep__0_99(control_unit_inst_n_865),
+        .r_we_cr_reg_rep__1_0(control_unit_inst_n_95),
+        .r_we_cr_reg_rep__1_1(control_unit_inst_n_96),
+        .r_we_cr_reg_rep__1_10(control_unit_inst_n_161),
+        .r_we_cr_reg_rep__1_100(control_unit_inst_n_897),
+        .r_we_cr_reg_rep__1_101(control_unit_inst_n_898),
+        .r_we_cr_reg_rep__1_102(control_unit_inst_n_899),
+        .r_we_cr_reg_rep__1_103(control_unit_inst_n_900),
+        .r_we_cr_reg_rep__1_104(control_unit_inst_n_932),
+        .r_we_cr_reg_rep__1_105(control_unit_inst_n_933),
+        .r_we_cr_reg_rep__1_106(control_unit_inst_n_934),
+        .r_we_cr_reg_rep__1_107(control_unit_inst_n_935),
+        .r_we_cr_reg_rep__1_108(control_unit_inst_n_1008),
+        .r_we_cr_reg_rep__1_109(control_unit_inst_n_1009),
+        .r_we_cr_reg_rep__1_11(control_unit_inst_n_162),
+        .r_we_cr_reg_rep__1_110(control_unit_inst_n_1010),
+        .r_we_cr_reg_rep__1_111(control_unit_inst_n_1011),
+        .r_we_cr_reg_rep__1_112(control_unit_inst_n_1012),
+        .r_we_cr_reg_rep__1_113(control_unit_inst_n_1013),
+        .r_we_cr_reg_rep__1_114(control_unit_inst_n_1014),
+        .r_we_cr_reg_rep__1_115(control_unit_inst_n_1015),
+        .r_we_cr_reg_rep__1_116(control_unit_inst_n_1016),
+        .r_we_cr_reg_rep__1_117(control_unit_inst_n_1017),
+        .r_we_cr_reg_rep__1_118(control_unit_inst_n_1018),
+        .r_we_cr_reg_rep__1_119(control_unit_inst_n_1019),
+        .r_we_cr_reg_rep__1_12(control_unit_inst_n_191),
+        .r_we_cr_reg_rep__1_120(control_unit_inst_n_1020),
+        .r_we_cr_reg_rep__1_121(control_unit_inst_n_1021),
+        .r_we_cr_reg_rep__1_122(control_unit_inst_n_1022),
+        .r_we_cr_reg_rep__1_123(control_unit_inst_n_1023),
+        .r_we_cr_reg_rep__1_124(control_unit_inst_n_1087),
+        .r_we_cr_reg_rep__1_125(control_unit_inst_n_1088),
+        .r_we_cr_reg_rep__1_126(control_unit_inst_n_1089),
+        .r_we_cr_reg_rep__1_127(control_unit_inst_n_1090),
+        .r_we_cr_reg_rep__1_13(control_unit_inst_n_192),
+        .r_we_cr_reg_rep__1_14(control_unit_inst_n_193),
+        .r_we_cr_reg_rep__1_15(control_unit_inst_n_194),
+        .r_we_cr_reg_rep__1_16(control_unit_inst_n_223),
+        .r_we_cr_reg_rep__1_17(control_unit_inst_n_224),
+        .r_we_cr_reg_rep__1_18(control_unit_inst_n_225),
+        .r_we_cr_reg_rep__1_19(control_unit_inst_n_226),
+        .r_we_cr_reg_rep__1_2(control_unit_inst_n_97),
+        .r_we_cr_reg_rep__1_20(control_unit_inst_n_257),
+        .r_we_cr_reg_rep__1_21(control_unit_inst_n_258),
+        .r_we_cr_reg_rep__1_22(control_unit_inst_n_259),
+        .r_we_cr_reg_rep__1_23(control_unit_inst_n_260),
+        .r_we_cr_reg_rep__1_24(control_unit_inst_n_291),
+        .r_we_cr_reg_rep__1_25(control_unit_inst_n_292),
+        .r_we_cr_reg_rep__1_26(control_unit_inst_n_293),
+        .r_we_cr_reg_rep__1_27(control_unit_inst_n_294),
+        .r_we_cr_reg_rep__1_28(control_unit_inst_n_321),
+        .r_we_cr_reg_rep__1_29(control_unit_inst_n_322),
+        .r_we_cr_reg_rep__1_3(control_unit_inst_n_98),
+        .r_we_cr_reg_rep__1_30(control_unit_inst_n_323),
+        .r_we_cr_reg_rep__1_31(control_unit_inst_n_324),
+        .r_we_cr_reg_rep__1_32(control_unit_inst_n_370),
+        .r_we_cr_reg_rep__1_33(control_unit_inst_n_371),
+        .r_we_cr_reg_rep__1_34(control_unit_inst_n_372),
+        .r_we_cr_reg_rep__1_35(control_unit_inst_n_373),
+        .r_we_cr_reg_rep__1_36(control_unit_inst_n_374),
+        .r_we_cr_reg_rep__1_37(control_unit_inst_n_375),
+        .r_we_cr_reg_rep__1_38(control_unit_inst_n_376),
+        .r_we_cr_reg_rep__1_39(control_unit_inst_n_377),
+        .r_we_cr_reg_rep__1_4(control_unit_inst_n_129),
+        .r_we_cr_reg_rep__1_40(control_unit_inst_n_417),
+        .r_we_cr_reg_rep__1_41(control_unit_inst_n_418),
+        .r_we_cr_reg_rep__1_42(control_unit_inst_n_419),
+        .r_we_cr_reg_rep__1_43(control_unit_inst_n_420),
+        .r_we_cr_reg_rep__1_44(control_unit_inst_n_452),
+        .r_we_cr_reg_rep__1_45(control_unit_inst_n_453),
+        .r_we_cr_reg_rep__1_46(control_unit_inst_n_454),
+        .r_we_cr_reg_rep__1_47(control_unit_inst_n_455),
+        .r_we_cr_reg_rep__1_48(control_unit_inst_n_482),
+        .r_we_cr_reg_rep__1_49(control_unit_inst_n_483),
+        .r_we_cr_reg_rep__1_5(control_unit_inst_n_130),
+        .r_we_cr_reg_rep__1_50(control_unit_inst_n_484),
+        .r_we_cr_reg_rep__1_51(control_unit_inst_n_485),
+        .r_we_cr_reg_rep__1_52(control_unit_inst_n_516),
+        .r_we_cr_reg_rep__1_53(control_unit_inst_n_517),
+        .r_we_cr_reg_rep__1_54(control_unit_inst_n_518),
+        .r_we_cr_reg_rep__1_55(control_unit_inst_n_519),
+        .r_we_cr_reg_rep__1_56(control_unit_inst_n_549),
+        .r_we_cr_reg_rep__1_57(control_unit_inst_n_550),
+        .r_we_cr_reg_rep__1_58(control_unit_inst_n_551),
+        .r_we_cr_reg_rep__1_59(control_unit_inst_n_552),
+        .r_we_cr_reg_rep__1_6(control_unit_inst_n_131),
+        .r_we_cr_reg_rep__1_60(control_unit_inst_n_583),
+        .r_we_cr_reg_rep__1_61(control_unit_inst_n_584),
+        .r_we_cr_reg_rep__1_62(control_unit_inst_n_585),
+        .r_we_cr_reg_rep__1_63(control_unit_inst_n_586),
+        .r_we_cr_reg_rep__1_64(control_unit_inst_n_614),
+        .r_we_cr_reg_rep__1_65(control_unit_inst_n_615),
+        .r_we_cr_reg_rep__1_66(control_unit_inst_n_616),
+        .r_we_cr_reg_rep__1_67(control_unit_inst_n_617),
+        .r_we_cr_reg_rep__1_68(control_unit_inst_n_647),
+        .r_we_cr_reg_rep__1_69(control_unit_inst_n_648),
+        .r_we_cr_reg_rep__1_7(control_unit_inst_n_132),
+        .r_we_cr_reg_rep__1_70(control_unit_inst_n_649),
+        .r_we_cr_reg_rep__1_71(control_unit_inst_n_650),
+        .r_we_cr_reg_rep__1_72(control_unit_inst_n_675),
+        .r_we_cr_reg_rep__1_73(control_unit_inst_n_676),
+        .r_we_cr_reg_rep__1_74(control_unit_inst_n_677),
+        .r_we_cr_reg_rep__1_75(control_unit_inst_n_678),
+        .r_we_cr_reg_rep__1_76(control_unit_inst_n_724),
+        .r_we_cr_reg_rep__1_77(control_unit_inst_n_725),
+        .r_we_cr_reg_rep__1_78(control_unit_inst_n_726),
+        .r_we_cr_reg_rep__1_79(control_unit_inst_n_727),
+        .r_we_cr_reg_rep__1_8(control_unit_inst_n_159),
+        .r_we_cr_reg_rep__1_80(control_unit_inst_n_728),
+        .r_we_cr_reg_rep__1_81(control_unit_inst_n_729),
+        .r_we_cr_reg_rep__1_82(control_unit_inst_n_730),
+        .r_we_cr_reg_rep__1_83(control_unit_inst_n_731),
+        .r_we_cr_reg_rep__1_84(control_unit_inst_n_771),
+        .r_we_cr_reg_rep__1_85(control_unit_inst_n_772),
+        .r_we_cr_reg_rep__1_86(control_unit_inst_n_773),
+        .r_we_cr_reg_rep__1_87(control_unit_inst_n_774),
+        .r_we_cr_reg_rep__1_88(control_unit_inst_n_802),
+        .r_we_cr_reg_rep__1_89(control_unit_inst_n_803),
+        .r_we_cr_reg_rep__1_9(control_unit_inst_n_160),
+        .r_we_cr_reg_rep__1_90(control_unit_inst_n_804),
+        .r_we_cr_reg_rep__1_91(control_unit_inst_n_805),
+        .r_we_cr_reg_rep__1_92(control_unit_inst_n_835),
+        .r_we_cr_reg_rep__1_93(control_unit_inst_n_836),
+        .r_we_cr_reg_rep__1_94(control_unit_inst_n_837),
+        .r_we_cr_reg_rep__1_95(control_unit_inst_n_838),
+        .r_we_cr_reg_rep__1_96(control_unit_inst_n_866),
+        .r_we_cr_reg_rep__1_97(control_unit_inst_n_867),
+        .r_we_cr_reg_rep__1_98(control_unit_inst_n_868),
+        .r_we_cr_reg_rep__1_99(control_unit_inst_n_869),
+        .r_we_cr_reg_rep__2_0(control_unit_inst_n_91),
+        .r_we_cr_reg_rep__2_1(control_unit_inst_n_92),
+        .r_we_cr_reg_rep__2_10(control_unit_inst_n_157),
+        .r_we_cr_reg_rep__2_100(control_unit_inst_n_893),
+        .r_we_cr_reg_rep__2_101(control_unit_inst_n_894),
+        .r_we_cr_reg_rep__2_102(control_unit_inst_n_895),
+        .r_we_cr_reg_rep__2_103(control_unit_inst_n_896),
+        .r_we_cr_reg_rep__2_104(control_unit_inst_n_936),
+        .r_we_cr_reg_rep__2_105(control_unit_inst_n_937),
+        .r_we_cr_reg_rep__2_106(control_unit_inst_n_938),
+        .r_we_cr_reg_rep__2_107(control_unit_inst_n_939),
+        .r_we_cr_reg_rep__2_108(control_unit_inst_n_992),
+        .r_we_cr_reg_rep__2_109(control_unit_inst_n_993),
+        .r_we_cr_reg_rep__2_11(control_unit_inst_n_158),
+        .r_we_cr_reg_rep__2_110(control_unit_inst_n_994),
+        .r_we_cr_reg_rep__2_111(control_unit_inst_n_995),
+        .r_we_cr_reg_rep__2_112(control_unit_inst_n_996),
+        .r_we_cr_reg_rep__2_113(control_unit_inst_n_997),
+        .r_we_cr_reg_rep__2_114(control_unit_inst_n_998),
+        .r_we_cr_reg_rep__2_115(control_unit_inst_n_999),
+        .r_we_cr_reg_rep__2_116(control_unit_inst_n_1000),
+        .r_we_cr_reg_rep__2_117(control_unit_inst_n_1001),
+        .r_we_cr_reg_rep__2_118(control_unit_inst_n_1002),
+        .r_we_cr_reg_rep__2_119(control_unit_inst_n_1003),
+        .r_we_cr_reg_rep__2_12(control_unit_inst_n_187),
+        .r_we_cr_reg_rep__2_120(control_unit_inst_n_1004),
+        .r_we_cr_reg_rep__2_121(control_unit_inst_n_1005),
+        .r_we_cr_reg_rep__2_122(control_unit_inst_n_1006),
+        .r_we_cr_reg_rep__2_123(control_unit_inst_n_1007),
+        .r_we_cr_reg_rep__2_124(control_unit_inst_n_1091),
+        .r_we_cr_reg_rep__2_125(control_unit_inst_n_1092),
+        .r_we_cr_reg_rep__2_126(control_unit_inst_n_1093),
+        .r_we_cr_reg_rep__2_127(control_unit_inst_n_1094),
+        .r_we_cr_reg_rep__2_13(control_unit_inst_n_188),
+        .r_we_cr_reg_rep__2_14(control_unit_inst_n_189),
+        .r_we_cr_reg_rep__2_15(control_unit_inst_n_190),
+        .r_we_cr_reg_rep__2_16(control_unit_inst_n_219),
+        .r_we_cr_reg_rep__2_17(control_unit_inst_n_220),
+        .r_we_cr_reg_rep__2_18(control_unit_inst_n_221),
+        .r_we_cr_reg_rep__2_19(control_unit_inst_n_222),
+        .r_we_cr_reg_rep__2_2(control_unit_inst_n_93),
+        .r_we_cr_reg_rep__2_20(control_unit_inst_n_261),
+        .r_we_cr_reg_rep__2_21(control_unit_inst_n_262),
+        .r_we_cr_reg_rep__2_22(control_unit_inst_n_263),
+        .r_we_cr_reg_rep__2_23(control_unit_inst_n_264),
+        .r_we_cr_reg_rep__2_24(control_unit_inst_n_295),
+        .r_we_cr_reg_rep__2_25(control_unit_inst_n_296),
+        .r_we_cr_reg_rep__2_26(control_unit_inst_n_297),
+        .r_we_cr_reg_rep__2_27(control_unit_inst_n_298),
+        .r_we_cr_reg_rep__2_28(control_unit_inst_n_317),
+        .r_we_cr_reg_rep__2_29(control_unit_inst_n_318),
+        .r_we_cr_reg_rep__2_3(control_unit_inst_n_94),
+        .r_we_cr_reg_rep__2_30(control_unit_inst_n_319),
+        .r_we_cr_reg_rep__2_31(control_unit_inst_n_320),
+        .r_we_cr_reg_rep__2_32(control_unit_inst_n_378),
+        .r_we_cr_reg_rep__2_33(control_unit_inst_n_379),
+        .r_we_cr_reg_rep__2_34(control_unit_inst_n_380),
+        .r_we_cr_reg_rep__2_35(control_unit_inst_n_381),
+        .r_we_cr_reg_rep__2_36(control_unit_inst_n_382),
+        .r_we_cr_reg_rep__2_37(control_unit_inst_n_383),
+        .r_we_cr_reg_rep__2_38(control_unit_inst_n_384),
+        .r_we_cr_reg_rep__2_39(control_unit_inst_n_385),
+        .r_we_cr_reg_rep__2_4(control_unit_inst_n_133),
+        .r_we_cr_reg_rep__2_40(control_unit_inst_n_413),
+        .r_we_cr_reg_rep__2_41(control_unit_inst_n_414),
+        .r_we_cr_reg_rep__2_42(control_unit_inst_n_415),
+        .r_we_cr_reg_rep__2_43(control_unit_inst_n_416),
+        .r_we_cr_reg_rep__2_44(control_unit_inst_n_456),
+        .r_we_cr_reg_rep__2_45(control_unit_inst_n_457),
+        .r_we_cr_reg_rep__2_46(control_unit_inst_n_458),
+        .r_we_cr_reg_rep__2_47(control_unit_inst_n_459),
+        .r_we_cr_reg_rep__2_48(control_unit_inst_n_478),
+        .r_we_cr_reg_rep__2_49(control_unit_inst_n_479),
+        .r_we_cr_reg_rep__2_5(control_unit_inst_n_134),
+        .r_we_cr_reg_rep__2_50(control_unit_inst_n_480),
+        .r_we_cr_reg_rep__2_51(control_unit_inst_n_481),
+        .r_we_cr_reg_rep__2_52(control_unit_inst_n_520),
+        .r_we_cr_reg_rep__2_53(control_unit_inst_n_521),
+        .r_we_cr_reg_rep__2_54(control_unit_inst_n_522),
+        .r_we_cr_reg_rep__2_55(control_unit_inst_n_523),
+        .r_we_cr_reg_rep__2_56(control_unit_inst_n_545),
+        .r_we_cr_reg_rep__2_57(control_unit_inst_n_546),
+        .r_we_cr_reg_rep__2_58(control_unit_inst_n_547),
+        .r_we_cr_reg_rep__2_59(control_unit_inst_n_548),
+        .r_we_cr_reg_rep__2_6(control_unit_inst_n_135),
+        .r_we_cr_reg_rep__2_60(control_unit_inst_n_587),
+        .r_we_cr_reg_rep__2_61(control_unit_inst_n_588),
+        .r_we_cr_reg_rep__2_62(control_unit_inst_n_589),
+        .r_we_cr_reg_rep__2_63(control_unit_inst_n_590),
+        .r_we_cr_reg_rep__2_64(control_unit_inst_n_618),
+        .r_we_cr_reg_rep__2_65(control_unit_inst_n_619),
+        .r_we_cr_reg_rep__2_66(control_unit_inst_n_620),
+        .r_we_cr_reg_rep__2_67(control_unit_inst_n_621),
+        .r_we_cr_reg_rep__2_68(control_unit_inst_n_651),
+        .r_we_cr_reg_rep__2_69(control_unit_inst_n_652),
+        .r_we_cr_reg_rep__2_7(control_unit_inst_n_136),
+        .r_we_cr_reg_rep__2_70(control_unit_inst_n_653),
+        .r_we_cr_reg_rep__2_71(control_unit_inst_n_654),
+        .r_we_cr_reg_rep__2_72(control_unit_inst_n_671),
+        .r_we_cr_reg_rep__2_73(control_unit_inst_n_672),
+        .r_we_cr_reg_rep__2_74(control_unit_inst_n_673),
+        .r_we_cr_reg_rep__2_75(control_unit_inst_n_674),
+        .r_we_cr_reg_rep__2_76(control_unit_inst_n_732),
+        .r_we_cr_reg_rep__2_77(control_unit_inst_n_733),
+        .r_we_cr_reg_rep__2_78(control_unit_inst_n_734),
+        .r_we_cr_reg_rep__2_79(control_unit_inst_n_735),
+        .r_we_cr_reg_rep__2_8(control_unit_inst_n_155),
+        .r_we_cr_reg_rep__2_80(control_unit_inst_n_736),
+        .r_we_cr_reg_rep__2_81(control_unit_inst_n_737),
+        .r_we_cr_reg_rep__2_82(control_unit_inst_n_738),
+        .r_we_cr_reg_rep__2_83(control_unit_inst_n_739),
+        .r_we_cr_reg_rep__2_84(control_unit_inst_n_767),
+        .r_we_cr_reg_rep__2_85(control_unit_inst_n_768),
+        .r_we_cr_reg_rep__2_86(control_unit_inst_n_769),
+        .r_we_cr_reg_rep__2_87(control_unit_inst_n_770),
+        .r_we_cr_reg_rep__2_88(control_unit_inst_n_798),
+        .r_we_cr_reg_rep__2_89(control_unit_inst_n_799),
+        .r_we_cr_reg_rep__2_9(control_unit_inst_n_156),
+        .r_we_cr_reg_rep__2_90(control_unit_inst_n_800),
+        .r_we_cr_reg_rep__2_91(control_unit_inst_n_801),
+        .r_we_cr_reg_rep__2_92(control_unit_inst_n_831),
+        .r_we_cr_reg_rep__2_93(control_unit_inst_n_832),
+        .r_we_cr_reg_rep__2_94(control_unit_inst_n_833),
+        .r_we_cr_reg_rep__2_95(control_unit_inst_n_834),
+        .r_we_cr_reg_rep__2_96(control_unit_inst_n_870),
+        .r_we_cr_reg_rep__2_97(control_unit_inst_n_871),
+        .r_we_cr_reg_rep__2_98(control_unit_inst_n_872),
+        .r_we_cr_reg_rep__2_99(control_unit_inst_n_873),
+        .r_we_cr_reg_rep__3_0(control_unit_inst_n_87),
+        .r_we_cr_reg_rep__3_1(control_unit_inst_n_88),
+        .r_we_cr_reg_rep__3_10(control_unit_inst_n_153),
+        .r_we_cr_reg_rep__3_100(control_unit_inst_n_889),
+        .r_we_cr_reg_rep__3_101(control_unit_inst_n_890),
+        .r_we_cr_reg_rep__3_102(control_unit_inst_n_891),
+        .r_we_cr_reg_rep__3_103(control_unit_inst_n_892),
+        .r_we_cr_reg_rep__3_104(control_unit_inst_n_940),
+        .r_we_cr_reg_rep__3_105(control_unit_inst_n_941),
+        .r_we_cr_reg_rep__3_106(control_unit_inst_n_942),
+        .r_we_cr_reg_rep__3_107(control_unit_inst_n_943),
+        .r_we_cr_reg_rep__3_108(control_unit_inst_n_976),
+        .r_we_cr_reg_rep__3_109(control_unit_inst_n_977),
+        .r_we_cr_reg_rep__3_11(control_unit_inst_n_154),
+        .r_we_cr_reg_rep__3_110(control_unit_inst_n_978),
+        .r_we_cr_reg_rep__3_111(control_unit_inst_n_979),
+        .r_we_cr_reg_rep__3_112(control_unit_inst_n_980),
+        .r_we_cr_reg_rep__3_113(control_unit_inst_n_981),
+        .r_we_cr_reg_rep__3_114(control_unit_inst_n_982),
+        .r_we_cr_reg_rep__3_115(control_unit_inst_n_983),
+        .r_we_cr_reg_rep__3_116(control_unit_inst_n_984),
+        .r_we_cr_reg_rep__3_117(control_unit_inst_n_985),
+        .r_we_cr_reg_rep__3_118(control_unit_inst_n_986),
+        .r_we_cr_reg_rep__3_119(control_unit_inst_n_987),
+        .r_we_cr_reg_rep__3_12(control_unit_inst_n_183),
+        .r_we_cr_reg_rep__3_120(control_unit_inst_n_988),
+        .r_we_cr_reg_rep__3_121(control_unit_inst_n_989),
+        .r_we_cr_reg_rep__3_122(control_unit_inst_n_990),
+        .r_we_cr_reg_rep__3_123(control_unit_inst_n_991),
+        .r_we_cr_reg_rep__3_124(control_unit_inst_n_1095),
+        .r_we_cr_reg_rep__3_125(control_unit_inst_n_1096),
+        .r_we_cr_reg_rep__3_126(control_unit_inst_n_1097),
+        .r_we_cr_reg_rep__3_127(control_unit_inst_n_1098),
+        .r_we_cr_reg_rep__3_13(control_unit_inst_n_184),
+        .r_we_cr_reg_rep__3_14(control_unit_inst_n_185),
+        .r_we_cr_reg_rep__3_15(control_unit_inst_n_186),
+        .r_we_cr_reg_rep__3_16(control_unit_inst_n_215),
+        .r_we_cr_reg_rep__3_17(control_unit_inst_n_216),
+        .r_we_cr_reg_rep__3_18(control_unit_inst_n_217),
+        .r_we_cr_reg_rep__3_19(control_unit_inst_n_218),
+        .r_we_cr_reg_rep__3_2(control_unit_inst_n_89),
+        .r_we_cr_reg_rep__3_20(control_unit_inst_n_265),
+        .r_we_cr_reg_rep__3_21(control_unit_inst_n_266),
+        .r_we_cr_reg_rep__3_22(control_unit_inst_n_267),
+        .r_we_cr_reg_rep__3_23(control_unit_inst_n_268),
+        .r_we_cr_reg_rep__3_24(control_unit_inst_n_299),
+        .r_we_cr_reg_rep__3_25(control_unit_inst_n_300),
+        .r_we_cr_reg_rep__3_26(control_unit_inst_n_301),
+        .r_we_cr_reg_rep__3_27(control_unit_inst_n_302),
+        .r_we_cr_reg_rep__3_28(control_unit_inst_n_313),
+        .r_we_cr_reg_rep__3_29(control_unit_inst_n_314),
+        .r_we_cr_reg_rep__3_3(control_unit_inst_n_90),
+        .r_we_cr_reg_rep__3_30(control_unit_inst_n_315),
+        .r_we_cr_reg_rep__3_31(control_unit_inst_n_316),
+        .r_we_cr_reg_rep__3_32(control_unit_inst_n_386),
+        .r_we_cr_reg_rep__3_33(control_unit_inst_n_387),
+        .r_we_cr_reg_rep__3_34(control_unit_inst_n_388),
+        .r_we_cr_reg_rep__3_35(control_unit_inst_n_389),
+        .r_we_cr_reg_rep__3_36(control_unit_inst_n_390),
+        .r_we_cr_reg_rep__3_37(control_unit_inst_n_391),
+        .r_we_cr_reg_rep__3_38(control_unit_inst_n_392),
+        .r_we_cr_reg_rep__3_39(control_unit_inst_n_393),
+        .r_we_cr_reg_rep__3_4(control_unit_inst_n_137),
+        .r_we_cr_reg_rep__3_40(control_unit_inst_n_409),
+        .r_we_cr_reg_rep__3_41(control_unit_inst_n_410),
+        .r_we_cr_reg_rep__3_42(control_unit_inst_n_411),
+        .r_we_cr_reg_rep__3_43(control_unit_inst_n_412),
+        .r_we_cr_reg_rep__3_44(control_unit_inst_n_460),
+        .r_we_cr_reg_rep__3_45(control_unit_inst_n_461),
+        .r_we_cr_reg_rep__3_46(control_unit_inst_n_462),
+        .r_we_cr_reg_rep__3_47(control_unit_inst_n_463),
+        .r_we_cr_reg_rep__3_48(control_unit_inst_n_474),
+        .r_we_cr_reg_rep__3_49(control_unit_inst_n_475),
+        .r_we_cr_reg_rep__3_5(control_unit_inst_n_138),
+        .r_we_cr_reg_rep__3_50(control_unit_inst_n_476),
+        .r_we_cr_reg_rep__3_51(control_unit_inst_n_477),
+        .r_we_cr_reg_rep__3_52(control_unit_inst_n_524),
+        .r_we_cr_reg_rep__3_53(control_unit_inst_n_525),
+        .r_we_cr_reg_rep__3_54(control_unit_inst_n_526),
+        .r_we_cr_reg_rep__3_55(control_unit_inst_n_527),
+        .r_we_cr_reg_rep__3_56(control_unit_inst_n_541),
+        .r_we_cr_reg_rep__3_57(control_unit_inst_n_542),
+        .r_we_cr_reg_rep__3_58(control_unit_inst_n_543),
+        .r_we_cr_reg_rep__3_59(control_unit_inst_n_544),
+        .r_we_cr_reg_rep__3_6(control_unit_inst_n_139),
+        .r_we_cr_reg_rep__3_60(control_unit_inst_n_591),
+        .r_we_cr_reg_rep__3_61(control_unit_inst_n_592),
+        .r_we_cr_reg_rep__3_62(control_unit_inst_n_593),
+        .r_we_cr_reg_rep__3_63(control_unit_inst_n_594),
+        .r_we_cr_reg_rep__3_64(control_unit_inst_n_622),
+        .r_we_cr_reg_rep__3_65(control_unit_inst_n_623),
+        .r_we_cr_reg_rep__3_66(control_unit_inst_n_624),
+        .r_we_cr_reg_rep__3_67(control_unit_inst_n_625),
+        .r_we_cr_reg_rep__3_68(control_unit_inst_n_655),
+        .r_we_cr_reg_rep__3_69(control_unit_inst_n_656),
+        .r_we_cr_reg_rep__3_7(control_unit_inst_n_140),
+        .r_we_cr_reg_rep__3_70(control_unit_inst_n_657),
+        .r_we_cr_reg_rep__3_71(control_unit_inst_n_658),
+        .r_we_cr_reg_rep__3_72(control_unit_inst_n_667),
+        .r_we_cr_reg_rep__3_73(control_unit_inst_n_668),
+        .r_we_cr_reg_rep__3_74(control_unit_inst_n_669),
+        .r_we_cr_reg_rep__3_75(control_unit_inst_n_670),
+        .r_we_cr_reg_rep__3_76(control_unit_inst_n_740),
+        .r_we_cr_reg_rep__3_77(control_unit_inst_n_741),
+        .r_we_cr_reg_rep__3_78(control_unit_inst_n_742),
+        .r_we_cr_reg_rep__3_79(control_unit_inst_n_743),
+        .r_we_cr_reg_rep__3_8(control_unit_inst_n_151),
+        .r_we_cr_reg_rep__3_80(control_unit_inst_n_744),
+        .r_we_cr_reg_rep__3_81(control_unit_inst_n_745),
+        .r_we_cr_reg_rep__3_82(control_unit_inst_n_746),
+        .r_we_cr_reg_rep__3_83(control_unit_inst_n_747),
+        .r_we_cr_reg_rep__3_84(control_unit_inst_n_763),
+        .r_we_cr_reg_rep__3_85(control_unit_inst_n_764),
+        .r_we_cr_reg_rep__3_86(control_unit_inst_n_765),
+        .r_we_cr_reg_rep__3_87(control_unit_inst_n_766),
+        .r_we_cr_reg_rep__3_88(control_unit_inst_n_794),
+        .r_we_cr_reg_rep__3_89(control_unit_inst_n_795),
+        .r_we_cr_reg_rep__3_9(control_unit_inst_n_152),
+        .r_we_cr_reg_rep__3_90(control_unit_inst_n_796),
+        .r_we_cr_reg_rep__3_91(control_unit_inst_n_797),
+        .r_we_cr_reg_rep__3_92(control_unit_inst_n_827),
+        .r_we_cr_reg_rep__3_93(control_unit_inst_n_828),
+        .r_we_cr_reg_rep__3_94(control_unit_inst_n_829),
+        .r_we_cr_reg_rep__3_95(control_unit_inst_n_830),
+        .r_we_cr_reg_rep__3_96(control_unit_inst_n_874),
+        .r_we_cr_reg_rep__3_97(control_unit_inst_n_875),
+        .r_we_cr_reg_rep__3_98(control_unit_inst_n_876),
+        .r_we_cr_reg_rep__3_99(control_unit_inst_n_877),
+        .r_we_cr_reg_rep__4_0(control_unit_inst_n_83),
+        .r_we_cr_reg_rep__4_1(control_unit_inst_n_84),
+        .r_we_cr_reg_rep__4_10(control_unit_inst_n_149),
+        .r_we_cr_reg_rep__4_100(control_unit_inst_n_885),
+        .r_we_cr_reg_rep__4_101(control_unit_inst_n_886),
+        .r_we_cr_reg_rep__4_102(control_unit_inst_n_887),
+        .r_we_cr_reg_rep__4_103(control_unit_inst_n_888),
+        .r_we_cr_reg_rep__4_104(control_unit_inst_n_944),
+        .r_we_cr_reg_rep__4_105(control_unit_inst_n_945),
+        .r_we_cr_reg_rep__4_106(control_unit_inst_n_946),
+        .r_we_cr_reg_rep__4_107(control_unit_inst_n_947),
+        .r_we_cr_reg_rep__4_108(control_unit_inst_n_960),
+        .r_we_cr_reg_rep__4_109(control_unit_inst_n_961),
+        .r_we_cr_reg_rep__4_11(control_unit_inst_n_150),
+        .r_we_cr_reg_rep__4_110(control_unit_inst_n_962),
+        .r_we_cr_reg_rep__4_111(control_unit_inst_n_963),
+        .r_we_cr_reg_rep__4_112(control_unit_inst_n_964),
+        .r_we_cr_reg_rep__4_113(control_unit_inst_n_965),
+        .r_we_cr_reg_rep__4_114(control_unit_inst_n_966),
+        .r_we_cr_reg_rep__4_115(control_unit_inst_n_967),
+        .r_we_cr_reg_rep__4_116(control_unit_inst_n_968),
+        .r_we_cr_reg_rep__4_117(control_unit_inst_n_969),
+        .r_we_cr_reg_rep__4_118(control_unit_inst_n_970),
+        .r_we_cr_reg_rep__4_119(control_unit_inst_n_971),
+        .r_we_cr_reg_rep__4_12(control_unit_inst_n_179),
+        .r_we_cr_reg_rep__4_120(control_unit_inst_n_972),
+        .r_we_cr_reg_rep__4_121(control_unit_inst_n_973),
+        .r_we_cr_reg_rep__4_122(control_unit_inst_n_974),
+        .r_we_cr_reg_rep__4_123(control_unit_inst_n_975),
+        .r_we_cr_reg_rep__4_124(control_unit_inst_n_1099),
+        .r_we_cr_reg_rep__4_125(control_unit_inst_n_1100),
+        .r_we_cr_reg_rep__4_126(control_unit_inst_n_1101),
+        .r_we_cr_reg_rep__4_127(control_unit_inst_n_1102),
+        .r_we_cr_reg_rep__4_13(control_unit_inst_n_180),
+        .r_we_cr_reg_rep__4_14(control_unit_inst_n_181),
+        .r_we_cr_reg_rep__4_15(control_unit_inst_n_182),
+        .r_we_cr_reg_rep__4_16(control_unit_inst_n_211),
+        .r_we_cr_reg_rep__4_17(control_unit_inst_n_212),
+        .r_we_cr_reg_rep__4_18(control_unit_inst_n_213),
+        .r_we_cr_reg_rep__4_19(control_unit_inst_n_214),
+        .r_we_cr_reg_rep__4_2(control_unit_inst_n_85),
+        .r_we_cr_reg_rep__4_20(control_unit_inst_n_269),
+        .r_we_cr_reg_rep__4_21(control_unit_inst_n_270),
+        .r_we_cr_reg_rep__4_22(control_unit_inst_n_271),
+        .r_we_cr_reg_rep__4_23(control_unit_inst_n_272),
+        .r_we_cr_reg_rep__4_24(control_unit_inst_n_303),
+        .r_we_cr_reg_rep__4_25(control_unit_inst_n_304),
+        .r_we_cr_reg_rep__4_26(control_unit_inst_n_305),
+        .r_we_cr_reg_rep__4_27(control_unit_inst_n_306),
+        .r_we_cr_reg_rep__4_28(control_unit_inst_n_309),
+        .r_we_cr_reg_rep__4_29(control_unit_inst_n_310),
+        .r_we_cr_reg_rep__4_3(control_unit_inst_n_86),
+        .r_we_cr_reg_rep__4_30(control_unit_inst_n_311),
+        .r_we_cr_reg_rep__4_31(control_unit_inst_n_312),
+        .r_we_cr_reg_rep__4_32(control_unit_inst_n_394),
+        .r_we_cr_reg_rep__4_33(control_unit_inst_n_395),
+        .r_we_cr_reg_rep__4_34(control_unit_inst_n_396),
+        .r_we_cr_reg_rep__4_35(control_unit_inst_n_397),
+        .r_we_cr_reg_rep__4_36(control_unit_inst_n_398),
+        .r_we_cr_reg_rep__4_37(control_unit_inst_n_399),
+        .r_we_cr_reg_rep__4_38(control_unit_inst_n_400),
+        .r_we_cr_reg_rep__4_39(control_unit_inst_n_401),
+        .r_we_cr_reg_rep__4_4(control_unit_inst_n_141),
+        .r_we_cr_reg_rep__4_40(control_unit_inst_n_405),
+        .r_we_cr_reg_rep__4_41(control_unit_inst_n_406),
+        .r_we_cr_reg_rep__4_42(control_unit_inst_n_407),
+        .r_we_cr_reg_rep__4_43(control_unit_inst_n_408),
+        .r_we_cr_reg_rep__4_44(control_unit_inst_n_464),
+        .r_we_cr_reg_rep__4_45(control_unit_inst_n_465),
+        .r_we_cr_reg_rep__4_46(control_unit_inst_n_466),
+        .r_we_cr_reg_rep__4_47(control_unit_inst_n_467),
+        .r_we_cr_reg_rep__4_48(control_unit_inst_n_470),
+        .r_we_cr_reg_rep__4_49(control_unit_inst_n_471),
+        .r_we_cr_reg_rep__4_5(control_unit_inst_n_142),
+        .r_we_cr_reg_rep__4_50(control_unit_inst_n_472),
+        .r_we_cr_reg_rep__4_51(control_unit_inst_n_473),
+        .r_we_cr_reg_rep__4_52(control_unit_inst_n_528),
+        .r_we_cr_reg_rep__4_53(control_unit_inst_n_529),
+        .r_we_cr_reg_rep__4_54(control_unit_inst_n_530),
+        .r_we_cr_reg_rep__4_55(control_unit_inst_n_531),
+        .r_we_cr_reg_rep__4_56(control_unit_inst_n_537),
+        .r_we_cr_reg_rep__4_57(control_unit_inst_n_538),
+        .r_we_cr_reg_rep__4_58(control_unit_inst_n_539),
+        .r_we_cr_reg_rep__4_59(control_unit_inst_n_540),
+        .r_we_cr_reg_rep__4_6(control_unit_inst_n_143),
+        .r_we_cr_reg_rep__4_60(control_unit_inst_n_595),
+        .r_we_cr_reg_rep__4_61(control_unit_inst_n_596),
+        .r_we_cr_reg_rep__4_62(control_unit_inst_n_597),
+        .r_we_cr_reg_rep__4_63(control_unit_inst_n_598),
+        .r_we_cr_reg_rep__4_64(control_unit_inst_n_626),
+        .r_we_cr_reg_rep__4_65(control_unit_inst_n_627),
+        .r_we_cr_reg_rep__4_66(control_unit_inst_n_628),
+        .r_we_cr_reg_rep__4_67(control_unit_inst_n_629),
+        .r_we_cr_reg_rep__4_68(control_unit_inst_n_659),
+        .r_we_cr_reg_rep__4_69(control_unit_inst_n_660),
+        .r_we_cr_reg_rep__4_7(control_unit_inst_n_144),
+        .r_we_cr_reg_rep__4_70(control_unit_inst_n_661),
+        .r_we_cr_reg_rep__4_71(control_unit_inst_n_662),
+        .r_we_cr_reg_rep__4_72(control_unit_inst_n_663),
+        .r_we_cr_reg_rep__4_73(control_unit_inst_n_664),
+        .r_we_cr_reg_rep__4_74(control_unit_inst_n_665),
+        .r_we_cr_reg_rep__4_75(control_unit_inst_n_666),
+        .r_we_cr_reg_rep__4_76(control_unit_inst_n_748),
+        .r_we_cr_reg_rep__4_77(control_unit_inst_n_749),
+        .r_we_cr_reg_rep__4_78(control_unit_inst_n_750),
+        .r_we_cr_reg_rep__4_79(control_unit_inst_n_751),
+        .r_we_cr_reg_rep__4_8(control_unit_inst_n_147),
+        .r_we_cr_reg_rep__4_80(control_unit_inst_n_752),
+        .r_we_cr_reg_rep__4_81(control_unit_inst_n_753),
+        .r_we_cr_reg_rep__4_82(control_unit_inst_n_754),
+        .r_we_cr_reg_rep__4_83(control_unit_inst_n_755),
+        .r_we_cr_reg_rep__4_84(control_unit_inst_n_759),
+        .r_we_cr_reg_rep__4_85(control_unit_inst_n_760),
+        .r_we_cr_reg_rep__4_86(control_unit_inst_n_761),
+        .r_we_cr_reg_rep__4_87(control_unit_inst_n_762),
+        .r_we_cr_reg_rep__4_88(control_unit_inst_n_790),
+        .r_we_cr_reg_rep__4_89(control_unit_inst_n_791),
+        .r_we_cr_reg_rep__4_9(control_unit_inst_n_148),
+        .r_we_cr_reg_rep__4_90(control_unit_inst_n_792),
+        .r_we_cr_reg_rep__4_91(control_unit_inst_n_793),
+        .r_we_cr_reg_rep__4_92(control_unit_inst_n_823),
+        .r_we_cr_reg_rep__4_93(control_unit_inst_n_824),
+        .r_we_cr_reg_rep__4_94(control_unit_inst_n_825),
+        .r_we_cr_reg_rep__4_95(control_unit_inst_n_826),
+        .r_we_cr_reg_rep__4_96(control_unit_inst_n_878),
+        .r_we_cr_reg_rep__4_97(control_unit_inst_n_879),
+        .r_we_cr_reg_rep__4_98(control_unit_inst_n_880),
+        .r_we_cr_reg_rep__4_99(control_unit_inst_n_881),
+        .r_we_cr_reg_rep__5_0(control_unit_inst_n_80),
+        .r_we_cr_reg_rep__5_1(control_unit_inst_n_81),
+        .r_we_cr_reg_rep__5_10(control_unit_inst_n_146),
+        .r_we_cr_reg_rep__5_100(control_unit_inst_n_852),
+        .r_we_cr_reg_rep__5_101(control_unit_inst_n_853),
+        .r_we_cr_reg_rep__5_102(control_unit_inst_n_882),
+        .r_we_cr_reg_rep__5_103(control_unit_inst_n_883),
+        .r_we_cr_reg_rep__5_104(control_unit_inst_n_884),
+        .r_we_cr_reg_rep__5_105(control_unit_inst_n_913),
+        .r_we_cr_reg_rep__5_106(control_unit_inst_n_914),
+        .r_we_cr_reg_rep__5_107(control_unit_inst_n_915),
+        .r_we_cr_reg_rep__5_108(control_unit_inst_n_916),
+        .r_we_cr_reg_rep__5_109(control_unit_inst_n_917),
+        .r_we_cr_reg_rep__5_11(control_unit_inst_n_175),
+        .r_we_cr_reg_rep__5_110(control_unit_inst_n_918),
+        .r_we_cr_reg_rep__5_111(control_unit_inst_n_919),
+        .r_we_cr_reg_rep__5_112(control_unit_inst_n_948),
+        .r_we_cr_reg_rep__5_113(control_unit_inst_n_949),
+        .r_we_cr_reg_rep__5_114(control_unit_inst_n_950),
+        .r_we_cr_reg_rep__5_115(control_unit_inst_n_951),
+        .r_we_cr_reg_rep__5_116(control_unit_inst_n_952),
+        .r_we_cr_reg_rep__5_117(control_unit_inst_n_953),
+        .r_we_cr_reg_rep__5_118(control_unit_inst_n_954),
+        .r_we_cr_reg_rep__5_119(control_unit_inst_n_955),
+        .r_we_cr_reg_rep__5_12(control_unit_inst_n_176),
+        .r_we_cr_reg_rep__5_120(control_unit_inst_n_956),
+        .r_we_cr_reg_rep__5_121(control_unit_inst_n_957),
+        .r_we_cr_reg_rep__5_122(control_unit_inst_n_958),
+        .r_we_cr_reg_rep__5_123(control_unit_inst_n_959),
+        .r_we_cr_reg_rep__5_124(control_unit_inst_n_1072),
+        .r_we_cr_reg_rep__5_125(control_unit_inst_n_1073),
+        .r_we_cr_reg_rep__5_126(control_unit_inst_n_1074),
+        .r_we_cr_reg_rep__5_127(control_unit_inst_n_1103),
+        .r_we_cr_reg_rep__5_128(control_unit_inst_n_1104),
+        .r_we_cr_reg_rep__5_129(control_unit_inst_n_1105),
+        .r_we_cr_reg_rep__5_13(control_unit_inst_n_177),
+        .r_we_cr_reg_rep__5_14(control_unit_inst_n_178),
+        .r_we_cr_reg_rep__5_15(control_unit_inst_n_207),
+        .r_we_cr_reg_rep__5_16(control_unit_inst_n_208),
+        .r_we_cr_reg_rep__5_17(control_unit_inst_n_209),
+        .r_we_cr_reg_rep__5_18(control_unit_inst_n_210),
+        .r_we_cr_reg_rep__5_19(control_unit_inst_n_239),
+        .r_we_cr_reg_rep__5_2(control_unit_inst_n_82),
+        .r_we_cr_reg_rep__5_20(control_unit_inst_n_240),
+        .r_we_cr_reg_rep__5_21(control_unit_inst_n_241),
+        .r_we_cr_reg_rep__5_22(control_unit_inst_n_242),
+        .r_we_cr_reg_rep__5_23(control_unit_inst_n_243),
+        .r_we_cr_reg_rep__5_24(control_unit_inst_n_244),
+        .r_we_cr_reg_rep__5_25(control_unit_inst_n_273),
+        .r_we_cr_reg_rep__5_26(control_unit_inst_n_274),
+        .r_we_cr_reg_rep__5_27(control_unit_inst_n_275),
+        .r_we_cr_reg_rep__5_28(control_unit_inst_n_276),
+        .r_we_cr_reg_rep__5_29(control_unit_inst_n_277),
+        .r_we_cr_reg_rep__5_3(control_unit_inst_n_111),
+        .r_we_cr_reg_rep__5_30(control_unit_inst_n_278),
+        .r_we_cr_reg_rep__5_31(control_unit_inst_n_307),
+        .r_we_cr_reg_rep__5_32(control_unit_inst_n_308),
+        .r_we_cr_reg_rep__5_33(control_unit_inst_n_337),
+        .r_we_cr_reg_rep__5_34(control_unit_inst_n_338),
+        .r_we_cr_reg_rep__5_35(control_unit_inst_n_339),
+        .r_we_cr_reg_rep__5_36(control_unit_inst_n_340),
+        .r_we_cr_reg_rep__5_37(control_unit_inst_n_341),
+        .r_we_cr_reg_rep__5_38(control_unit_inst_n_342),
+        .r_we_cr_reg_rep__5_39(control_unit_inst_n_343),
+        .r_we_cr_reg_rep__5_4(control_unit_inst_n_112),
+        .r_we_cr_reg_rep__5_40(control_unit_inst_n_344),
+        .r_we_cr_reg_rep__5_41(control_unit_inst_n_345),
+        .r_we_cr_reg_rep__5_42(control_unit_inst_n_402),
+        .r_we_cr_reg_rep__5_43(control_unit_inst_n_403),
+        .r_we_cr_reg_rep__5_44(control_unit_inst_n_404),
+        .r_we_cr_reg_rep__5_45(control_unit_inst_n_433),
+        .r_we_cr_reg_rep__5_46(control_unit_inst_n_434),
+        .r_we_cr_reg_rep__5_47(control_unit_inst_n_435),
+        .r_we_cr_reg_rep__5_48(control_unit_inst_n_436),
+        .r_we_cr_reg_rep__5_49(control_unit_inst_n_437),
+        .r_we_cr_reg_rep__5_5(control_unit_inst_n_113),
+        .r_we_cr_reg_rep__5_50(control_unit_inst_n_438),
+        .r_we_cr_reg_rep__5_51(control_unit_inst_n_439),
+        .r_we_cr_reg_rep__5_52(control_unit_inst_n_468),
+        .r_we_cr_reg_rep__5_53(control_unit_inst_n_469),
+        .r_we_cr_reg_rep__5_54(control_unit_inst_n_498),
+        .r_we_cr_reg_rep__5_55(control_unit_inst_n_499),
+        .r_we_cr_reg_rep__5_56(control_unit_inst_n_500),
+        .r_we_cr_reg_rep__5_57(control_unit_inst_n_501),
+        .r_we_cr_reg_rep__5_58(control_unit_inst_n_502),
+        .r_we_cr_reg_rep__5_59(control_unit_inst_n_503),
+        .r_we_cr_reg_rep__5_6(control_unit_inst_n_114),
+        .r_we_cr_reg_rep__5_60(control_unit_inst_n_532),
+        .r_we_cr_reg_rep__5_61(control_unit_inst_n_533),
+        .r_we_cr_reg_rep__5_62(control_unit_inst_n_534),
+        .r_we_cr_reg_rep__5_63(control_unit_inst_n_535),
+        .r_we_cr_reg_rep__5_64(control_unit_inst_n_536),
+        .r_we_cr_reg_rep__5_65(control_unit_inst_n_565),
+        .r_we_cr_reg_rep__5_66(control_unit_inst_n_566),
+        .r_we_cr_reg_rep__5_67(control_unit_inst_n_567),
+        .r_we_cr_reg_rep__5_68(control_unit_inst_n_568),
+        .r_we_cr_reg_rep__5_69(control_unit_inst_n_569),
+        .r_we_cr_reg_rep__5_7(control_unit_inst_n_115),
+        .r_we_cr_reg_rep__5_70(control_unit_inst_n_570),
+        .r_we_cr_reg_rep__5_71(control_unit_inst_n_599),
+        .r_we_cr_reg_rep__5_72(control_unit_inst_n_600),
+        .r_we_cr_reg_rep__5_73(control_unit_inst_n_601),
+        .r_we_cr_reg_rep__5_74(control_unit_inst_n_630),
+        .r_we_cr_reg_rep__5_75(control_unit_inst_n_631),
+        .r_we_cr_reg_rep__5_76(control_unit_inst_n_632),
+        .r_we_cr_reg_rep__5_77(control_unit_inst_n_633),
+        .r_we_cr_reg_rep__5_78(control_unit_inst_n_634),
+        .r_we_cr_reg_rep__5_79(control_unit_inst_n_691),
+        .r_we_cr_reg_rep__5_8(control_unit_inst_n_116),
+        .r_we_cr_reg_rep__5_80(control_unit_inst_n_692),
+        .r_we_cr_reg_rep__5_81(control_unit_inst_n_693),
+        .r_we_cr_reg_rep__5_82(control_unit_inst_n_694),
+        .r_we_cr_reg_rep__5_83(control_unit_inst_n_695),
+        .r_we_cr_reg_rep__5_84(control_unit_inst_n_696),
+        .r_we_cr_reg_rep__5_85(control_unit_inst_n_697),
+        .r_we_cr_reg_rep__5_86(control_unit_inst_n_698),
+        .r_we_cr_reg_rep__5_87(control_unit_inst_n_699),
+        .r_we_cr_reg_rep__5_88(control_unit_inst_n_756),
+        .r_we_cr_reg_rep__5_89(control_unit_inst_n_757),
+        .r_we_cr_reg_rep__5_9(control_unit_inst_n_145),
+        .r_we_cr_reg_rep__5_90(control_unit_inst_n_758),
+        .r_we_cr_reg_rep__5_91(control_unit_inst_n_787),
+        .r_we_cr_reg_rep__5_92(control_unit_inst_n_788),
+        .r_we_cr_reg_rep__5_93(control_unit_inst_n_789),
+        .r_we_cr_reg_rep__5_94(control_unit_inst_n_818),
+        .r_we_cr_reg_rep__5_95(control_unit_inst_n_819),
+        .r_we_cr_reg_rep__5_96(control_unit_inst_n_820),
+        .r_we_cr_reg_rep__5_97(control_unit_inst_n_821),
+        .r_we_cr_reg_rep__5_98(control_unit_inst_n_822),
+        .r_we_cr_reg_rep__5_99(control_unit_inst_n_851),
         .r_we_ir(r_we_ir),
+        .r_we_ir_reg_0(control_unit_inst_n_46),
         .rst_n_IBUF(rst_n_IBUF),
         .w_addr1_mux(w_addr1_mux[3:2]),
         .w_rgf_data2(w_rgf_data2));
   datapath datapath_inst
-       (.E(i_re_cr_datapath),
-        .\FSM_onehot_r_nstate_reg[2] (datapath_inst_n_195),
+       (.CLK(i_re_cr_datapath_BUFG),
+        .\FSM_onehot_r_nstate_reg[2] (datapath_inst_n_197),
+        .\FSM_onehot_r_nstate_reg[2]_0 (datapath_inst_n_199),
+        .\FSM_onehot_r_nstate_reg[2]_1 (datapath_inst_n_203),
         .Q(w_rgf_data1),
+        .S({control_unit_inst_n_49,control_unit_inst_n_50,control_unit_inst_n_51}),
         .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .data0(data0),
         .data1(data1),
-        .i__carry_i_10(control_unit_inst_n_1),
         .i_addr1_mux_datapath(i_addr1_mux_datapath),
-        .i_addr2_mux_datapath(i_addr2_mux_datapath),
+        .i_alu_input_datapath(i_alu_input_datapath),
         .i_alu_opcode_datapath(i_alu_opcode_datapath),
+        .i_re_rom_datapath(i_re_rom_datapath),
         .o_bits_OBUF(o_bits_OBUF),
-        .\o_data1_reg[31] (control_unit_inst_n_5),
+        .\o_data1_reg[31] (control_unit_inst_n_4),
         .p_1_in(p_1_in),
-        .\r_addr1_mux_reg[0] (datapath_inst_n_112),
+        .r_addr1_mux(r_addr1_mux),
+        .\r_addr1_mux_reg[0] (datapath_inst_n_111),
         .\r_addr1_mux_reg[0]_0 (w_addr1_mux[1:0]),
-        .\r_addr1_mux_reg[0]_1 (datapath_inst_n_115),
-        .\r_addr1_mux_reg[0]_10 (datapath_inst_n_124),
-        .\r_addr1_mux_reg[0]_11 (datapath_inst_n_125),
-        .\r_addr1_mux_reg[0]_12 (datapath_inst_n_126),
-        .\r_addr1_mux_reg[0]_13 (datapath_inst_n_127),
-        .\r_addr1_mux_reg[0]_14 (datapath_inst_n_128),
-        .\r_addr1_mux_reg[0]_15 (datapath_inst_n_129),
-        .\r_addr1_mux_reg[0]_16 (datapath_inst_n_130),
-        .\r_addr1_mux_reg[0]_17 (datapath_inst_n_131),
-        .\r_addr1_mux_reg[0]_2 (datapath_inst_n_116),
-        .\r_addr1_mux_reg[0]_3 (datapath_inst_n_117),
-        .\r_addr1_mux_reg[0]_4 (datapath_inst_n_118),
-        .\r_addr1_mux_reg[0]_5 (datapath_inst_n_119),
-        .\r_addr1_mux_reg[0]_6 (datapath_inst_n_120),
-        .\r_addr1_mux_reg[0]_7 (datapath_inst_n_121),
-        .\r_addr1_mux_reg[0]_8 (datapath_inst_n_122),
-        .\r_addr1_mux_reg[0]_9 (datapath_inst_n_123),
-        .\r_alu_opcode_reg[1] (control_unit_inst_n_41),
-        .r_data(r_data),
-        .\r_data_reg[0]_C (datapath_inst_n_110),
-        .\r_data_reg[0]_P (datapath_inst_n_111),
-        .\r_data_reg[11]_C (datapath_inst_n_199),
-        .\r_data_reg[11]_C_0 (datapath_inst_n_201),
-        .\r_data_reg[12]_C (datapath_inst_n_197),
-        .\r_data_reg[13]_P ({o_instructions_datapath[13:10],o_instructions_datapath[6],o_instructions_datapath[4:1]}),
-        .\r_data_reg[1]_C (control_unit_inst_n_1069),
-        .\r_data_reg[1]_P (datapath_inst_n_196),
-        .\r_data_reg[1]_P_0 (control_unit_inst_n_1068),
-        .\r_data_reg[6]_C (w_rgf_data2),
-        .\r_data_reg[9]_C (datapath_inst_n_198),
-        .\r_data_reg[9]_C_0 (datapath_inst_n_200),
-        .\r_reg_reg[0][0]_C (control_unit_inst_n_305),
-        .\r_reg_reg[0][0]_P (control_unit_inst_n_141),
-        .\r_reg_reg[0][10]_C (control_unit_inst_n_323),
-        .\r_reg_reg[0][10]_P (control_unit_inst_n_132),
-        .\r_reg_reg[0][11]_C (control_unit_inst_n_325),
-        .\r_reg_reg[0][11]_P (control_unit_inst_n_131),
-        .\r_reg_reg[0][12]_C (control_unit_inst_n_327),
-        .\r_reg_reg[0][12]_P (control_unit_inst_n_130),
-        .\r_reg_reg[0][13]_C (control_unit_inst_n_329),
-        .\r_reg_reg[0][13]_P (control_unit_inst_n_129),
-        .\r_reg_reg[0][14]_C (control_unit_inst_n_331),
-        .\r_reg_reg[0][14]_P (control_unit_inst_n_128),
-        .\r_reg_reg[0][15]_C (control_unit_inst_n_333),
-        .\r_reg_reg[0][15]_P (control_unit_inst_n_127),
-        .\r_reg_reg[0][16]_C (control_unit_inst_n_335),
-        .\r_reg_reg[0][16]_P (control_unit_inst_n_126),
-        .\r_reg_reg[0][17]_C (control_unit_inst_n_337),
-        .\r_reg_reg[0][17]_P (control_unit_inst_n_125),
-        .\r_reg_reg[0][18]_C (control_unit_inst_n_339),
-        .\r_reg_reg[0][18]_P (control_unit_inst_n_124),
-        .\r_reg_reg[0][19]_C (control_unit_inst_n_341),
-        .\r_reg_reg[0][19]_P (control_unit_inst_n_123),
-        .\r_reg_reg[0][1]_C (control_unit_inst_n_307),
-        .\r_reg_reg[0][1]_P (control_unit_inst_n_140),
-        .\r_reg_reg[0][20]_C (control_unit_inst_n_343),
-        .\r_reg_reg[0][20]_P (control_unit_inst_n_122),
-        .\r_reg_reg[0][21]_C (control_unit_inst_n_345),
-        .\r_reg_reg[0][21]_P (control_unit_inst_n_121),
-        .\r_reg_reg[0][22]_C (control_unit_inst_n_347),
-        .\r_reg_reg[0][22]_P (control_unit_inst_n_120),
-        .\r_reg_reg[0][23]_C (control_unit_inst_n_349),
-        .\r_reg_reg[0][23]_P (control_unit_inst_n_119),
-        .\r_reg_reg[0][24]_C (control_unit_inst_n_351),
-        .\r_reg_reg[0][24]_P (control_unit_inst_n_118),
-        .\r_reg_reg[0][25]_C (control_unit_inst_n_353),
-        .\r_reg_reg[0][25]_P (control_unit_inst_n_117),
-        .\r_reg_reg[0][26]_C (control_unit_inst_n_355),
-        .\r_reg_reg[0][26]_P (control_unit_inst_n_116),
-        .\r_reg_reg[0][27]_C (control_unit_inst_n_357),
-        .\r_reg_reg[0][27]_P (control_unit_inst_n_115),
-        .\r_reg_reg[0][28]_C (control_unit_inst_n_359),
-        .\r_reg_reg[0][28]_P (control_unit_inst_n_114),
-        .\r_reg_reg[0][29]_C (control_unit_inst_n_361),
-        .\r_reg_reg[0][29]_P (control_unit_inst_n_113),
-        .\r_reg_reg[0][2]_C (control_unit_inst_n_367),
-        .\r_reg_reg[0][2]_P (control_unit_inst_n_110),
-        .\r_reg_reg[0][30]_C (control_unit_inst_n_363),
-        .\r_reg_reg[0][30]_P (control_unit_inst_n_112),
-        .\r_reg_reg[0][31]_C (control_unit_inst_n_365),
-        .\r_reg_reg[0][31]_P (control_unit_inst_n_111),
-        .\r_reg_reg[0][3]_C (control_unit_inst_n_309),
-        .\r_reg_reg[0][3]_P (control_unit_inst_n_139),
-        .\r_reg_reg[0][4]_C (control_unit_inst_n_311),
-        .\r_reg_reg[0][4]_P (control_unit_inst_n_138),
-        .\r_reg_reg[0][5]_C (control_unit_inst_n_313),
-        .\r_reg_reg[0][5]_P (control_unit_inst_n_137),
-        .\r_reg_reg[0][6]_C (control_unit_inst_n_315),
-        .\r_reg_reg[0][6]_P (control_unit_inst_n_136),
-        .\r_reg_reg[0][7]_C (control_unit_inst_n_317),
-        .\r_reg_reg[0][7]_P (control_unit_inst_n_135),
-        .\r_reg_reg[0][8]_C (control_unit_inst_n_319),
-        .\r_reg_reg[0][8]_P (control_unit_inst_n_134),
-        .\r_reg_reg[0][9]_C (control_unit_inst_n_321),
-        .\r_reg_reg[0][9]_P (control_unit_inst_n_133),
-        .\r_reg_reg[10][0]_C (control_unit_inst_n_919),
-        .\r_reg_reg[10][0]_P (control_unit_inst_n_916),
-        .\r_reg_reg[10][10]_C (control_unit_inst_n_1011),
-        .\r_reg_reg[10][10]_P (control_unit_inst_n_1008),
-        .\r_reg_reg[10][11]_C (control_unit_inst_n_1007),
-        .\r_reg_reg[10][11]_P (control_unit_inst_n_1004),
-        .\r_reg_reg[10][12]_C (control_unit_inst_n_1003),
-        .\r_reg_reg[10][12]_P (control_unit_inst_n_1000),
-        .\r_reg_reg[10][13]_C (control_unit_inst_n_999),
-        .\r_reg_reg[10][13]_P (control_unit_inst_n_996),
-        .\r_reg_reg[10][14]_C (control_unit_inst_n_995),
-        .\r_reg_reg[10][14]_P (control_unit_inst_n_992),
-        .\r_reg_reg[10][15]_C (control_unit_inst_n_991),
-        .\r_reg_reg[10][15]_P (control_unit_inst_n_988),
-        .\r_reg_reg[10][16]_C (control_unit_inst_n_987),
-        .\r_reg_reg[10][16]_P (control_unit_inst_n_984),
-        .\r_reg_reg[10][17]_C (control_unit_inst_n_983),
-        .\r_reg_reg[10][17]_P (control_unit_inst_n_980),
-        .\r_reg_reg[10][18]_C (control_unit_inst_n_979),
-        .\r_reg_reg[10][18]_P (control_unit_inst_n_976),
-        .\r_reg_reg[10][19]_C (control_unit_inst_n_975),
-        .\r_reg_reg[10][19]_P (control_unit_inst_n_972),
-        .\r_reg_reg[10][1]_C (control_unit_inst_n_915),
-        .\r_reg_reg[10][1]_P (control_unit_inst_n_912),
-        .\r_reg_reg[10][20]_C (control_unit_inst_n_971),
-        .\r_reg_reg[10][20]_P (control_unit_inst_n_968),
-        .\r_reg_reg[10][21]_C (control_unit_inst_n_967),
-        .\r_reg_reg[10][21]_P (control_unit_inst_n_964),
-        .\r_reg_reg[10][22]_C (control_unit_inst_n_963),
-        .\r_reg_reg[10][22]_P (control_unit_inst_n_960),
-        .\r_reg_reg[10][23]_C (control_unit_inst_n_959),
-        .\r_reg_reg[10][23]_P (control_unit_inst_n_956),
-        .\r_reg_reg[10][24]_C (control_unit_inst_n_955),
-        .\r_reg_reg[10][24]_P (control_unit_inst_n_952),
-        .\r_reg_reg[10][25]_C (control_unit_inst_n_951),
-        .\r_reg_reg[10][25]_P (control_unit_inst_n_948),
-        .\r_reg_reg[10][26]_C (control_unit_inst_n_947),
-        .\r_reg_reg[10][26]_P (control_unit_inst_n_944),
-        .\r_reg_reg[10][27]_C (control_unit_inst_n_943),
-        .\r_reg_reg[10][27]_P (control_unit_inst_n_940),
-        .\r_reg_reg[10][28]_C (control_unit_inst_n_939),
-        .\r_reg_reg[10][28]_P (control_unit_inst_n_936),
-        .\r_reg_reg[10][29]_C (control_unit_inst_n_935),
-        .\r_reg_reg[10][29]_P (control_unit_inst_n_932),
-        .\r_reg_reg[10][2]_C (control_unit_inst_n_847),
-        .\r_reg_reg[10][2]_P (control_unit_inst_n_368),
-        .\r_reg_reg[10][30]_C (control_unit_inst_n_931),
-        .\r_reg_reg[10][30]_P (control_unit_inst_n_928),
-        .\r_reg_reg[10][31]_C (control_unit_inst_n_927),
-        .\r_reg_reg[10][31]_P (control_unit_inst_n_924),
-        .\r_reg_reg[10][3]_C (control_unit_inst_n_923),
-        .\r_reg_reg[10][3]_P (control_unit_inst_n_920),
-        .\r_reg_reg[10][4]_C (control_unit_inst_n_1035),
-        .\r_reg_reg[10][4]_P (control_unit_inst_n_1032),
-        .\r_reg_reg[10][5]_C (control_unit_inst_n_1031),
-        .\r_reg_reg[10][5]_P (control_unit_inst_n_1028),
-        .\r_reg_reg[10][6]_C (control_unit_inst_n_1027),
-        .\r_reg_reg[10][6]_P (control_unit_inst_n_1024),
-        .\r_reg_reg[10][7]_C (control_unit_inst_n_1023),
-        .\r_reg_reg[10][7]_P (control_unit_inst_n_1020),
-        .\r_reg_reg[10][8]_C (control_unit_inst_n_1019),
-        .\r_reg_reg[10][8]_P (control_unit_inst_n_1016),
-        .\r_reg_reg[10][9]_C (control_unit_inst_n_1015),
-        .\r_reg_reg[10][9]_P (control_unit_inst_n_1012),
-        .\r_reg_reg[11][0]_C (control_unit_inst_n_464),
-        .\r_reg_reg[11][0]_P (control_unit_inst_n_465),
-        .\r_reg_reg[11][10]_C (control_unit_inst_n_455),
-        .\r_reg_reg[11][10]_P (control_unit_inst_n_474),
-        .\r_reg_reg[11][11]_C (control_unit_inst_n_454),
-        .\r_reg_reg[11][11]_P (control_unit_inst_n_475),
-        .\r_reg_reg[11][12]_C (control_unit_inst_n_453),
-        .\r_reg_reg[11][12]_P (control_unit_inst_n_476),
-        .\r_reg_reg[11][13]_C (control_unit_inst_n_452),
-        .\r_reg_reg[11][13]_P (control_unit_inst_n_477),
-        .\r_reg_reg[11][14]_C (control_unit_inst_n_451),
-        .\r_reg_reg[11][14]_P (control_unit_inst_n_478),
-        .\r_reg_reg[11][15]_C (control_unit_inst_n_450),
-        .\r_reg_reg[11][15]_P (control_unit_inst_n_479),
-        .\r_reg_reg[11][16]_C (control_unit_inst_n_449),
-        .\r_reg_reg[11][16]_P (control_unit_inst_n_480),
-        .\r_reg_reg[11][17]_C (control_unit_inst_n_448),
-        .\r_reg_reg[11][17]_P (control_unit_inst_n_481),
-        .\r_reg_reg[11][18]_C (control_unit_inst_n_447),
-        .\r_reg_reg[11][18]_P (control_unit_inst_n_482),
-        .\r_reg_reg[11][19]_C (control_unit_inst_n_446),
-        .\r_reg_reg[11][19]_P (control_unit_inst_n_483),
-        .\r_reg_reg[11][1]_C (control_unit_inst_n_463),
-        .\r_reg_reg[11][1]_P (control_unit_inst_n_466),
-        .\r_reg_reg[11][20]_C (control_unit_inst_n_445),
-        .\r_reg_reg[11][20]_P (control_unit_inst_n_484),
-        .\r_reg_reg[11][21]_C (control_unit_inst_n_444),
-        .\r_reg_reg[11][21]_P (control_unit_inst_n_485),
-        .\r_reg_reg[11][22]_C (control_unit_inst_n_443),
-        .\r_reg_reg[11][22]_P (control_unit_inst_n_486),
-        .\r_reg_reg[11][23]_C (control_unit_inst_n_442),
-        .\r_reg_reg[11][23]_P (control_unit_inst_n_487),
-        .\r_reg_reg[11][24]_C (control_unit_inst_n_441),
-        .\r_reg_reg[11][24]_P (control_unit_inst_n_488),
-        .\r_reg_reg[11][25]_C (control_unit_inst_n_440),
-        .\r_reg_reg[11][25]_P (control_unit_inst_n_489),
-        .\r_reg_reg[11][26]_C (control_unit_inst_n_439),
-        .\r_reg_reg[11][26]_P (control_unit_inst_n_490),
-        .\r_reg_reg[11][27]_C (control_unit_inst_n_438),
-        .\r_reg_reg[11][27]_P (control_unit_inst_n_491),
-        .\r_reg_reg[11][28]_C (control_unit_inst_n_437),
-        .\r_reg_reg[11][28]_P (control_unit_inst_n_492),
-        .\r_reg_reg[11][29]_C (control_unit_inst_n_436),
-        .\r_reg_reg[11][29]_P (control_unit_inst_n_493),
-        .\r_reg_reg[11][2]_C (control_unit_inst_n_433),
-        .\r_reg_reg[11][2]_P (control_unit_inst_n_496),
-        .\r_reg_reg[11][30]_C (control_unit_inst_n_435),
-        .\r_reg_reg[11][30]_P (control_unit_inst_n_494),
-        .\r_reg_reg[11][31]_C (control_unit_inst_n_434),
-        .\r_reg_reg[11][31]_P (control_unit_inst_n_495),
-        .\r_reg_reg[11][3]_C (control_unit_inst_n_462),
-        .\r_reg_reg[11][3]_P (control_unit_inst_n_467),
-        .\r_reg_reg[11][4]_C (control_unit_inst_n_461),
-        .\r_reg_reg[11][4]_P (control_unit_inst_n_468),
-        .\r_reg_reg[11][5]_C (control_unit_inst_n_460),
-        .\r_reg_reg[11][5]_P (control_unit_inst_n_469),
-        .\r_reg_reg[11][6]_C (control_unit_inst_n_459),
-        .\r_reg_reg[11][6]_P (control_unit_inst_n_470),
-        .\r_reg_reg[11][7]_C (control_unit_inst_n_458),
-        .\r_reg_reg[11][7]_P (control_unit_inst_n_471),
-        .\r_reg_reg[11][8]_C (control_unit_inst_n_457),
-        .\r_reg_reg[11][8]_P (control_unit_inst_n_472),
-        .\r_reg_reg[11][9]_C (control_unit_inst_n_456),
-        .\r_reg_reg[11][9]_P (control_unit_inst_n_473),
-        .\r_reg_reg[12][0]_C (control_unit_inst_n_918),
-        .\r_reg_reg[12][0]_P (control_unit_inst_n_240),
-        .\r_reg_reg[12][10]_C (control_unit_inst_n_1010),
-        .\r_reg_reg[12][10]_P (control_unit_inst_n_249),
-        .\r_reg_reg[12][11]_C (control_unit_inst_n_1006),
-        .\r_reg_reg[12][11]_P (control_unit_inst_n_250),
-        .\r_reg_reg[12][12]_C (control_unit_inst_n_1002),
-        .\r_reg_reg[12][12]_P (control_unit_inst_n_251),
-        .\r_reg_reg[12][13]_C (control_unit_inst_n_998),
-        .\r_reg_reg[12][13]_P (control_unit_inst_n_252),
-        .\r_reg_reg[12][14]_C (control_unit_inst_n_994),
-        .\r_reg_reg[12][14]_P (control_unit_inst_n_253),
-        .\r_reg_reg[12][15]_C (control_unit_inst_n_990),
-        .\r_reg_reg[12][15]_P (control_unit_inst_n_254),
-        .\r_reg_reg[12][16]_C (control_unit_inst_n_986),
-        .\r_reg_reg[12][16]_P (control_unit_inst_n_255),
-        .\r_reg_reg[12][17]_C (control_unit_inst_n_982),
-        .\r_reg_reg[12][17]_P (control_unit_inst_n_256),
-        .\r_reg_reg[12][18]_C (control_unit_inst_n_978),
-        .\r_reg_reg[12][18]_P (control_unit_inst_n_257),
-        .\r_reg_reg[12][19]_C (control_unit_inst_n_974),
-        .\r_reg_reg[12][19]_P (control_unit_inst_n_258),
-        .\r_reg_reg[12][1]_C (control_unit_inst_n_914),
-        .\r_reg_reg[12][1]_P (control_unit_inst_n_241),
-        .\r_reg_reg[12][20]_C (control_unit_inst_n_970),
-        .\r_reg_reg[12][20]_P (control_unit_inst_n_259),
-        .\r_reg_reg[12][21]_C (control_unit_inst_n_966),
-        .\r_reg_reg[12][21]_P (control_unit_inst_n_260),
-        .\r_reg_reg[12][22]_C (control_unit_inst_n_962),
-        .\r_reg_reg[12][22]_P (control_unit_inst_n_261),
-        .\r_reg_reg[12][23]_C (control_unit_inst_n_958),
-        .\r_reg_reg[12][23]_P (control_unit_inst_n_262),
-        .\r_reg_reg[12][24]_C (control_unit_inst_n_954),
-        .\r_reg_reg[12][24]_P (control_unit_inst_n_263),
-        .\r_reg_reg[12][25]_C (control_unit_inst_n_950),
-        .\r_reg_reg[12][25]_P (control_unit_inst_n_264),
-        .\r_reg_reg[12][26]_C (control_unit_inst_n_946),
-        .\r_reg_reg[12][26]_P (control_unit_inst_n_265),
-        .\r_reg_reg[12][27]_C (control_unit_inst_n_942),
-        .\r_reg_reg[12][27]_P (control_unit_inst_n_266),
-        .\r_reg_reg[12][28]_C (control_unit_inst_n_938),
-        .\r_reg_reg[12][28]_P (control_unit_inst_n_267),
-        .\r_reg_reg[12][29]_C (control_unit_inst_n_934),
-        .\r_reg_reg[12][29]_P (control_unit_inst_n_268),
-        .\r_reg_reg[12][2]_C (control_unit_inst_n_846),
-        .\r_reg_reg[12][2]_C_0 (control_unit_inst_n_8),
-        .\r_reg_reg[12][2]_P (control_unit_inst_n_271),
-        .\r_reg_reg[12][30]_C (control_unit_inst_n_930),
-        .\r_reg_reg[12][30]_P (control_unit_inst_n_269),
-        .\r_reg_reg[12][31]_C (control_unit_inst_n_926),
-        .\r_reg_reg[12][31]_P (control_unit_inst_n_270),
-        .\r_reg_reg[12][3]_C (control_unit_inst_n_922),
-        .\r_reg_reg[12][3]_P (control_unit_inst_n_242),
-        .\r_reg_reg[12][4]_C (control_unit_inst_n_1034),
-        .\r_reg_reg[12][4]_P (control_unit_inst_n_243),
-        .\r_reg_reg[12][5]_C (control_unit_inst_n_1030),
-        .\r_reg_reg[12][5]_P (control_unit_inst_n_244),
-        .\r_reg_reg[12][6]_C (control_unit_inst_n_1026),
-        .\r_reg_reg[12][6]_P (control_unit_inst_n_245),
-        .\r_reg_reg[12][7]_C (control_unit_inst_n_1022),
-        .\r_reg_reg[12][7]_P (control_unit_inst_n_246),
-        .\r_reg_reg[12][8]_C (control_unit_inst_n_1018),
-        .\r_reg_reg[12][8]_P (control_unit_inst_n_247),
-        .\r_reg_reg[12][9]_C (control_unit_inst_n_1014),
-        .\r_reg_reg[12][9]_P (control_unit_inst_n_248),
-        .\r_reg_reg[13][0]_C (control_unit_inst_n_753),
-        .\r_reg_reg[13][0]_P (control_unit_inst_n_563),
-        .\r_reg_reg[13][10]_C (control_unit_inst_n_744),
-        .\r_reg_reg[13][10]_P (control_unit_inst_n_572),
-        .\r_reg_reg[13][11]_C (control_unit_inst_n_743),
-        .\r_reg_reg[13][11]_P (control_unit_inst_n_573),
-        .\r_reg_reg[13][12]_C (control_unit_inst_n_742),
-        .\r_reg_reg[13][12]_P (control_unit_inst_n_574),
-        .\r_reg_reg[13][13]_C (control_unit_inst_n_741),
-        .\r_reg_reg[13][13]_P (control_unit_inst_n_575),
-        .\r_reg_reg[13][14]_C (control_unit_inst_n_740),
-        .\r_reg_reg[13][14]_P (control_unit_inst_n_576),
-        .\r_reg_reg[13][15]_C (control_unit_inst_n_739),
-        .\r_reg_reg[13][15]_P (control_unit_inst_n_577),
-        .\r_reg_reg[13][16]_C (control_unit_inst_n_738),
-        .\r_reg_reg[13][16]_P (control_unit_inst_n_578),
-        .\r_reg_reg[13][17]_C (control_unit_inst_n_737),
-        .\r_reg_reg[13][17]_P (control_unit_inst_n_579),
-        .\r_reg_reg[13][18]_C (control_unit_inst_n_736),
-        .\r_reg_reg[13][18]_P (control_unit_inst_n_580),
-        .\r_reg_reg[13][19]_C (control_unit_inst_n_735),
-        .\r_reg_reg[13][19]_P (control_unit_inst_n_581),
-        .\r_reg_reg[13][1]_C (control_unit_inst_n_752),
-        .\r_reg_reg[13][1]_P (control_unit_inst_n_564),
-        .\r_reg_reg[13][20]_C (control_unit_inst_n_734),
-        .\r_reg_reg[13][20]_P (control_unit_inst_n_582),
-        .\r_reg_reg[13][21]_C (control_unit_inst_n_733),
-        .\r_reg_reg[13][21]_P (control_unit_inst_n_583),
-        .\r_reg_reg[13][22]_C (control_unit_inst_n_732),
-        .\r_reg_reg[13][22]_P (control_unit_inst_n_584),
-        .\r_reg_reg[13][23]_C (control_unit_inst_n_731),
-        .\r_reg_reg[13][23]_P (control_unit_inst_n_585),
-        .\r_reg_reg[13][24]_C (control_unit_inst_n_730),
-        .\r_reg_reg[13][24]_P (control_unit_inst_n_586),
-        .\r_reg_reg[13][25]_C (control_unit_inst_n_729),
-        .\r_reg_reg[13][25]_P (control_unit_inst_n_587),
-        .\r_reg_reg[13][26]_C (control_unit_inst_n_728),
-        .\r_reg_reg[13][26]_P (control_unit_inst_n_588),
-        .\r_reg_reg[13][27]_C (control_unit_inst_n_727),
-        .\r_reg_reg[13][27]_P (control_unit_inst_n_589),
-        .\r_reg_reg[13][28]_C (control_unit_inst_n_726),
-        .\r_reg_reg[13][28]_P (control_unit_inst_n_590),
-        .\r_reg_reg[13][29]_C (control_unit_inst_n_725),
-        .\r_reg_reg[13][29]_P (control_unit_inst_n_591),
-        .\r_reg_reg[13][2]_C (control_unit_inst_n_722),
-        .\r_reg_reg[13][2]_P (control_unit_inst_n_594),
-        .\r_reg_reg[13][30]_C (control_unit_inst_n_724),
-        .\r_reg_reg[13][30]_P (control_unit_inst_n_592),
-        .\r_reg_reg[13][31]_C (control_unit_inst_n_723),
-        .\r_reg_reg[13][31]_P (control_unit_inst_n_593),
-        .\r_reg_reg[13][3]_C (control_unit_inst_n_751),
-        .\r_reg_reg[13][3]_P (control_unit_inst_n_565),
-        .\r_reg_reg[13][4]_C (control_unit_inst_n_750),
-        .\r_reg_reg[13][4]_P (control_unit_inst_n_566),
-        .\r_reg_reg[13][5]_C (control_unit_inst_n_749),
-        .\r_reg_reg[13][5]_P (control_unit_inst_n_567),
-        .\r_reg_reg[13][6]_C (control_unit_inst_n_748),
-        .\r_reg_reg[13][6]_P (control_unit_inst_n_568),
-        .\r_reg_reg[13][7]_C (control_unit_inst_n_747),
-        .\r_reg_reg[13][7]_P (control_unit_inst_n_569),
-        .\r_reg_reg[13][8]_C (control_unit_inst_n_746),
-        .\r_reg_reg[13][8]_P (control_unit_inst_n_570),
-        .\r_reg_reg[13][9]_C (control_unit_inst_n_745),
-        .\r_reg_reg[13][9]_P (control_unit_inst_n_571),
-        .\r_reg_reg[14][0]_C (control_unit_inst_n_881),
-        .\r_reg_reg[14][0]_P (control_unit_inst_n_658),
-        .\r_reg_reg[14][10]_C (control_unit_inst_n_890),
-        .\r_reg_reg[14][10]_P (control_unit_inst_n_676),
-        .\r_reg_reg[14][11]_C (control_unit_inst_n_891),
-        .\r_reg_reg[14][11]_P (control_unit_inst_n_678),
-        .\r_reg_reg[14][12]_C (control_unit_inst_n_892),
-        .\r_reg_reg[14][12]_P (control_unit_inst_n_680),
-        .\r_reg_reg[14][13]_C (control_unit_inst_n_893),
-        .\r_reg_reg[14][13]_P (control_unit_inst_n_682),
-        .\r_reg_reg[14][14]_C (control_unit_inst_n_894),
-        .\r_reg_reg[14][14]_P (control_unit_inst_n_684),
-        .\r_reg_reg[14][15]_C (control_unit_inst_n_895),
-        .\r_reg_reg[14][15]_P (control_unit_inst_n_686),
-        .\r_reg_reg[14][16]_C (control_unit_inst_n_896),
-        .\r_reg_reg[14][16]_P (control_unit_inst_n_688),
-        .\r_reg_reg[14][17]_C (control_unit_inst_n_897),
-        .\r_reg_reg[14][17]_P (control_unit_inst_n_690),
-        .\r_reg_reg[14][18]_C (control_unit_inst_n_898),
-        .\r_reg_reg[14][18]_P (control_unit_inst_n_692),
-        .\r_reg_reg[14][19]_C (control_unit_inst_n_899),
-        .\r_reg_reg[14][19]_P (control_unit_inst_n_694),
-        .\r_reg_reg[14][1]_C (control_unit_inst_n_882),
-        .\r_reg_reg[14][1]_P (control_unit_inst_n_660),
-        .\r_reg_reg[14][20]_C (control_unit_inst_n_900),
-        .\r_reg_reg[14][20]_P (control_unit_inst_n_696),
-        .\r_reg_reg[14][21]_C (control_unit_inst_n_901),
-        .\r_reg_reg[14][21]_P (control_unit_inst_n_698),
-        .\r_reg_reg[14][22]_C (control_unit_inst_n_902),
-        .\r_reg_reg[14][22]_P (control_unit_inst_n_700),
-        .\r_reg_reg[14][23]_C (control_unit_inst_n_903),
-        .\r_reg_reg[14][23]_P (control_unit_inst_n_702),
-        .\r_reg_reg[14][24]_C (control_unit_inst_n_904),
-        .\r_reg_reg[14][24]_P (control_unit_inst_n_704),
-        .\r_reg_reg[14][25]_C (control_unit_inst_n_905),
-        .\r_reg_reg[14][25]_P (control_unit_inst_n_706),
-        .\r_reg_reg[14][26]_C (control_unit_inst_n_906),
-        .\r_reg_reg[14][26]_P (control_unit_inst_n_708),
-        .\r_reg_reg[14][27]_C (control_unit_inst_n_907),
-        .\r_reg_reg[14][27]_P (control_unit_inst_n_710),
-        .\r_reg_reg[14][28]_C (control_unit_inst_n_908),
-        .\r_reg_reg[14][28]_P (control_unit_inst_n_712),
-        .\r_reg_reg[14][29]_C (control_unit_inst_n_909),
-        .\r_reg_reg[14][29]_P (control_unit_inst_n_714),
-        .\r_reg_reg[14][2]_C (control_unit_inst_n_848),
-        .\r_reg_reg[14][2]_P (control_unit_inst_n_720),
-        .\r_reg_reg[14][30]_C (control_unit_inst_n_910),
-        .\r_reg_reg[14][30]_P (control_unit_inst_n_716),
-        .\r_reg_reg[14][31]_C (control_unit_inst_n_911),
-        .\r_reg_reg[14][31]_P (control_unit_inst_n_718),
-        .\r_reg_reg[14][3]_C (control_unit_inst_n_883),
-        .\r_reg_reg[14][3]_P (control_unit_inst_n_662),
-        .\r_reg_reg[14][4]_C (control_unit_inst_n_884),
-        .\r_reg_reg[14][4]_P (control_unit_inst_n_664),
-        .\r_reg_reg[14][5]_C (control_unit_inst_n_885),
-        .\r_reg_reg[14][5]_P (control_unit_inst_n_666),
-        .\r_reg_reg[14][6]_C (control_unit_inst_n_886),
-        .\r_reg_reg[14][6]_P (control_unit_inst_n_668),
-        .\r_reg_reg[14][7]_C (control_unit_inst_n_887),
-        .\r_reg_reg[14][7]_P (control_unit_inst_n_670),
-        .\r_reg_reg[14][8]_C (control_unit_inst_n_888),
-        .\r_reg_reg[14][8]_P (control_unit_inst_n_672),
-        .\r_reg_reg[14][9]_C (control_unit_inst_n_889),
-        .\r_reg_reg[14][9]_P (control_unit_inst_n_674),
-        .\r_reg_reg[15][0]_C (control_unit_inst_n_879),
-        .\r_reg_reg[15][0]_P (control_unit_inst_n_399),
-        .\r_reg_reg[15][10]_C (control_unit_inst_n_870),
-        .\r_reg_reg[15][10]_P (control_unit_inst_n_390),
-        .\r_reg_reg[15][11]_C (control_unit_inst_n_869),
-        .\r_reg_reg[15][11]_P (control_unit_inst_n_389),
-        .\r_reg_reg[15][12]_C (control_unit_inst_n_868),
-        .\r_reg_reg[15][12]_P (control_unit_inst_n_388),
-        .\r_reg_reg[15][13]_C (control_unit_inst_n_867),
-        .\r_reg_reg[15][13]_P (control_unit_inst_n_387),
-        .\r_reg_reg[15][14]_C (control_unit_inst_n_866),
-        .\r_reg_reg[15][14]_P (control_unit_inst_n_386),
-        .\r_reg_reg[15][15]_C (control_unit_inst_n_865),
-        .\r_reg_reg[15][15]_P (control_unit_inst_n_385),
-        .\r_reg_reg[15][16]_C (control_unit_inst_n_864),
-        .\r_reg_reg[15][16]_P (control_unit_inst_n_384),
-        .\r_reg_reg[15][17]_C (control_unit_inst_n_863),
-        .\r_reg_reg[15][17]_P (control_unit_inst_n_383),
-        .\r_reg_reg[15][18]_C (control_unit_inst_n_862),
-        .\r_reg_reg[15][18]_P (control_unit_inst_n_382),
-        .\r_reg_reg[15][19]_C (control_unit_inst_n_861),
-        .\r_reg_reg[15][19]_P (control_unit_inst_n_381),
-        .\r_reg_reg[15][1]_C (control_unit_inst_n_878),
-        .\r_reg_reg[15][1]_P (control_unit_inst_n_398),
-        .\r_reg_reg[15][20]_C (control_unit_inst_n_860),
-        .\r_reg_reg[15][20]_P (control_unit_inst_n_380),
-        .\r_reg_reg[15][21]_C (control_unit_inst_n_859),
-        .\r_reg_reg[15][21]_P (control_unit_inst_n_379),
-        .\r_reg_reg[15][22]_C (control_unit_inst_n_858),
-        .\r_reg_reg[15][22]_P (control_unit_inst_n_378),
-        .\r_reg_reg[15][23]_C (control_unit_inst_n_857),
-        .\r_reg_reg[15][23]_P (control_unit_inst_n_377),
-        .\r_reg_reg[15][24]_C (control_unit_inst_n_856),
-        .\r_reg_reg[15][24]_P (control_unit_inst_n_376),
-        .\r_reg_reg[15][25]_C (control_unit_inst_n_855),
-        .\r_reg_reg[15][25]_P (control_unit_inst_n_375),
-        .\r_reg_reg[15][26]_C (control_unit_inst_n_854),
-        .\r_reg_reg[15][26]_P (control_unit_inst_n_374),
-        .\r_reg_reg[15][27]_C (control_unit_inst_n_853),
-        .\r_reg_reg[15][27]_P (control_unit_inst_n_373),
-        .\r_reg_reg[15][28]_C (control_unit_inst_n_852),
-        .\r_reg_reg[15][28]_P (control_unit_inst_n_372),
-        .\r_reg_reg[15][29]_C (control_unit_inst_n_851),
-        .\r_reg_reg[15][29]_P (control_unit_inst_n_371),
-        .\r_reg_reg[15][2]_C (control_unit_inst_n_880),
-        .\r_reg_reg[15][2]_P (control_unit_inst_n_400),
-        .\r_reg_reg[15][30]_C (control_unit_inst_n_850),
-        .\r_reg_reg[15][30]_P (control_unit_inst_n_370),
-        .\r_reg_reg[15][31]_C (control_unit_inst_n_849),
-        .\r_reg_reg[15][31]_C_0 (control_unit_inst_n_43),
-        .\r_reg_reg[15][31]_P (control_unit_inst_n_369),
-        .\r_reg_reg[15][3]_C (control_unit_inst_n_877),
-        .\r_reg_reg[15][3]_P (control_unit_inst_n_397),
-        .\r_reg_reg[15][4]_C (control_unit_inst_n_876),
-        .\r_reg_reg[15][4]_P (control_unit_inst_n_396),
-        .\r_reg_reg[15][5]_C (control_unit_inst_n_875),
-        .\r_reg_reg[15][5]_P (control_unit_inst_n_395),
-        .\r_reg_reg[15][6]_C (control_unit_inst_n_874),
-        .\r_reg_reg[15][6]_P (control_unit_inst_n_394),
-        .\r_reg_reg[15][7]_C (control_unit_inst_n_873),
-        .\r_reg_reg[15][7]_P (control_unit_inst_n_393),
-        .\r_reg_reg[15][8]_C (control_unit_inst_n_872),
-        .\r_reg_reg[15][8]_P (control_unit_inst_n_392),
-        .\r_reg_reg[15][9]_C (control_unit_inst_n_871),
-        .\r_reg_reg[15][9]_P (control_unit_inst_n_391),
-        .\r_reg_reg[1][0]_C (control_unit_inst_n_77),
-        .\r_reg_reg[1][0]_P (control_unit_inst_n_206),
-        .\r_reg_reg[1][10]_C (control_unit_inst_n_68),
-        .\r_reg_reg[1][10]_P (control_unit_inst_n_215),
-        .\r_reg_reg[1][11]_C (control_unit_inst_n_67),
-        .\r_reg_reg[1][11]_P (control_unit_inst_n_216),
-        .\r_reg_reg[1][12]_C (control_unit_inst_n_66),
-        .\r_reg_reg[1][12]_P (control_unit_inst_n_217),
-        .\r_reg_reg[1][13]_C (control_unit_inst_n_65),
-        .\r_reg_reg[1][13]_P (control_unit_inst_n_218),
-        .\r_reg_reg[1][14]_C (control_unit_inst_n_64),
-        .\r_reg_reg[1][14]_P (control_unit_inst_n_219),
-        .\r_reg_reg[1][15]_C (control_unit_inst_n_63),
-        .\r_reg_reg[1][15]_P (control_unit_inst_n_220),
-        .\r_reg_reg[1][16]_C (control_unit_inst_n_62),
-        .\r_reg_reg[1][16]_P (control_unit_inst_n_221),
-        .\r_reg_reg[1][17]_C (control_unit_inst_n_61),
-        .\r_reg_reg[1][17]_P (control_unit_inst_n_222),
-        .\r_reg_reg[1][18]_C (control_unit_inst_n_60),
-        .\r_reg_reg[1][18]_P (control_unit_inst_n_223),
-        .\r_reg_reg[1][19]_C (control_unit_inst_n_59),
-        .\r_reg_reg[1][19]_P (control_unit_inst_n_224),
-        .\r_reg_reg[1][1]_C (control_unit_inst_n_76),
-        .\r_reg_reg[1][1]_P (control_unit_inst_n_207),
-        .\r_reg_reg[1][20]_C (control_unit_inst_n_58),
-        .\r_reg_reg[1][20]_P (control_unit_inst_n_225),
-        .\r_reg_reg[1][21]_C (control_unit_inst_n_57),
-        .\r_reg_reg[1][21]_P (control_unit_inst_n_226),
-        .\r_reg_reg[1][22]_C (control_unit_inst_n_56),
-        .\r_reg_reg[1][22]_P (control_unit_inst_n_227),
-        .\r_reg_reg[1][23]_C (control_unit_inst_n_55),
-        .\r_reg_reg[1][23]_P (control_unit_inst_n_228),
-        .\r_reg_reg[1][24]_C (control_unit_inst_n_54),
-        .\r_reg_reg[1][24]_P (control_unit_inst_n_229),
-        .\r_reg_reg[1][25]_C (control_unit_inst_n_53),
-        .\r_reg_reg[1][25]_P (control_unit_inst_n_230),
-        .\r_reg_reg[1][26]_C (control_unit_inst_n_52),
-        .\r_reg_reg[1][26]_P (control_unit_inst_n_231),
-        .\r_reg_reg[1][27]_C (control_unit_inst_n_51),
-        .\r_reg_reg[1][27]_P (control_unit_inst_n_232),
-        .\r_reg_reg[1][28]_C (control_unit_inst_n_50),
-        .\r_reg_reg[1][28]_P (control_unit_inst_n_233),
-        .\r_reg_reg[1][29]_C (control_unit_inst_n_49),
-        .\r_reg_reg[1][29]_P (control_unit_inst_n_234),
-        .\r_reg_reg[1][2]_C (control_unit_inst_n_75),
-        .\r_reg_reg[1][2]_P (control_unit_inst_n_208),
-        .\r_reg_reg[1][30]_C (control_unit_inst_n_48),
-        .\r_reg_reg[1][30]_P (control_unit_inst_n_235),
-        .\r_reg_reg[1][31]_C (control_unit_inst_n_47),
-        .\r_reg_reg[1][31]_P (control_unit_inst_n_236),
-        .\r_reg_reg[1][3]_C (control_unit_inst_n_46),
-        .\r_reg_reg[1][3]_P (control_unit_inst_n_45),
-        .\r_reg_reg[1][4]_C (control_unit_inst_n_74),
-        .\r_reg_reg[1][4]_P (control_unit_inst_n_209),
-        .\r_reg_reg[1][5]_C (control_unit_inst_n_73),
-        .\r_reg_reg[1][5]_P (control_unit_inst_n_210),
-        .\r_reg_reg[1][6]_C (control_unit_inst_n_72),
-        .\r_reg_reg[1][6]_P (control_unit_inst_n_211),
-        .\r_reg_reg[1][7]_C (control_unit_inst_n_71),
-        .\r_reg_reg[1][7]_P (control_unit_inst_n_212),
-        .\r_reg_reg[1][8]_C (control_unit_inst_n_70),
-        .\r_reg_reg[1][8]_P (control_unit_inst_n_213),
-        .\r_reg_reg[1][9]_C (control_unit_inst_n_69),
-        .\r_reg_reg[1][9]_P (control_unit_inst_n_214),
-        .\r_reg_reg[2][0]_C (control_unit_inst_n_78),
-        .\r_reg_reg[2][0]_P (control_unit_inst_n_173),
-        .\r_reg_reg[2][10]_C (control_unit_inst_n_87),
-        .\r_reg_reg[2][10]_P (control_unit_inst_n_164),
-        .\r_reg_reg[2][11]_C (control_unit_inst_n_88),
-        .\r_reg_reg[2][11]_P (control_unit_inst_n_163),
-        .\r_reg_reg[2][12]_C (control_unit_inst_n_89),
-        .\r_reg_reg[2][12]_P (control_unit_inst_n_162),
-        .\r_reg_reg[2][13]_C (control_unit_inst_n_90),
-        .\r_reg_reg[2][13]_P (control_unit_inst_n_161),
-        .\r_reg_reg[2][14]_C (control_unit_inst_n_91),
-        .\r_reg_reg[2][14]_P (control_unit_inst_n_160),
-        .\r_reg_reg[2][15]_C (control_unit_inst_n_92),
-        .\r_reg_reg[2][15]_P (control_unit_inst_n_159),
-        .\r_reg_reg[2][16]_C (control_unit_inst_n_93),
-        .\r_reg_reg[2][16]_P (control_unit_inst_n_158),
-        .\r_reg_reg[2][17]_C (control_unit_inst_n_94),
-        .\r_reg_reg[2][17]_P (control_unit_inst_n_157),
-        .\r_reg_reg[2][18]_C (control_unit_inst_n_95),
-        .\r_reg_reg[2][18]_P (control_unit_inst_n_156),
-        .\r_reg_reg[2][19]_C (control_unit_inst_n_96),
-        .\r_reg_reg[2][19]_P (control_unit_inst_n_155),
-        .\r_reg_reg[2][1]_C (control_unit_inst_n_79),
-        .\r_reg_reg[2][1]_P (control_unit_inst_n_172),
-        .\r_reg_reg[2][20]_C (control_unit_inst_n_97),
-        .\r_reg_reg[2][20]_P (control_unit_inst_n_154),
-        .\r_reg_reg[2][21]_C (control_unit_inst_n_98),
-        .\r_reg_reg[2][21]_P (control_unit_inst_n_153),
-        .\r_reg_reg[2][22]_C (control_unit_inst_n_99),
-        .\r_reg_reg[2][22]_P (control_unit_inst_n_152),
-        .\r_reg_reg[2][23]_C (control_unit_inst_n_100),
-        .\r_reg_reg[2][23]_P (control_unit_inst_n_151),
-        .\r_reg_reg[2][24]_C (control_unit_inst_n_101),
-        .\r_reg_reg[2][24]_P (control_unit_inst_n_150),
-        .\r_reg_reg[2][25]_C (control_unit_inst_n_102),
-        .\r_reg_reg[2][25]_P (control_unit_inst_n_149),
-        .\r_reg_reg[2][26]_C (control_unit_inst_n_103),
-        .\r_reg_reg[2][26]_P (control_unit_inst_n_148),
-        .\r_reg_reg[2][27]_C (control_unit_inst_n_104),
-        .\r_reg_reg[2][27]_P (control_unit_inst_n_147),
-        .\r_reg_reg[2][28]_C (control_unit_inst_n_105),
-        .\r_reg_reg[2][28]_P (control_unit_inst_n_146),
-        .\r_reg_reg[2][29]_C (control_unit_inst_n_106),
-        .\r_reg_reg[2][29]_P (control_unit_inst_n_145),
-        .\r_reg_reg[2][2]_C (control_unit_inst_n_109),
-        .\r_reg_reg[2][2]_P (control_unit_inst_n_142),
-        .\r_reg_reg[2][30]_C (control_unit_inst_n_107),
-        .\r_reg_reg[2][30]_P (control_unit_inst_n_144),
-        .\r_reg_reg[2][31]_C (control_unit_inst_n_108),
-        .\r_reg_reg[2][31]_P (control_unit_inst_n_143),
-        .\r_reg_reg[2][3]_C (control_unit_inst_n_80),
-        .\r_reg_reg[2][3]_P (control_unit_inst_n_171),
-        .\r_reg_reg[2][4]_C (control_unit_inst_n_81),
-        .\r_reg_reg[2][4]_P (control_unit_inst_n_170),
-        .\r_reg_reg[2][5]_C (control_unit_inst_n_82),
-        .\r_reg_reg[2][5]_P (control_unit_inst_n_169),
-        .\r_reg_reg[2][6]_C (control_unit_inst_n_83),
-        .\r_reg_reg[2][6]_P (control_unit_inst_n_168),
-        .\r_reg_reg[2][7]_C (control_unit_inst_n_84),
-        .\r_reg_reg[2][7]_P (control_unit_inst_n_167),
-        .\r_reg_reg[2][8]_C (control_unit_inst_n_85),
-        .\r_reg_reg[2][8]_P (control_unit_inst_n_166),
-        .\r_reg_reg[2][9]_C (control_unit_inst_n_86),
-        .\r_reg_reg[2][9]_P (control_unit_inst_n_165),
-        .\r_reg_reg[3][0]_C (control_unit_inst_n_917),
-        .\r_reg_reg[3][0]_P (control_unit_inst_n_205),
-        .\r_reg_reg[3][10]_C (control_unit_inst_n_1009),
-        .\r_reg_reg[3][10]_P (control_unit_inst_n_196),
-        .\r_reg_reg[3][11]_C (control_unit_inst_n_1005),
-        .\r_reg_reg[3][11]_P (control_unit_inst_n_195),
-        .\r_reg_reg[3][12]_C (control_unit_inst_n_1001),
-        .\r_reg_reg[3][12]_P (control_unit_inst_n_194),
-        .\r_reg_reg[3][13]_C (control_unit_inst_n_997),
-        .\r_reg_reg[3][13]_P (control_unit_inst_n_193),
-        .\r_reg_reg[3][14]_C (control_unit_inst_n_993),
-        .\r_reg_reg[3][14]_P (control_unit_inst_n_192),
-        .\r_reg_reg[3][15]_C (control_unit_inst_n_989),
-        .\r_reg_reg[3][15]_P (control_unit_inst_n_191),
-        .\r_reg_reg[3][16]_C (control_unit_inst_n_985),
-        .\r_reg_reg[3][16]_P (control_unit_inst_n_190),
-        .\r_reg_reg[3][17]_C (control_unit_inst_n_981),
-        .\r_reg_reg[3][17]_P (control_unit_inst_n_189),
-        .\r_reg_reg[3][18]_C (control_unit_inst_n_977),
-        .\r_reg_reg[3][18]_P (control_unit_inst_n_188),
-        .\r_reg_reg[3][19]_C (control_unit_inst_n_973),
-        .\r_reg_reg[3][19]_P (control_unit_inst_n_187),
-        .\r_reg_reg[3][1]_C (control_unit_inst_n_913),
-        .\r_reg_reg[3][1]_P (control_unit_inst_n_204),
-        .\r_reg_reg[3][20]_C (control_unit_inst_n_969),
-        .\r_reg_reg[3][20]_P (control_unit_inst_n_186),
-        .\r_reg_reg[3][21]_C (control_unit_inst_n_965),
-        .\r_reg_reg[3][21]_P (control_unit_inst_n_185),
-        .\r_reg_reg[3][22]_C (control_unit_inst_n_961),
-        .\r_reg_reg[3][22]_P (control_unit_inst_n_184),
-        .\r_reg_reg[3][23]_C (control_unit_inst_n_957),
-        .\r_reg_reg[3][23]_P (control_unit_inst_n_183),
-        .\r_reg_reg[3][24]_C (control_unit_inst_n_953),
-        .\r_reg_reg[3][24]_P (control_unit_inst_n_182),
-        .\r_reg_reg[3][25]_C (control_unit_inst_n_949),
-        .\r_reg_reg[3][25]_P (control_unit_inst_n_181),
-        .\r_reg_reg[3][26]_C (control_unit_inst_n_945),
-        .\r_reg_reg[3][26]_P (control_unit_inst_n_180),
-        .\r_reg_reg[3][27]_C (control_unit_inst_n_941),
-        .\r_reg_reg[3][27]_P (control_unit_inst_n_179),
-        .\r_reg_reg[3][28]_C (control_unit_inst_n_937),
-        .\r_reg_reg[3][28]_P (control_unit_inst_n_178),
-        .\r_reg_reg[3][29]_C (control_unit_inst_n_933),
-        .\r_reg_reg[3][29]_P (control_unit_inst_n_177),
-        .\r_reg_reg[3][2]_C (control_unit_inst_n_498),
-        .\r_reg_reg[3][2]_P (control_unit_inst_n_174),
-        .\r_reg_reg[3][30]_C (control_unit_inst_n_929),
-        .\r_reg_reg[3][30]_P (control_unit_inst_n_176),
-        .\r_reg_reg[3][31]_C (control_unit_inst_n_925),
-        .\r_reg_reg[3][31]_P (control_unit_inst_n_175),
-        .\r_reg_reg[3][3]_C (control_unit_inst_n_921),
-        .\r_reg_reg[3][3]_P (control_unit_inst_n_203),
-        .\r_reg_reg[3][4]_C (control_unit_inst_n_1033),
-        .\r_reg_reg[3][4]_P (control_unit_inst_n_202),
-        .\r_reg_reg[3][5]_C (control_unit_inst_n_1029),
-        .\r_reg_reg[3][5]_P (control_unit_inst_n_201),
-        .\r_reg_reg[3][6]_C (control_unit_inst_n_1025),
-        .\r_reg_reg[3][6]_P (control_unit_inst_n_200),
-        .\r_reg_reg[3][7]_C (control_unit_inst_n_1021),
-        .\r_reg_reg[3][7]_P (control_unit_inst_n_199),
-        .\r_reg_reg[3][8]_C (control_unit_inst_n_1017),
-        .\r_reg_reg[3][8]_P (control_unit_inst_n_198),
-        .\r_reg_reg[3][9]_C (control_unit_inst_n_1013),
-        .\r_reg_reg[3][9]_P (control_unit_inst_n_197),
-        .\r_reg_reg[4][0]_C (control_unit_inst_n_303),
-        .\r_reg_reg[4][0]_P (control_unit_inst_n_532),
-        .\r_reg_reg[4][10]_C (control_unit_inst_n_294),
-        .\r_reg_reg[4][10]_P (control_unit_inst_n_541),
-        .\r_reg_reg[4][11]_C (control_unit_inst_n_293),
-        .\r_reg_reg[4][11]_P (control_unit_inst_n_542),
-        .\r_reg_reg[4][12]_C (control_unit_inst_n_292),
-        .\r_reg_reg[4][12]_P (control_unit_inst_n_543),
-        .\r_reg_reg[4][13]_C (control_unit_inst_n_291),
-        .\r_reg_reg[4][13]_P (control_unit_inst_n_544),
-        .\r_reg_reg[4][14]_C (control_unit_inst_n_290),
-        .\r_reg_reg[4][14]_P (control_unit_inst_n_545),
-        .\r_reg_reg[4][15]_C (control_unit_inst_n_289),
-        .\r_reg_reg[4][15]_P (control_unit_inst_n_546),
-        .\r_reg_reg[4][16]_C (control_unit_inst_n_288),
-        .\r_reg_reg[4][16]_P (control_unit_inst_n_547),
-        .\r_reg_reg[4][17]_C (control_unit_inst_n_287),
-        .\r_reg_reg[4][17]_P (control_unit_inst_n_548),
-        .\r_reg_reg[4][18]_C (control_unit_inst_n_286),
-        .\r_reg_reg[4][18]_P (control_unit_inst_n_549),
-        .\r_reg_reg[4][19]_C (control_unit_inst_n_285),
-        .\r_reg_reg[4][19]_P (control_unit_inst_n_550),
-        .\r_reg_reg[4][1]_C (control_unit_inst_n_302),
-        .\r_reg_reg[4][1]_P (control_unit_inst_n_533),
-        .\r_reg_reg[4][20]_C (control_unit_inst_n_284),
-        .\r_reg_reg[4][20]_P (control_unit_inst_n_551),
-        .\r_reg_reg[4][21]_C (control_unit_inst_n_283),
-        .\r_reg_reg[4][21]_P (control_unit_inst_n_552),
-        .\r_reg_reg[4][22]_C (control_unit_inst_n_282),
-        .\r_reg_reg[4][22]_P (control_unit_inst_n_553),
-        .\r_reg_reg[4][23]_C (control_unit_inst_n_281),
-        .\r_reg_reg[4][23]_P (control_unit_inst_n_554),
-        .\r_reg_reg[4][24]_C (control_unit_inst_n_280),
-        .\r_reg_reg[4][24]_P (control_unit_inst_n_555),
-        .\r_reg_reg[4][25]_C (control_unit_inst_n_279),
-        .\r_reg_reg[4][25]_P (control_unit_inst_n_556),
-        .\r_reg_reg[4][26]_C (control_unit_inst_n_278),
-        .\r_reg_reg[4][26]_P (control_unit_inst_n_557),
-        .\r_reg_reg[4][27]_C (control_unit_inst_n_277),
-        .\r_reg_reg[4][27]_P (control_unit_inst_n_558),
-        .\r_reg_reg[4][28]_C (control_unit_inst_n_276),
-        .\r_reg_reg[4][28]_P (control_unit_inst_n_559),
-        .\r_reg_reg[4][29]_C (control_unit_inst_n_275),
-        .\r_reg_reg[4][29]_P (control_unit_inst_n_560),
-        .\r_reg_reg[4][2]_C (control_unit_inst_n_272),
-        .\r_reg_reg[4][2]_P (control_unit_inst_n_499),
-        .\r_reg_reg[4][30]_C (control_unit_inst_n_274),
-        .\r_reg_reg[4][30]_P (control_unit_inst_n_561),
-        .\r_reg_reg[4][31]_C (control_unit_inst_n_273),
-        .\r_reg_reg[4][31]_P (control_unit_inst_n_562),
-        .\r_reg_reg[4][3]_C (control_unit_inst_n_301),
-        .\r_reg_reg[4][3]_P (control_unit_inst_n_534),
-        .\r_reg_reg[4][4]_C (control_unit_inst_n_300),
-        .\r_reg_reg[4][4]_P (control_unit_inst_n_535),
-        .\r_reg_reg[4][5]_C (control_unit_inst_n_299),
-        .\r_reg_reg[4][5]_P (control_unit_inst_n_536),
-        .\r_reg_reg[4][6]_C (control_unit_inst_n_298),
-        .\r_reg_reg[4][6]_P (control_unit_inst_n_537),
-        .\r_reg_reg[4][7]_C (control_unit_inst_n_297),
-        .\r_reg_reg[4][7]_P (control_unit_inst_n_538),
-        .\r_reg_reg[4][8]_C (control_unit_inst_n_296),
-        .\r_reg_reg[4][8]_P (control_unit_inst_n_539),
-        .\r_reg_reg[4][9]_C (control_unit_inst_n_295),
-        .\r_reg_reg[4][9]_P (control_unit_inst_n_540),
-        .\r_reg_reg[5][0]_C (control_unit_inst_n_657),
-        .\r_reg_reg[5][0]_P (control_unit_inst_n_531),
-        .\r_reg_reg[5][10]_C (control_unit_inst_n_648),
-        .\r_reg_reg[5][10]_P (control_unit_inst_n_522),
-        .\r_reg_reg[5][11]_C (control_unit_inst_n_647),
-        .\r_reg_reg[5][11]_P (control_unit_inst_n_521),
-        .\r_reg_reg[5][12]_C (control_unit_inst_n_646),
-        .\r_reg_reg[5][12]_P (control_unit_inst_n_520),
-        .\r_reg_reg[5][13]_C (control_unit_inst_n_645),
-        .\r_reg_reg[5][13]_P (control_unit_inst_n_519),
-        .\r_reg_reg[5][14]_C (control_unit_inst_n_644),
-        .\r_reg_reg[5][14]_P (control_unit_inst_n_518),
-        .\r_reg_reg[5][15]_C (control_unit_inst_n_643),
-        .\r_reg_reg[5][15]_P (control_unit_inst_n_517),
-        .\r_reg_reg[5][16]_C (control_unit_inst_n_642),
-        .\r_reg_reg[5][16]_P (control_unit_inst_n_516),
-        .\r_reg_reg[5][17]_C (control_unit_inst_n_641),
-        .\r_reg_reg[5][17]_P (control_unit_inst_n_515),
-        .\r_reg_reg[5][18]_C (control_unit_inst_n_640),
-        .\r_reg_reg[5][18]_P (control_unit_inst_n_514),
-        .\r_reg_reg[5][19]_C (control_unit_inst_n_639),
-        .\r_reg_reg[5][19]_P (control_unit_inst_n_513),
-        .\r_reg_reg[5][1]_C (control_unit_inst_n_656),
-        .\r_reg_reg[5][1]_P (control_unit_inst_n_530),
-        .\r_reg_reg[5][20]_C (control_unit_inst_n_638),
-        .\r_reg_reg[5][20]_P (control_unit_inst_n_512),
-        .\r_reg_reg[5][21]_C (control_unit_inst_n_637),
-        .\r_reg_reg[5][21]_P (control_unit_inst_n_511),
-        .\r_reg_reg[5][22]_C (control_unit_inst_n_636),
-        .\r_reg_reg[5][22]_P (control_unit_inst_n_510),
-        .\r_reg_reg[5][23]_C (control_unit_inst_n_635),
-        .\r_reg_reg[5][23]_P (control_unit_inst_n_509),
-        .\r_reg_reg[5][24]_C (control_unit_inst_n_634),
-        .\r_reg_reg[5][24]_P (control_unit_inst_n_508),
-        .\r_reg_reg[5][25]_C (control_unit_inst_n_633),
-        .\r_reg_reg[5][25]_P (control_unit_inst_n_507),
-        .\r_reg_reg[5][26]_C (control_unit_inst_n_632),
-        .\r_reg_reg[5][26]_P (control_unit_inst_n_506),
-        .\r_reg_reg[5][27]_C (control_unit_inst_n_631),
-        .\r_reg_reg[5][27]_P (control_unit_inst_n_505),
-        .\r_reg_reg[5][28]_C (control_unit_inst_n_630),
-        .\r_reg_reg[5][28]_P (control_unit_inst_n_504),
-        .\r_reg_reg[5][29]_C (control_unit_inst_n_629),
-        .\r_reg_reg[5][29]_P (control_unit_inst_n_503),
-        .\r_reg_reg[5][2]_C (control_unit_inst_n_497),
-        .\r_reg_reg[5][2]_P (control_unit_inst_n_500),
-        .\r_reg_reg[5][30]_C (control_unit_inst_n_628),
-        .\r_reg_reg[5][30]_P (control_unit_inst_n_502),
-        .\r_reg_reg[5][31]_C (control_unit_inst_n_627),
-        .\r_reg_reg[5][31]_P (control_unit_inst_n_501),
-        .\r_reg_reg[5][3]_C (control_unit_inst_n_655),
-        .\r_reg_reg[5][3]_P (control_unit_inst_n_529),
-        .\r_reg_reg[5][4]_C (control_unit_inst_n_654),
-        .\r_reg_reg[5][4]_P (control_unit_inst_n_528),
-        .\r_reg_reg[5][5]_C (control_unit_inst_n_653),
-        .\r_reg_reg[5][5]_P (control_unit_inst_n_527),
-        .\r_reg_reg[5][6]_C (control_unit_inst_n_652),
-        .\r_reg_reg[5][6]_P (control_unit_inst_n_526),
-        .\r_reg_reg[5][7]_C (control_unit_inst_n_651),
-        .\r_reg_reg[5][7]_P (control_unit_inst_n_525),
-        .\r_reg_reg[5][8]_C (control_unit_inst_n_650),
-        .\r_reg_reg[5][8]_P (control_unit_inst_n_524),
-        .\r_reg_reg[5][9]_C (control_unit_inst_n_649),
-        .\r_reg_reg[5][9]_P (control_unit_inst_n_523),
-        .\r_reg_reg[6][0]_C (control_unit_inst_n_1036),
-        .\r_reg_reg[6][0]_P (control_unit_inst_n_659),
-        .\r_reg_reg[6][10]_C (control_unit_inst_n_1045),
-        .\r_reg_reg[6][10]_P (control_unit_inst_n_677),
-        .\r_reg_reg[6][11]_C (control_unit_inst_n_1046),
-        .\r_reg_reg[6][11]_P (control_unit_inst_n_679),
-        .\r_reg_reg[6][12]_C (control_unit_inst_n_1047),
-        .\r_reg_reg[6][12]_P (control_unit_inst_n_681),
-        .\r_reg_reg[6][13]_C (control_unit_inst_n_1048),
-        .\r_reg_reg[6][13]_P (control_unit_inst_n_683),
-        .\r_reg_reg[6][14]_C (control_unit_inst_n_1049),
-        .\r_reg_reg[6][14]_P (control_unit_inst_n_685),
-        .\r_reg_reg[6][15]_C (control_unit_inst_n_1050),
-        .\r_reg_reg[6][15]_P (control_unit_inst_n_687),
-        .\r_reg_reg[6][16]_C (control_unit_inst_n_1051),
-        .\r_reg_reg[6][16]_P (control_unit_inst_n_689),
-        .\r_reg_reg[6][17]_C (control_unit_inst_n_1052),
-        .\r_reg_reg[6][17]_P (control_unit_inst_n_691),
-        .\r_reg_reg[6][18]_C (control_unit_inst_n_1053),
-        .\r_reg_reg[6][18]_P (control_unit_inst_n_693),
-        .\r_reg_reg[6][19]_C (control_unit_inst_n_1054),
-        .\r_reg_reg[6][19]_P (control_unit_inst_n_695),
-        .\r_reg_reg[6][1]_C (control_unit_inst_n_1037),
-        .\r_reg_reg[6][1]_P (control_unit_inst_n_661),
-        .\r_reg_reg[6][20]_C (control_unit_inst_n_1055),
-        .\r_reg_reg[6][20]_P (control_unit_inst_n_697),
-        .\r_reg_reg[6][21]_C (control_unit_inst_n_1056),
-        .\r_reg_reg[6][21]_P (control_unit_inst_n_699),
-        .\r_reg_reg[6][22]_C (control_unit_inst_n_1057),
-        .\r_reg_reg[6][22]_P (control_unit_inst_n_701),
-        .\r_reg_reg[6][23]_C (control_unit_inst_n_1058),
-        .\r_reg_reg[6][23]_P (control_unit_inst_n_703),
-        .\r_reg_reg[6][24]_C (control_unit_inst_n_1059),
-        .\r_reg_reg[6][24]_P (control_unit_inst_n_705),
-        .\r_reg_reg[6][25]_C (control_unit_inst_n_1060),
-        .\r_reg_reg[6][25]_P (control_unit_inst_n_707),
-        .\r_reg_reg[6][26]_C (control_unit_inst_n_1061),
-        .\r_reg_reg[6][26]_P (control_unit_inst_n_709),
-        .\r_reg_reg[6][27]_C (control_unit_inst_n_1062),
-        .\r_reg_reg[6][27]_P (control_unit_inst_n_711),
-        .\r_reg_reg[6][28]_C (control_unit_inst_n_1063),
-        .\r_reg_reg[6][28]_P (control_unit_inst_n_713),
-        .\r_reg_reg[6][29]_C (control_unit_inst_n_1064),
-        .\r_reg_reg[6][29]_P (control_unit_inst_n_715),
-        .\r_reg_reg[6][2]_C (control_unit_inst_n_1067),
-        .\r_reg_reg[6][2]_P (control_unit_inst_n_721),
-        .\r_reg_reg[6][30]_C (control_unit_inst_n_1065),
-        .\r_reg_reg[6][30]_P (control_unit_inst_n_717),
-        .\r_reg_reg[6][31]_C (control_unit_inst_n_1066),
-        .\r_reg_reg[6][31]_P (control_unit_inst_n_719),
-        .\r_reg_reg[6][3]_C (control_unit_inst_n_1038),
-        .\r_reg_reg[6][3]_P (control_unit_inst_n_663),
-        .\r_reg_reg[6][4]_C (control_unit_inst_n_1039),
-        .\r_reg_reg[6][4]_P (control_unit_inst_n_665),
-        .\r_reg_reg[6][5]_C (control_unit_inst_n_1040),
-        .\r_reg_reg[6][5]_P (control_unit_inst_n_667),
-        .\r_reg_reg[6][6]_C (control_unit_inst_n_1041),
-        .\r_reg_reg[6][6]_P (control_unit_inst_n_669),
-        .\r_reg_reg[6][7]_C (control_unit_inst_n_1042),
-        .\r_reg_reg[6][7]_P (control_unit_inst_n_671),
-        .\r_reg_reg[6][8]_C (control_unit_inst_n_1043),
-        .\r_reg_reg[6][8]_P (control_unit_inst_n_673),
-        .\r_reg_reg[6][9]_C (control_unit_inst_n_1044),
-        .\r_reg_reg[6][9]_P (control_unit_inst_n_675),
-        .\r_reg_reg[7][0]_C (control_unit_inst_n_784),
-        .\r_reg_reg[7][0]_P (control_unit_inst_n_401),
-        .\r_reg_reg[7][10]_C (control_unit_inst_n_775),
-        .\r_reg_reg[7][10]_P (control_unit_inst_n_410),
-        .\r_reg_reg[7][11]_C (control_unit_inst_n_774),
-        .\r_reg_reg[7][11]_P (control_unit_inst_n_411),
-        .\r_reg_reg[7][12]_C (control_unit_inst_n_773),
-        .\r_reg_reg[7][12]_P (control_unit_inst_n_412),
-        .\r_reg_reg[7][13]_C (control_unit_inst_n_772),
-        .\r_reg_reg[7][13]_P (control_unit_inst_n_413),
-        .\r_reg_reg[7][14]_C (control_unit_inst_n_771),
-        .\r_reg_reg[7][14]_P (control_unit_inst_n_414),
-        .\r_reg_reg[7][15]_C (control_unit_inst_n_770),
-        .\r_reg_reg[7][15]_P (control_unit_inst_n_415),
-        .\r_reg_reg[7][16]_C (control_unit_inst_n_769),
-        .\r_reg_reg[7][16]_P (control_unit_inst_n_416),
-        .\r_reg_reg[7][17]_C (control_unit_inst_n_768),
-        .\r_reg_reg[7][17]_P (control_unit_inst_n_417),
-        .\r_reg_reg[7][18]_C (control_unit_inst_n_767),
-        .\r_reg_reg[7][18]_P (control_unit_inst_n_418),
-        .\r_reg_reg[7][19]_C (control_unit_inst_n_766),
-        .\r_reg_reg[7][19]_P (control_unit_inst_n_419),
-        .\r_reg_reg[7][1]_C (control_unit_inst_n_783),
-        .\r_reg_reg[7][1]_P (control_unit_inst_n_402),
-        .\r_reg_reg[7][20]_C (control_unit_inst_n_765),
-        .\r_reg_reg[7][20]_P (control_unit_inst_n_420),
-        .\r_reg_reg[7][21]_C (control_unit_inst_n_764),
-        .\r_reg_reg[7][21]_P (control_unit_inst_n_421),
-        .\r_reg_reg[7][22]_C (control_unit_inst_n_763),
-        .\r_reg_reg[7][22]_P (control_unit_inst_n_422),
-        .\r_reg_reg[7][23]_C (control_unit_inst_n_762),
-        .\r_reg_reg[7][23]_P (control_unit_inst_n_423),
-        .\r_reg_reg[7][24]_C (control_unit_inst_n_761),
-        .\r_reg_reg[7][24]_P (control_unit_inst_n_424),
-        .\r_reg_reg[7][25]_C (control_unit_inst_n_760),
-        .\r_reg_reg[7][25]_P (control_unit_inst_n_425),
-        .\r_reg_reg[7][26]_C (control_unit_inst_n_759),
-        .\r_reg_reg[7][26]_P (control_unit_inst_n_426),
-        .\r_reg_reg[7][27]_C (control_unit_inst_n_758),
-        .\r_reg_reg[7][27]_P (control_unit_inst_n_427),
-        .\r_reg_reg[7][28]_C (control_unit_inst_n_757),
-        .\r_reg_reg[7][28]_P (control_unit_inst_n_428),
-        .\r_reg_reg[7][29]_C (control_unit_inst_n_756),
-        .\r_reg_reg[7][29]_P (control_unit_inst_n_429),
-        .\r_reg_reg[7][2]_C (control_unit_inst_n_785),
-        .\r_reg_reg[7][2]_P (control_unit_inst_n_432),
-        .\r_reg_reg[7][30]_C (control_unit_inst_n_755),
-        .\r_reg_reg[7][30]_P (control_unit_inst_n_430),
-        .\r_reg_reg[7][31]_C (control_unit_inst_n_754),
-        .\r_reg_reg[7][31]_P (control_unit_inst_n_431),
-        .\r_reg_reg[7][3]_C (control_unit_inst_n_782),
-        .\r_reg_reg[7][3]_P (control_unit_inst_n_403),
-        .\r_reg_reg[7][4]_C (control_unit_inst_n_781),
-        .\r_reg_reg[7][4]_P (control_unit_inst_n_404),
-        .\r_reg_reg[7][5]_C (control_unit_inst_n_780),
-        .\r_reg_reg[7][5]_P (control_unit_inst_n_405),
-        .\r_reg_reg[7][6]_C (control_unit_inst_n_779),
-        .\r_reg_reg[7][6]_P (control_unit_inst_n_406),
-        .\r_reg_reg[7][7]_C (control_unit_inst_n_778),
-        .\r_reg_reg[7][7]_P (control_unit_inst_n_407),
-        .\r_reg_reg[7][8]_C (control_unit_inst_n_777),
-        .\r_reg_reg[7][8]_P (control_unit_inst_n_408),
-        .\r_reg_reg[7][9]_C (control_unit_inst_n_776),
-        .\r_reg_reg[7][9]_P (control_unit_inst_n_409),
-        .\r_reg_reg[8][0]_C (control_unit_inst_n_304),
-        .\r_reg_reg[8][0]_P (control_unit_inst_n_815),
-        .\r_reg_reg[8][10]_C (control_unit_inst_n_322),
-        .\r_reg_reg[8][10]_P (control_unit_inst_n_824),
-        .\r_reg_reg[8][11]_C (control_unit_inst_n_324),
-        .\r_reg_reg[8][11]_P (control_unit_inst_n_825),
-        .\r_reg_reg[8][12]_C (control_unit_inst_n_326),
-        .\r_reg_reg[8][12]_P (control_unit_inst_n_826),
-        .\r_reg_reg[8][13]_C (control_unit_inst_n_328),
-        .\r_reg_reg[8][13]_P (control_unit_inst_n_827),
-        .\r_reg_reg[8][14]_C (control_unit_inst_n_330),
-        .\r_reg_reg[8][14]_P (control_unit_inst_n_828),
-        .\r_reg_reg[8][15]_C (control_unit_inst_n_332),
-        .\r_reg_reg[8][15]_P (control_unit_inst_n_829),
-        .\r_reg_reg[8][16]_C (control_unit_inst_n_334),
-        .\r_reg_reg[8][16]_P (control_unit_inst_n_830),
-        .\r_reg_reg[8][17]_C (control_unit_inst_n_336),
-        .\r_reg_reg[8][17]_P (control_unit_inst_n_831),
-        .\r_reg_reg[8][18]_C (control_unit_inst_n_338),
-        .\r_reg_reg[8][18]_P (control_unit_inst_n_832),
-        .\r_reg_reg[8][19]_C (control_unit_inst_n_340),
-        .\r_reg_reg[8][19]_P (control_unit_inst_n_833),
-        .\r_reg_reg[8][1]_C (control_unit_inst_n_306),
-        .\r_reg_reg[8][1]_P (control_unit_inst_n_816),
-        .\r_reg_reg[8][20]_C (control_unit_inst_n_342),
-        .\r_reg_reg[8][20]_P (control_unit_inst_n_834),
-        .\r_reg_reg[8][21]_C (control_unit_inst_n_344),
-        .\r_reg_reg[8][21]_P (control_unit_inst_n_835),
-        .\r_reg_reg[8][22]_C (control_unit_inst_n_346),
-        .\r_reg_reg[8][22]_P (control_unit_inst_n_836),
-        .\r_reg_reg[8][23]_C (control_unit_inst_n_348),
-        .\r_reg_reg[8][23]_P (control_unit_inst_n_837),
-        .\r_reg_reg[8][24]_C (control_unit_inst_n_350),
-        .\r_reg_reg[8][24]_P (control_unit_inst_n_838),
-        .\r_reg_reg[8][25]_C (control_unit_inst_n_352),
-        .\r_reg_reg[8][25]_P (control_unit_inst_n_839),
-        .\r_reg_reg[8][26]_C (control_unit_inst_n_354),
-        .\r_reg_reg[8][26]_P (control_unit_inst_n_840),
-        .\r_reg_reg[8][27]_C (control_unit_inst_n_356),
-        .\r_reg_reg[8][27]_P (control_unit_inst_n_841),
-        .\r_reg_reg[8][28]_C (control_unit_inst_n_358),
-        .\r_reg_reg[8][28]_P (control_unit_inst_n_842),
-        .\r_reg_reg[8][29]_C (control_unit_inst_n_360),
-        .\r_reg_reg[8][29]_P (control_unit_inst_n_843),
-        .\r_reg_reg[8][2]_C (control_unit_inst_n_366),
-        .\r_reg_reg[8][2]_P (control_unit_inst_n_786),
-        .\r_reg_reg[8][30]_C (control_unit_inst_n_362),
-        .\r_reg_reg[8][30]_P (control_unit_inst_n_844),
-        .\r_reg_reg[8][31]_C (control_unit_inst_n_364),
-        .\r_reg_reg[8][31]_P (control_unit_inst_n_845),
-        .\r_reg_reg[8][3]_C (control_unit_inst_n_308),
-        .\r_reg_reg[8][3]_P (control_unit_inst_n_817),
-        .\r_reg_reg[8][4]_C (control_unit_inst_n_310),
-        .\r_reg_reg[8][4]_P (control_unit_inst_n_818),
-        .\r_reg_reg[8][5]_C (control_unit_inst_n_312),
-        .\r_reg_reg[8][5]_P (control_unit_inst_n_819),
-        .\r_reg_reg[8][6]_C (control_unit_inst_n_314),
-        .\r_reg_reg[8][6]_P (control_unit_inst_n_820),
-        .\r_reg_reg[8][7]_C (control_unit_inst_n_316),
-        .\r_reg_reg[8][7]_P (control_unit_inst_n_821),
-        .\r_reg_reg[8][8]_C (control_unit_inst_n_318),
-        .\r_reg_reg[8][8]_P (control_unit_inst_n_822),
-        .\r_reg_reg[8][9]_C (control_unit_inst_n_320),
-        .\r_reg_reg[8][9]_P (control_unit_inst_n_823),
-        .\r_reg_reg[9][0]_C (control_unit_inst_n_596),
-        .\r_reg_reg[9][0]_P (control_unit_inst_n_239),
-        .\r_reg_reg[9][10]_C (control_unit_inst_n_605),
-        .\r_reg_reg[9][10]_P (control_unit_inst_n_808),
-        .\r_reg_reg[9][11]_C (control_unit_inst_n_606),
-        .\r_reg_reg[9][11]_P (control_unit_inst_n_807),
-        .\r_reg_reg[9][12]_C (control_unit_inst_n_607),
-        .\r_reg_reg[9][12]_P (control_unit_inst_n_806),
-        .\r_reg_reg[9][13]_C (control_unit_inst_n_608),
-        .\r_reg_reg[9][13]_P (control_unit_inst_n_805),
-        .\r_reg_reg[9][14]_C (control_unit_inst_n_609),
-        .\r_reg_reg[9][14]_P (control_unit_inst_n_804),
-        .\r_reg_reg[9][15]_C (control_unit_inst_n_610),
-        .\r_reg_reg[9][15]_P (control_unit_inst_n_803),
-        .\r_reg_reg[9][16]_C (control_unit_inst_n_611),
-        .\r_reg_reg[9][16]_P (control_unit_inst_n_802),
-        .\r_reg_reg[9][17]_C (control_unit_inst_n_612),
-        .\r_reg_reg[9][17]_P (control_unit_inst_n_801),
-        .\r_reg_reg[9][18]_C (control_unit_inst_n_613),
-        .\r_reg_reg[9][18]_P (control_unit_inst_n_800),
-        .\r_reg_reg[9][19]_C (control_unit_inst_n_614),
-        .\r_reg_reg[9][19]_P (control_unit_inst_n_799),
-        .\r_reg_reg[9][1]_C (control_unit_inst_n_597),
-        .\r_reg_reg[9][1]_P (control_unit_inst_n_238),
-        .\r_reg_reg[9][20]_C (control_unit_inst_n_615),
-        .\r_reg_reg[9][20]_P (control_unit_inst_n_798),
-        .\r_reg_reg[9][21]_C (control_unit_inst_n_616),
-        .\r_reg_reg[9][21]_P (control_unit_inst_n_797),
-        .\r_reg_reg[9][22]_C (control_unit_inst_n_617),
-        .\r_reg_reg[9][22]_P (control_unit_inst_n_796),
-        .\r_reg_reg[9][23]_C (control_unit_inst_n_618),
-        .\r_reg_reg[9][23]_P (control_unit_inst_n_795),
-        .\r_reg_reg[9][24]_C (control_unit_inst_n_619),
-        .\r_reg_reg[9][24]_P (control_unit_inst_n_794),
-        .\r_reg_reg[9][25]_C (control_unit_inst_n_620),
-        .\r_reg_reg[9][25]_P (control_unit_inst_n_793),
-        .\r_reg_reg[9][26]_C (control_unit_inst_n_621),
-        .\r_reg_reg[9][26]_P (control_unit_inst_n_792),
-        .\r_reg_reg[9][27]_C (control_unit_inst_n_622),
-        .\r_reg_reg[9][27]_P (control_unit_inst_n_791),
-        .\r_reg_reg[9][28]_C (control_unit_inst_n_623),
-        .\r_reg_reg[9][28]_P (control_unit_inst_n_790),
-        .\r_reg_reg[9][29]_C (control_unit_inst_n_624),
-        .\r_reg_reg[9][29]_P (control_unit_inst_n_789),
-        .\r_reg_reg[9][2]_C (control_unit_inst_n_595),
-        .\r_reg_reg[9][2]_P (control_unit_inst_n_237),
-        .\r_reg_reg[9][30]_C (control_unit_inst_n_625),
-        .\r_reg_reg[9][30]_P (control_unit_inst_n_788),
-        .\r_reg_reg[9][31]_C (control_unit_inst_n_626),
-        .\r_reg_reg[9][31]_P (control_unit_inst_n_787),
-        .\r_reg_reg[9][3]_C (control_unit_inst_n_598),
-        .\r_reg_reg[9][3]_P (control_unit_inst_n_44),
-        .\r_reg_reg[9][3]_P_0 (control_unit_inst_n_42),
-        .\r_reg_reg[9][4]_C (control_unit_inst_n_599),
-        .\r_reg_reg[9][4]_P (control_unit_inst_n_814),
-        .\r_reg_reg[9][5]_C (control_unit_inst_n_600),
-        .\r_reg_reg[9][5]_P (control_unit_inst_n_813),
-        .\r_reg_reg[9][6]_C (control_unit_inst_n_601),
-        .\r_reg_reg[9][6]_P (control_unit_inst_n_812),
-        .\r_reg_reg[9][7]_C (control_unit_inst_n_602),
-        .\r_reg_reg[9][7]_P (control_unit_inst_n_811),
-        .\r_reg_reg[9][8]_C (control_unit_inst_n_603),
-        .\r_reg_reg[9][8]_P (control_unit_inst_n_810),
-        .\r_reg_reg[9][9]_C (control_unit_inst_n_604),
-        .\r_reg_reg[9][9]_P (control_unit_inst_n_809),
+        .\r_addr1_mux_reg[0]_1 (datapath_inst_n_114),
+        .\r_addr1_mux_reg[0]_10 (datapath_inst_n_123),
+        .\r_addr1_mux_reg[0]_11 (datapath_inst_n_124),
+        .\r_addr1_mux_reg[0]_12 (datapath_inst_n_125),
+        .\r_addr1_mux_reg[0]_13 (datapath_inst_n_126),
+        .\r_addr1_mux_reg[0]_14 (datapath_inst_n_127),
+        .\r_addr1_mux_reg[0]_15 (datapath_inst_n_128),
+        .\r_addr1_mux_reg[0]_16 (datapath_inst_n_129),
+        .\r_addr1_mux_reg[0]_17 (datapath_inst_n_130),
+        .\r_addr1_mux_reg[0]_2 (datapath_inst_n_115),
+        .\r_addr1_mux_reg[0]_3 (datapath_inst_n_116),
+        .\r_addr1_mux_reg[0]_4 (datapath_inst_n_117),
+        .\r_addr1_mux_reg[0]_5 (datapath_inst_n_118),
+        .\r_addr1_mux_reg[0]_6 (datapath_inst_n_119),
+        .\r_addr1_mux_reg[0]_7 (datapath_inst_n_120),
+        .\r_addr1_mux_reg[0]_8 (datapath_inst_n_121),
+        .\r_addr1_mux_reg[0]_9 (datapath_inst_n_122),
+        .r_alu_input(r_alu_input),
+        .\r_alu_opcode_reg[1] ({control_unit_inst_n_43,control_unit_inst_n_44,r_re_rom}),
+        .\r_data_reg[0]_C (datapath_inst_n_109),
+        .\r_data_reg[0]_P (datapath_inst_n_110),
+        .\r_data_reg[10]_P ({o_instructions_datapath[10],o_instructions_datapath[8],o_instructions_datapath[6],o_instructions_datapath[4:0]}),
+        .\r_data_reg[12]_P (datapath_inst_n_200),
+        .\r_data_reg[13]_C (datapath_inst_n_202),
+        .\r_data_reg[14]_P (datapath_inst_n_198),
+        .\r_data_reg[15]_P (control_unit_inst_n_46),
+        .\r_data_reg[1]_C (control_unit_inst_n_1105),
+        .\r_data_reg[1]_P (control_unit_inst_n_1104),
+        .\r_data_reg[6]_P (w_rgf_data2),
+        .\r_data_reg[7]_P (r_data),
+        .\r_data_reg[9]_P (datapath_inst_n_195),
+        .\r_reg_reg[0][0]_C (control_unit_inst_n_341),
+        .\r_reg_reg[0][0]_P (control_unit_inst_n_177),
+        .\r_reg_reg[0][10]_C (control_unit_inst_n_359),
+        .\r_reg_reg[0][10]_P (control_unit_inst_n_168),
+        .\r_reg_reg[0][11]_C (control_unit_inst_n_361),
+        .\r_reg_reg[0][11]_P (control_unit_inst_n_167),
+        .\r_reg_reg[0][12]_C (control_unit_inst_n_363),
+        .\r_reg_reg[0][12]_P (control_unit_inst_n_166),
+        .\r_reg_reg[0][13]_C (control_unit_inst_n_365),
+        .\r_reg_reg[0][13]_P (control_unit_inst_n_165),
+        .\r_reg_reg[0][14]_C (control_unit_inst_n_367),
+        .\r_reg_reg[0][14]_P (control_unit_inst_n_164),
+        .\r_reg_reg[0][15]_C (control_unit_inst_n_369),
+        .\r_reg_reg[0][15]_P (control_unit_inst_n_163),
+        .\r_reg_reg[0][16]_C (control_unit_inst_n_371),
+        .\r_reg_reg[0][16]_P (control_unit_inst_n_162),
+        .\r_reg_reg[0][17]_C (control_unit_inst_n_373),
+        .\r_reg_reg[0][17]_P (control_unit_inst_n_161),
+        .\r_reg_reg[0][18]_C (control_unit_inst_n_375),
+        .\r_reg_reg[0][18]_P (control_unit_inst_n_160),
+        .\r_reg_reg[0][19]_C (control_unit_inst_n_377),
+        .\r_reg_reg[0][19]_P (control_unit_inst_n_159),
+        .\r_reg_reg[0][1]_C (control_unit_inst_n_343),
+        .\r_reg_reg[0][1]_P (control_unit_inst_n_176),
+        .\r_reg_reg[0][20]_C (control_unit_inst_n_379),
+        .\r_reg_reg[0][20]_P (control_unit_inst_n_158),
+        .\r_reg_reg[0][21]_C (control_unit_inst_n_381),
+        .\r_reg_reg[0][21]_P (control_unit_inst_n_157),
+        .\r_reg_reg[0][22]_C (control_unit_inst_n_383),
+        .\r_reg_reg[0][22]_P (control_unit_inst_n_156),
+        .\r_reg_reg[0][23]_C (control_unit_inst_n_385),
+        .\r_reg_reg[0][23]_P (control_unit_inst_n_155),
+        .\r_reg_reg[0][24]_C (control_unit_inst_n_387),
+        .\r_reg_reg[0][24]_P (control_unit_inst_n_154),
+        .\r_reg_reg[0][25]_C (control_unit_inst_n_389),
+        .\r_reg_reg[0][25]_P (control_unit_inst_n_153),
+        .\r_reg_reg[0][26]_C (control_unit_inst_n_391),
+        .\r_reg_reg[0][26]_P (control_unit_inst_n_152),
+        .\r_reg_reg[0][27]_C (control_unit_inst_n_393),
+        .\r_reg_reg[0][27]_P (control_unit_inst_n_151),
+        .\r_reg_reg[0][28]_C (control_unit_inst_n_395),
+        .\r_reg_reg[0][28]_P (control_unit_inst_n_150),
+        .\r_reg_reg[0][29]_C (control_unit_inst_n_397),
+        .\r_reg_reg[0][29]_P (control_unit_inst_n_149),
+        .\r_reg_reg[0][2]_C (control_unit_inst_n_403),
+        .\r_reg_reg[0][2]_P (control_unit_inst_n_146),
+        .\r_reg_reg[0][30]_C (control_unit_inst_n_399),
+        .\r_reg_reg[0][30]_P (control_unit_inst_n_148),
+        .\r_reg_reg[0][31]_C (control_unit_inst_n_401),
+        .\r_reg_reg[0][31]_P (control_unit_inst_n_147),
+        .\r_reg_reg[0][3]_C (control_unit_inst_n_345),
+        .\r_reg_reg[0][3]_P (control_unit_inst_n_175),
+        .\r_reg_reg[0][4]_C (control_unit_inst_n_347),
+        .\r_reg_reg[0][4]_P (control_unit_inst_n_174),
+        .\r_reg_reg[0][5]_C (control_unit_inst_n_349),
+        .\r_reg_reg[0][5]_P (control_unit_inst_n_173),
+        .\r_reg_reg[0][6]_C (control_unit_inst_n_351),
+        .\r_reg_reg[0][6]_P (control_unit_inst_n_172),
+        .\r_reg_reg[0][7]_C (control_unit_inst_n_353),
+        .\r_reg_reg[0][7]_P (control_unit_inst_n_171),
+        .\r_reg_reg[0][8]_C (control_unit_inst_n_355),
+        .\r_reg_reg[0][8]_P (control_unit_inst_n_170),
+        .\r_reg_reg[0][9]_C (control_unit_inst_n_357),
+        .\r_reg_reg[0][9]_P (control_unit_inst_n_169),
+        .\r_reg_reg[10][0]_C (control_unit_inst_n_955),
+        .\r_reg_reg[10][0]_P (control_unit_inst_n_952),
+        .\r_reg_reg[10][10]_C (control_unit_inst_n_1047),
+        .\r_reg_reg[10][10]_P (control_unit_inst_n_1044),
+        .\r_reg_reg[10][11]_C (control_unit_inst_n_1043),
+        .\r_reg_reg[10][11]_P (control_unit_inst_n_1040),
+        .\r_reg_reg[10][12]_C (control_unit_inst_n_1039),
+        .\r_reg_reg[10][12]_P (control_unit_inst_n_1036),
+        .\r_reg_reg[10][13]_C (control_unit_inst_n_1035),
+        .\r_reg_reg[10][13]_P (control_unit_inst_n_1032),
+        .\r_reg_reg[10][14]_C (control_unit_inst_n_1031),
+        .\r_reg_reg[10][14]_P (control_unit_inst_n_1028),
+        .\r_reg_reg[10][15]_C (control_unit_inst_n_1027),
+        .\r_reg_reg[10][15]_P (control_unit_inst_n_1024),
+        .\r_reg_reg[10][16]_C (control_unit_inst_n_1023),
+        .\r_reg_reg[10][16]_P (control_unit_inst_n_1020),
+        .\r_reg_reg[10][17]_C (control_unit_inst_n_1019),
+        .\r_reg_reg[10][17]_P (control_unit_inst_n_1016),
+        .\r_reg_reg[10][18]_C (control_unit_inst_n_1015),
+        .\r_reg_reg[10][18]_P (control_unit_inst_n_1012),
+        .\r_reg_reg[10][19]_C (control_unit_inst_n_1011),
+        .\r_reg_reg[10][19]_P (control_unit_inst_n_1008),
+        .\r_reg_reg[10][1]_C (control_unit_inst_n_951),
+        .\r_reg_reg[10][1]_P (control_unit_inst_n_948),
+        .\r_reg_reg[10][20]_C (control_unit_inst_n_1007),
+        .\r_reg_reg[10][20]_P (control_unit_inst_n_1004),
+        .\r_reg_reg[10][21]_C (control_unit_inst_n_1003),
+        .\r_reg_reg[10][21]_P (control_unit_inst_n_1000),
+        .\r_reg_reg[10][22]_C (control_unit_inst_n_999),
+        .\r_reg_reg[10][22]_P (control_unit_inst_n_996),
+        .\r_reg_reg[10][23]_C (control_unit_inst_n_995),
+        .\r_reg_reg[10][23]_P (control_unit_inst_n_992),
+        .\r_reg_reg[10][24]_C (control_unit_inst_n_991),
+        .\r_reg_reg[10][24]_P (control_unit_inst_n_988),
+        .\r_reg_reg[10][25]_C (control_unit_inst_n_987),
+        .\r_reg_reg[10][25]_P (control_unit_inst_n_984),
+        .\r_reg_reg[10][26]_C (control_unit_inst_n_983),
+        .\r_reg_reg[10][26]_P (control_unit_inst_n_980),
+        .\r_reg_reg[10][27]_C (control_unit_inst_n_979),
+        .\r_reg_reg[10][27]_P (control_unit_inst_n_976),
+        .\r_reg_reg[10][28]_C (control_unit_inst_n_975),
+        .\r_reg_reg[10][28]_P (control_unit_inst_n_972),
+        .\r_reg_reg[10][29]_C (control_unit_inst_n_971),
+        .\r_reg_reg[10][29]_P (control_unit_inst_n_968),
+        .\r_reg_reg[10][2]_C (control_unit_inst_n_883),
+        .\r_reg_reg[10][2]_P (control_unit_inst_n_404),
+        .\r_reg_reg[10][30]_C (control_unit_inst_n_967),
+        .\r_reg_reg[10][30]_P (control_unit_inst_n_964),
+        .\r_reg_reg[10][31]_C (control_unit_inst_n_963),
+        .\r_reg_reg[10][31]_P (control_unit_inst_n_960),
+        .\r_reg_reg[10][3]_C (control_unit_inst_n_959),
+        .\r_reg_reg[10][3]_P (control_unit_inst_n_956),
+        .\r_reg_reg[10][4]_C (control_unit_inst_n_1071),
+        .\r_reg_reg[10][4]_P (control_unit_inst_n_1068),
+        .\r_reg_reg[10][5]_C (control_unit_inst_n_1067),
+        .\r_reg_reg[10][5]_P (control_unit_inst_n_1064),
+        .\r_reg_reg[10][6]_C (control_unit_inst_n_1063),
+        .\r_reg_reg[10][6]_P (control_unit_inst_n_1060),
+        .\r_reg_reg[10][7]_C (control_unit_inst_n_1059),
+        .\r_reg_reg[10][7]_P (control_unit_inst_n_1056),
+        .\r_reg_reg[10][8]_C (control_unit_inst_n_1055),
+        .\r_reg_reg[10][8]_P (control_unit_inst_n_1052),
+        .\r_reg_reg[10][9]_C (control_unit_inst_n_1051),
+        .\r_reg_reg[10][9]_P (control_unit_inst_n_1048),
+        .\r_reg_reg[11][0]_C (control_unit_inst_n_500),
+        .\r_reg_reg[11][0]_P (control_unit_inst_n_501),
+        .\r_reg_reg[11][10]_C (control_unit_inst_n_491),
+        .\r_reg_reg[11][10]_P (control_unit_inst_n_510),
+        .\r_reg_reg[11][11]_C (control_unit_inst_n_490),
+        .\r_reg_reg[11][11]_P (control_unit_inst_n_511),
+        .\r_reg_reg[11][12]_C (control_unit_inst_n_489),
+        .\r_reg_reg[11][12]_P (control_unit_inst_n_512),
+        .\r_reg_reg[11][13]_C (control_unit_inst_n_488),
+        .\r_reg_reg[11][13]_P (control_unit_inst_n_513),
+        .\r_reg_reg[11][14]_C (control_unit_inst_n_487),
+        .\r_reg_reg[11][14]_P (control_unit_inst_n_514),
+        .\r_reg_reg[11][15]_C (control_unit_inst_n_486),
+        .\r_reg_reg[11][15]_P (control_unit_inst_n_515),
+        .\r_reg_reg[11][16]_C (control_unit_inst_n_485),
+        .\r_reg_reg[11][16]_P (control_unit_inst_n_516),
+        .\r_reg_reg[11][17]_C (control_unit_inst_n_484),
+        .\r_reg_reg[11][17]_P (control_unit_inst_n_517),
+        .\r_reg_reg[11][18]_C (control_unit_inst_n_483),
+        .\r_reg_reg[11][18]_P (control_unit_inst_n_518),
+        .\r_reg_reg[11][19]_C (control_unit_inst_n_482),
+        .\r_reg_reg[11][19]_P (control_unit_inst_n_519),
+        .\r_reg_reg[11][1]_C (control_unit_inst_n_499),
+        .\r_reg_reg[11][1]_P (control_unit_inst_n_502),
+        .\r_reg_reg[11][20]_C (control_unit_inst_n_481),
+        .\r_reg_reg[11][20]_P (control_unit_inst_n_520),
+        .\r_reg_reg[11][21]_C (control_unit_inst_n_480),
+        .\r_reg_reg[11][21]_P (control_unit_inst_n_521),
+        .\r_reg_reg[11][22]_C (control_unit_inst_n_479),
+        .\r_reg_reg[11][22]_P (control_unit_inst_n_522),
+        .\r_reg_reg[11][23]_C (control_unit_inst_n_478),
+        .\r_reg_reg[11][23]_P (control_unit_inst_n_523),
+        .\r_reg_reg[11][24]_C (control_unit_inst_n_477),
+        .\r_reg_reg[11][24]_P (control_unit_inst_n_524),
+        .\r_reg_reg[11][25]_C (control_unit_inst_n_476),
+        .\r_reg_reg[11][25]_P (control_unit_inst_n_525),
+        .\r_reg_reg[11][26]_C (control_unit_inst_n_475),
+        .\r_reg_reg[11][26]_P (control_unit_inst_n_526),
+        .\r_reg_reg[11][27]_C (control_unit_inst_n_474),
+        .\r_reg_reg[11][27]_P (control_unit_inst_n_527),
+        .\r_reg_reg[11][28]_C (control_unit_inst_n_473),
+        .\r_reg_reg[11][28]_P (control_unit_inst_n_528),
+        .\r_reg_reg[11][29]_C (control_unit_inst_n_472),
+        .\r_reg_reg[11][29]_P (control_unit_inst_n_529),
+        .\r_reg_reg[11][2]_C (control_unit_inst_n_469),
+        .\r_reg_reg[11][2]_P (control_unit_inst_n_532),
+        .\r_reg_reg[11][30]_C (control_unit_inst_n_471),
+        .\r_reg_reg[11][30]_P (control_unit_inst_n_530),
+        .\r_reg_reg[11][31]_C (control_unit_inst_n_470),
+        .\r_reg_reg[11][31]_P (control_unit_inst_n_531),
+        .\r_reg_reg[11][3]_C (control_unit_inst_n_498),
+        .\r_reg_reg[11][3]_P (control_unit_inst_n_503),
+        .\r_reg_reg[11][4]_C (control_unit_inst_n_497),
+        .\r_reg_reg[11][4]_P (control_unit_inst_n_504),
+        .\r_reg_reg[11][5]_C (control_unit_inst_n_496),
+        .\r_reg_reg[11][5]_P (control_unit_inst_n_505),
+        .\r_reg_reg[11][6]_C (control_unit_inst_n_495),
+        .\r_reg_reg[11][6]_P (control_unit_inst_n_506),
+        .\r_reg_reg[11][7]_C (control_unit_inst_n_494),
+        .\r_reg_reg[11][7]_P (control_unit_inst_n_507),
+        .\r_reg_reg[11][8]_C (control_unit_inst_n_493),
+        .\r_reg_reg[11][8]_P (control_unit_inst_n_508),
+        .\r_reg_reg[11][9]_C (control_unit_inst_n_492),
+        .\r_reg_reg[11][9]_P (control_unit_inst_n_509),
+        .\r_reg_reg[12][0]_C (control_unit_inst_n_954),
+        .\r_reg_reg[12][0]_P (control_unit_inst_n_276),
+        .\r_reg_reg[12][10]_C (control_unit_inst_n_1046),
+        .\r_reg_reg[12][10]_P (control_unit_inst_n_285),
+        .\r_reg_reg[12][11]_C (control_unit_inst_n_1042),
+        .\r_reg_reg[12][11]_P (control_unit_inst_n_286),
+        .\r_reg_reg[12][12]_C (control_unit_inst_n_1038),
+        .\r_reg_reg[12][12]_P (control_unit_inst_n_287),
+        .\r_reg_reg[12][13]_C (control_unit_inst_n_1034),
+        .\r_reg_reg[12][13]_P (control_unit_inst_n_288),
+        .\r_reg_reg[12][14]_C (control_unit_inst_n_1030),
+        .\r_reg_reg[12][14]_P (control_unit_inst_n_289),
+        .\r_reg_reg[12][15]_C (control_unit_inst_n_1026),
+        .\r_reg_reg[12][15]_P (control_unit_inst_n_290),
+        .\r_reg_reg[12][16]_C (control_unit_inst_n_1022),
+        .\r_reg_reg[12][16]_P (control_unit_inst_n_291),
+        .\r_reg_reg[12][17]_C (control_unit_inst_n_1018),
+        .\r_reg_reg[12][17]_P (control_unit_inst_n_292),
+        .\r_reg_reg[12][18]_C (control_unit_inst_n_1014),
+        .\r_reg_reg[12][18]_P (control_unit_inst_n_293),
+        .\r_reg_reg[12][19]_C (control_unit_inst_n_1010),
+        .\r_reg_reg[12][19]_P (control_unit_inst_n_294),
+        .\r_reg_reg[12][1]_C (control_unit_inst_n_950),
+        .\r_reg_reg[12][1]_P (control_unit_inst_n_277),
+        .\r_reg_reg[12][20]_C (control_unit_inst_n_1006),
+        .\r_reg_reg[12][20]_P (control_unit_inst_n_295),
+        .\r_reg_reg[12][21]_C (control_unit_inst_n_1002),
+        .\r_reg_reg[12][21]_P (control_unit_inst_n_296),
+        .\r_reg_reg[12][22]_C (control_unit_inst_n_998),
+        .\r_reg_reg[12][22]_P (control_unit_inst_n_297),
+        .\r_reg_reg[12][23]_C (control_unit_inst_n_994),
+        .\r_reg_reg[12][23]_P (control_unit_inst_n_298),
+        .\r_reg_reg[12][24]_C (control_unit_inst_n_990),
+        .\r_reg_reg[12][24]_P (control_unit_inst_n_299),
+        .\r_reg_reg[12][25]_C (control_unit_inst_n_986),
+        .\r_reg_reg[12][25]_P (control_unit_inst_n_300),
+        .\r_reg_reg[12][26]_C (control_unit_inst_n_982),
+        .\r_reg_reg[12][26]_P (control_unit_inst_n_301),
+        .\r_reg_reg[12][27]_C (control_unit_inst_n_978),
+        .\r_reg_reg[12][27]_P (control_unit_inst_n_302),
+        .\r_reg_reg[12][28]_C (control_unit_inst_n_974),
+        .\r_reg_reg[12][28]_P (control_unit_inst_n_303),
+        .\r_reg_reg[12][29]_C (control_unit_inst_n_970),
+        .\r_reg_reg[12][29]_P (control_unit_inst_n_304),
+        .\r_reg_reg[12][2]_C (control_unit_inst_n_882),
+        .\r_reg_reg[12][2]_C_0 (control_unit_inst_n_7),
+        .\r_reg_reg[12][2]_P (control_unit_inst_n_307),
+        .\r_reg_reg[12][30]_C (control_unit_inst_n_966),
+        .\r_reg_reg[12][30]_P (control_unit_inst_n_305),
+        .\r_reg_reg[12][31]_C (control_unit_inst_n_962),
+        .\r_reg_reg[12][31]_P (control_unit_inst_n_306),
+        .\r_reg_reg[12][3]_C (control_unit_inst_n_958),
+        .\r_reg_reg[12][3]_P (control_unit_inst_n_278),
+        .\r_reg_reg[12][4]_C (control_unit_inst_n_1070),
+        .\r_reg_reg[12][4]_P (control_unit_inst_n_279),
+        .\r_reg_reg[12][5]_C (control_unit_inst_n_1066),
+        .\r_reg_reg[12][5]_P (control_unit_inst_n_280),
+        .\r_reg_reg[12][6]_C (control_unit_inst_n_1062),
+        .\r_reg_reg[12][6]_P (control_unit_inst_n_281),
+        .\r_reg_reg[12][7]_C (control_unit_inst_n_1058),
+        .\r_reg_reg[12][7]_P (control_unit_inst_n_282),
+        .\r_reg_reg[12][8]_C (control_unit_inst_n_1054),
+        .\r_reg_reg[12][8]_P (control_unit_inst_n_283),
+        .\r_reg_reg[12][9]_C (control_unit_inst_n_1050),
+        .\r_reg_reg[12][9]_P (control_unit_inst_n_284),
+        .\r_reg_reg[13][0]_C (control_unit_inst_n_789),
+        .\r_reg_reg[13][0]_P (control_unit_inst_n_599),
+        .\r_reg_reg[13][10]_C (control_unit_inst_n_780),
+        .\r_reg_reg[13][10]_P (control_unit_inst_n_608),
+        .\r_reg_reg[13][11]_C (control_unit_inst_n_779),
+        .\r_reg_reg[13][11]_P (control_unit_inst_n_609),
+        .\r_reg_reg[13][12]_C (control_unit_inst_n_778),
+        .\r_reg_reg[13][12]_P (control_unit_inst_n_610),
+        .\r_reg_reg[13][13]_C (control_unit_inst_n_777),
+        .\r_reg_reg[13][13]_P (control_unit_inst_n_611),
+        .\r_reg_reg[13][14]_C (control_unit_inst_n_776),
+        .\r_reg_reg[13][14]_P (control_unit_inst_n_612),
+        .\r_reg_reg[13][15]_C (control_unit_inst_n_775),
+        .\r_reg_reg[13][15]_P (control_unit_inst_n_613),
+        .\r_reg_reg[13][16]_C (control_unit_inst_n_774),
+        .\r_reg_reg[13][16]_P (control_unit_inst_n_614),
+        .\r_reg_reg[13][17]_C (control_unit_inst_n_773),
+        .\r_reg_reg[13][17]_P (control_unit_inst_n_615),
+        .\r_reg_reg[13][18]_C (control_unit_inst_n_772),
+        .\r_reg_reg[13][18]_P (control_unit_inst_n_616),
+        .\r_reg_reg[13][19]_C (control_unit_inst_n_771),
+        .\r_reg_reg[13][19]_P (control_unit_inst_n_617),
+        .\r_reg_reg[13][1]_C (control_unit_inst_n_788),
+        .\r_reg_reg[13][1]_P (control_unit_inst_n_600),
+        .\r_reg_reg[13][20]_C (control_unit_inst_n_770),
+        .\r_reg_reg[13][20]_P (control_unit_inst_n_618),
+        .\r_reg_reg[13][21]_C (control_unit_inst_n_769),
+        .\r_reg_reg[13][21]_P (control_unit_inst_n_619),
+        .\r_reg_reg[13][22]_C (control_unit_inst_n_768),
+        .\r_reg_reg[13][22]_P (control_unit_inst_n_620),
+        .\r_reg_reg[13][23]_C (control_unit_inst_n_767),
+        .\r_reg_reg[13][23]_P (control_unit_inst_n_621),
+        .\r_reg_reg[13][24]_C (control_unit_inst_n_766),
+        .\r_reg_reg[13][24]_P (control_unit_inst_n_622),
+        .\r_reg_reg[13][25]_C (control_unit_inst_n_765),
+        .\r_reg_reg[13][25]_P (control_unit_inst_n_623),
+        .\r_reg_reg[13][26]_C (control_unit_inst_n_764),
+        .\r_reg_reg[13][26]_P (control_unit_inst_n_624),
+        .\r_reg_reg[13][27]_C (control_unit_inst_n_763),
+        .\r_reg_reg[13][27]_P (control_unit_inst_n_625),
+        .\r_reg_reg[13][28]_C (control_unit_inst_n_762),
+        .\r_reg_reg[13][28]_P (control_unit_inst_n_626),
+        .\r_reg_reg[13][29]_C (control_unit_inst_n_761),
+        .\r_reg_reg[13][29]_P (control_unit_inst_n_627),
+        .\r_reg_reg[13][2]_C (control_unit_inst_n_758),
+        .\r_reg_reg[13][2]_P (control_unit_inst_n_630),
+        .\r_reg_reg[13][30]_C (control_unit_inst_n_760),
+        .\r_reg_reg[13][30]_P (control_unit_inst_n_628),
+        .\r_reg_reg[13][31]_C (control_unit_inst_n_759),
+        .\r_reg_reg[13][31]_P (control_unit_inst_n_629),
+        .\r_reg_reg[13][3]_C (control_unit_inst_n_787),
+        .\r_reg_reg[13][3]_P (control_unit_inst_n_601),
+        .\r_reg_reg[13][4]_C (control_unit_inst_n_786),
+        .\r_reg_reg[13][4]_P (control_unit_inst_n_602),
+        .\r_reg_reg[13][5]_C (control_unit_inst_n_785),
+        .\r_reg_reg[13][5]_P (control_unit_inst_n_603),
+        .\r_reg_reg[13][6]_C (control_unit_inst_n_784),
+        .\r_reg_reg[13][6]_P (control_unit_inst_n_604),
+        .\r_reg_reg[13][7]_C (control_unit_inst_n_783),
+        .\r_reg_reg[13][7]_P (control_unit_inst_n_605),
+        .\r_reg_reg[13][8]_C (control_unit_inst_n_782),
+        .\r_reg_reg[13][8]_P (control_unit_inst_n_606),
+        .\r_reg_reg[13][9]_C (control_unit_inst_n_781),
+        .\r_reg_reg[13][9]_P (control_unit_inst_n_607),
+        .\r_reg_reg[14][0]_C (control_unit_inst_n_917),
+        .\r_reg_reg[14][0]_P (control_unit_inst_n_694),
+        .\r_reg_reg[14][10]_C (control_unit_inst_n_926),
+        .\r_reg_reg[14][10]_P (control_unit_inst_n_712),
+        .\r_reg_reg[14][11]_C (control_unit_inst_n_927),
+        .\r_reg_reg[14][11]_P (control_unit_inst_n_714),
+        .\r_reg_reg[14][12]_C (control_unit_inst_n_928),
+        .\r_reg_reg[14][12]_P (control_unit_inst_n_716),
+        .\r_reg_reg[14][13]_C (control_unit_inst_n_929),
+        .\r_reg_reg[14][13]_P (control_unit_inst_n_718),
+        .\r_reg_reg[14][14]_C (control_unit_inst_n_930),
+        .\r_reg_reg[14][14]_P (control_unit_inst_n_720),
+        .\r_reg_reg[14][15]_C (control_unit_inst_n_931),
+        .\r_reg_reg[14][15]_P (control_unit_inst_n_722),
+        .\r_reg_reg[14][16]_C (control_unit_inst_n_932),
+        .\r_reg_reg[14][16]_P (control_unit_inst_n_724),
+        .\r_reg_reg[14][17]_C (control_unit_inst_n_933),
+        .\r_reg_reg[14][17]_P (control_unit_inst_n_726),
+        .\r_reg_reg[14][18]_C (control_unit_inst_n_934),
+        .\r_reg_reg[14][18]_P (control_unit_inst_n_728),
+        .\r_reg_reg[14][19]_C (control_unit_inst_n_935),
+        .\r_reg_reg[14][19]_P (control_unit_inst_n_730),
+        .\r_reg_reg[14][1]_C (control_unit_inst_n_918),
+        .\r_reg_reg[14][1]_P (control_unit_inst_n_696),
+        .\r_reg_reg[14][20]_C (control_unit_inst_n_936),
+        .\r_reg_reg[14][20]_P (control_unit_inst_n_732),
+        .\r_reg_reg[14][21]_C (control_unit_inst_n_937),
+        .\r_reg_reg[14][21]_P (control_unit_inst_n_734),
+        .\r_reg_reg[14][22]_C (control_unit_inst_n_938),
+        .\r_reg_reg[14][22]_P (control_unit_inst_n_736),
+        .\r_reg_reg[14][23]_C (control_unit_inst_n_939),
+        .\r_reg_reg[14][23]_P (control_unit_inst_n_738),
+        .\r_reg_reg[14][24]_C (control_unit_inst_n_940),
+        .\r_reg_reg[14][24]_P (control_unit_inst_n_740),
+        .\r_reg_reg[14][25]_C (control_unit_inst_n_941),
+        .\r_reg_reg[14][25]_P (control_unit_inst_n_742),
+        .\r_reg_reg[14][26]_C (control_unit_inst_n_942),
+        .\r_reg_reg[14][26]_P (control_unit_inst_n_744),
+        .\r_reg_reg[14][27]_C (control_unit_inst_n_943),
+        .\r_reg_reg[14][27]_P (control_unit_inst_n_746),
+        .\r_reg_reg[14][28]_C (control_unit_inst_n_944),
+        .\r_reg_reg[14][28]_P (control_unit_inst_n_748),
+        .\r_reg_reg[14][29]_C (control_unit_inst_n_945),
+        .\r_reg_reg[14][29]_P (control_unit_inst_n_750),
+        .\r_reg_reg[14][2]_C (control_unit_inst_n_884),
+        .\r_reg_reg[14][2]_P (control_unit_inst_n_756),
+        .\r_reg_reg[14][30]_C (control_unit_inst_n_946),
+        .\r_reg_reg[14][30]_P (control_unit_inst_n_752),
+        .\r_reg_reg[14][31]_C (control_unit_inst_n_947),
+        .\r_reg_reg[14][31]_P (control_unit_inst_n_754),
+        .\r_reg_reg[14][3]_C (control_unit_inst_n_919),
+        .\r_reg_reg[14][3]_P (control_unit_inst_n_698),
+        .\r_reg_reg[14][4]_C (control_unit_inst_n_920),
+        .\r_reg_reg[14][4]_P (control_unit_inst_n_700),
+        .\r_reg_reg[14][5]_C (control_unit_inst_n_921),
+        .\r_reg_reg[14][5]_P (control_unit_inst_n_702),
+        .\r_reg_reg[14][6]_C (control_unit_inst_n_922),
+        .\r_reg_reg[14][6]_P (control_unit_inst_n_704),
+        .\r_reg_reg[14][7]_C (control_unit_inst_n_923),
+        .\r_reg_reg[14][7]_P (control_unit_inst_n_706),
+        .\r_reg_reg[14][8]_C (control_unit_inst_n_924),
+        .\r_reg_reg[14][8]_P (control_unit_inst_n_708),
+        .\r_reg_reg[14][9]_C (control_unit_inst_n_925),
+        .\r_reg_reg[14][9]_P (control_unit_inst_n_710),
+        .\r_reg_reg[15][0]_C (control_unit_inst_n_915),
+        .\r_reg_reg[15][0]_P (control_unit_inst_n_435),
+        .\r_reg_reg[15][10]_C (control_unit_inst_n_906),
+        .\r_reg_reg[15][10]_P (control_unit_inst_n_426),
+        .\r_reg_reg[15][11]_C (control_unit_inst_n_905),
+        .\r_reg_reg[15][11]_P (control_unit_inst_n_425),
+        .\r_reg_reg[15][12]_C (control_unit_inst_n_904),
+        .\r_reg_reg[15][12]_P (control_unit_inst_n_424),
+        .\r_reg_reg[15][13]_C (control_unit_inst_n_903),
+        .\r_reg_reg[15][13]_P (control_unit_inst_n_423),
+        .\r_reg_reg[15][14]_C (control_unit_inst_n_902),
+        .\r_reg_reg[15][14]_P (control_unit_inst_n_422),
+        .\r_reg_reg[15][15]_C (control_unit_inst_n_901),
+        .\r_reg_reg[15][15]_P (control_unit_inst_n_421),
+        .\r_reg_reg[15][16]_C (control_unit_inst_n_900),
+        .\r_reg_reg[15][16]_P (control_unit_inst_n_420),
+        .\r_reg_reg[15][17]_C (control_unit_inst_n_899),
+        .\r_reg_reg[15][17]_P (control_unit_inst_n_419),
+        .\r_reg_reg[15][18]_C (control_unit_inst_n_898),
+        .\r_reg_reg[15][18]_P (control_unit_inst_n_418),
+        .\r_reg_reg[15][19]_C (control_unit_inst_n_897),
+        .\r_reg_reg[15][19]_P (control_unit_inst_n_417),
+        .\r_reg_reg[15][1]_C (control_unit_inst_n_914),
+        .\r_reg_reg[15][1]_P (control_unit_inst_n_434),
+        .\r_reg_reg[15][20]_C (control_unit_inst_n_896),
+        .\r_reg_reg[15][20]_P (control_unit_inst_n_416),
+        .\r_reg_reg[15][21]_C (control_unit_inst_n_895),
+        .\r_reg_reg[15][21]_P (control_unit_inst_n_415),
+        .\r_reg_reg[15][22]_C (control_unit_inst_n_894),
+        .\r_reg_reg[15][22]_P (control_unit_inst_n_414),
+        .\r_reg_reg[15][23]_C (control_unit_inst_n_893),
+        .\r_reg_reg[15][23]_P (control_unit_inst_n_413),
+        .\r_reg_reg[15][24]_C (control_unit_inst_n_892),
+        .\r_reg_reg[15][24]_P (control_unit_inst_n_412),
+        .\r_reg_reg[15][25]_C (control_unit_inst_n_891),
+        .\r_reg_reg[15][25]_P (control_unit_inst_n_411),
+        .\r_reg_reg[15][26]_C (control_unit_inst_n_890),
+        .\r_reg_reg[15][26]_P (control_unit_inst_n_410),
+        .\r_reg_reg[15][27]_C (control_unit_inst_n_889),
+        .\r_reg_reg[15][27]_P (control_unit_inst_n_409),
+        .\r_reg_reg[15][28]_C (control_unit_inst_n_888),
+        .\r_reg_reg[15][28]_P (control_unit_inst_n_408),
+        .\r_reg_reg[15][29]_C (control_unit_inst_n_887),
+        .\r_reg_reg[15][29]_P (control_unit_inst_n_407),
+        .\r_reg_reg[15][2]_C (control_unit_inst_n_916),
+        .\r_reg_reg[15][2]_P (control_unit_inst_n_436),
+        .\r_reg_reg[15][30]_C (control_unit_inst_n_886),
+        .\r_reg_reg[15][30]_P (control_unit_inst_n_406),
+        .\r_reg_reg[15][31]_C (control_unit_inst_n_885),
+        .\r_reg_reg[15][31]_C_0 (control_unit_inst_n_48),
+        .\r_reg_reg[15][31]_P (control_unit_inst_n_405),
+        .\r_reg_reg[15][3]_C (control_unit_inst_n_913),
+        .\r_reg_reg[15][3]_P (control_unit_inst_n_433),
+        .\r_reg_reg[15][4]_C (control_unit_inst_n_912),
+        .\r_reg_reg[15][4]_P (control_unit_inst_n_432),
+        .\r_reg_reg[15][5]_C (control_unit_inst_n_911),
+        .\r_reg_reg[15][5]_P (control_unit_inst_n_431),
+        .\r_reg_reg[15][6]_C (control_unit_inst_n_910),
+        .\r_reg_reg[15][6]_P (control_unit_inst_n_430),
+        .\r_reg_reg[15][7]_C (control_unit_inst_n_909),
+        .\r_reg_reg[15][7]_P (control_unit_inst_n_429),
+        .\r_reg_reg[15][8]_C (control_unit_inst_n_908),
+        .\r_reg_reg[15][8]_P (control_unit_inst_n_428),
+        .\r_reg_reg[15][9]_C (control_unit_inst_n_907),
+        .\r_reg_reg[15][9]_P (control_unit_inst_n_427),
+        .\r_reg_reg[1][0]_C (control_unit_inst_n_113),
+        .\r_reg_reg[1][0]_LDC_i_5 (control_unit_inst_n_42),
+        .\r_reg_reg[1][0]_P (control_unit_inst_n_242),
+        .\r_reg_reg[1][10]_C (control_unit_inst_n_104),
+        .\r_reg_reg[1][10]_P (control_unit_inst_n_251),
+        .\r_reg_reg[1][11]_C (control_unit_inst_n_103),
+        .\r_reg_reg[1][11]_P (control_unit_inst_n_252),
+        .\r_reg_reg[1][12]_C (control_unit_inst_n_102),
+        .\r_reg_reg[1][12]_LDC_i_5 ({control_unit_inst_n_60,control_unit_inst_n_61,control_unit_inst_n_62,control_unit_inst_n_63}),
+        .\r_reg_reg[1][12]_P (control_unit_inst_n_253),
+        .\r_reg_reg[1][13]_C (control_unit_inst_n_101),
+        .\r_reg_reg[1][13]_P (control_unit_inst_n_254),
+        .\r_reg_reg[1][14]_C (control_unit_inst_n_100),
+        .\r_reg_reg[1][14]_P (control_unit_inst_n_255),
+        .\r_reg_reg[1][15]_C (control_unit_inst_n_99),
+        .\r_reg_reg[1][15]_P (control_unit_inst_n_256),
+        .\r_reg_reg[1][16]_C (control_unit_inst_n_98),
+        .\r_reg_reg[1][16]_LDC_i_4 ({control_unit_inst_n_64,control_unit_inst_n_65,control_unit_inst_n_66,control_unit_inst_n_67}),
+        .\r_reg_reg[1][16]_P (control_unit_inst_n_257),
+        .\r_reg_reg[1][17]_C (control_unit_inst_n_97),
+        .\r_reg_reg[1][17]_P (control_unit_inst_n_258),
+        .\r_reg_reg[1][18]_C (control_unit_inst_n_96),
+        .\r_reg_reg[1][18]_P (control_unit_inst_n_259),
+        .\r_reg_reg[1][19]_C (control_unit_inst_n_95),
+        .\r_reg_reg[1][19]_P (control_unit_inst_n_260),
+        .\r_reg_reg[1][1]_C (control_unit_inst_n_112),
+        .\r_reg_reg[1][1]_P (control_unit_inst_n_243),
+        .\r_reg_reg[1][20]_C (control_unit_inst_n_94),
+        .\r_reg_reg[1][20]_LDC_i_4 ({control_unit_inst_n_68,control_unit_inst_n_69,control_unit_inst_n_70,control_unit_inst_n_71}),
+        .\r_reg_reg[1][20]_P (control_unit_inst_n_261),
+        .\r_reg_reg[1][21]_C (control_unit_inst_n_93),
+        .\r_reg_reg[1][21]_P (control_unit_inst_n_262),
+        .\r_reg_reg[1][22]_C (control_unit_inst_n_92),
+        .\r_reg_reg[1][22]_P (control_unit_inst_n_263),
+        .\r_reg_reg[1][23]_C (control_unit_inst_n_91),
+        .\r_reg_reg[1][23]_P (control_unit_inst_n_264),
+        .\r_reg_reg[1][24]_C (control_unit_inst_n_90),
+        .\r_reg_reg[1][24]_LDC_i_5 ({control_unit_inst_n_72,control_unit_inst_n_73,control_unit_inst_n_74,control_unit_inst_n_75}),
+        .\r_reg_reg[1][24]_P (control_unit_inst_n_265),
+        .\r_reg_reg[1][25]_C (control_unit_inst_n_89),
+        .\r_reg_reg[1][25]_P (control_unit_inst_n_266),
+        .\r_reg_reg[1][26]_C (control_unit_inst_n_88),
+        .\r_reg_reg[1][26]_P (control_unit_inst_n_267),
+        .\r_reg_reg[1][27]_C (control_unit_inst_n_87),
+        .\r_reg_reg[1][27]_P (control_unit_inst_n_268),
+        .\r_reg_reg[1][28]_C (control_unit_inst_n_86),
+        .\r_reg_reg[1][28]_LDC_i_4 ({control_unit_inst_n_76,control_unit_inst_n_77,control_unit_inst_n_78,control_unit_inst_n_79}),
+        .\r_reg_reg[1][28]_P (control_unit_inst_n_269),
+        .\r_reg_reg[1][29]_C (control_unit_inst_n_85),
+        .\r_reg_reg[1][29]_P (control_unit_inst_n_270),
+        .\r_reg_reg[1][2]_C (control_unit_inst_n_111),
+        .\r_reg_reg[1][2]_P (control_unit_inst_n_244),
+        .\r_reg_reg[1][30]_C (control_unit_inst_n_84),
+        .\r_reg_reg[1][30]_P (control_unit_inst_n_271),
+        .\r_reg_reg[1][31]_C (control_unit_inst_n_83),
+        .\r_reg_reg[1][31]_P (control_unit_inst_n_272),
+        .\r_reg_reg[1][3]_C (control_unit_inst_n_82),
+        .\r_reg_reg[1][3]_P (control_unit_inst_n_81),
+        .\r_reg_reg[1][4]_C (control_unit_inst_n_110),
+        .\r_reg_reg[1][4]_LDC_i_4 ({control_unit_inst_n_52,control_unit_inst_n_53,control_unit_inst_n_54,control_unit_inst_n_55}),
+        .\r_reg_reg[1][4]_P (control_unit_inst_n_245),
+        .\r_reg_reg[1][5]_C (control_unit_inst_n_109),
+        .\r_reg_reg[1][5]_P (control_unit_inst_n_246),
+        .\r_reg_reg[1][6]_C (control_unit_inst_n_108),
+        .\r_reg_reg[1][6]_P (control_unit_inst_n_247),
+        .\r_reg_reg[1][7]_C (control_unit_inst_n_107),
+        .\r_reg_reg[1][7]_P (control_unit_inst_n_248),
+        .\r_reg_reg[1][8]_C (control_unit_inst_n_106),
+        .\r_reg_reg[1][8]_LDC_i_4 ({control_unit_inst_n_56,control_unit_inst_n_57,control_unit_inst_n_58,control_unit_inst_n_59}),
+        .\r_reg_reg[1][8]_P (control_unit_inst_n_249),
+        .\r_reg_reg[1][9]_C (control_unit_inst_n_105),
+        .\r_reg_reg[1][9]_P (control_unit_inst_n_250),
+        .\r_reg_reg[2][0]_C (control_unit_inst_n_114),
+        .\r_reg_reg[2][0]_P (control_unit_inst_n_209),
+        .\r_reg_reg[2][10]_C (control_unit_inst_n_123),
+        .\r_reg_reg[2][10]_P (control_unit_inst_n_200),
+        .\r_reg_reg[2][11]_C (control_unit_inst_n_124),
+        .\r_reg_reg[2][11]_P (control_unit_inst_n_199),
+        .\r_reg_reg[2][12]_C (control_unit_inst_n_125),
+        .\r_reg_reg[2][12]_P (control_unit_inst_n_198),
+        .\r_reg_reg[2][13]_C (control_unit_inst_n_126),
+        .\r_reg_reg[2][13]_P (control_unit_inst_n_197),
+        .\r_reg_reg[2][14]_C (control_unit_inst_n_127),
+        .\r_reg_reg[2][14]_P (control_unit_inst_n_196),
+        .\r_reg_reg[2][15]_C (control_unit_inst_n_128),
+        .\r_reg_reg[2][15]_P (control_unit_inst_n_195),
+        .\r_reg_reg[2][16]_C (control_unit_inst_n_129),
+        .\r_reg_reg[2][16]_P (control_unit_inst_n_194),
+        .\r_reg_reg[2][17]_C (control_unit_inst_n_130),
+        .\r_reg_reg[2][17]_P (control_unit_inst_n_193),
+        .\r_reg_reg[2][18]_C (control_unit_inst_n_131),
+        .\r_reg_reg[2][18]_P (control_unit_inst_n_192),
+        .\r_reg_reg[2][19]_C (control_unit_inst_n_132),
+        .\r_reg_reg[2][19]_P (control_unit_inst_n_191),
+        .\r_reg_reg[2][1]_C (control_unit_inst_n_115),
+        .\r_reg_reg[2][1]_P (control_unit_inst_n_208),
+        .\r_reg_reg[2][20]_C (control_unit_inst_n_133),
+        .\r_reg_reg[2][20]_P (control_unit_inst_n_190),
+        .\r_reg_reg[2][21]_C (control_unit_inst_n_134),
+        .\r_reg_reg[2][21]_P (control_unit_inst_n_189),
+        .\r_reg_reg[2][22]_C (control_unit_inst_n_135),
+        .\r_reg_reg[2][22]_P (control_unit_inst_n_188),
+        .\r_reg_reg[2][23]_C (control_unit_inst_n_136),
+        .\r_reg_reg[2][23]_P (control_unit_inst_n_187),
+        .\r_reg_reg[2][24]_C (control_unit_inst_n_137),
+        .\r_reg_reg[2][24]_P (control_unit_inst_n_186),
+        .\r_reg_reg[2][25]_C (control_unit_inst_n_138),
+        .\r_reg_reg[2][25]_P (control_unit_inst_n_185),
+        .\r_reg_reg[2][26]_C (control_unit_inst_n_139),
+        .\r_reg_reg[2][26]_P (control_unit_inst_n_184),
+        .\r_reg_reg[2][27]_C (control_unit_inst_n_140),
+        .\r_reg_reg[2][27]_P (control_unit_inst_n_183),
+        .\r_reg_reg[2][28]_C (control_unit_inst_n_141),
+        .\r_reg_reg[2][28]_P (control_unit_inst_n_182),
+        .\r_reg_reg[2][29]_C (control_unit_inst_n_142),
+        .\r_reg_reg[2][29]_P (control_unit_inst_n_181),
+        .\r_reg_reg[2][2]_C (control_unit_inst_n_145),
+        .\r_reg_reg[2][2]_P (control_unit_inst_n_178),
+        .\r_reg_reg[2][30]_C (control_unit_inst_n_143),
+        .\r_reg_reg[2][30]_P (control_unit_inst_n_180),
+        .\r_reg_reg[2][31]_C (control_unit_inst_n_144),
+        .\r_reg_reg[2][31]_P (control_unit_inst_n_179),
+        .\r_reg_reg[2][3]_C (control_unit_inst_n_116),
+        .\r_reg_reg[2][3]_P (control_unit_inst_n_207),
+        .\r_reg_reg[2][4]_C (control_unit_inst_n_117),
+        .\r_reg_reg[2][4]_P (control_unit_inst_n_206),
+        .\r_reg_reg[2][5]_C (control_unit_inst_n_118),
+        .\r_reg_reg[2][5]_P (control_unit_inst_n_205),
+        .\r_reg_reg[2][6]_C (control_unit_inst_n_119),
+        .\r_reg_reg[2][6]_P (control_unit_inst_n_204),
+        .\r_reg_reg[2][7]_C (control_unit_inst_n_120),
+        .\r_reg_reg[2][7]_P (control_unit_inst_n_203),
+        .\r_reg_reg[2][8]_C (control_unit_inst_n_121),
+        .\r_reg_reg[2][8]_P (control_unit_inst_n_202),
+        .\r_reg_reg[2][9]_C (control_unit_inst_n_122),
+        .\r_reg_reg[2][9]_P (control_unit_inst_n_201),
+        .\r_reg_reg[3][0]_C (control_unit_inst_n_953),
+        .\r_reg_reg[3][0]_P (control_unit_inst_n_241),
+        .\r_reg_reg[3][10]_C (control_unit_inst_n_1045),
+        .\r_reg_reg[3][10]_P (control_unit_inst_n_232),
+        .\r_reg_reg[3][11]_C (control_unit_inst_n_1041),
+        .\r_reg_reg[3][11]_P (control_unit_inst_n_231),
+        .\r_reg_reg[3][12]_C (control_unit_inst_n_1037),
+        .\r_reg_reg[3][12]_P (control_unit_inst_n_230),
+        .\r_reg_reg[3][13]_C (control_unit_inst_n_1033),
+        .\r_reg_reg[3][13]_P (control_unit_inst_n_229),
+        .\r_reg_reg[3][14]_C (control_unit_inst_n_1029),
+        .\r_reg_reg[3][14]_P (control_unit_inst_n_228),
+        .\r_reg_reg[3][15]_C (control_unit_inst_n_1025),
+        .\r_reg_reg[3][15]_P (control_unit_inst_n_227),
+        .\r_reg_reg[3][16]_C (control_unit_inst_n_1021),
+        .\r_reg_reg[3][16]_P (control_unit_inst_n_226),
+        .\r_reg_reg[3][17]_C (control_unit_inst_n_1017),
+        .\r_reg_reg[3][17]_P (control_unit_inst_n_225),
+        .\r_reg_reg[3][18]_C (control_unit_inst_n_1013),
+        .\r_reg_reg[3][18]_P (control_unit_inst_n_224),
+        .\r_reg_reg[3][19]_C (control_unit_inst_n_1009),
+        .\r_reg_reg[3][19]_P (control_unit_inst_n_223),
+        .\r_reg_reg[3][1]_C (control_unit_inst_n_949),
+        .\r_reg_reg[3][1]_P (control_unit_inst_n_240),
+        .\r_reg_reg[3][20]_C (control_unit_inst_n_1005),
+        .\r_reg_reg[3][20]_P (control_unit_inst_n_222),
+        .\r_reg_reg[3][21]_C (control_unit_inst_n_1001),
+        .\r_reg_reg[3][21]_P (control_unit_inst_n_221),
+        .\r_reg_reg[3][22]_C (control_unit_inst_n_997),
+        .\r_reg_reg[3][22]_P (control_unit_inst_n_220),
+        .\r_reg_reg[3][23]_C (control_unit_inst_n_993),
+        .\r_reg_reg[3][23]_P (control_unit_inst_n_219),
+        .\r_reg_reg[3][24]_C (control_unit_inst_n_989),
+        .\r_reg_reg[3][24]_P (control_unit_inst_n_218),
+        .\r_reg_reg[3][25]_C (control_unit_inst_n_985),
+        .\r_reg_reg[3][25]_P (control_unit_inst_n_217),
+        .\r_reg_reg[3][26]_C (control_unit_inst_n_981),
+        .\r_reg_reg[3][26]_P (control_unit_inst_n_216),
+        .\r_reg_reg[3][27]_C (control_unit_inst_n_977),
+        .\r_reg_reg[3][27]_P (control_unit_inst_n_215),
+        .\r_reg_reg[3][28]_C (control_unit_inst_n_973),
+        .\r_reg_reg[3][28]_P (control_unit_inst_n_214),
+        .\r_reg_reg[3][29]_C (control_unit_inst_n_969),
+        .\r_reg_reg[3][29]_P (control_unit_inst_n_213),
+        .\r_reg_reg[3][2]_C (control_unit_inst_n_534),
+        .\r_reg_reg[3][2]_P (control_unit_inst_n_210),
+        .\r_reg_reg[3][30]_C (control_unit_inst_n_965),
+        .\r_reg_reg[3][30]_P (control_unit_inst_n_212),
+        .\r_reg_reg[3][31]_C (control_unit_inst_n_961),
+        .\r_reg_reg[3][31]_P (control_unit_inst_n_211),
+        .\r_reg_reg[3][3]_C (control_unit_inst_n_957),
+        .\r_reg_reg[3][3]_P (control_unit_inst_n_239),
+        .\r_reg_reg[3][4]_C (control_unit_inst_n_1069),
+        .\r_reg_reg[3][4]_P (control_unit_inst_n_238),
+        .\r_reg_reg[3][5]_C (control_unit_inst_n_1065),
+        .\r_reg_reg[3][5]_P (control_unit_inst_n_237),
+        .\r_reg_reg[3][6]_C (control_unit_inst_n_1061),
+        .\r_reg_reg[3][6]_P (control_unit_inst_n_236),
+        .\r_reg_reg[3][7]_C (control_unit_inst_n_1057),
+        .\r_reg_reg[3][7]_P (control_unit_inst_n_235),
+        .\r_reg_reg[3][8]_C (control_unit_inst_n_1053),
+        .\r_reg_reg[3][8]_P (control_unit_inst_n_234),
+        .\r_reg_reg[3][9]_C (control_unit_inst_n_1049),
+        .\r_reg_reg[3][9]_P (control_unit_inst_n_233),
+        .\r_reg_reg[4][0]_C (control_unit_inst_n_339),
+        .\r_reg_reg[4][0]_P (control_unit_inst_n_568),
+        .\r_reg_reg[4][10]_C (control_unit_inst_n_330),
+        .\r_reg_reg[4][10]_P (control_unit_inst_n_577),
+        .\r_reg_reg[4][11]_C (control_unit_inst_n_329),
+        .\r_reg_reg[4][11]_P (control_unit_inst_n_578),
+        .\r_reg_reg[4][12]_C (control_unit_inst_n_328),
+        .\r_reg_reg[4][12]_P (control_unit_inst_n_579),
+        .\r_reg_reg[4][13]_C (control_unit_inst_n_327),
+        .\r_reg_reg[4][13]_P (control_unit_inst_n_580),
+        .\r_reg_reg[4][14]_C (control_unit_inst_n_326),
+        .\r_reg_reg[4][14]_P (control_unit_inst_n_581),
+        .\r_reg_reg[4][15]_C (control_unit_inst_n_325),
+        .\r_reg_reg[4][15]_P (control_unit_inst_n_582),
+        .\r_reg_reg[4][16]_C (control_unit_inst_n_324),
+        .\r_reg_reg[4][16]_P (control_unit_inst_n_583),
+        .\r_reg_reg[4][17]_C (control_unit_inst_n_323),
+        .\r_reg_reg[4][17]_P (control_unit_inst_n_584),
+        .\r_reg_reg[4][18]_C (control_unit_inst_n_322),
+        .\r_reg_reg[4][18]_P (control_unit_inst_n_585),
+        .\r_reg_reg[4][19]_C (control_unit_inst_n_321),
+        .\r_reg_reg[4][19]_P (control_unit_inst_n_586),
+        .\r_reg_reg[4][1]_C (control_unit_inst_n_338),
+        .\r_reg_reg[4][1]_P (control_unit_inst_n_569),
+        .\r_reg_reg[4][20]_C (control_unit_inst_n_320),
+        .\r_reg_reg[4][20]_P (control_unit_inst_n_587),
+        .\r_reg_reg[4][21]_C (control_unit_inst_n_319),
+        .\r_reg_reg[4][21]_P (control_unit_inst_n_588),
+        .\r_reg_reg[4][22]_C (control_unit_inst_n_318),
+        .\r_reg_reg[4][22]_P (control_unit_inst_n_589),
+        .\r_reg_reg[4][23]_C (control_unit_inst_n_317),
+        .\r_reg_reg[4][23]_P (control_unit_inst_n_590),
+        .\r_reg_reg[4][24]_C (control_unit_inst_n_316),
+        .\r_reg_reg[4][24]_P (control_unit_inst_n_591),
+        .\r_reg_reg[4][25]_C (control_unit_inst_n_315),
+        .\r_reg_reg[4][25]_P (control_unit_inst_n_592),
+        .\r_reg_reg[4][26]_C (control_unit_inst_n_314),
+        .\r_reg_reg[4][26]_P (control_unit_inst_n_593),
+        .\r_reg_reg[4][27]_C (control_unit_inst_n_313),
+        .\r_reg_reg[4][27]_P (control_unit_inst_n_594),
+        .\r_reg_reg[4][28]_C (control_unit_inst_n_312),
+        .\r_reg_reg[4][28]_P (control_unit_inst_n_595),
+        .\r_reg_reg[4][29]_C (control_unit_inst_n_311),
+        .\r_reg_reg[4][29]_P (control_unit_inst_n_596),
+        .\r_reg_reg[4][2]_C (control_unit_inst_n_308),
+        .\r_reg_reg[4][2]_P (control_unit_inst_n_535),
+        .\r_reg_reg[4][30]_C (control_unit_inst_n_310),
+        .\r_reg_reg[4][30]_P (control_unit_inst_n_597),
+        .\r_reg_reg[4][31]_C (control_unit_inst_n_309),
+        .\r_reg_reg[4][31]_P (control_unit_inst_n_598),
+        .\r_reg_reg[4][3]_C (control_unit_inst_n_337),
+        .\r_reg_reg[4][3]_P (control_unit_inst_n_570),
+        .\r_reg_reg[4][4]_C (control_unit_inst_n_336),
+        .\r_reg_reg[4][4]_P (control_unit_inst_n_571),
+        .\r_reg_reg[4][5]_C (control_unit_inst_n_335),
+        .\r_reg_reg[4][5]_P (control_unit_inst_n_572),
+        .\r_reg_reg[4][6]_C (control_unit_inst_n_334),
+        .\r_reg_reg[4][6]_P (control_unit_inst_n_573),
+        .\r_reg_reg[4][7]_C (control_unit_inst_n_333),
+        .\r_reg_reg[4][7]_P (control_unit_inst_n_574),
+        .\r_reg_reg[4][8]_C (control_unit_inst_n_332),
+        .\r_reg_reg[4][8]_P (control_unit_inst_n_575),
+        .\r_reg_reg[4][9]_C (control_unit_inst_n_331),
+        .\r_reg_reg[4][9]_P (control_unit_inst_n_576),
+        .\r_reg_reg[5][0]_C (control_unit_inst_n_693),
+        .\r_reg_reg[5][0]_P (control_unit_inst_n_567),
+        .\r_reg_reg[5][10]_C (control_unit_inst_n_684),
+        .\r_reg_reg[5][10]_P (control_unit_inst_n_558),
+        .\r_reg_reg[5][11]_C (control_unit_inst_n_683),
+        .\r_reg_reg[5][11]_P (control_unit_inst_n_557),
+        .\r_reg_reg[5][12]_C (control_unit_inst_n_682),
+        .\r_reg_reg[5][12]_P (control_unit_inst_n_556),
+        .\r_reg_reg[5][13]_C (control_unit_inst_n_681),
+        .\r_reg_reg[5][13]_P (control_unit_inst_n_555),
+        .\r_reg_reg[5][14]_C (control_unit_inst_n_680),
+        .\r_reg_reg[5][14]_P (control_unit_inst_n_554),
+        .\r_reg_reg[5][15]_C (control_unit_inst_n_679),
+        .\r_reg_reg[5][15]_P (control_unit_inst_n_553),
+        .\r_reg_reg[5][16]_C (control_unit_inst_n_678),
+        .\r_reg_reg[5][16]_P (control_unit_inst_n_552),
+        .\r_reg_reg[5][17]_C (control_unit_inst_n_677),
+        .\r_reg_reg[5][17]_P (control_unit_inst_n_551),
+        .\r_reg_reg[5][18]_C (control_unit_inst_n_676),
+        .\r_reg_reg[5][18]_P (control_unit_inst_n_550),
+        .\r_reg_reg[5][19]_C (control_unit_inst_n_675),
+        .\r_reg_reg[5][19]_P (control_unit_inst_n_549),
+        .\r_reg_reg[5][1]_C (control_unit_inst_n_692),
+        .\r_reg_reg[5][1]_P (control_unit_inst_n_566),
+        .\r_reg_reg[5][20]_C (control_unit_inst_n_674),
+        .\r_reg_reg[5][20]_P (control_unit_inst_n_548),
+        .\r_reg_reg[5][21]_C (control_unit_inst_n_673),
+        .\r_reg_reg[5][21]_P (control_unit_inst_n_547),
+        .\r_reg_reg[5][22]_C (control_unit_inst_n_672),
+        .\r_reg_reg[5][22]_P (control_unit_inst_n_546),
+        .\r_reg_reg[5][23]_C (control_unit_inst_n_671),
+        .\r_reg_reg[5][23]_P (control_unit_inst_n_545),
+        .\r_reg_reg[5][24]_C (control_unit_inst_n_670),
+        .\r_reg_reg[5][24]_P (control_unit_inst_n_544),
+        .\r_reg_reg[5][25]_C (control_unit_inst_n_669),
+        .\r_reg_reg[5][25]_P (control_unit_inst_n_543),
+        .\r_reg_reg[5][26]_C (control_unit_inst_n_668),
+        .\r_reg_reg[5][26]_P (control_unit_inst_n_542),
+        .\r_reg_reg[5][27]_C (control_unit_inst_n_667),
+        .\r_reg_reg[5][27]_P (control_unit_inst_n_541),
+        .\r_reg_reg[5][28]_C (control_unit_inst_n_666),
+        .\r_reg_reg[5][28]_P (control_unit_inst_n_540),
+        .\r_reg_reg[5][29]_C (control_unit_inst_n_665),
+        .\r_reg_reg[5][29]_P (control_unit_inst_n_539),
+        .\r_reg_reg[5][2]_C (control_unit_inst_n_533),
+        .\r_reg_reg[5][2]_P (control_unit_inst_n_536),
+        .\r_reg_reg[5][30]_C (control_unit_inst_n_664),
+        .\r_reg_reg[5][30]_P (control_unit_inst_n_538),
+        .\r_reg_reg[5][31]_C (control_unit_inst_n_663),
+        .\r_reg_reg[5][31]_P (control_unit_inst_n_537),
+        .\r_reg_reg[5][3]_C (control_unit_inst_n_691),
+        .\r_reg_reg[5][3]_P (control_unit_inst_n_565),
+        .\r_reg_reg[5][4]_C (control_unit_inst_n_690),
+        .\r_reg_reg[5][4]_P (control_unit_inst_n_564),
+        .\r_reg_reg[5][5]_C (control_unit_inst_n_689),
+        .\r_reg_reg[5][5]_P (control_unit_inst_n_563),
+        .\r_reg_reg[5][6]_C (control_unit_inst_n_688),
+        .\r_reg_reg[5][6]_P (control_unit_inst_n_562),
+        .\r_reg_reg[5][7]_C (control_unit_inst_n_687),
+        .\r_reg_reg[5][7]_P (control_unit_inst_n_561),
+        .\r_reg_reg[5][8]_C (control_unit_inst_n_686),
+        .\r_reg_reg[5][8]_P (control_unit_inst_n_560),
+        .\r_reg_reg[5][9]_C (control_unit_inst_n_685),
+        .\r_reg_reg[5][9]_P (control_unit_inst_n_559),
+        .\r_reg_reg[6][0]_C (control_unit_inst_n_1072),
+        .\r_reg_reg[6][0]_P (control_unit_inst_n_695),
+        .\r_reg_reg[6][10]_C (control_unit_inst_n_1081),
+        .\r_reg_reg[6][10]_P (control_unit_inst_n_713),
+        .\r_reg_reg[6][11]_C (control_unit_inst_n_1082),
+        .\r_reg_reg[6][11]_P (control_unit_inst_n_715),
+        .\r_reg_reg[6][12]_C (control_unit_inst_n_1083),
+        .\r_reg_reg[6][12]_P (control_unit_inst_n_717),
+        .\r_reg_reg[6][13]_C (control_unit_inst_n_1084),
+        .\r_reg_reg[6][13]_P (control_unit_inst_n_719),
+        .\r_reg_reg[6][14]_C (control_unit_inst_n_1085),
+        .\r_reg_reg[6][14]_P (control_unit_inst_n_721),
+        .\r_reg_reg[6][15]_C (control_unit_inst_n_1086),
+        .\r_reg_reg[6][15]_P (control_unit_inst_n_723),
+        .\r_reg_reg[6][16]_C (control_unit_inst_n_1087),
+        .\r_reg_reg[6][16]_P (control_unit_inst_n_725),
+        .\r_reg_reg[6][17]_C (control_unit_inst_n_1088),
+        .\r_reg_reg[6][17]_P (control_unit_inst_n_727),
+        .\r_reg_reg[6][18]_C (control_unit_inst_n_1089),
+        .\r_reg_reg[6][18]_P (control_unit_inst_n_729),
+        .\r_reg_reg[6][19]_C (control_unit_inst_n_1090),
+        .\r_reg_reg[6][19]_P (control_unit_inst_n_731),
+        .\r_reg_reg[6][1]_C (control_unit_inst_n_1073),
+        .\r_reg_reg[6][1]_P (control_unit_inst_n_697),
+        .\r_reg_reg[6][20]_C (control_unit_inst_n_1091),
+        .\r_reg_reg[6][20]_P (control_unit_inst_n_733),
+        .\r_reg_reg[6][21]_C (control_unit_inst_n_1092),
+        .\r_reg_reg[6][21]_P (control_unit_inst_n_735),
+        .\r_reg_reg[6][22]_C (control_unit_inst_n_1093),
+        .\r_reg_reg[6][22]_P (control_unit_inst_n_737),
+        .\r_reg_reg[6][23]_C (control_unit_inst_n_1094),
+        .\r_reg_reg[6][23]_P (control_unit_inst_n_739),
+        .\r_reg_reg[6][24]_C (control_unit_inst_n_1095),
+        .\r_reg_reg[6][24]_P (control_unit_inst_n_741),
+        .\r_reg_reg[6][25]_C (control_unit_inst_n_1096),
+        .\r_reg_reg[6][25]_P (control_unit_inst_n_743),
+        .\r_reg_reg[6][26]_C (control_unit_inst_n_1097),
+        .\r_reg_reg[6][26]_P (control_unit_inst_n_745),
+        .\r_reg_reg[6][27]_C (control_unit_inst_n_1098),
+        .\r_reg_reg[6][27]_P (control_unit_inst_n_747),
+        .\r_reg_reg[6][28]_C (control_unit_inst_n_1099),
+        .\r_reg_reg[6][28]_P (control_unit_inst_n_749),
+        .\r_reg_reg[6][29]_C (control_unit_inst_n_1100),
+        .\r_reg_reg[6][29]_P (control_unit_inst_n_751),
+        .\r_reg_reg[6][2]_C (control_unit_inst_n_1103),
+        .\r_reg_reg[6][2]_P (control_unit_inst_n_757),
+        .\r_reg_reg[6][30]_C (control_unit_inst_n_1101),
+        .\r_reg_reg[6][30]_P (control_unit_inst_n_753),
+        .\r_reg_reg[6][31]_C (control_unit_inst_n_1102),
+        .\r_reg_reg[6][31]_P (control_unit_inst_n_755),
+        .\r_reg_reg[6][3]_C (control_unit_inst_n_1074),
+        .\r_reg_reg[6][3]_P (control_unit_inst_n_699),
+        .\r_reg_reg[6][4]_C (control_unit_inst_n_1075),
+        .\r_reg_reg[6][4]_P (control_unit_inst_n_701),
+        .\r_reg_reg[6][5]_C (control_unit_inst_n_1076),
+        .\r_reg_reg[6][5]_P (control_unit_inst_n_703),
+        .\r_reg_reg[6][6]_C (control_unit_inst_n_1077),
+        .\r_reg_reg[6][6]_P (control_unit_inst_n_705),
+        .\r_reg_reg[6][7]_C (control_unit_inst_n_1078),
+        .\r_reg_reg[6][7]_P (control_unit_inst_n_707),
+        .\r_reg_reg[6][8]_C (control_unit_inst_n_1079),
+        .\r_reg_reg[6][8]_P (control_unit_inst_n_709),
+        .\r_reg_reg[6][9]_C (control_unit_inst_n_1080),
+        .\r_reg_reg[6][9]_P (control_unit_inst_n_711),
+        .\r_reg_reg[7][0]_C (control_unit_inst_n_820),
+        .\r_reg_reg[7][0]_P (control_unit_inst_n_437),
+        .\r_reg_reg[7][10]_C (control_unit_inst_n_811),
+        .\r_reg_reg[7][10]_P (control_unit_inst_n_446),
+        .\r_reg_reg[7][11]_C (control_unit_inst_n_810),
+        .\r_reg_reg[7][11]_P (control_unit_inst_n_447),
+        .\r_reg_reg[7][12]_C (control_unit_inst_n_809),
+        .\r_reg_reg[7][12]_P (control_unit_inst_n_448),
+        .\r_reg_reg[7][13]_C (control_unit_inst_n_808),
+        .\r_reg_reg[7][13]_P (control_unit_inst_n_449),
+        .\r_reg_reg[7][14]_C (control_unit_inst_n_807),
+        .\r_reg_reg[7][14]_P (control_unit_inst_n_450),
+        .\r_reg_reg[7][15]_C (control_unit_inst_n_806),
+        .\r_reg_reg[7][15]_P (control_unit_inst_n_451),
+        .\r_reg_reg[7][16]_C (control_unit_inst_n_805),
+        .\r_reg_reg[7][16]_P (control_unit_inst_n_452),
+        .\r_reg_reg[7][17]_C (control_unit_inst_n_804),
+        .\r_reg_reg[7][17]_P (control_unit_inst_n_453),
+        .\r_reg_reg[7][18]_C (control_unit_inst_n_803),
+        .\r_reg_reg[7][18]_P (control_unit_inst_n_454),
+        .\r_reg_reg[7][19]_C (control_unit_inst_n_802),
+        .\r_reg_reg[7][19]_P (control_unit_inst_n_455),
+        .\r_reg_reg[7][1]_C (control_unit_inst_n_819),
+        .\r_reg_reg[7][1]_P (control_unit_inst_n_438),
+        .\r_reg_reg[7][20]_C (control_unit_inst_n_801),
+        .\r_reg_reg[7][20]_P (control_unit_inst_n_456),
+        .\r_reg_reg[7][21]_C (control_unit_inst_n_800),
+        .\r_reg_reg[7][21]_P (control_unit_inst_n_457),
+        .\r_reg_reg[7][22]_C (control_unit_inst_n_799),
+        .\r_reg_reg[7][22]_P (control_unit_inst_n_458),
+        .\r_reg_reg[7][23]_C (control_unit_inst_n_798),
+        .\r_reg_reg[7][23]_P (control_unit_inst_n_459),
+        .\r_reg_reg[7][24]_C (control_unit_inst_n_797),
+        .\r_reg_reg[7][24]_P (control_unit_inst_n_460),
+        .\r_reg_reg[7][25]_C (control_unit_inst_n_796),
+        .\r_reg_reg[7][25]_P (control_unit_inst_n_461),
+        .\r_reg_reg[7][26]_C (control_unit_inst_n_795),
+        .\r_reg_reg[7][26]_P (control_unit_inst_n_462),
+        .\r_reg_reg[7][27]_C (control_unit_inst_n_794),
+        .\r_reg_reg[7][27]_P (control_unit_inst_n_463),
+        .\r_reg_reg[7][28]_C (control_unit_inst_n_793),
+        .\r_reg_reg[7][28]_P (control_unit_inst_n_464),
+        .\r_reg_reg[7][29]_C (control_unit_inst_n_792),
+        .\r_reg_reg[7][29]_P (control_unit_inst_n_465),
+        .\r_reg_reg[7][2]_C (control_unit_inst_n_821),
+        .\r_reg_reg[7][2]_P (control_unit_inst_n_468),
+        .\r_reg_reg[7][30]_C (control_unit_inst_n_791),
+        .\r_reg_reg[7][30]_P (control_unit_inst_n_466),
+        .\r_reg_reg[7][31]_C (control_unit_inst_n_790),
+        .\r_reg_reg[7][31]_P (control_unit_inst_n_467),
+        .\r_reg_reg[7][3]_C (control_unit_inst_n_818),
+        .\r_reg_reg[7][3]_P (control_unit_inst_n_439),
+        .\r_reg_reg[7][4]_C (control_unit_inst_n_817),
+        .\r_reg_reg[7][4]_P (control_unit_inst_n_440),
+        .\r_reg_reg[7][5]_C (control_unit_inst_n_816),
+        .\r_reg_reg[7][5]_P (control_unit_inst_n_441),
+        .\r_reg_reg[7][6]_C (control_unit_inst_n_815),
+        .\r_reg_reg[7][6]_P (control_unit_inst_n_442),
+        .\r_reg_reg[7][7]_C (control_unit_inst_n_814),
+        .\r_reg_reg[7][7]_P (control_unit_inst_n_443),
+        .\r_reg_reg[7][8]_C (control_unit_inst_n_813),
+        .\r_reg_reg[7][8]_P (control_unit_inst_n_444),
+        .\r_reg_reg[7][9]_C (control_unit_inst_n_812),
+        .\r_reg_reg[7][9]_P (control_unit_inst_n_445),
+        .\r_reg_reg[8][0]_C (control_unit_inst_n_340),
+        .\r_reg_reg[8][0]_P (control_unit_inst_n_851),
+        .\r_reg_reg[8][10]_C (control_unit_inst_n_358),
+        .\r_reg_reg[8][10]_P (control_unit_inst_n_860),
+        .\r_reg_reg[8][11]_C (control_unit_inst_n_360),
+        .\r_reg_reg[8][11]_P (control_unit_inst_n_861),
+        .\r_reg_reg[8][12]_C (control_unit_inst_n_362),
+        .\r_reg_reg[8][12]_P (control_unit_inst_n_862),
+        .\r_reg_reg[8][13]_C (control_unit_inst_n_364),
+        .\r_reg_reg[8][13]_P (control_unit_inst_n_863),
+        .\r_reg_reg[8][14]_C (control_unit_inst_n_366),
+        .\r_reg_reg[8][14]_P (control_unit_inst_n_864),
+        .\r_reg_reg[8][15]_C (control_unit_inst_n_368),
+        .\r_reg_reg[8][15]_P (control_unit_inst_n_865),
+        .\r_reg_reg[8][16]_C (control_unit_inst_n_370),
+        .\r_reg_reg[8][16]_P (control_unit_inst_n_866),
+        .\r_reg_reg[8][17]_C (control_unit_inst_n_372),
+        .\r_reg_reg[8][17]_P (control_unit_inst_n_867),
+        .\r_reg_reg[8][18]_C (control_unit_inst_n_374),
+        .\r_reg_reg[8][18]_P (control_unit_inst_n_868),
+        .\r_reg_reg[8][19]_C (control_unit_inst_n_376),
+        .\r_reg_reg[8][19]_P (control_unit_inst_n_869),
+        .\r_reg_reg[8][1]_C (control_unit_inst_n_342),
+        .\r_reg_reg[8][1]_P (control_unit_inst_n_852),
+        .\r_reg_reg[8][20]_C (control_unit_inst_n_378),
+        .\r_reg_reg[8][20]_P (control_unit_inst_n_870),
+        .\r_reg_reg[8][21]_C (control_unit_inst_n_380),
+        .\r_reg_reg[8][21]_P (control_unit_inst_n_871),
+        .\r_reg_reg[8][22]_C (control_unit_inst_n_382),
+        .\r_reg_reg[8][22]_P (control_unit_inst_n_872),
+        .\r_reg_reg[8][23]_C (control_unit_inst_n_384),
+        .\r_reg_reg[8][23]_P (control_unit_inst_n_873),
+        .\r_reg_reg[8][24]_C (control_unit_inst_n_386),
+        .\r_reg_reg[8][24]_P (control_unit_inst_n_874),
+        .\r_reg_reg[8][25]_C (control_unit_inst_n_388),
+        .\r_reg_reg[8][25]_P (control_unit_inst_n_875),
+        .\r_reg_reg[8][26]_C (control_unit_inst_n_390),
+        .\r_reg_reg[8][26]_P (control_unit_inst_n_876),
+        .\r_reg_reg[8][27]_C (control_unit_inst_n_392),
+        .\r_reg_reg[8][27]_P (control_unit_inst_n_877),
+        .\r_reg_reg[8][28]_C (control_unit_inst_n_394),
+        .\r_reg_reg[8][28]_P (control_unit_inst_n_878),
+        .\r_reg_reg[8][29]_C (control_unit_inst_n_396),
+        .\r_reg_reg[8][29]_P (control_unit_inst_n_879),
+        .\r_reg_reg[8][2]_C (control_unit_inst_n_402),
+        .\r_reg_reg[8][2]_P (control_unit_inst_n_822),
+        .\r_reg_reg[8][30]_C (control_unit_inst_n_398),
+        .\r_reg_reg[8][30]_P (control_unit_inst_n_880),
+        .\r_reg_reg[8][31]_C (control_unit_inst_n_400),
+        .\r_reg_reg[8][31]_P (control_unit_inst_n_881),
+        .\r_reg_reg[8][3]_C (control_unit_inst_n_344),
+        .\r_reg_reg[8][3]_P (control_unit_inst_n_853),
+        .\r_reg_reg[8][4]_C (control_unit_inst_n_346),
+        .\r_reg_reg[8][4]_P (control_unit_inst_n_854),
+        .\r_reg_reg[8][5]_C (control_unit_inst_n_348),
+        .\r_reg_reg[8][5]_P (control_unit_inst_n_855),
+        .\r_reg_reg[8][6]_C (control_unit_inst_n_350),
+        .\r_reg_reg[8][6]_P (control_unit_inst_n_856),
+        .\r_reg_reg[8][7]_C (control_unit_inst_n_352),
+        .\r_reg_reg[8][7]_P (control_unit_inst_n_857),
+        .\r_reg_reg[8][8]_C (control_unit_inst_n_354),
+        .\r_reg_reg[8][8]_P (control_unit_inst_n_858),
+        .\r_reg_reg[8][9]_C (control_unit_inst_n_356),
+        .\r_reg_reg[8][9]_P (control_unit_inst_n_859),
+        .\r_reg_reg[9][0]_C (control_unit_inst_n_632),
+        .\r_reg_reg[9][0]_P (control_unit_inst_n_275),
+        .\r_reg_reg[9][10]_C (control_unit_inst_n_641),
+        .\r_reg_reg[9][10]_P (control_unit_inst_n_844),
+        .\r_reg_reg[9][11]_C (control_unit_inst_n_642),
+        .\r_reg_reg[9][11]_P (control_unit_inst_n_843),
+        .\r_reg_reg[9][12]_C (control_unit_inst_n_643),
+        .\r_reg_reg[9][12]_P (control_unit_inst_n_842),
+        .\r_reg_reg[9][13]_C (control_unit_inst_n_644),
+        .\r_reg_reg[9][13]_P (control_unit_inst_n_841),
+        .\r_reg_reg[9][14]_C (control_unit_inst_n_645),
+        .\r_reg_reg[9][14]_P (control_unit_inst_n_840),
+        .\r_reg_reg[9][15]_C (control_unit_inst_n_646),
+        .\r_reg_reg[9][15]_P (control_unit_inst_n_839),
+        .\r_reg_reg[9][16]_C (control_unit_inst_n_647),
+        .\r_reg_reg[9][16]_P (control_unit_inst_n_838),
+        .\r_reg_reg[9][17]_C (control_unit_inst_n_648),
+        .\r_reg_reg[9][17]_P (control_unit_inst_n_837),
+        .\r_reg_reg[9][18]_C (control_unit_inst_n_649),
+        .\r_reg_reg[9][18]_P (control_unit_inst_n_836),
+        .\r_reg_reg[9][19]_C (control_unit_inst_n_650),
+        .\r_reg_reg[9][19]_P (control_unit_inst_n_835),
+        .\r_reg_reg[9][1]_C (control_unit_inst_n_633),
+        .\r_reg_reg[9][1]_P (control_unit_inst_n_274),
+        .\r_reg_reg[9][20]_C (control_unit_inst_n_651),
+        .\r_reg_reg[9][20]_P (control_unit_inst_n_834),
+        .\r_reg_reg[9][21]_C (control_unit_inst_n_652),
+        .\r_reg_reg[9][21]_P (control_unit_inst_n_833),
+        .\r_reg_reg[9][22]_C (control_unit_inst_n_653),
+        .\r_reg_reg[9][22]_P (control_unit_inst_n_832),
+        .\r_reg_reg[9][23]_C (control_unit_inst_n_654),
+        .\r_reg_reg[9][23]_P (control_unit_inst_n_831),
+        .\r_reg_reg[9][24]_C (control_unit_inst_n_655),
+        .\r_reg_reg[9][24]_P (control_unit_inst_n_830),
+        .\r_reg_reg[9][25]_C (control_unit_inst_n_656),
+        .\r_reg_reg[9][25]_P (control_unit_inst_n_829),
+        .\r_reg_reg[9][26]_C (control_unit_inst_n_657),
+        .\r_reg_reg[9][26]_P (control_unit_inst_n_828),
+        .\r_reg_reg[9][27]_C (control_unit_inst_n_658),
+        .\r_reg_reg[9][27]_P (control_unit_inst_n_827),
+        .\r_reg_reg[9][28]_C (control_unit_inst_n_659),
+        .\r_reg_reg[9][28]_P (control_unit_inst_n_826),
+        .\r_reg_reg[9][29]_C (control_unit_inst_n_660),
+        .\r_reg_reg[9][29]_P (control_unit_inst_n_825),
+        .\r_reg_reg[9][2]_C (control_unit_inst_n_631),
+        .\r_reg_reg[9][2]_P (control_unit_inst_n_273),
+        .\r_reg_reg[9][30]_C (control_unit_inst_n_661),
+        .\r_reg_reg[9][30]_P (control_unit_inst_n_824),
+        .\r_reg_reg[9][31]_C (control_unit_inst_n_662),
+        .\r_reg_reg[9][31]_P (control_unit_inst_n_823),
+        .\r_reg_reg[9][3]_C (control_unit_inst_n_634),
+        .\r_reg_reg[9][3]_P (control_unit_inst_n_80),
+        .\r_reg_reg[9][3]_P_0 (control_unit_inst_n_47),
+        .\r_reg_reg[9][4]_C (control_unit_inst_n_635),
+        .\r_reg_reg[9][4]_P (control_unit_inst_n_850),
+        .\r_reg_reg[9][5]_C (control_unit_inst_n_636),
+        .\r_reg_reg[9][5]_P (control_unit_inst_n_849),
+        .\r_reg_reg[9][6]_C (control_unit_inst_n_637),
+        .\r_reg_reg[9][6]_P (control_unit_inst_n_848),
+        .\r_reg_reg[9][7]_C (control_unit_inst_n_638),
+        .\r_reg_reg[9][7]_P (control_unit_inst_n_847),
+        .\r_reg_reg[9][8]_C (control_unit_inst_n_639),
+        .\r_reg_reg[9][8]_P (control_unit_inst_n_846),
+        .\r_reg_reg[9][9]_C (control_unit_inst_n_640),
+        .\r_reg_reg[9][9]_P (control_unit_inst_n_845),
         .r_rgf0(r_rgf0),
         .r_we_ir(r_we_ir),
         .r_we_ir_reg(datapath_inst_n_4),
-        .rst_n(datapath_inst_n_202),
+        .rst_n(datapath_inst_n_204),
         .rst_n_IBUF(rst_n_IBUF),
         .w_addr1_mux(w_addr1_mux[3:2]));
+  BUFG i_re_cr_datapath_BUFG_inst
+       (.I(i_re_cr_datapath),
+        .O(i_re_cr_datapath_BUFG));
   OBUF \o_bits_OBUF[0]_inst 
        (.I(o_bits_OBUF[0]),
         .O(o_bits[0]));

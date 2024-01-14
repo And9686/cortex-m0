@@ -11,19 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="53.810 ns"></ZoomStartTime>
-      <ZoomEndTime time="308.811 ns"></ZoomEndTime>
-      <Cursor1Time time="278.096 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="367.001 ns"></ZoomEndTime>
+      <Cursor1Time time="445.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="217"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
-   <wave_markers>
-      <marker time="65000" label="" />
-      <marker time="105000" label="" />
-   </wave_markers>
    <wvobject fp_name="/tb_top_layer/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -52,8 +48,8 @@
          <obj_property name="ObjectShortName">o_bits[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_state" type="array">
-         <obj_property name="ElementShortName">r_state[1:0]</obj_property>
-         <obj_property name="ObjectShortName">r_state[1:0]</obj_property>
+         <obj_property name="ElementShortName">r_state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">r_state[2:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/i_instructions" type="array">
          <obj_property name="ElementShortName">i_instructions[15:0]</obj_property>
@@ -70,6 +66,38 @@
       <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/o_res" type="array">
          <obj_property name="ElementShortName">o_res[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_res[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_branch" type="logic">
+         <obj_property name="ElementShortName">r_branch</obj_property>
+         <obj_property name="ObjectShortName">r_branch</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_we_cr" type="logic">
+         <obj_property name="ElementShortName">r_we_cr</obj_property>
+         <obj_property name="ObjectShortName">r_we_cr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_re_cr" type="logic">
+         <obj_property name="ElementShortName">i_re_cr</obj_property>
+         <obj_property name="ObjectShortName">i_re_cr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/w_rgf_data2" type="array">
+         <obj_property name="ElementShortName">w_rgf_data2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_rgf_data2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/w_addr2_mux" type="array">
+         <obj_property name="ElementShortName">w_addr2_mux[3:0]</obj_property>
+         <obj_property name="ObjectShortName">w_addr2_mux[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_addr2_mux" type="array">
+         <obj_property name="ElementShortName">i_addr2_mux[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr2_mux[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/o_addr2_mux" type="array">
+         <obj_property name="ElementShortName">o_addr2_mux[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_addr2_mux[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/rom_inst/i_address" type="array">
+         <obj_property name="ElementShortName">i_address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_address[31:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

@@ -29,6 +29,7 @@ module control_unit(
     output wire o_we_ir,
     output wire o_we_cr,
     output wire o_re_cr,
+    output wire o_re_rom,
     output wire [1:0] o_addr1_mux,
     output wire [1:0] o_addr2_mux,
     output wire [1:0] o_data_mux,
@@ -37,22 +38,23 @@ module control_unit(
     );
     
     // Define States
-    parameter FETCH     = 0;
-    parameter DECODE    = 1;
-    parameter EXECUTE   = 2;
-    parameter START     = 3;
-    parameter HALT      = 4;
+    parameter FETCH             = 0;
+    parameter DECODE            = 1;
+    parameter EXECUTE           = 2;
+    parameter START             = 3;
+    parameter HALT              = 4; 
     
     // Registers
-    reg [1:0] r_state, r_nstate;
-    reg r_we_ir, r_we_cr, r_re_cr;
+    reg [2:0] r_state, r_nstate;
+    reg r_we_ir, r_we_cr, r_re_cr, r_re_rom;
     reg [1:0] r_addr1_mux;
-    reg r_addr2_mux;
+    reg [1:0] r_addr2_mux;
     reg [1:0] r_data_mux;
     reg [3:0] r_alu_opcode;
     reg [1:0] r_alu_input;
     reg [3:0] r_execute;
     reg [15:0] r_instructions;
+    reg r_branch; // this flag is for increment pc purposes in fetch
     
     
     // State Machine
@@ -63,6 +65,8 @@ module control_unit(
             r_we_ir = 0;
             r_we_cr = 0;
             r_re_cr = 0;
+            r_re_rom = 0;
+            r_branch = 0;
             r_addr1_mux = 0;
             r_addr2_mux = 0;
             r_data_mux = 0;
@@ -77,17 +81,21 @@ module control_unit(
                     r_state = START;
                     r_addr1_mux = 2; // select program counter address
                     r_data_mux = 1; // Select pc addr
-                    r_re_cr = 0;
+                    r_re_cr = 1;
                     r_we_cr = 0; 
-                    r_we_ir = 0;                    
+                    r_we_ir = 0;    
+                    r_re_rom = 1;    
                     r_nstate = FETCH;
                 end
                 FETCH: begin // Fetch the instruction
                     r_state = FETCH;
                     r_re_cr = 1;
-                    r_we_cr = 1; 
-                    r_we_ir = 1;   
                     
+                    if (!r_branch) r_we_cr = 1; 
+                    else r_branch = 0;
+                    
+                    r_we_ir = 1;   
+                    r_re_rom = 0;
                     r_nstate = DECODE;
                 end
                 DECODE: begin // Decode the instruction, check if needs another fetch for example or simply execute?
@@ -119,7 +127,7 @@ module control_unit(
                             r_alu_opcode = `SUB;
                         end else
                         if (r_instructions[13:11] == 3'b100) begin  // MOV Imediate
-                            r_addr2_mux = 3; // Result Register
+                            r_addr1_mux = 3; // Result Register
                             r_data_mux = 3; // Imediate 8bits
                             r_execute = `MOV_8BIT;
                         end
@@ -163,8 +171,9 @@ module control_unit(
                             r_nstate = START;
                         end
                         `BRNCH_AL: begin
-                            r_we_cr = 1; // Write Enable the core register 
                             r_re_cr = 0;
+                            r_we_cr = 1; // Write Enable the core register 
+                            r_branch = 1;
                             r_nstate = START;
                         end
                         `HALT_INS: begin
@@ -192,6 +201,7 @@ module control_unit(
     assign o_we_ir = r_we_ir;
     assign o_we_cr = r_we_cr;
     assign o_re_cr = r_re_cr;
+    assign o_re_rom = r_re_rom;
     assign o_addr1_mux = r_addr1_mux;
     assign o_addr2_mux = r_addr2_mux;
     assign o_data_mux = r_data_mux;
