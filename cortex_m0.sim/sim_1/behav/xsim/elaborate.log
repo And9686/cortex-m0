@@ -4,5 +4,19 @@ Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_address' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:88]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.r16
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_behav

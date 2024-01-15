@@ -38,7 +38,7 @@ integer i;
 
 reg [31:0] r_reg [15:0];
 
-always @(negedge  rst_n or posedge i_we or posedge i_re) begin
+always @(posedge clk or negedge  rst_n or posedge i_we) begin
     if (!rst_n) begin
         // rst_n the r_reg to 0 on a rising edge of the rst_n signal
         o_data1 = 0;

@@ -1,0 +1,47 @@
++====================+===================+==================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                              |
++====================+===================+==================================================+
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][30]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[7][30]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][30]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[5][30]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[1][30]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][30]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[5][29]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[5][26]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][24]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][24]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[0][22]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][22]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[4][22]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[5][22]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][22]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[1][21]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][20]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[7][17]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][17]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][16]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[1][16]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][13]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][12]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][12]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[0][10]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][10]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[7][10]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][10]_C/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[4][9]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[1][9]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][9]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[7][8]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][6]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][6]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][6]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][5]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[4][4]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[4][2]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[2][0]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[0][0]_P/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][0]_C/D  |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[6][31]_P/D |
+| sys_clk_pin        | sys_clk_pin       | datapath_inst/core_register/r_reg_reg[3][31]_P/D |
++--------------------+-------------------+--------------------------------------------------+

@@ -26,12 +26,14 @@ module datapath(
   input wire i_we_ir,
   input wire i_we_cr,
   input wire i_re_cr,
-  input wire i_re_rom,
   input wire [1:0] i_addr1_mux,
-  input wire [1:0] i_addr2_mux,
+  input wire i_addr2_mux,
   input wire [1:0] i_data_mux,
   input wire [3:0] i_alu_opcode,
   input wire [1:0] i_alu_input, // For when its an imediate entering the ALU
+
+  input wire i_we_pc, // Program Counter Specific Enable
+  input wire i_mux_pc,
 
   output wire [15:0] o_instructions,
   output wire [3:0] o_bits
@@ -47,12 +49,14 @@ module datapath(
   wire [31:0]   w_rgf_data1;
   wire [31:0]   w_rgf_data2;
   
-  reg [3:0] w_addr2_mux;
+  wire [3:0] w_addr2_mux;
+  
+  // Program Counter Specific Wires
+  wire [15:0] w_in_pc, w_pc_address;
 
   reg [31:0]    r_rgf;
   reg [31:0]    r_alu_input;
   reg [3:0]     w_addr1_mux;
-  reg [3:0]     r_pc_addr = 15;
   
   // Instantiate modules
   r16 instruction_register (
@@ -61,6 +65,14 @@ module datapath(
     .i_we(i_we_ir),
     .i_data(w_rom),
     .o_data(w_ir)
+  );
+
+  r16 program_counter (
+    .clk(clk),
+    .rst_n(rst_n),
+    .i_we(i_we_pc),
+    .i_data(w_in_pc),
+    .o_data(w_pc_address)
   );
 
   flg flags (
@@ -73,8 +85,7 @@ module datapath(
 
   rom rom_inst (
     .clk(clk),
-    .i_re_rom(i_re_rom),
-    .i_address(w_rgf_data1),
+    .i_address(w_pc_address),
     .o_rom(w_rom)
   );
 
@@ -100,29 +111,25 @@ module datapath(
     .o_bits(o_bits)
   );
 
+  // Program Counter MUX: This needs to increment and have the possibility to branch
+    assign w_in_pc = i_mux_pc ? (w_pc_address + w_ir[7:0] - 1'b1) : (w_pc_address + 1);
+  // -------------------------------------------------------------------------------
+
     always @*
       case (i_addr1_mux)
          2'b00  : w_addr1_mux = w_ir[2:0];
          2'b01  : w_addr1_mux = w_ir[5:3];
-         2'b10  : w_addr1_mux = r_pc_addr;
-         2'b11  : w_addr1_mux = w_ir[10:8]; // mov instruction
+         // 2'b10  : w_addr1_mux = r_pc_addr;
+         2'b11  : w_addr1_mux = w_ir[10:8]; // MOV IMEDIATE 8 Bits
          default: w_addr1_mux = 0;
       endcase
   
-  // assign w_addr2_mux = i_addr2_mux ? w_ir[2:0]:w_ir[6:3];
-  
-  always @*
-      case (i_addr2_mux)
-         2'b00  : w_addr2_mux = w_ir[6:3];
-         2'b01  : w_addr2_mux = w_ir[2:0];
-         2'b10  : w_addr2_mux = r_pc_addr; // program counter
-         default: w_addr2_mux = 0;
-  endcase
+  assign w_addr2_mux = i_addr2_mux ? w_ir[2:0]:w_ir[6:3];
   
   always @*
       case (i_data_mux)
          2'b00  : r_rgf = w_rgf_data1; // any core register data
-         2'b01  : r_rgf = w_rgf_data1+1; // program counter
+         // 2'b01  : r_rgf = w_rgf_data1+1; // program counter
          2'b10  : r_rgf = w_alu_result;
          2'b11  : r_rgf = w_ir[7:0]; // mov imediate
          default: r_rgf = 0;
@@ -133,7 +140,7 @@ module datapath(
          2'b00: r_alu_input = w_rgf_data1; // default output from core registers
          2'b01: r_alu_input = w_ir[8:6]; // Add 3bit imediate
          2'b10: r_alu_input = w_ir[7:0]; // Add 8bit imediate
-         default: r_alu_input = 0; // nothing
+         default: r_alu_input = 0; // nothing for now
       endcase
   // Output assignment
   assign o_instructions = w_ir;

@@ -30,7 +30,7 @@ module r16(
     // Registers
     reg [15:0] r_data;
     
-    always @(posedge clk or posedge i_we or negedge  rst_n) begin
+    always @(posedge i_we or negedge  rst_n) begin
         if(!rst_n) begin
             r_data <= 16'h0000;
         end else begin      

@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="367.001 ns"></ZoomEndTime>
-      <Cursor1Time time="445.000 ns"></Cursor1Time>
+      <ZoomEndTime time="459.367 ns"></ZoomEndTime>
+      <Cursor1Time time="374.270 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="217"></NameColumnWidth>
-      <ValueColumnWidth column_width="80"></ValueColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
+   <WVObjectSize size="6" />
    <wvobject fp_name="/tb_top_layer/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -33,71 +33,55 @@
       <obj_property name="ObjectShortName">r_reg[15:0][31:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
+   <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_we_cr" type="logic">
+      <obj_property name="ElementShortName">i_we_cr</obj_property>
+      <obj_property name="ObjectShortName">i_we_cr</obj_property>
+   </wvobject>
    <wvobject type="divider" fp_name="divider289">
+      <obj_property name="label">.</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject fp_name="group287" type="group">
       <obj_property name="label">ANALISE</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/r_rgf" type="array">
-         <obj_property name="ElementShortName">r_rgf[31:0]</obj_property>
-         <obj_property name="ObjectShortName">r_rgf[31:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_top_layer/top_layer_inst/o_bits" type="array">
          <obj_property name="ElementShortName">o_bits[3:0]</obj_property>
          <obj_property name="ObjectShortName">o_bits[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_state" type="array">
-         <obj_property name="ElementShortName">r_state[2:0]</obj_property>
-         <obj_property name="ObjectShortName">r_state[2:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/i_instructions" type="array">
          <obj_property name="ElementShortName">i_instructions[15:0]</obj_property>
          <obj_property name="ObjectShortName">i_instructions[15:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/i_op1" type="array">
-         <obj_property name="ElementShortName">i_op1[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i_op1[31:0]</obj_property>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/w_pc_address" type="array">
+         <obj_property name="ElementShortName">w_pc_address[15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_pc_address[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#808000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/i_op2" type="array">
-         <obj_property name="ElementShortName">i_op2[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i_op2[31:0]</obj_property>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_we_pc" type="logic">
+         <obj_property name="ElementShortName">i_we_pc</obj_property>
+         <obj_property name="ObjectShortName">i_we_pc</obj_property>
+         <obj_property name="CustomSignalColor">#808000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/alu_inst/o_res" type="array">
-         <obj_property name="ElementShortName">o_res[31:0]</obj_property>
-         <obj_property name="ObjectShortName">o_res[31:0]</obj_property>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_mux_pc" type="logic">
+         <obj_property name="ElementShortName">i_mux_pc</obj_property>
+         <obj_property name="ObjectShortName">i_mux_pc</obj_property>
+         <obj_property name="CustomSignalColor">#808000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_branch" type="logic">
-         <obj_property name="ElementShortName">r_branch</obj_property>
-         <obj_property name="ObjectShortName">r_branch</obj_property>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_state" type="array">
+         <obj_property name="ElementShortName">r_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">r_state[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#808080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_we_cr" type="logic">
-         <obj_property name="ElementShortName">r_we_cr</obj_property>
-         <obj_property name="ObjectShortName">r_we_cr</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_re_cr" type="logic">
-         <obj_property name="ElementShortName">i_re_cr</obj_property>
-         <obj_property name="ObjectShortName">i_re_cr</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/w_rgf_data2" type="array">
-         <obj_property name="ElementShortName">w_rgf_data2[31:0]</obj_property>
-         <obj_property name="ObjectShortName">w_rgf_data2[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/w_addr2_mux" type="array">
-         <obj_property name="ElementShortName">w_addr2_mux[3:0]</obj_property>
-         <obj_property name="ObjectShortName">w_addr2_mux[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/i_addr2_mux" type="array">
-         <obj_property name="ElementShortName">i_addr2_mux[1:0]</obj_property>
-         <obj_property name="ObjectShortName">i_addr2_mux[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/o_addr2_mux" type="array">
-         <obj_property name="ElementShortName">o_addr2_mux[1:0]</obj_property>
-         <obj_property name="ObjectShortName">o_addr2_mux[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top_layer/top_layer_inst/datapath_inst/rom_inst/i_address" type="array">
-         <obj_property name="ElementShortName">i_address[31:0]</obj_property>
-         <obj_property name="ObjectShortName">i_address[31:0]</obj_property>
+      <wvobject fp_name="/tb_top_layer/top_layer_inst/control_unit_inst/r_execute" type="array">
+         <obj_property name="ElementShortName">r_execute[3:0]</obj_property>
+         <obj_property name="ObjectShortName">r_execute[3:0]</obj_property>
+         <obj_property name="CustomSignalColor">#808080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

@@ -29,13 +29,14 @@ module top_layer(
   wire i_we_ir_datapath;
   wire i_we_cr_datapath;
   wire i_re_cr_datapath;
-  wire i_re_rom_datapath;
   wire [1:0] i_addr1_mux_datapath;
-  wire [1:0] i_addr2_mux_datapath;
+  wire i_addr2_mux_datapath;
   wire [1:0] i_data_mux_datapath;
   wire [3:0] i_alu_opcode_datapath;
   wire [1:0] i_alu_input_datapath;
   wire [15:0] o_instructions_datapath;
+  wire w_we_pc;
+  wire w_mux_pc;
 
   // Instantiate datapath module
   datapath datapath_inst (
@@ -44,14 +45,16 @@ module top_layer(
     .i_we_ir(i_we_ir_datapath),
     .i_we_cr(i_we_cr_datapath),
     .i_re_cr(i_re_cr_datapath),
-    .i_re_rom(i_re_rom_datapath),
     .i_addr1_mux(i_addr1_mux_datapath),
     .i_addr2_mux(i_addr2_mux_datapath),
     .i_data_mux(i_data_mux_datapath),
     .i_alu_opcode(i_alu_opcode_datapath),
     .i_alu_input(i_alu_input_datapath),
     .o_instructions(o_instructions_datapath),
-    .o_bits(o_bits)
+    .o_bits(o_bits),
+    
+    .i_we_pc(w_we_pc),
+    .i_mux_pc(w_mux_pc)
   );
 
   // Instantiate control_unit module
@@ -62,12 +65,14 @@ module top_layer(
     .o_we_ir(i_we_ir_datapath),
     .o_we_cr(i_we_cr_datapath),
     .o_re_cr(i_re_cr_datapath),
-    .o_re_rom(i_re_rom_datapath),
     .o_addr1_mux(i_addr1_mux_datapath),
     .o_addr2_mux(i_addr2_mux_datapath),
     .o_data_mux(i_data_mux_datapath),
     .o_alu_opcode(i_alu_opcode_datapath),
-    .o_alu_input(i_alu_input_datapath)
+    .o_alu_input(i_alu_input_datapath),
+    
+    .o_we_pc(w_we_pc),
+    .o_mux_pc(w_mux_pc)
   );
 
 endmodule
