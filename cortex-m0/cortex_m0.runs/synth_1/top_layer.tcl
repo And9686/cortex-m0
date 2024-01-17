@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/top_layer.tcl"
+  variable script "C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.runs/synth_1/top_layer.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,33 +70,37 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.cache/wt [current_project]
-set_property parent.project_path C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.cache/wt [current_project]
+set_property parent.project_path C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.cache/ip [current_project]
+set_property ip_output_repo c:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.mem
+read_mem C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/rom.mem
 read_verilog -library xil_defaultlib {
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/def.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v
-  C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/def.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/nvic.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v
+  C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -107,12 +111,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc]
+read_xdc C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

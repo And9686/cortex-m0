@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed Jan 17 04:30:43 2024
+| Date             : Wed Jan 17 06:46:07 2024
 | Host             : DESKTOP-C79CDTU running 64-bit major release  (build 9200)
 | Command          : report_power -file top_layer_power_routed.rpt -pb top_layer_power_summary_routed.pb -rpx top_layer_power_routed.rpx
 | Design           : top_layer
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.106        |
+| Total On-Chip Power (W)  | 0.105        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.013        |
+| Dynamic (W)              | 0.012        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.8         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.010 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     6479 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     3177 |     17600 |           18.05 |
-|   Register     |    <0.001 |     2809 |     35200 |            7.98 |
+| Slice Logic    |    <0.001 |     6350 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     3119 |     17600 |           17.72 |
+|   Register     |    <0.001 |     2735 |     35200 |            7.77 |
 |   CARRY4       |    <0.001 |       20 |      4400 |            0.45 |
-|   F7/F8 Muxes  |    <0.001 |       94 |     17600 |            0.53 |
-|   Others       |     0.000 |       12 |       --- |             --- |
-| Signals        |     0.001 |     6104 |       --- |             --- |
-| I/O            |    <0.001 |        6 |       100 |            6.00 |
+|   F7/F8 Muxes  |    <0.001 |       60 |     17600 |            0.34 |
+|   Others       |     0.000 |       13 |       --- |             --- |
+| Signals        |     0.001 |     6040 |       --- |             --- |
+| I/O            |    <0.001 |        9 |       100 |            9.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.106 |          |           |                 |
+| Total          |     0.105 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.016 |       0.013 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.016 |       0.012 |      0.004 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,7 +148,7 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| top_layer         |     0.013 |
+| top_layer         |     0.012 |
 |   datapath_inst   |     0.012 |
 |     core_register |     0.003 |
 |     memory_inst   |     0.008 |

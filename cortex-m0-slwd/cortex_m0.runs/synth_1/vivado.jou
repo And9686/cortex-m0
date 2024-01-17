@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Jan 17 06:58:15 2024
+# Process ID: 22008
+# Current directory: C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0-slwd/cortex_m0.runs/synth_1
+# Command line: vivado.exe -log demonstration.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source demonstration.tcl
+# Log file: C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0-slwd/cortex_m0.runs/synth_1/demonstration.vds
+# Journal file: C:/Users/aluno/Documents/cortex-m0-v6/cortex-m0-slwd/cortex_m0.runs/synth_1\vivado.jou
+# Running On: DESKTOP-C79CDTU, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16987 MB
+#-----------------------------------------------------------
+source demonstration.tcl -notrace
