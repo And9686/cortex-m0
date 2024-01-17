@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc rfile:../../../cortex_m0.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc rfile:../../../../cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L12P_T1_MRCC_35 Sch=sysclk
 set_property src_info {type:XDC file:1 line:20 export:INPUT save:INPUT read:READ} [current_design]

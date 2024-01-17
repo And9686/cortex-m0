@@ -2,16 +2,16 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Mon Jan 15 03:20:01 2024
-# Process ID: 9300
-# Current directory: C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19532 C:\Users\aluno\Documents\cortex-m0-v3\cortex-m0\cortex_m0.xpr
-# Log file: C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/vivado.log
-# Journal file: C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0\vivado.jou
+# Start of session at: Tue Jan 16 22:03:49 2024
+# Process ID: 6352
+# Current directory: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29536 C:\Users\aluno\Documents\cortex-m0-v4\cortex-m0\cortex_m0.xpr
+# Log file: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/vivado.log
+# Journal file: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0\vivado.jou
 # Running On: DESKTOP-C79CDTU, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16987 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.xpr
+open_project C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.xpr
 WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-100:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/boards/board_files/arty-a7-100/E.0/1.0/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-100:part0:1.1 available at C:/Xilinx/Vivado/2022.2/data/boards/board_files/arty-a7-100/E.0/1.1/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-35:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/boards/board_files/arty-a7-35/E.0/1.0/board.xml as part xc7a35ticsg324-1l specified in board_part file is either invalid or not available
@@ -87,12 +87,646 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [Project 1-313] Project file moved from 'D:/cortex_m0' since last save.
-INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.gen/sources_1'.
+INFO: [Project 1-313] Project file moved from 'C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0' since last save.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:09 . Memory (MB): peak = 1209.961 ; gain = 410.969
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1185.023 ; gain = 404.465
 update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp with file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp
+launch_runs impl_1 -jobs 12
+[Tue Jan 16 22:11:03 2024] Launched synth_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/runme.log
+[Tue Jan 16 22:11:03 2024] Launched impl_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/runme.log
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_layer' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim/rom.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_layer_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module r16
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rgf
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_layer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top_layer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_address' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:88]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.r16
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_layer_behav -key {Behavioral:sim_1:Functional:tb_top_layer} -tclbatch {tb_top_layer.tcl} -view {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg
+source tb_top_layer.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 120 ns : File "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" Line 53
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_layer_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1274.207 ; gain = 48.512
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run impl_1
+export_ip_user_files -of_objects  [get_files C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc
+add_files -fileset constrs_1 -norecurse C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp with file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp
+launch_runs impl_1 -jobs 12
+[Tue Jan 16 22:16:58 2024] Launched synth_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/runme.log
+[Tue Jan 16 22:16:58 2024] Launched impl_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1603.469 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.245 . Memory (MB): peak = 2297.000 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.245 . Memory (MB): peak = 2297.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2297.000 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2415.012 ; gain = 1140.805
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+launch_simulation -mode post-implementation -type functional
+Command: launch_simulation  -mode post-implementation -type functional
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-implementation functional simulation in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode funcsim -nolib -force -file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/tb_top_layer_func_impl.v"
+INFO: [SIM-utils-36] Netlist generated:C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/tb_top_layer_func_impl.v
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_layer' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/rom.mem'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim'
+"xvlog --incr --relax -prj tb_top_layer_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/tb_top_layer_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module flg
+INFO: [VRFC 10-311] analyzing module r16
+INFO: [VRFC 10-311] analyzing module r16_0
+INFO: [VRFC 10-311] analyzing module rgf
+INFO: [VRFC 10-311] analyzing module top_layer
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top_layer
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_top_layer_func_impl xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_top_layer_func_impl xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.FDPE_default
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module xil_defaultlib.control_unit
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.alu
+Compiling module unisims_ver.latchsre_ldce
+Compiling module unisims_ver.LDCE
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.r16
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1(INIT=2'b01)
+Compiling module xil_defaultlib.r16_0
+Compiling module xil_defaultlib.datapath
+Compiling module unisims_ver.OBUF
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_func_impl
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 2437.055 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_layer_func_impl -key {Post-Implementation:sim_1:Functional:tb_top_layer} -tclbatch {tb_top_layer.tcl} -view {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg
+WARNING: Simulation object /tb_top_layer/top_layer_inst/datapath_inst/core_register/r_reg was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/datapath_inst/i_we_cr was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/control_unit_inst/i_instructions was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/datapath_inst/w_pc_address was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/datapath_inst/i_we_pc was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/datapath_inst/i_mux_pc was not found in the design.
+WARNING: Simulation object /tb_top_layer/top_layer_inst/control_unit_inst/r_state was not found in the design.
+source tb_top_layer.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 120 ns : File "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" Line 53
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_layer_func_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2463.699 ; gain = 26.645
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Tue Jan 16 23:14:46 2024] Launched impl_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2022.2
+  **** Build date : Oct 14 2022 at 05:18:10
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-00:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2464.199 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210351A77CACA
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 4593.910 ; gain = 2129.711
+set_property PROGRAM.FILE {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/top_layer.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/top_layer.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+close [ open C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v w ]
+add_files C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v w ]
+add_files C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_design
+close_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 4651.566 ; gain = 2.930
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_layer' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim/rom.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_layer_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_block
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module r16
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rgf
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_layer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top_layer
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_addr_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:92]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'i_addr_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:93]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'o_data_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:94]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'o_data_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:95]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'o_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v:33]
+WARNING: [VRFC 10-5021] port 'i_data_ram' is not connected on this instance [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:87]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.r16
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.memory_block
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_layer_behav -key {Behavioral:sim_1:Functional:tb_top_layer} -tclbatch {tb_top_layer.tcl} -view {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg
+source tb_top_layer.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 120 ns : File "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" Line 53
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_layer_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 4651.566 ; gain = 0.000
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_layer' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim/rom.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_layer_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_block
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module r16
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rgf
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_layer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top_layer
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_addr_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:92]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'i_addr_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:93]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'o_data_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:94]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'o_data_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:95]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'o_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v:33]
+WARNING: [VRFC 10-5021] port 'i_data_ram' is not connected on this instance [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:87]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.r16
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.memory_block
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_layer_behav -key {Behavioral:sim_1:Functional:tb_top_layer} -tclbatch {tb_top_layer.tcl} -view {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg
+source tb_top_layer.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 120 ns : File "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" Line 53
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_layer_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 4651.566 ; gain = 0.000
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp with file C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Tue Jan 16 23:56:45 2024] Launched synth_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/runme.log
+[Tue Jan 16 23:56:45 2024] Launched impl_1...
+Run output will be captured here: C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2022.2
+  **** Build date : Oct 14 2022 at 05:18:10
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-00:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2024 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210351A77CACA
+set_property PROGRAM.FILE {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/top_layer.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/top_layer.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/impl_1/top_layer.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+launch_simulation -mode post-implementation -type functional
+Command: launch_simulation  -mode post-implementation -type functional
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+boost::filesystem::remove: O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_hw_manager
+launch_simulation -mode post-implementation -type functional
+Command: launch_simulation  -mode post-implementation -type functional
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+boost::filesystem::remove: O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/simulate.log"
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_layer' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim/rom.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_layer_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_block
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_layer_behav xil_defaultlib.tb_top_layer xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_addr_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:92]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'i_addr_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:93]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'o_data_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:94]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'o_data_ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:95]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'o_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v:33]
+WARNING: [VRFC 10-5021] port 'i_data_ram' is not connected on this instance [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:87]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.r16
+Compiling module xil_defaultlib.flg
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.memory_block
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.rgf
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.top_layer
+Compiling module xil_defaultlib.tb_top_layer
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_layer_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_layer_behav -key {Behavioral:sim_1:Functional:tb_top_layer} -tclbatch {tb_top_layer.tcl} -view {C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/tb_top_layer_behav.wcfg
+source tb_top_layer.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 120 ns : File "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/tb_top_layer.v" Line 53
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_layer_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 4651.566 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-implementation -type functional
+Command: launch_simulation  -mode post-implementation -type functional
+INFO: [Vivado 12-12493] Simulation top is 'tb_top_layer'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+boost::filesystem::remove: O processo não pode aceder ao ficheiro porque este está a ser utilizado por outro processo: "C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.sim/sim_1/impl/func/xsim/simulate.log"
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 17 00:11:31 2024...

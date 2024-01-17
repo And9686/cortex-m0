@@ -35,9 +35,11 @@ module control_unit(
     output wire [3:0] o_alu_opcode,
     output wire [1:0] o_alu_input,
     
+    output wire o_re_ram,
+    output wire o_we_ram,
+    
     output wire o_we_pc,
     output wire o_mux_pc
-    
     );
     
     // Define States
@@ -56,6 +58,10 @@ module control_unit(
     reg [1:0] r_alu_input;
     reg [3:0] r_execute;
     reg [15:0] r_instructions;
+    
+    // RAM Flags
+    reg r_re_ram;
+    reg r_we_ram;
     
     //Program Counter Flags
     reg r_we_pc;
@@ -76,6 +82,9 @@ module control_unit(
             r_alu_input = 0;
             r_instructions = 0;
             r_execute = 4'hf;
+            
+            r_re_ram = 0;
+            r_we_ram = 0;
             
             r_we_pc = 0;
             r_mux_pc = 0;
@@ -137,9 +146,21 @@ module control_unit(
                         if (r_instructions[11:8] == 4'b1110) begin// Undefined Branch (Positive Jump)
                             r_mux_pc = 1;
                             r_execute = `BRNCH_AL;
-
                         end
-                    end
+                    end else
+                    if (r_instructions[15:9] == 7'b0101100) begin // Load Register
+                        r_data_mux = 1; // OUTPUT RAM
+                        r_addr2_mux = 1; // Second register
+                        r_addr1_mux = 2; // first Register
+                        r_re_ram = 1;
+                        r_execute = `LOAD_REG;
+                    end else
+                    if (r_instructions[15:9] == 7'b0101000) begin // Store Register
+                        r_addr2_mux = 1; // Second register
+                        r_addr1_mux = 2; // first Register
+                        r_re_cr = 1;
+                        r_execute = `STORE_RG;
+                    end         
                     
                     r_nstate = EXECUTE;
                 end
@@ -165,6 +186,18 @@ module control_unit(
                             r_we_pc = 1;
                             r_nstate = START;
                         end
+                        `LOAD_REG: begin
+                            r_re_ram = 0;
+                            r_addr1_mux = 1;
+                            r_we_cr = 1;
+                            r_nstate = START;
+                        end
+                        `STORE_RG: begin
+                            r_re_ram = 0;
+                            r_addr1_mux = 1;
+                            r_we_ram = 1;
+                            r_nstate = START;
+                        end
                         default: r_nstate = START;
                     endcase 
                     r_execute = 4'hf; // Reset r_execute value
@@ -184,5 +217,8 @@ module control_unit(
     
     assign o_we_pc = r_we_pc;
     assign o_mux_pc = r_mux_pc;
+    
+    assign o_re_ram = r_re_ram;
+    assign o_we_ram = r_we_ram;
     
 endmodule

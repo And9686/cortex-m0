@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.runs/synth_1'
+HD_PWD='C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

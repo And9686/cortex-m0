@@ -10,9 +10,9 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source top_layer.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 416.043 ; gain = 105.266
-Command: read_checkpoint -auto_incremental -incremental C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 415.973 ; gain = 96.355
+Command: read_checkpoint -auto_incremental -incremental C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/utils_1/imports/synth_1/top_layer.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top_layer -part xc7z010clg400-1
 Starting synth_design
@@ -23,31 +23,37 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14844
+INFO: [Synth 8-7075] Helper process launched with PID 26120
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1225.512 ; gain = 409.266
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1226.191 ; gain = 408.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_layer' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
-INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'r16' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'r16' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v:23]
-INFO: [Synth 8-6157] synthesizing module 'flg' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'flg' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
-INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
-INFO: [Synth 8-3876] $readmem data file 'rom.mem' is read successfully [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:37]
-INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
-INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
+INFO: [Synth 8-6157] synthesizing module 'top_layer' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'r16' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'r16' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/r16.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flg' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'flg' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/flg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'memory_block' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v:23]
+INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
+INFO: [Synth 8-3876] $readmem data file 'rom.mem' is read successfully [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rom.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ram' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/ram.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory_block' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/memory_block.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
 	Parameter OPCODE_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
-INFO: [Synth 8-6157] synthesizing module 'rgf' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'rgf' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'top_layer' (0#1) [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
-WARNING: [Synth 8-6014] Unused sequential element r_instructions_reg was removed.  [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:77]
-WARNING: [Synth 8-6014] Unused sequential element r_state_reg was removed.  [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/alu.v:24]
+INFO: [Synth 8-6157] synthesizing module 'rgf' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'rgf' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/rgf.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:132]
+INFO: [Synth 8-226] default block is never used [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'top_layer' (0#1) [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/top_layer.v:23]
+WARNING: [Synth 8-6014] Unused sequential element r_instructions_reg was removed.  [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:83]
+WARNING: [Synth 8-6014] Unused sequential element r_state_reg was removed.  [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/control_unit.v:96]
 WARNING: [Synth 8-7129] Port i_instructions[7] in module control_unit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_instructions[6] in module control_unit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_instructions[5] in module control_unit is either unconnected or has no load
@@ -78,51 +84,51 @@ WARNING: [Synth 8-7129] Port i_address[17] in module rom is either unconnected o
 WARNING: [Synth 8-7129] Port i_address[16] in module rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clk in module r16 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1325.297 ; gain = 509.051
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1342.863 ; gain = 524.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1325.297 ; gain = 509.051
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1342.863 ; gain = 524.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1325.297 ; gain = 509.051
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1342.863 ; gain = 524.672
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1325.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.092 . Memory (MB): peak = 1342.863 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc]
-Finished Parsing XDC File [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_layer_propImpl.xdc].
+Parsing XDC File [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0-slowed/cortex_m0.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_layer_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_layer_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1380.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1399.074 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1380.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1399.074 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'r_nstate_reg' in module 'control_unit'
 ---------------------------------------------------------------------------------------------------
@@ -135,7 +141,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'r_nstate_reg' in module 'co
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_nstate_reg' using encoding 'one-hot' in module 'control_unit'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -145,25 +151,28 @@ Detailed RTL Component Info :
 	   2 Input   33 Bit       Adders := 1     
 	   3 Input   33 Bit       Adders := 2     
 	   3 Input   16 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 17    
+	               32 Bit    Registers := 82    
 	               16 Bit    Registers := 2     
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 8     
 +---Muxes : 
 	   8 Input   33 Bit        Muxes := 3     
 	   2 Input   33 Bit        Muxes := 3     
-	   2 Input   32 Bit        Muxes := 96    
+	   2 Input   32 Bit        Muxes := 364   
 	   4 Input   32 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 5     
 	   4 Input    4 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 17    
-	   4 Input    1 Bit        Muxes := 12    
+	   4 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 29    
+	   7 Input    1 Bit        Muxes := 5     
+	   5 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 14    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -179,9 +188,110 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[11][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[10][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[9][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[8][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[15][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[14][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[13][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (core_register/\r_reg_reg[12][12] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:17 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -191,8 +301,8 @@ ROM: Preliminary Mapping Report
 +------------+------------+---------------+----------------+
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
-|rom         | r_rom      | 4096x13       | LUT            | 
-|top_layer   | p_0_out    | 4096x13       | LUT            | 
+|rom         | r_rom      | 4096x16       | LUT            | 
+|rom         | p_0_out    | 4096x16       | LUT            | 
 +------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -202,19 +312,20 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:01:23 . Memory (MB): peak = 1399.074 ; gain = 580.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (28868.0/oG. 150.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:02:04 . Memory (MB): peak = 1534.203 ; gain = 716.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Technology Mapping : Time (s): cpu = 00:01:30 ; elapsed = 00:02:26 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -228,41 +339,142 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][31]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][30]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][29]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][28]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][27]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][26]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][25]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][24]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][23]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][22]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][21]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][20]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][19]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][18]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][17]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][16]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][15]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][14]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][13]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][12]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][11]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][10]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][9]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][8]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][7]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][6]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][5]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][4]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][3]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][2]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][1]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[25][0]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][31]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][30]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][29]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][28]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][27]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][26]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][25]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][24]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][23]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][22]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][21]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][20]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][19]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][18]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][17]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][16]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][15]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][14]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][13]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][12]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][11]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][10]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][9]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][8]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][7]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][6]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][5]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][4]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][3]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][2]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][1]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[26][0]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][31]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][30]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][29]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][28]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][27]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][26]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][25]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][24]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][23]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][22]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][21]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][20]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][19]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][18]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][17]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][16]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][15]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][14]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][13]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][12]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][11]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][10]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][9]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][8]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][7]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][6]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][5]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][4]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][3]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][2]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][1]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[27][0]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[28][31]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[28][30]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[28][29]_LDC) is unused and will be removed from module top_layer.
+WARNING: [Synth 8-3332] Sequential element (datapath_inst/memory_inst/ram_inst/r_reg_reg[28][28]_LDC) is unused and will be removed from module top_layer.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished IO Insertion : Time (s): cpu = 00:01:36 ; elapsed = 00:02:32 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:36 ; elapsed = 00:02:32 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:36 ; elapsed = 00:02:32 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:36 ; elapsed = 00:02:32 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:02:33 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:02:33 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -281,39 +493,40 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    20|
 |3     |LUT1   |     1|
-|4     |LUT2   |    36|
-|5     |LUT3   |   303|
-|6     |LUT4   |    21|
-|7     |LUT5   |   118|
-|8     |LUT6   |   605|
-|9     |FDCE   |   312|
-|10    |FDPE   |   261|
-|11    |LDC    |   257|
-|12    |IBUF   |     2|
-|13    |OBUF   |     4|
+|4     |LUT2   |    78|
+|5     |LUT3   |  1083|
+|6     |LUT4   |   309|
+|7     |LUT5   |   454|
+|8     |LUT6   |  1485|
+|9     |MUXF7  |    94|
+|10    |FDCE   |  1008|
+|11    |FDPE   |   902|
+|12    |LDC    |   897|
+|13    |IBUF   |     2|
+|14    |OBUF   |     4|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:02:33 . Memory (MB): peak = 1534.832 ; gain = 716.641
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1380.664 ; gain = 509.051
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1380.664 ; gain = 564.418
+Synthesis finished with 0 errors, 0 critical warnings and 1152 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:02:31 . Memory (MB): peak = 1534.832 ; gain = 660.430
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:02:34 . Memory (MB): peak = 1534.832 ; gain = 716.641
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1380.664 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 277 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1545.086 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1011 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1380.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1546.762 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 257 instances were transformed.
-  LDC => LDCE: 257 instances
+  A total of 897 instances were transformed.
+  LDC => LDCE: 897 instances
 
-Synth Design complete, checksum: e2039ccf
+Synth Design complete, checksum: 94415330
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+151 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1380.664 ; gain = 939.734
-INFO: [Common 17-1381] The checkpoint 'C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:02:39 . Memory (MB): peak = 1546.762 ; gain = 1105.906
+INFO: [Common 17-1381] The checkpoint 'C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.runs/synth_1/top_layer.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_layer_utilization_synth.rpt -pb top_layer_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jan 15 06:45:53 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 17 04:23:47 2024...

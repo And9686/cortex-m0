@@ -4,7 +4,9 @@ verilog xil_defaultlib  \
 "../../../../cortex_m0.srcs/sources_1/new/control_unit.v" \
 "../../../../cortex_m0.srcs/sources_1/new/datapath.v" \
 "../../../../cortex_m0.srcs/sources_1/new/flg.v" \
+"../../../../cortex_m0.srcs/sources_1/new/memory_block.v" \
 "../../../../cortex_m0.srcs/sources_1/new/r16.v" \
+"../../../../cortex_m0.srcs/sources_1/new/ram.v" \
 "../../../../cortex_m0.srcs/sources_1/new/rgf.v" \
 "../../../../cortex_m0.srcs/sources_1/new/rom.v" \
 "../../../../cortex_m0.srcs/sources_1/new/top_layer.v" \

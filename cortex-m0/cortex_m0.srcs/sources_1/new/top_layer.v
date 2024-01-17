@@ -37,6 +37,8 @@ module top_layer(
   wire [15:0] o_instructions_datapath;
   wire w_we_pc;
   wire w_mux_pc;
+  wire w_re_ram;
+  wire w_we_ram;
 
   // Instantiate datapath module
   datapath datapath_inst (
@@ -52,6 +54,9 @@ module top_layer(
     .i_alu_input(i_alu_input_datapath),
     .o_instructions(o_instructions_datapath),
     .o_bits(o_bits),
+    
+    .i_re_ram(w_re_ram), 
+    .i_we_ram(w_we_ram),
     
     .i_we_pc(w_we_pc),
     .i_mux_pc(w_mux_pc)
@@ -70,6 +75,9 @@ module top_layer(
     .o_data_mux(i_data_mux_datapath),
     .o_alu_opcode(i_alu_opcode_datapath),
     .o_alu_input(i_alu_input_datapath),
+    
+    .o_re_ram(w_re_ram),
+    .o_we_ram(w_we_ram),
     
     .o_we_pc(w_we_pc),
     .o_mux_pc(w_mux_pc)

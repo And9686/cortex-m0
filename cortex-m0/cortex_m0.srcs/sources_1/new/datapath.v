@@ -34,6 +34,8 @@ module datapath(
 
   input wire i_we_pc, // Program Counter Specific Enable
   input wire i_mux_pc,
+  
+  input wire i_re_ram, i_we_ram, // RAM SIGNALS 
 
   output wire [15:0] o_instructions,
   output wire [3:0] o_bits
@@ -48,6 +50,9 @@ module datapath(
   wire [31:0]   w_alu_result;
   wire [31:0]   w_rgf_data1;
   wire [31:0]   w_rgf_data2;
+  
+  wire [31:0]   w_ram_output;
+  wire [31:0]   w_ram_address;
   
   wire [3:0] w_addr2_mux;
   
@@ -82,12 +87,20 @@ module datapath(
     .i_data(w_alu_flg),
     .o_data(w_flg_data)
   );
-
-  rom rom_inst (
+  
+  // Memory Block
+  memory_block memory_inst(
     .clk(clk),
-    .i_address(w_pc_address),
-    .o_rom(w_rom)
+    .rst_n(rst_n),
+    .i_re(i_re_ram),
+    .i_we(i_we_ram),
+    .i_data_ram(w_rgf_data1),
+    .i_addr_rom(w_pc_address),
+    .i_addr_ram(w_ram_address),
+    .o_data_rom(w_rom),
+    .o_data_ram(w_ram_output)
   );
+  // ------------
 
   alu #(4) alu_inst (
     .i_op1(r_alu_input),
@@ -118,18 +131,22 @@ module datapath(
     always @*
       case (i_addr1_mux)
          2'b00  : w_addr1_mux = w_ir[2:0];
-         2'b01  : w_addr1_mux = w_ir[5:3];
-         // 2'b10  : w_addr1_mux = r_pc_addr;
+         2'b01  : w_addr1_mux = w_ir[5:3]; // Result for load/store operations
+         2'b10  : w_addr1_mux = w_ir[8:6]; // For LOAD instructions
          2'b11  : w_addr1_mux = w_ir[10:8]; // MOV IMEDIATE 8 Bits
          default: w_addr1_mux = 0;
       endcase
   
   assign w_addr2_mux = i_addr2_mux ? w_ir[2:0]:w_ir[6:3];
   
+  // RAM Address Operation
+  assign w_ram_address = w_addr1_mux + w_addr2_mux;
+  // ---------------------
+  
   always @*
       case (i_data_mux)
          2'b00  : r_rgf = w_rgf_data1; // any core register data
-         // 2'b01  : r_rgf = w_rgf_data1+1; // program counter
+         2'b01  : r_rgf = w_ram_output; // ram output
          2'b10  : r_rgf = w_alu_result;
          2'b11  : r_rgf = w_ir[7:0]; // mov imediate
          default: r_rgf = 0;

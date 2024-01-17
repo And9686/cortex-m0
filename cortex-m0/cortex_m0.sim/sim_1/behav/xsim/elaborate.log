@@ -4,7 +4,7 @@ Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_address' [C:/Users/aluno/Documents/cortex-m0-v3/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:88]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'i_addr_rom' [C:/Users/aluno/Documents/cortex-m0-v4/cortex-m0/cortex_m0.srcs/sources_1/new/datapath.v:98]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -12,6 +12,8 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.r16
 Compiling module xil_defaultlib.flg
 Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.memory_block
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.rgf
 Compiling module xil_defaultlib.datapath
